@@ -1,0 +1,392 @@
+[
+  {
+    "id": "skazka",
+    "kind": "generated_illustration",
+    "sourceFile": "exec-5b641bf3-8967-4dc2-bece-6a57fd681b43.png",
+    "sourceSHA256": "ded078e1d4b37e4e3a15c0085f446a8b4e7cc857a2865868f07d8e5f407f324d",
+    "description": "AI-generated interpretive architectural visualization; not a surveyed or as-built plan. Native generation resolution retained.",
+    "variants": [
+      {
+        "path": "visuals/v2/skazka.webp",
+        "width": 1672,
+        "height": 941,
+        "bytes": 717160,
+        "sha256": "5e30960ac6235f2130396eb1a1640d5ec128c54c86dee881690df9559fdbfd10"
+      },
+      {
+        "path": "visuals/v2/skazka-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 217428,
+        "sha256": "4c27fc46153dba275eb4b7ec73d9bd61352a0deb74937111c8027f923aed9e4e"
+      },
+      {
+        "path": "visuals/v2/skazka-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 101908,
+        "sha256": "87273f1bfa0401d3b12337f35d7b725f92b8971a82af1af1126f49212c15afe8"
+      }
+    ]
+  },
+  {
+    "id": "leo-tolstoy",
+    "kind": "generated_illustration",
+    "sourceFile": "exec-68961157-7394-4898-bff6-a179b4227f92.png",
+    "sourceSHA256": "17a0c9c8db59478e427b8ab7ef924f8793b7622436e9756f4706be8db1309a59",
+    "description": "AI-generated interpretive architectural visualization; not a surveyed or as-built plan. Native generation resolution retained.",
+    "variants": [
+      {
+        "path": "visuals/v2/leo-tolstoy.webp",
+        "width": 1672,
+        "height": 941,
+        "bytes": 721940,
+        "sha256": "4bd0ebae341d8114f94266e5ab214e0b0bacc37cf25b69aec5ac1033280de3f0"
+      },
+      {
+        "path": "visuals/v2/leo-tolstoy-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 220886,
+        "sha256": "80a00e55f236baad00644e2e0b9ad98227335e6e34f9f31e54a51574b4179f4e"
+      },
+      {
+        "path": "visuals/v2/leo-tolstoy-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 101658,
+        "sha256": "ee7048d53a250ddeeac93c111d2c4eff0938c3aeeb7e01def6799b5873f3bbc6"
+      }
+    ]
+  },
+  {
+    "id": "vdnkh",
+    "kind": "generated_illustration",
+    "sourceFile": "exec-63606cf6-62fa-409f-b08e-2b31a0d8922a.png",
+    "sourceSHA256": "8e17a729507c031da0aecd5e401aad60969ad00193a2e8a3478f8b78f25c5455",
+    "description": "AI-generated interpretive architectural visualization; not a surveyed or as-built plan. Native generation resolution retained.",
+    "variants": [
+      {
+        "path": "visuals/v2/vdnkh.webp",
+        "width": 1672,
+        "height": 941,
+        "bytes": 720632,
+        "sha256": "f2c8fbfab694b6de266c1e1ed23c6afb885f31c41b87cab9f57efee0936bacb8"
+      },
+      {
+        "path": "visuals/v2/vdnkh-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 224150,
+        "sha256": "e5b6a2f101ca96868781d90481aa680a81ac60b9dba7fdfee174ff824897b13b"
+      },
+      {
+        "path": "visuals/v2/vdnkh-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 106748,
+        "sha256": "72ab6b4b51333f90ac7f1854c2d158e82f0a7685ee6912d2a5b560ec1669cbc0"
+      }
+    ]
+  },
+  {
+    "id": "izmaylovo",
+    "kind": "generated_illustration",
+    "sourceFile": "exec-83bfd979-f782-4f72-9bc0-6e08bd40b880.png",
+    "sourceSHA256": "d785ecee58a3d9dd85feadbfc600f1d83f5b64aa420d4497f898d1a215d56e2d",
+    "description": "AI-generated interpretive architectural visualization; not a surveyed or as-built plan. Native generation resolution retained.",
+    "variants": [
+      {
+        "path": "visuals/v2/izmaylovo.webp",
+        "width": 1672,
+        "height": 941,
+        "bytes": 689826,
+        "sha256": "3caa758585ab48a5eef41d8f641ea4c754681bfcca413607ba0d0aa764fd2f33"
+      },
+      {
+        "path": "visuals/v2/izmaylovo-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 211814,
+        "sha256": "de8728e1ffa90a859822219702a1a8ec4b7956d76017156153e86652dbbe8fd7"
+      },
+      {
+        "path": "visuals/v2/izmaylovo-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 98990,
+        "sha256": "f5d22416df6ce121310cc3a514b945f377841d755f2decabd9e39bf483fbdba1"
+      }
+    ]
+  },
+  {
+    "id": "ohta",
+    "kind": "generated_illustration",
+    "sourceFile": "exec-f68b93c6-225b-42cc-89a8-fb0d30bc08ed.png",
+    "sourceSHA256": "e68f0fdd772f65cf059fa553049a223ba73fda4dd612b23cdf0262279478a638",
+    "description": "AI-generated interpretive architectural visualization; not a surveyed or as-built plan. Native generation resolution retained.",
+    "variants": [
+      {
+        "path": "visuals/v2/ohta.webp",
+        "width": 1672,
+        "height": 941,
+        "bytes": 712180,
+        "sha256": "1ac09125be02acd9eebf68b7510f3717e7d8348cb5737cd75d57cb9ea62152fc"
+      },
+      {
+        "path": "visuals/v2/ohta-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 209750,
+        "sha256": "f6e73e8d7d173788e40450a5eea728336a418ddfa9786e4104b2d7692a6af937"
+      },
+      {
+        "path": "visuals/v2/ohta-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 97968,
+        "sha256": "41a21929162ad10146e333861ab523a94c155bedf1ac564bd1354e5504e7fc72"
+      }
+    ]
+  },
+  {
+    "id": "minny-gorodok",
+    "kind": "generated_illustration",
+    "sourceFile": "exec-b24cc7b1-7aaf-4a3b-895f-2b079a55d49a.png",
+    "sourceSHA256": "d83223e356ceae7dc0a53ea883d2a4c82e6b36200879a4a8f9f4ba2ac1840311",
+    "description": "AI-generated interpretive architectural visualization; not a surveyed or as-built plan. Native generation resolution retained.",
+    "variants": [
+      {
+        "path": "visuals/v2/minny-gorodok.webp",
+        "width": 1672,
+        "height": 941,
+        "bytes": 751008,
+        "sha256": "fdd73bb07bce6f08ffc650eccc074ef384e159be6252ad82d1a7bbe313876fba"
+      },
+      {
+        "path": "visuals/v2/minny-gorodok-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 227698,
+        "sha256": "cadd2b2690083b723992eb52b71d33c7bab7e20f3928ad83fb9cd3563f36bd95"
+      },
+      {
+        "path": "visuals/v2/minny-gorodok-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 103596,
+        "sha256": "822ab5b669073e3ecbb9da9ae19a548ffffd927d9d2b115413a262380401ab78"
+      }
+    ]
+  },
+  {
+    "id": "airport",
+    "kind": "generated_illustration",
+    "sourceFile": "exec-aac6c680-4bc1-4d89-9631-2d678754e9f9.png",
+    "sourceSHA256": "91dc8459af98746b1e403a4934488c736cd7fe7ad77f93517715b6068cc98c32",
+    "description": "AI-generated interpretive architectural visualization; not a surveyed or as-built plan. Native generation resolution retained.",
+    "variants": [
+      {
+        "path": "visuals/v2/airport.webp",
+        "width": 1672,
+        "height": 941,
+        "bytes": 401972,
+        "sha256": "7b4ecd205e02011af514b9142de82df8443f22f3a7e54354958cfd2e94591963"
+      },
+      {
+        "path": "visuals/v2/airport-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 123044,
+        "sha256": "f80acd8df032f00001fa399639d60ade426646869b17e08cb51eff0ae2fa7956"
+      },
+      {
+        "path": "visuals/v2/airport-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 61328,
+        "sha256": "f7d671daba6b297e1b31d02e40b31c82848e6d424bc11b15b774323613f9fb2d"
+      }
+    ]
+  },
+  {
+    "id": "engineering",
+    "kind": "generated_illustration",
+    "sourceFile": "exec-a82fd081-8f2e-4baa-a64a-a658a75d8ba3.png",
+    "sourceSHA256": "4b5c7450aeadfa06994217fa0e63d309be057e899e8ac01d6446d0958a531091",
+    "description": "AI-generated interpretive architectural visualization; not a surveyed or as-built plan. Native generation resolution retained.",
+    "variants": [
+      {
+        "path": "visuals/v2/engineering.webp",
+        "width": 1672,
+        "height": 941,
+        "bytes": 349684,
+        "sha256": "e4c2e01d1a31eab024575f5e3a1ed519e93d5d6f0fbae64c13cee146e633b697"
+      },
+      {
+        "path": "visuals/v2/engineering-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 117806,
+        "sha256": "23d40824b21bb105a56306d1f0f3ad1f07c05914f7e2bec301514a6891f034df"
+      },
+      {
+        "path": "visuals/v2/engineering-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 61844,
+        "sha256": "152a9e13bce6a953efd576f63601122577f30c943264697d7f471041e24f8e95"
+      }
+    ]
+  },
+  {
+    "id": "salalah-coast",
+    "kind": "documentary_photo",
+    "sourceFile": "hero-02-coast-original.jpg",
+    "sourceSHA256": "a6a27b31d97875de3dfbe7db2319eaa0ef1464ab140e75e81e5ea66cd91ad78f",
+    "description": "Owner-supplied original drone photography; conventional image conversion and resizing only.",
+    "variants": [
+      {
+        "path": "visuals/v2/salalah-coast.webp",
+        "width": 2400,
+        "height": 1728,
+        "bytes": 545484,
+        "sha256": "e1e6e04238ebb25a270f7841f25ff3e3909fdf1f5ba8d61403eaeafd819b025d"
+      },
+      {
+        "path": "visuals/v2/salalah-coast-960.webp",
+        "width": 960,
+        "height": 691,
+        "bytes": 69556,
+        "sha256": "26a0b50672378316737ea6e675a3865f2ad9143343596466a7e279438fa34736"
+      },
+      {
+        "path": "visuals/v2/salalah-coast-640.webp",
+        "width": 640,
+        "height": 461,
+        "bytes": 33718,
+        "sha256": "b136b67a673410e8f2931036bfb054ecacb62941da0bbd6b088fdd5348bd9500"
+      }
+    ]
+  },
+  {
+    "id": "salalah-dawn",
+    "kind": "documentary_photo",
+    "sourceFile": "hero-01-dawn-camera-conversion.jpg",
+    "sourceSHA256": "9d991e91a1e72456cf19174ef165b3aedc1ea4f58bcb1893520147c4558ef03f",
+    "description": "Owner-supplied original drone photography; conventional image conversion and resizing only.",
+    "variants": [
+      {
+        "path": "visuals/v2/salalah-dawn.webp",
+        "width": 2400,
+        "height": 1350,
+        "bytes": 239158,
+        "sha256": "6c0f7aeb9cad103b24edf78bcdeb377e757e244bed43827f5f466132c542fe82"
+      },
+      {
+        "path": "visuals/v2/salalah-dawn-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 32496,
+        "sha256": "9acc7619b4a91e7f4a452df19945b69979d5ecd3fdc278432a7aa912b909b9d1"
+      },
+      {
+        "path": "visuals/v2/salalah-dawn-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 16870,
+        "sha256": "f5f45e79e66396a97e0426eefb17aa8ac57b810247ddfcab5b10cc7e6ad024d9"
+      }
+    ]
+  },
+  {
+    "id": "salalah-palms",
+    "kind": "documentary_photo",
+    "sourceFile": "hero-03-palms-camera-conversion.jpg",
+    "sourceSHA256": "be1f969b3bbdeb0083d84fd87799e167146e32b8fc0a614040849d9a72e38166",
+    "description": "Owner-supplied original drone photography; conventional image conversion and resizing only.",
+    "variants": [
+      {
+        "path": "visuals/v2/salalah-palms.webp",
+        "width": 2400,
+        "height": 1350,
+        "bytes": 293652,
+        "sha256": "a7e7507a3070e6863cd9fd04f4df3f0cdc7a13e755c182f1d5f02d167dfc6846"
+      },
+      {
+        "path": "visuals/v2/salalah-palms-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 36646,
+        "sha256": "c1468441e95027ca299ec5caa899f8f116ff6a7f875355cd3b384b549b00c5fe"
+      },
+      {
+        "path": "visuals/v2/salalah-palms-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 19516,
+        "sha256": "84ab82105ebc1d6cd5e0440db3fd1821b4851462335786da8009a2e579a3dc09"
+      }
+    ]
+  },
+  {
+    "id": "salalah-concept",
+    "kind": "presentation_concept",
+    "sourceFile": "territory-day.webp",
+    "sourceSHA256": "0ff801df91e4492dcb9c5e0496c297651c744b75f6223d79b4303116bd5f4670",
+    "description": "Existing Salalah presentation concept, not an installed site photograph.",
+    "variants": [
+      {
+        "path": "visuals/v2/salalah-concept.webp",
+        "width": 1672,
+        "height": 941,
+        "bytes": 477802,
+        "sha256": "c1f6e7f1f3d3e2eaa3a37ce10f266d65f9b66317d27ea12642639fc41d42c06e"
+      },
+      {
+        "path": "visuals/v2/salalah-concept-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 152892,
+        "sha256": "341d3b50a5a8c7bb0eb4704c7121cd3a5d18ce84e0ac6ec5e172d8620e648123"
+      },
+      {
+        "path": "visuals/v2/salalah-concept-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 75270,
+        "sha256": "1ac89c9a9852a1a6905472353c42bf50231b812f9beecd51ddd17ea8cebfdf0a"
+      }
+    ]
+  },
+  {
+    "id": "salalah-plan",
+    "kind": "supplied_plan",
+    "sourceFile": "masterplan-13.webp",
+    "sourceSHA256": "7518ce8e407df0cf4c6f4c8ba370e25b245013e212dbe2b591aed437f4e9a23d",
+    "description": "Selected 13-programme-element development plan from supplied Salalah presentation; includes existing wheel and support functions.",
+    "variants": [
+      {
+        "path": "visuals/v2/salalah-plan.webp",
+        "width": 3300,
+        "height": 1070,
+        "bytes": 525150,
+        "sha256": "1973b41ebe2ebefd540635856c0f4e6786919eb8cb9436767c99a580d9491a6a"
+      },
+      {
+        "path": "visuals/v2/salalah-plan-960.webp",
+        "width": 960,
+        "height": 311,
+        "bytes": 57818,
+        "sha256": "c013c4cdb5ed8cc38d3868f1af159ff8f512ac50ff1872a0ed91462391ca3e10"
+      },
+      {
+        "path": "visuals/v2/salalah-plan-640.webp",
+        "width": 640,
+        "height": 208,
+        "bytes": 30060,
+        "sha256": "095a9293ed7490e70ad9739923b109c87164d66564c9a0143aeb99b8b9556722"
+      }
+    ]
+  }
+]

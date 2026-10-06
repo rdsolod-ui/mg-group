@@ -41,6 +41,26 @@ for (const file of [
     throw Error("Logo is not all vector paths: " + file);
 }
 const manifest = [];
+const visualRecords = JSON.parse(fs.readFileSync('src/data/visual-provenance.json', 'utf8'));
+for (const record of visualRecords) {
+  for (const variant of record.variants) {
+    const bytes = fs.readFileSync(path.join(root, variant.path));
+    if (bytes.length !== variant.bytes || crypto.createHash('sha256').update(bytes).digest('hex') !== variant.sha256)
+      throw Error(`Visual asset mismatch: ${variant.path}`);
+  }
+}
+if (html.includes('media/al-haffa/1.webp') || html.includes('media/skazka/1.webp')) throw Error('Legacy case imagery is still rendered');
+if (!html.includes('Original project photography') || !html.includes('Generated masterplan visualization')) throw Error('Visual provenance captions missing');
+const filmRoot=path.join(root,'films/salalah');
+for (const resolution of [360,720,1080]) {
+  const playlist=fs.readFileSync(path.join(filmRoot,`${resolution}p/index.m3u8`),'utf8');
+  const durations=[...playlist.matchAll(/#EXTINF:([\d.]+)/g)].map(m=>Number(m[1]));
+  if (Math.abs(durations.reduce((a,b)=>a+b,0)-24)>.05 || !playlist.includes('#EXT-X-ENDLIST')) throw Error('Incomplete Salalah film');
+  for (const segment of playlist.split(/\r?\n/).filter(l=>l&&!l.startsWith('#'))) {
+    if (!/^seg-\d+\.ts$/.test(segment) || !fs.statSync(path.join(filmRoot,`${resolution}p`,segment)).size) throw Error('Missing Salalah film segment');
+  }
+}
+console.log(`PASS: ${visualRecords.length} classified visual assets and 24-second adaptive Salalah film`);
 for (const slug of ["wheel", "chain", "drop-tower", "condor", "typhoon", "lightning"]) {
   const data = fs.readFileSync(path.join(root, "rides", `${slug}.glb`));
   if (data.toString("utf8", 0, 4) !== "glTF" || data.readUInt32LE(4) !== 2 || data.readUInt32LE(8) !== data.length)

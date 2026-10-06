@@ -15,14 +15,15 @@ The narrative begins with engineering and technical delivery, then presents proj
 16. Cooperation scopes and AL-SHAHIQ within the group.
 17. Khalid's Oman contact card with WhatsApp QR, downloadable vCard, Moscow head office and a project brief.
 
-Each case uses a common component: image, location, name, scope statement, large metrics, group role, opening year as listed and stage/source note. Construction-stage visitation figures are not displayed as achieved results. Galleries open on user action.
+Each case uses a common component: complete perspective masterplan, location, name, scope statement, large metrics, group role, opening year as listed and stage/source note. Construction-stage visitation figures are not displayed as achieved results. Galleries open on user action with 100–300% detail inspection. Salalah has separate site-photo, site-film, development-concept and programme-plan modes.
 
 ## Implementation
 
 - Next.js static export with `/mg-group` base path.
 - Shared React shell: header, chapter navigation, Present, theme and dialogs.
 - GSAP only for a short presentation transition; all nonessential motion respects pause and reduced motion.
-- SVG engineering illustration and schematic geography avoid unnecessary 3D loading.
+- A detailed generated engineering illustration complements seven interpretive masterplans. Salalah keeps documentary photography/footage separate from its presentation concepts. Asset provenance and generation prompts are versioned.
+- The satellite globe loads only while its section is visible and uses on-demand rendering without automatic rotation. Accessible city links and an image error fallback remain available.
 - The requested ride chapter lazy-loads compressed Blender GLB assets with React Three Fiber, local Draco decoding, PBR environment lighting and a rendered poster fallback. Only the active model animates; offscreen and reduced-motion states pause rendering.
 - Park-film mode uses native HLS or a dynamically imported hls.js player, self-hosted adaptive video segments and an economical MP4 fallback. A transparent Blender-rendered landscape device surrounds the live HTML video. Heavy media is loaded only after a play or design-view action.
 - Local WOFF2 fonts, WebP images and all-path brand SVGs.

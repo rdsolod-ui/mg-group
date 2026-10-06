@@ -21,6 +21,8 @@ export type AttractionVideoProps = {
   device?: AttractionDevice;
   /** Highest existing variant, relative to this attraction's media directory. */
   highPlaylist?: string;
+  mediaBase?: string;
+  framed?: boolean;
 };
 
 type Quality = "auto" | "economy" | "high";
@@ -54,7 +56,7 @@ export default function AttractionVideo(props: AttractionVideoProps) {
   return <VideoSession key={props.slug} {...props} />;
 }
 
-function VideoSession({ slug, title, paused, visible, device = defaultDevice, highPlaylist = "1080p/index.m3u8" }: AttractionVideoProps) {
+function VideoSession({ slug, title, paused, visible, device = defaultDevice, highPlaylist = "1080p/index.m3u8", mediaBase, framed = true }: AttractionVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const hlsRef = useRef<Hls | null>(null);
@@ -82,7 +84,7 @@ function VideoSession({ slug, title, paused, visible, device = defaultDevice, hi
   const [tabVisible, setTabVisible] = useState(true);
   const [playBlocked, setPlayBlocked] = useState(false);
   const id = useId();
-  const base = `/mg-group/ride-videos/${slug}`;
+  const base = mediaBase || `/mg-group/ride-videos/${slug}`;
   const allowed = visible && tabVisible && !paused;
   allowedRef.current = allowed;
 
@@ -338,8 +340,8 @@ function VideoSession({ slug, title, paused, visible, device = defaultDevice, hi
   const secondsAhead = bufferedAhead ? Math.max(0, Math.floor(bufferedAhead[1] - clock.time)) : 0;
 
   return <div className={styles.player} ref={containerRef} data-media-controls data-attraction-video={slug} data-engine={engine} data-status={status}>
-    <div className={styles.device} style={{ aspectRatio: device.aspectRatio }}>
-      <div className={styles.screen} style={screenStyle}>
+    <div className={styles.device} style={{ aspectRatio: framed ? device.aspectRatio : 16 / 9 }}>
+      <div className={styles.screen} style={framed ? screenStyle : { inset: 0, width: '100%', height: '100%', borderRadius: 4 }}>
         <video
           ref={videoRef} className={styles.video} preload="none" playsInline muted={muted}
           poster={`${base}/poster.webp`} aria-label={`${title} — attraction video`}
@@ -364,11 +366,11 @@ function VideoSession({ slug, title, paused, visible, device = defaultDevice, hi
         />
         {!active && <button className={styles.playOverlay} onClick={start} disabled={!allowed} aria-label={status === "error" ? `Retry ${title} video` : `Play ${title} video`}>
           <span className={styles.playDisc}>{status === "ended" || status === "error" ? <RotateCcw aria-hidden="true" /> : <Play aria-hidden="true" />}</span>
-          <span lang="ar" dir="rtl">{status === "error" ? "إعادة المحاولة" : status === "ended" ? "إعادة المشاهدة" : "شاهد الفيديو"}<small lang="en" dir="ltr">{status === "error" ? "Retry video" : status === "ended" ? "Watch again" : "Watch the ride"}</small></span>
+          <span lang="ar" dir="rtl">{status === "error" ? "إعادة المحاولة" : status === "ended" ? "إعادة المشاهدة" : "شاهد الفيديو"}<small lang="en" dir="ltr">{status === "error" ? "Retry video" : status === "ended" ? "Watch again" : framed ? "Watch the ride" : "Watch the site film"}</small></span>
         </button>}
         {waiting && <div className={styles.waiting} role="status"><span className={styles.spinner} aria-hidden="true" /><span lang="ar" dir="rtl">جارٍ تحميل الفيديو<small lang="en" dir="ltr">Buffering video</small></span></div>}
       </div>
-      <img className={styles.frame} src={device.src} alt="" aria-hidden="true" loading="lazy" draggable="false" />
+      {framed && <img className={styles.frame} src={device.src} alt="" aria-hidden="true" loading="lazy" draggable="false" />}
     </div>
 
     <div className={styles.controls}>

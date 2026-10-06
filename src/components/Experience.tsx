@@ -18,6 +18,9 @@ import {
 } from "lucide-react";
 import register from "@/data/source-register.json";
 import RideShowcase from "./RideShowcase";
+import ProjectVisual, { VisualCaption, VisualInspector } from './ProjectVisual';
+import PortfolioGlobe from './PortfolioGlobe';
+import { projectVisuals } from '@/data/project-visuals';
 
 const base = "/mg-group";
 const asset = (p: string) => `${base}/${p}`;
@@ -50,7 +53,6 @@ const caseCopy: Record<
     place: PairText;
     claim: PairText;
     role: PairText;
-    hero: number;
   }
 > = {
   skazka: {
@@ -61,7 +63,6 @@ const caseCopy: Record<
       "Full-cycle experience. At the scale of a complete park.",
     ),
     role: pair("مالك ومشغّل", "Owner & operator"),
-    hero: 1,
   },
   "leo-tolstoy": {
     name: pair("منتزه ليف تولستوي", "Leo Tolstoy Park"),
@@ -71,7 +72,6 @@ const caseCopy: Record<
       "Operating the destination. Managing the visitor experience.",
     ),
     role: pair("مشغّل", "Operator"),
-    hero: 2,
   },
   vdnkh: {
     name: pair("ألعاب في دي إن خا", "VDNKH Attractions"),
@@ -81,7 +81,6 @@ const caseCopy: Record<
       "Technical operations within a major urban destination.",
     ),
     role: pair("مشغّل الألعاب", "Ride operator"),
-    hero: 1,
   },
   izmaylovo: {
     name: pair("كرملين إزمايلوفو", "Kremlin Izmaylovo"),
@@ -91,7 +90,6 @@ const caseCopy: Record<
       "Attractions as part of the tourism experience.",
     ),
     role: pair("مالك ومشغّل للمشروع", "Project owner & operator"),
-    hero: 1,
   },
   ohta: {
     name: pair("أوختا بارك", "Ohta Park"),
@@ -101,14 +99,12 @@ const caseCopy: Record<
       "An attraction integrated into its destination.",
     ),
     role: pair("مالك ومشغّل للمشروع", "Project owner & operator"),
-    hero: 1,
   },
   "minny-gorodok": {
     name: pair("منتزه ميني غورودوك", "Minny Gorodok Park"),
     place: pair("فلاديفوستوك، روسيا", "Vladivostok, Russia"),
     claim: pair("مشروع تطوير واسع النطاق.", "Development at a larger scale."),
     role: pair("مستثمر ومشغّل", "Investor & operator"),
-    hero: 2,
   },
   "al-haffa": {
     name: pair("سوق الحافة", "Al Haffa Market"),
@@ -118,7 +114,6 @@ const caseCopy: Record<
       "The group’s experience in Oman.",
     ),
     role: pair("مالك ومشغّل", "Owner & operator"),
-    hero: 1,
   },
   airport: {
     name: pair("منطقة الترفيه في المطار", "Airport Entertainment Zone"),
@@ -128,7 +123,6 @@ const caseCopy: Record<
       "Entertainment beyond the traditional park.",
     ),
     role: pair("مالك ومشغّل", "Owner & operator"),
-    hero: 1,
   },
 };
 function Pair({
@@ -193,167 +187,20 @@ function Metric({
     </div>
   );
 }
-function EngineeringDrawing() {
-  return (
-    <svg
-      className="engineering-drawing"
-      viewBox="0 0 650 580"
-      role="img"
-      aria-labelledby="engineeringTitle"
-    >
-      <title id="engineeringTitle">
-        Engineering process diagram — conceptual structure, not a technical
-        drawing
-      </title>
-      <defs>
-        <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
-          <path
-            d="M32 0H0V32"
-            fill="none"
-            stroke="currentColor"
-            opacity=".12"
-          />
-        </pattern>
-      </defs>
-      <path d="M0 0H650V580H0Z" fill="url(#grid)" />
-      <g fill="none" stroke="currentColor" strokeWidth="2">
-        <circle cx="325" cy="242" r="155" />
-        <circle cx="325" cy="242" r="133" />
-        <circle cx="325" cy="242" r="21" />
-        {Array.from({ length: 12 }, (_, i) => {
-          const a = (i * Math.PI) / 6;
-          return (
-            <path
-              key={i}
-              d={`M${(325 + Math.cos(a) * 24).toFixed(3)} ${(242 + Math.sin(a) * 24).toFixed(3)}L${(325 + Math.cos(a) * 154).toFixed(3)} ${(242 + Math.sin(a) * 154).toFixed(3)}`}
-            />
-          );
-        })}
-        <path d="M325 247L223 492H428Z M218 492H433 M171 528H479 M325 40V65 M325 418V446 M135 242H112 M515 242H540 M150 79H499 M150 65V94 M499 65V94" />
-        <path
-          d="M185 334L164 315 M465 334L486 315 M150 110V383"
-          strokeDasharray="5 7"
-        />
-      </g>
-      <g fill="var(--accent)">
-        {Array.from({ length: 8 }, (_, i) => {
-          const a = (i * Math.PI) / 4;
-          return (
-            <path
-              key={i}
-              d={`M${(325 + Math.cos(a) * 155 - 11).toFixed(3)} ${(242 + Math.sin(a) * 155 - 6).toFixed(3)}h22v17h-22z`}
-            />
-          );
-        })}
-        <circle cx="325" cy="242" r="7" />
-      </g>
-      <g fill="currentColor" fontSize="16" fontFamily="IBM Plex Sans">
-        <text x="298" y="61">
-          Structure
-        </text>
-        <text x="460" y="425">
-          Assembly
-        </text>
-        <text x="171" y="550">
-          Engineering → installation → launch
-        </text>
-      </g>
-    </svg>
-  );
-}
-function WorldMap({ go }: { go: (i: number) => void }) {
-  const points = [
-    { x: 332, y: 151, n: "Moscow", i: 7 },
-    { x: 319, y: 133, n: "Saint Petersburg", i: 11 },
-    { x: 528, y: 203, n: "Vladivostok", i: 12 },
-    { x: 373, y: 305, n: "Salalah", i: 13 },
-  ];
-  return (
-    <div className="map-frame">
-      <svg viewBox="0 0 680 450" aria-hidden="true">
-        <g fill="var(--map-land)">
-          <path d="M76 109l42-36 56-5 38 20 21 48-21 28-19 1-3 37-38 39-25-7-16-37-29-23-29-1-9-29zM170 257l42 14 28 49-20 74-21 35-19-35-7-52-17-37zM287 102l32-24 63 2 11 25 29 3 43-17 61 22 50 51 37 5 12 40-27 23-32-27-24 7-31-12-22 27-25-10-17-27-36 4-19-41-35 10-34-20-9-26zM290 194l45-8 35 21 23 42-17 59-36 55-30-27-14-62-21-38zM482 221l31 16 10 41-19 20-15-32zM536 324l60-7 31 36-20 35-48 3-27-31z" />
-        </g>
-        <path
-          d="M332 151Q420 100 528 203 M332 151Q365 230 373 305 M319 133L332 151"
-          fill="none"
-          stroke="var(--accent)"
-          strokeWidth="1.5"
-          strokeDasharray="4 7"
-          opacity=".7"
-        />
-        {points.map((p) => (
-          <g key={p.n}>
-            <circle cx={p.x} cy={p.y} r="5" fill="var(--accent)" />
-            <circle
-              cx={p.x}
-              cy={p.y}
-              r="12"
-              fill="none"
-              stroke="var(--accent)"
-            />
-            <text
-              x={p.x + 15}
-              y={p.y + 5}
-              fill="var(--text)"
-              fontSize="13"
-              fontFamily="IBM Plex Sans"
-            >
-              {p.n}
-            </text>
-          </g>
-        ))}
-      </svg>
-      <p className="map-note">
-        <Pair
-          value={pair(
-            "خريطة تخطيطية؛ المواقع تقريبية.",
-            "Schematic map; locations are approximate.",
-          )}
-        />
-      </p>
-      <div className="map-links">
-        {points.map((p) => (
-          <button key={p.n} onClick={() => go(p.i)}>
-            {p.n}
-          </button>
-        ))}
-      </div>
-    </div>
-  );
-}
 function CaseStudy({
   project,
   onGallery,
+  paused,
 }: {
   project: Project;
-  onGallery: (p: Project) => void;
+  onGallery: (p: Project, image?: number) => void;
+  paused: boolean;
 }) {
   const c = caseCopy[project.id];
   const construction = project.stageInSource === "under_construction";
   return (
     <>
-      <div className="visual case-visual">
-        <figure>
-          <img
-            src={asset(`media/${project.id}/${c.hero}.webp`)}
-            alt={`${c.name.en} — image from the supplied corporate presentation`}
-            loading="lazy"
-          />
-          <figcaption>
-            <Pair
-              value={pair(
-                "صور من العرض التعريفي للمجموعة",
-                "Images from the corporate presentation",
-              )}
-            />
-          </figcaption>
-        </figure>
-        <button className="gallery-open" onClick={() => onGallery(project)}>
-          <Pair value={pair("شاهد الصور والمخطط", "View images & plan")} />
-          <Expand size={17} />
-        </button>
-      </div>
+      <ProjectVisual id={project.id} paused={paused} onExpand={(index) => onGallery(project, index)} />
       <div className="copy case-copy">
         <p className="location">
           <Pair value={c.place} />
@@ -556,8 +403,8 @@ export default function Experience() {
           ?.scrollIntoView({ behavior: "instant" }),
       );
   };
-  const enterGallery = (p: Project) => {
-    setImage(0);
+  const enterGallery = (p: Project, image = 0) => {
+    setImage(image);
     setGallery(p);
   };
   const section = (id: string, children: React.ReactNode, className = "") => {
@@ -637,14 +484,17 @@ export default function Experience() {
           <>
             <div className="hero-photo">
               <img
-                src={asset("media/skazka/1.webp")}
-                alt="Skazka Park, Moscow — aerial view from the corporate presentation"
+                src={asset("visuals/v2/skazka.webp")}
+                srcSet={`${asset('visuals/v2/skazka-640.webp')} 640w, ${asset('visuals/v2/skazka-960.webp')} 960w, ${asset('visuals/v2/skazka.webp')} 1672w`}
+                sizes="(max-width: 900px) 100vw, 60vw"
+                alt="Skazka Park — generated aerial masterplan visualization"
                 fetchPriority="high"
               />
               <div className="hero-line">
                 <span>Russia</span>
                 <span>Oman</span>
               </div>
+              <span className="hero-visual-credit"><span lang="ar" dir="rtl">تصوّر للمخطط العام</span><span lang="en">Illustrative masterplan</span></span>
             </div>
             <div className="copy hero-copy">
               <p className="hero-brand" lang="en" dir="ltr">
@@ -733,12 +583,12 @@ export default function Experience() {
           "engineering",
           <>
             <div className="visual technical-visual">
-              <EngineeringDrawing />
+              <img className="engineering-render" src={asset('visuals/v2/engineering.webp')} srcSet={`${asset('visuals/v2/engineering-640.webp')} 640w, ${asset('visuals/v2/engineering-960.webp')} 960w, ${asset('visuals/v2/engineering.webp')} 1672w`} sizes="(max-width: 900px) 92vw, 55vw" alt="Illustrative wheel drive assembly showing mechanical components, structure and maintenance access" loading="lazy" />
               <p className="drawing-caption">
                 <Pair
                   value={pair(
-                    "رسم توضيحي لمسار العمل الهندسي",
-                    "Illustration of the engineering workflow",
+                    "تصوّر هندسي توضيحي؛ ليس مخططاً تصنيعياً.",
+                    "Generated engineering illustration; not a fabrication drawing.",
                   )}
                 />
               </p>
@@ -877,7 +727,7 @@ export default function Experience() {
           "geography",
           <>
             <div className="visual">
-              <WorldMap go={go} />
+              <PortfolioGlobe go={go} />
             </div>
             <div className="copy">
               <Heading
@@ -925,6 +775,7 @@ export default function Experience() {
             <CaseStudy
               project={register.projects.find((p) => p.id === id)!}
               onGallery={enterGallery}
+              paused={paused || menu || notes || !!gallery}
             />,
             "case-study",
           ),
@@ -1238,29 +1089,20 @@ export default function Experience() {
             <h2 lang="en" dir="ltr">
               {caseCopy[gallery.id].name.en}
             </h2>
-            <img
-              className="gallery-image"
-              src={asset(gallery.media[image])}
-              alt={`${caseCopy[gallery.id].name.en} source image ${image + 1}`}
-            />
+            <VisualInspector key={`${gallery.id}-${image}`} visual={projectVisuals[gallery.id][image]} />
             <div className="gallery-thumbs">
-              {gallery.media.map((m, i) => (
+              {projectVisuals[gallery.id].map((m, i) => (
                 <button
-                  key={m}
+                  key={m.src}
                   onClick={() => setImage(i)}
-                  aria-label={`View source image ${i + 1}`}
+                  aria-label={`View image ${i + 1}: ${m.alt}`}
                   aria-pressed={image === i}
                 >
-                  <img src={asset(m)} alt="" />
+                  <img src={asset(m.src.replace('.webp', '-640.webp'))} alt="" />
                 </button>
               ))}
             </div>
-            <Pair
-              value={pair(
-                "صورة أو مخطط من العرض التعريفي؛ لا يثبت اكتمال البناء.",
-                "Image or plan from the corporate presentation; it does not establish construction completion.",
-              )}
-            />
+            <VisualCaption visual={projectVisuals[gallery.id][image]} />
           </>
         )}
       </dialog>

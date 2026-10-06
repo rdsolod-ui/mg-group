@@ -25,7 +25,7 @@ npm run check:export
 npm run preview
 ```
 
-Development/preview URL: `http://127.0.0.1:3116/mg-group/`. The static build is in `out/`. Next.js exports HTML, CSS and JavaScript; no application server, database or login is required. Nginx serves the production artifact. React and GSAP handle the presentation interface; the engineering and geographic diagrams are SVG.
+Development/preview URL: `http://127.0.0.1:3116/mg-group/`. The static build is in `out/`. Next.js exports HTML, CSS and JavaScript; no application server, database or login is required. Nginx serves the production artifact. React and GSAP handle the presentation interface; an on-demand Three.js globe presents the portfolio geography.
 
 ## Content and evidence
 
@@ -39,7 +39,7 @@ Portfolio facts and images originate in the ten-page MG GROUP CORP presentation 
 - The owner supplied 10 engineers and 54 mechanics on 6 October 2026: 64 technical specialists in total. Certifications and service-level commitments are not supplied or invented.
 - The original field “Number of employers” is retained only in the data register for clarification, not used as an engineer/mechanic count.
 
-Images are not enlarged into claims of completed construction. Source plans and project images remain identified as source material. The original PDF is not redistributed in the site. Khalid is the owner-designated contact in Oman. His owner-supplied WhatsApp number is +968 9610 0010. The QR opens the WhatsApp chat URL; downloading the vCard or project brief sends no message.
+Seven generated perspective masterplans and an engineering illustration replace the original low-resolution case imagery. They are labelled interpretive visualizations, not surveyed or as-built plans. Salalah uses original owner-supplied DJI photographs and a 24-second adaptive site film, alongside the development concept and 13-element programme plan from the Salalah presentation. Source photography, footage and development concepts remain separately identified. See `docs/VISUAL-SYSTEM-V2.md` for provenance, exact generation prompts and limitations. The original PDF is not redistributed in the site. Khalid is the owner-designated contact in Oman. His owner-supplied WhatsApp number is +968 9610 0010. The QR opens the WhatsApp chat URL; downloading the vCard or project brief sends no message.
 
 ## Public assets and licences
 

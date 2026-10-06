@@ -1,0 +1,37 @@
+{
+  "durationSeconds": 24,
+  "fps": 30,
+  "audio": false,
+  "kind": "documentary_footage",
+  "editing": "Four six-second excerpts; original speed, no generated frames, no added music.",
+  "shots": [
+    {
+      "sourceFile": "DJI_20261001062322_0030_D.MP4",
+      "sourceSHA256": "3b0b0d19c226095506b2d2313d17846b0e1231fae60dd31a924655529bca2146",
+      "sourceStartSeconds": 8,
+      "durationSeconds": 6,
+      "speed": 1
+    },
+    {
+      "sourceFile": "DJI_20260930164315_0014_D.MP4",
+      "sourceSHA256": "bfd5aed6c283ef44231676bbeb71b2e8df43b95f9b5eb6934120e9e41cd06545",
+      "sourceStartSeconds": 10,
+      "durationSeconds": 6,
+      "speed": 1
+    },
+    {
+      "sourceFile": "DJI_20261001064947_0046_D.MP4",
+      "sourceSHA256": "20fe30a6971eb26477616ad589d438e2c82d7cdb7e66302c3413ce7158f5d66b",
+      "sourceStartSeconds": 16,
+      "durationSeconds": 6,
+      "speed": 1
+    },
+    {
+      "sourceFile": "DJI_20260930180636_0049_D.MP4",
+      "sourceSHA256": "4c8a8265a1e9314f8a84b30c83a8c30a23dfa0c9bb82db08ce01fa4a1611e6e5",
+      "sourceStartSeconds": 8,
+      "durationSeconds": 6,
+      "speed": 1
+    }
+  ]
+}
