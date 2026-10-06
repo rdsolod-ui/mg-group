@@ -144,7 +144,7 @@ h2 {
   direction: rtl;
   text-align: right;
 }
-.header nav button {
+.header nav a {
   font-size: 14px;
   line-height: 1.3;
 }

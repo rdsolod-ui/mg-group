@@ -1,0 +1,42 @@
+{
+  "id": "/mg-group/",
+  "name": "MG Group | مجموعة إم جي",
+  "short_name": "MG Group",
+  "description": "هندسة وتركيب وتشغيل مدن الملاهي. Amusement park engineering, installation and operations.",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "/mg-group/",
+  "scope": "/mg-group/",
+  "display": "standalone",
+  "background_color": "#f6f4ee",
+  "theme_color": "#102d40",
+  "categories": [
+    "business"
+  ],
+  "icons": [
+    {
+      "src": "/mg-group/icons/android-chrome-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/mg-group/icons/maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/mg-group/icons/android-chrome-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/mg-group/icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

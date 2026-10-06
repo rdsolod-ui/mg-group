@@ -456,14 +456,17 @@ export default function Experience() {
         </a>
         <nav aria-label="Main navigation">
           {[1, 3, 7, 16].map((i) => (
-            <button key={i} onClick={() => go(i)}>
+            <a key={i} href={`#${chapters[i][0]}`} onClick={(event) => {
+              if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+              event.preventDefault(); go(i);
+            }}>
               <Pair
                 value={pair(
                   chapters[i][1],
                   i === 7 ? "Projects" : chapters[i][2],
                 )}
               />
-            </button>
+            </a>
           ))}
         </nav>
         <div className="header-tools">

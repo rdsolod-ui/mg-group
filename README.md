@@ -45,6 +45,10 @@ Seven generated perspective masterplans and an engineering illustration replace 
 
 Font licences are in `public/licenses/`. IBM Plex and Aref Ruqaa glyph outlines are used in the brand files under their respective OFL terms. Preserve these notices. Portfolio photography, plans, project names and corporate brand materials originate in supplied company material; public visibility does not grant a blanket licence to reuse those assets. No blanket licence is assigned to the portfolio.
 
+## SEO and link previews
+
+The static page includes bilingual search metadata, Open Graph and Twitter cards, accurate Organization/WebSite/WebPage/Service JSON-LD, a canonical sitemap, and a full SVG/ICO/PNG/Apple/Android/maskable icon kit. Three generated photographic previews use the original vector logo and local Arabic/English fonts. See [SEO, sharing and favicon documentation](docs/SEO-AND-SHARING.md) for editable sources, checks, generation provenance and platform limitations.
+
 ## Release contract
 
 GitHub CI builds, checks and uploads `mg-group-static-site` with `revision.json` and a file manifest. VPS publication uses that exact artifact, a fresh server baseline, a separate release directory and an atomic route switch. Existing catalog entries and other sites must be preserved. Public publication and live read-back are distinct from a local build. Server administration and private release receipts are kept outside this repository.

@@ -22,6 +22,9 @@ const mime = {
   ".mp4": "video/mp4",
   ".m4s": "video/iso.segment",
   ".png": "image/png",
+  ".ico": "image/x-icon",
+  ".xml": "application/xml; charset=utf-8",
+  ".webmanifest": "application/manifest+json",
 };
 http
   .createServer(async (req, res) => {

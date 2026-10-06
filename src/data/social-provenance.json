@@ -1,0 +1,41 @@
+{
+  "id": "mg-sharing-v1",
+  "created": "2026-10-07",
+  "classification": "generated-concept",
+  "generationTool": "image_gen",
+  "mode": "new-image",
+  "brandSource": "public/brand/mg-group-white.svg",
+  "editableLayout": "design/social-card.html",
+  "brief": "docs/SEO-AND-SHARING.md",
+  "documentaryProjectPhoto": false,
+  "variants": [
+    {
+      "path": "social/park-concept-v1.jpg",
+      "width": 1727,
+      "height": 911,
+      "bytes": 369323,
+      "sha256": "22c433f397f703e6bc5bce111d31632ac53d11816429ed99247c5013607c3404"
+    },
+    {
+      "path": "social/mg-group-og-v1.jpg",
+      "width": 1200,
+      "height": 630,
+      "bytes": 168559,
+      "sha256": "3eb45db6695cbbc3e65cda051b9360066c7409db8fcb9ca5aef0185ccf800035"
+    },
+    {
+      "path": "social/mg-group-card-v1.jpg",
+      "width": 1200,
+      "height": 600,
+      "bytes": 167778,
+      "sha256": "3d160daf510d3cacd93c6d8f894e1f98af7285c0d98cc14fdd8338e1ebb04106"
+    },
+    {
+      "path": "social/mg-group-square-v1.jpg",
+      "width": 1200,
+      "height": 1200,
+      "bytes": 259756,
+      "sha256": "ac9424cb58ea9ffb00cafdae23dff190a8b819ff2f06c0ee22844bde08a28491"
+    }
+  ]
+}
