@@ -21,6 +21,9 @@ import RideShowcase from "./RideShowcase";
 import ProjectVisual, { VisualCaption, VisualInspector } from './ProjectVisual';
 import PortfolioGlobe from './PortfolioGlobe';
 import ChapterPhoto from './ChapterPhoto';
+import { PortfolioChart, TeamChart, CountryChart } from './MotionCharts';
+import { ParkScene, DriveScene, LifecycleScene, NetworkScene, ContactSignal } from './MotionScenes';
+import useMotionVisibility from './useMotionVisibility';
 import { projectVisuals } from '@/data/project-visuals';
 
 const base = "/mg-group";
@@ -283,6 +286,9 @@ export default function Experience() {
   const [gallery, setGallery] = useState<Project | null>(null);
   const [image, setImage] = useState(0);
   const [fullscreen, setFullscreen] = useState(false);
+  const foreground = useMotionVisibility(root, present);
+  const mediaPaused = paused || !foreground || menu || notes || !!gallery;
+  const motionBlocked = mediaPaused || reduced;
   const menuDialog = useRef<HTMLDialogElement>(null),
     notesDialog = useRef<HTMLDialogElement>(null),
     galleryDialog = useRef<HTMLDialogElement>(null);
@@ -311,6 +317,7 @@ export default function Experience() {
     try {
       const t = localStorage.getItem("mg-group-theme");
       if (t === "light" || t === "dark") setTheme(t);
+      setPaused(localStorage.getItem('mg-group-motion') === 'paused');
     } catch {}
     return () => mq.removeEventListener("change", update);
   }, []);
@@ -340,20 +347,14 @@ export default function Experience() {
     return () => observer.disconnect();
   }, [present]);
   useEffect(() => {
-    if (!present || paused || reduced || menu || notes || gallery) return;
-    const copy = document.querySelector(".chapter.is-active .copy");
-    if (copy) {
-      const animation = gsap.fromTo(
-        copy,
-        { opacity: 0.45 },
-        { opacity: 1, duration: 0.45 },
-      );
-      return () => {
-        animation.kill();
-        gsap.set(copy, { clearProps: "opacity" });
-      };
-    }
-  }, [active, present, paused, reduced, menu, notes, gallery]);
+    if (motionBlocked) return;
+    const elements = root.current?.querySelectorAll('.chapter.is-active > .visual, .chapter.is-active > .copy');
+    if (!elements?.length) return;
+    const context = gsap.context(() => {
+      gsap.fromTo(elements, { opacity: .55, y: 16 }, { opacity: 1, y: 0, duration: .65, stagger: .08, ease: 'power2.out', clearProps: 'transform,opacity' });
+    }, root);
+    return () => context.revert();
+  }, [active, present, motionBlocked]);
   useEffect(() => {
     const key = (e: KeyboardEvent) => {
       if (
@@ -418,6 +419,7 @@ export default function Experience() {
         aria-label={chapters[i][2]}
         style={present && active !== i ? { display: "none" } : undefined}
       >
+        <div className="chapter-atmosphere" aria-hidden="true"><span className="loop-ambient-orbit" /><span className="loop-ambient-glow" /></div>
         {children}
       </section>
     );
@@ -425,8 +427,9 @@ export default function Experience() {
   return (
     <div
       ref={root}
-      className={`experience ${present ? "is-present" : ""} ${paused || reduced ? "motion-paused" : ""}`}
+      className={`experience ${present ? "is-present" : ""} ${motionBlocked ? "motion-paused" : ""}`}
       data-chapters={chapters.length}
+      data-motion={motionBlocked ? 'paused' : 'running'}
     >
       <a className="skip" href="#intro">
         انتقل إلى المحتوى · Skip to content
@@ -495,6 +498,7 @@ export default function Experience() {
                 <span>Russia</span>
                 <span>Oman</span>
               </div>
+              <ParkScene />
               <span className="hero-visual-credit"><span lang="ar" dir="rtl">تصوّر للمخطط العام</span><span lang="en">Illustrative masterplan</span></span>
             </div>
             <div className="copy hero-copy">
@@ -560,6 +564,7 @@ export default function Experience() {
                   "The portfolio spans complete parks, urban attractions, tourism destinations and entertainment zones.",
                 )}
               />
+              <PortfolioChart />
               <div className="single-proof">
                 <strong dir="ltr">1.5m</strong>
                 <Pair
@@ -586,6 +591,7 @@ export default function Experience() {
           <>
             <div className="visual technical-visual">
               <img className="engineering-render" src={asset('visuals/v2/engineering.webp')} srcSet={`${asset('visuals/v2/engineering-640.webp')} 640w, ${asset('visuals/v2/engineering-960.webp')} 960w, ${asset('visuals/v2/engineering.webp')} 1672w`} sizes="(max-width: 900px) 92vw, 55vw" alt="Illustrative wheel drive assembly showing mechanical components, structure and maintenance access" loading="lazy" />
+              <DriveScene />
               <p className="drawing-caption">
                 <Pair
                   value={pair(
@@ -632,7 +638,7 @@ export default function Experience() {
             </div>
           </>,
         )}
-        {section("ride-models", <RideShowcase paused={paused || menu || notes || !!gallery} reduced={reduced} />, "ride-models-chapter")}
+        {section("ride-models", <RideShowcase paused={mediaPaused} reduced={reduced} />, "ride-models-chapter")}
         {section(
           "specialists",
           <>
@@ -663,14 +669,7 @@ export default function Experience() {
                   "Ten engineers. Fifty-four mechanics. A team connecting design with installation, launch and day-to-day operation.",
                 )}
               />
-              <div className="specialists-evidence">
-                <Metric value="60" ar="لعبة في سكازكا" en="Rides at Skazka" />
-                <Metric
-                  value="27"
-                  ar="لعبة في ليف تولستوي"
-                  en="Rides at Leo Tolstoy"
-                />
-              </div>
+              <TeamChart />
               <p className="source-note">
                 <Pair
                   value={pair(
@@ -687,13 +686,14 @@ export default function Experience() {
           <>
             <div className="visual lifecycle-lines photo-board">
               <ChapterPhoto scene="lifecycle" />
+              <LifecycleScene />
               {[
                 pair("استراتيجية وتصميم", "Strategy & design"),
                 pair("هندسة وتركيب", "Engineering & installation"),
                 pair("إطلاق", "Launch"),
                 pair("تشغيل وصيانة", "Operation & maintenance"),
               ].map((v, i) => (
-                <article key={v.en}>
+                <article key={v.en} className="loop-step">
                   <span dir="ltr">0{i + 1}</span>
                   <Pair value={v} />
                 </article>
@@ -731,7 +731,7 @@ export default function Experience() {
           "geography",
           <>
             <div className="visual">
-              <PortfolioGlobe go={go} />
+              <PortfolioGlobe go={go} paused={motionBlocked || active !== 6} />
             </div>
             <div className="copy">
               <Heading
@@ -745,19 +745,12 @@ export default function Experience() {
                   "Moscow, Khimki, Saint Petersburg, Vladivostok, Domodedovo and Salalah. Different settings. Engineering connected with operations.",
                 )}
               />
-              <div className="geography-metrics">
-                <Metric value="8" ar="مشاريع" en="Projects" />
-                <Metric
-                  value="6"
-                  ar="مواقع في المحفظة"
-                  en="Portfolio locations"
-                />
-              </div>
+              <CountryChart />
               <p className="source-note">
                 <Pair
                   value={pair(
-                    "الجغرافيا وفق المحفظة المقدّمة.",
-                    "Geography as listed in the supplied portfolio.",
+                    "٨ مشاريع في ٦ مواقع، وفق المحفظة المقدّمة.",
+                    "8 projects in 6 locations, as listed in the supplied portfolio.",
                   )}
                 />
               </p>
@@ -779,7 +772,7 @@ export default function Experience() {
             <CaseStudy
               project={register.projects.find((p) => p.id === id)!}
               onGallery={enterGallery}
-              paused={paused || menu || notes || !!gallery}
+              paused={mediaPaused}
             />,
             "case-study",
           ),
@@ -800,6 +793,7 @@ export default function Experience() {
               ))}
               <div className="group-member">
                 <img src={asset("brand/al-shahiq.svg")} alt="AL-SHAHIQ" />
+                <NetworkScene />
                 <Pair
                   value={pair(
                     "شركة ضمن مجموعة إم جي",
@@ -856,6 +850,7 @@ export default function Experience() {
               <div className="business-card">
               <div className="card-heading">
                 <img src={asset("brand/mg-group.svg")} alt="MG Group" />
+                <ContactSignal />
                 <span lang="en">Oman</span>
               </div>
               <div className="qr-wrap">
@@ -991,9 +986,10 @@ export default function Experience() {
           </button>
           <button
             className="icon-button"
-            onClick={() => setPaused(!paused)}
+            onClick={() => { const next = !paused; setPaused(next); try { localStorage.setItem('mg-group-motion', next ? 'paused' : 'running'); } catch {} }}
             aria-label={paused ? "Resume motion" : "Pause motion"}
             aria-pressed={paused}
+            title={reduced ? 'Reduced motion is enabled in your device settings' : paused ? 'Resume all animation loops' : 'Pause all animation loops'}
           >
             {paused ? <Play size={18} /> : <Pause size={18} />}
           </button>

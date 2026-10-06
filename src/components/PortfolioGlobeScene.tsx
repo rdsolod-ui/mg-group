@@ -23,10 +23,10 @@ function Earth({go}:{go:(n:number)=>void}){
     {[2,3].map(i=>{const a=point(globeLocations[0].lat,globeLocations[0].lon),b=point(globeLocations[i].lat,globeLocations[i].lon);const points=Array.from({length:61},(_,j)=>a.clone().lerp(b,j/60).normalize().multiplyScalar(1.014+.12*Math.sin(Math.PI*j/60)));return <Line key={i} points={points} color="#efb48c" lineWidth={1.2} transparent opacity={.75}/>;})}
   </>;
 }
-export default function PortfolioGlobeScene({go}:{go:(n:number)=>void}){
-  return <Canvas frameloop="demand" dpr={[1,1.5]} camera={{position:point(35,70,3.45).toArray(),fov:40}} gl={{alpha:true,antialias:true,powerPreference:'low-power'}}>
+export default function PortfolioGlobeScene({go,paused}:{go:(n:number)=>void;paused:boolean}){
+  return <Canvas frameloop={paused ? 'demand' : 'always'} dpr={[1,1.5]} camera={{position:point(35,70,3.45).toArray(),fov:40}} gl={{alpha:true,antialias:true,powerPreference:'low-power'}}>
     <ambientLight intensity={1.4}/><directionalLight position={[3,5,2]} intensity={1.4}/>
     <Suspense fallback={null}><Earth go={go}/></Suspense>
-    <OrbitControls enablePan={false} enableZoom={false} enableDamping={false} rotateSpeed={.45}/>
+    <OrbitControls enablePan={false} enableZoom={false} enableDamping={false} rotateSpeed={.45} autoRotate={!paused} autoRotateSpeed={.22}/>
   </Canvas>;
 }

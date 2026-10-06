@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import { Expand, Minus, Plus } from 'lucide-react';
 import AttractionVideo from './AttractionVideo';
 import { projectVisuals, salalahProgramme, type VisualAsset } from '@/data/project-visuals';
+import register from '@/data/source-register.json';
+import { ProjectCapacity } from './MotionCharts';
 
 export function VisualCaption({ visual }: { visual: VisualAsset }) {
   return <span className="pair"><span lang="ar" dir="rtl">{visual.ar}</span><span className="en" lang="en" dir="ltr">{visual.en}</span></span>;
@@ -34,6 +36,7 @@ export default function ProjectVisual({ id, onExpand, paused }: { id: string; on
   const salalah=id==='al-haffa';
   const index=mode==='concept'?3:mode==='plan'?4:0;
   const visual=projectVisuals[id][index];
+  const project=register.projects.find(p=>p.id===id)!;
   return <div ref={ref} className={`visual case-visual masterplan-visual ${salalah?'salalah-visual':''}`}>
     {salalah && <div className="project-media-tabs" data-media-controls aria-label="Salalah project media">
       {[['photo','صور الموقع','Site photos'],['film','الفيلم','Site film'],['concept','تصوّر التطوير','Development'],['plan','المخطط','Programme plan']].map(([key,ar,en])=><button key={key} aria-pressed={mode===key} onClick={()=>setMode(key)}><span lang="ar" dir="rtl">{ar}</span><small lang="en">{en}</small></button>)}
@@ -44,6 +47,7 @@ export default function ProjectVisual({ id, onExpand, paused }: { id: string; on
     </div> : <>
       <figure><button className="masterplan-image-button" onClick={()=>onExpand(index)} aria-label={`Explore ${id} images and masterplan`}><VisualImage visual={visual}/><span className="image-expand"><Expand size={20}/></span></button><figcaption><VisualCaption visual={visual}/></figcaption></figure>
       <button className="gallery-open" onClick={()=>onExpand(index)}><span className="pair"><span lang="ar" dir="rtl">استكشف الصور والتفاصيل</span><span className="en" lang="en">Explore images & details</span></span><Expand size={17}/></button>
+      <ProjectCapacity id={id} value={project.metrics.attractions.value} activities={id==='airport'} construction={project.stageInSource==='under_construction'} />
     </>}
   </div>;
 }

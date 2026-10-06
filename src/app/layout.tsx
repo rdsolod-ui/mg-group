@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "./visuals.css";
 import "./chapter-photography.css";
+import "./motion.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://marketing.parkskazka.ru"),
   title: "MG Group | Engineering, construction & park operations",
