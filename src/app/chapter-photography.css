@@ -1,0 +1,129 @@
+/* Photographic chapter panels retain the factual figures as live bilingual text. */
+.chapter-photograph { margin:0; min-width:0; }
+.chapter-photograph > img { display:block; width:100%; height:auto; aspect-ratio:1672/941; object-fit:cover; border-radius:5px; }
+.chapter-photograph figcaption { display:flex; flex-wrap:wrap; justify-content:space-between; gap:4px 12px; padding:8px 0; font-size:10px; line-height:1.5; color:var(--muted); }
+.chapter-photograph figcaption [lang=en] { font-family:'IBM Plex Sans'; }
+.photo-board { border:0; padding:0; min-width:0; }
+.photo-board > .chapter-photograph { grid-column:1/-1; }
+.proof-wall.photo-board { display:grid; grid-template-columns:1.3fr 1fr; gap:18px 25px; }
+.photo-board .proof-big > strong { font-size:clamp(90px,8vw,150px); margin-bottom:12px; }
+.photo-board .proof-big .pair { font-size:16px; }
+.photo-board .proof-big .en { font-size:12px; }
+.photo-board .proof-small { margin:0; padding:0 0 0 25px; border:0; border-left:1px solid var(--line); gap:25px; align-items:center; }
+.photo-board .proof-small .metric > strong { font-size:clamp(45px,4.5vw,75px); }
+.specialists-board.photo-board { display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:20px; }
+.photo-board .team-total { display:block; margin:0; }
+.photo-board .team-total > strong { display:block; font-size:clamp(80px,7vw,140px); margin-bottom:13px; }
+.photo-board .team-total .pair { font-size:15px; }
+.photo-board .team-total .en { font-size:11px; }
+.photo-board .team-type { flex-direction:column-reverse; align-items:flex-start; justify-content:flex-end; gap:12px; padding:0 0 0 20px; border-bottom:0; border-left:1px solid var(--line); }
+.photo-board .team-type > strong { font-size:clamp(60px,5.7vw,110px); }
+.photo-board .team-type > .pair { font-size:19px; }
+.photo-board .team-type .en { font-size:13px; }
+.lifecycle-lines.photo-board { display:grid; grid-template-columns:1fr 1fr; gap:0 26px; }
+.photo-board.lifecycle-lines article { padding:17px 0; gap:16px; }
+.photo-board.lifecycle-lines article > span { font-size:27px; }
+.photo-board.lifecycle-lines .pair { font-size:18px; }
+.photo-board.lifecycle-lines .en { font-size:12px; }
+.partnership-board.photo-board > article { padding:11px 0; }
+.photo-board.partnership-board article .pair { display:flex; flex-direction:row; align-items:center; justify-content:space-between; gap:10px; font-size:17px; }
+.photo-board.partnership-board article .en { font-size:12px; text-align:right; }
+.photo-board .group-member { margin-top:20px; gap:20px; }
+.photo-board .group-member > img { width:155px; }
+.contact-photo-card > .chapter-photograph > img { aspect-ratio:3.5; object-position:50% 40%; }
+.contact-photo-card .business-card { padding:22px; box-shadow:none; }
+.contact-photo-card .card-heading { padding-bottom:12px; }
+.contact-photo-card .card-heading > img { width:180px; }
+.contact-photo-card .qr-wrap { margin-top:12px; gap:20px; }
+.contact-photo-card .qr-wrap > a { width:37%; max-width:195px; }
+.contact-photo-card .card-person > strong { font-size:27px; }
+.contact-photo-card .card-person > strong[lang=en] { font-size:23px; }
+.contact-photo-card .card-person .pair { margin:8px 0; }
+.contact-photo-card .qr-caption { margin:8px 0 12px; }
+.contact-photo-card .card-links { padding-top:12px; }
+@media (min-width:901px) and (max-height:800px) {
+  .photo-board > .chapter-photograph > img { max-height:245px; }
+  .proof-wall.photo-board { gap:10px 20px; }
+  .photo-board .proof-big > strong { font-size:86px; margin-bottom:8px; }
+  .photo-board .proof-big .pair { font-size:14px; }
+  .photo-board .proof-big .en { font-size:11px; }
+  .photo-board .proof-small { gap:18px; padding-left:20px; }
+  .photo-board .proof-small .metric > strong { font-size:46px; }
+  .specialists-board.photo-board { gap:10px 18px; }
+  .photo-board .team-total > strong { font-size:78px; }
+  .photo-board .team-type > strong { font-size:64px; }
+  .photo-board .team-type > .pair { font-size:17px; }
+  .photo-board.lifecycle-lines article { padding:10px 0; }
+  .photo-board.lifecycle-lines .pair { font-size:16px; }
+  .photo-board.partnership-board > article { padding:8px 0; }
+  .photo-board .group-member { margin-top:13px; }
+  .photo-board .group-member > img { width:140px; }
+  .is-present .contact-photo-card .business-card { padding:16px 20px; }
+  .contact-photo-card > .chapter-photograph > img { height:140px; object-position:50% 25%; }
+  .is-present .contact-photo-card .qr-wrap > a { width:29%; max-width:130px; }
+  .is-present .contact-photo-card .card-heading > img { width:160px; }
+  .is-present .contact-photo-card .card-links { padding-top:8px; }
+  .contact-photo-card .card-person > strong { font-size:23px; }
+  .contact-photo-card .card-person > strong[lang=en] { font-size:20px; }
+  .contact-photo-card .card-person .pair { font-size:12px; margin:5px 0; }
+  .is-present .contact-photo-card .business-card .card-person .pair { margin:5px 0; }
+  .contact-photo-card .qr-caption { font-size:10px; }
+}
+@media (max-width:900px) {
+  .chapter-photograph figcaption { font-size:9px; }
+  .proof-wall.photo-board { gap:15px 18px; }
+  .photo-board .proof-big > strong { font-size:96px; }
+  .photo-board .proof-big .pair { font-size:14px; }
+  .photo-board .proof-big .en { font-size:11px; }
+  .photo-board .proof-small { padding-left:17px; gap:20px; }
+  .photo-board .proof-small .metric > strong { font-size:46px; }
+  .specialists-board.photo-board { gap:18px 13px; }
+  .photo-board .team-total > strong { font-size:80px; }
+  .photo-board .team-type { padding-left:13px; }
+  .photo-board .team-type > strong { font-size:58px; }
+  .photo-board .team-type > .pair { font-size:17px; }
+  .photo-board .team-total .pair { font-size:13px; }
+  .photo-board .team-total .en { font-size:10px; }
+  .photo-board.lifecycle-lines { gap:0 18px; }
+  .photo-board.lifecycle-lines article { gap:10px; }
+  .photo-board.lifecycle-lines .pair { font-size:16px; }
+  .photo-board.lifecycle-lines .en { font-size:11px; }
+  .photo-board.partnership-board article .pair { font-size:16px; }
+  .contact-photo-card > .chapter-photograph > img { aspect-ratio:16/9; }
+  .contact-photo-card .business-card { padding:20px; }
+  .contact-photo-card .qr-wrap > a { width:43%; }
+  .contact-photo-card .card-heading > img { width:165px; }
+  .contact-photo-card .card-person > a { font-size:14px; }
+}
+@media (min-width:2400px) {
+  .chapter-photograph figcaption { font-size:17px; padding:15px 0; }
+  .proof-wall.photo-board { gap:30px 45px; }
+  .photo-board .proof-big > strong { font-size:250px; }
+  .photo-board .proof-big .pair { font-size:30px; }
+  .photo-board .proof-big .en { font-size:23px; }
+  .photo-board .proof-small { gap:65px; padding-left:45px; }
+  .photo-board .proof-small .metric > strong { font-size:130px; }
+  .specialists-board.photo-board { gap:35px; }
+  .photo-board .team-total > strong { font-size:230px; }
+  .photo-board .team-total .pair { font-size:28px; }
+  .photo-board .team-total .en { font-size:21px; }
+  .photo-board .team-type > strong { font-size:170px; }
+  .photo-board .team-type > .pair { font-size:36px; }
+  .photo-board .team-type .en { font-size:26px; }
+  .photo-board.lifecycle-lines article { padding:30px 0; gap:30px; }
+  .photo-board.lifecycle-lines article > span { font-size:54px; }
+  .photo-board.lifecycle-lines .pair { font-size:36px; }
+  .photo-board.lifecycle-lines .en { font-size:25px; }
+  .photo-board.partnership-board > article { padding:22px 0; }
+  .photo-board.partnership-board article .pair { font-size:36px; }
+  .photo-board.partnership-board article .en { font-size:24px; }
+  .photo-board .group-member > img { width:290px; }
+  .contact-photo-card .business-card { padding:40px; }
+  .contact-photo-card .card-heading > img { width:350px; }
+  .contact-photo-card .qr-wrap > a { width:32%; max-width:350px; }
+  .contact-photo-card .card-person > strong { font-size:50px; }
+  .contact-photo-card .card-person > strong[lang=en] { font-size:44px; }
+  .contact-photo-card .card-person .pair { font-size:24px; }
+  .contact-photo-card .card-person .en { font-size:20px; }
+  .contact-photo-card .card-person > a { font-size:30px; }
+}

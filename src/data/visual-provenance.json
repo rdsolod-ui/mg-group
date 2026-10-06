@@ -388,5 +388,155 @@
         "sha256": "095a9293ed7490e70ad9739923b109c87164d66564c9a0143aeb99b8b9556722"
       }
     ]
+  },
+  {
+    "id": "chapter-proof",
+    "kind": "generated_photorealistic_illustration",
+    "sourceFile": "exec-be1f5cb9-b7eb-48df-87b2-a97505884869.png",
+    "sourceSHA256": "75de41851cbf55021e7878960bad2efdc4fff0fa0e19e4bb1504db363464fda7",
+    "description": "Generated photorealistic fictional scene. Not documentary evidence of a named project, actual employees, partner or office. Native image resolution retained.",
+    "variants": [
+      {
+        "path": "visuals/chapters/proof.webp",
+        "width": 1672,
+        "height": 941,
+        "bytes": 445758,
+        "sha256": "8b88e36258f8538b35daa32d89cdfa11d88968408e1339f28b464a28113b5f3f"
+      },
+      {
+        "path": "visuals/chapters/proof-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 145416,
+        "sha256": "e143c309e8259d152513f62db6490e60fb73fbe0088e1b3e626b20f70f0481a9"
+      },
+      {
+        "path": "visuals/chapters/proof-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 68200,
+        "sha256": "b0b414772f40d92d129386f65071b49d99fe75292c2e2260506a10bf5496a949"
+      }
+    ]
+  },
+  {
+    "id": "chapter-specialists",
+    "kind": "generated_photorealistic_illustration",
+    "sourceFile": "exec-18231c73-6093-4443-9409-96a083cac4cc.png",
+    "sourceSHA256": "b296adbb5e6afcd18c96d1b3ca796d744e94e5734efb979f88206e8f202f28cc",
+    "description": "Generated photorealistic fictional scene. Not documentary evidence of a named project, actual employees, partner or office. Native image resolution retained.",
+    "variants": [
+      {
+        "path": "visuals/chapters/specialists.webp",
+        "width": 1672,
+        "height": 941,
+        "bytes": 209520,
+        "sha256": "c77cc5f1024754ea514e885201021396ea55fa67bed1dd04479daf30b570e8fb"
+      },
+      {
+        "path": "visuals/chapters/specialists-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 79284,
+        "sha256": "d26848f1dc43f22438ef5db659e0563feafc954e1e4b7e8101419575977c5592"
+      },
+      {
+        "path": "visuals/chapters/specialists-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 45226,
+        "sha256": "ce7ee104df8994443a605668e4272d787d602a02450c111e0a9f3541d91db312"
+      }
+    ]
+  },
+  {
+    "id": "chapter-lifecycle",
+    "kind": "generated_photorealistic_illustration",
+    "sourceFile": "exec-437692e4-5607-406e-a7aa-ed3653447a17.png",
+    "sourceSHA256": "1a37493d61b5656cc755a9bd4dbe1f623eec688ff8beabd3444ab3d65863f576",
+    "description": "Generated photorealistic fictional scene. Not documentary evidence of a named project, actual employees, partner or office. Native image resolution retained.",
+    "variants": [
+      {
+        "path": "visuals/chapters/lifecycle.webp",
+        "width": 1672,
+        "height": 941,
+        "bytes": 287214,
+        "sha256": "6c979a215e79df09765ff5ee473c4d50bd320298d0ebbbaa2d46d161c85f51e0"
+      },
+      {
+        "path": "visuals/chapters/lifecycle-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 101886,
+        "sha256": "a5a9b346befb049b407b67437867140ff00be2e2d5c74dbeadd89640e1ca029e"
+      },
+      {
+        "path": "visuals/chapters/lifecycle-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 53490,
+        "sha256": "44e8486f4eb2fb90e2412b16a0baf0917c501514ebbbb7a185274c448747672b"
+      }
+    ]
+  },
+  {
+    "id": "chapter-partnership",
+    "kind": "generated_photorealistic_illustration",
+    "sourceFile": "exec-cfd79ad0-830d-49d9-b9b4-d51bc91071f0.png",
+    "sourceSHA256": "e52f7f4ba979d9ebd527c9cc04d35ec07ddbbdc690a04f895fc513b87d68c5c0",
+    "description": "Generated photorealistic fictional scene. Not documentary evidence of a named project, actual employees, partner or office. Native image resolution retained.",
+    "variants": [
+      {
+        "path": "visuals/chapters/partnership.webp",
+        "width": 1672,
+        "height": 941,
+        "bytes": 219354,
+        "sha256": "8b037a141596d9fd2868b5d69750cc631193fc5740d76aa1a38af22b15fa083a"
+      },
+      {
+        "path": "visuals/chapters/partnership-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 81388,
+        "sha256": "d1a1d146a4006740e4df013914457cdafbacadb88cf205e92b216a6cd806f0da"
+      },
+      {
+        "path": "visuals/chapters/partnership-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 45206,
+        "sha256": "c665979b242581b0ddae1950c1401229b742ae5277b7e7e0b833c208a6f7398b"
+      }
+    ]
+  },
+  {
+    "id": "chapter-contact",
+    "kind": "generated_photorealistic_illustration",
+    "sourceFile": "exec-95d063a1-82f1-4280-be6d-8c70f19dc27c.png",
+    "sourceSHA256": "38423243451f450b921eced1901b0a17492d48794e71283a2316aefb88e463e2",
+    "description": "Generated photorealistic fictional scene. Not documentary evidence of a named project, actual employees, partner or office. Native image resolution retained.",
+    "variants": [
+      {
+        "path": "visuals/chapters/contact.webp",
+        "width": 1672,
+        "height": 941,
+        "bytes": 304724,
+        "sha256": "a056302a4d37f76b5d52980e6f1ecfd3a76c8ae155735fb4f12b1cd98a2f8e6f"
+      },
+      {
+        "path": "visuals/chapters/contact-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 97416,
+        "sha256": "b8b7b123478573a9576751109a607394bfa02ea51c875f55288931b25c276ec1"
+      },
+      {
+        "path": "visuals/chapters/contact-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 46272,
+        "sha256": "9b41c0583de3ca8e96967337fa4bbafc6a32cacefd9fda569c0c732fedb0126b"
+      }
+    ]
   }
 ]

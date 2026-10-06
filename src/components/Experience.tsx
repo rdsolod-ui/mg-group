@@ -20,6 +20,7 @@ import register from "@/data/source-register.json";
 import RideShowcase from "./RideShowcase";
 import ProjectVisual, { VisualCaption, VisualInspector } from './ProjectVisual';
 import PortfolioGlobe from './PortfolioGlobe';
+import ChapterPhoto from './ChapterPhoto';
 import { projectVisuals } from '@/data/project-visuals';
 
 const base = "/mg-group";
@@ -531,7 +532,8 @@ export default function Experience() {
         {section(
           "proof",
           <>
-            <div className="proof-wall visual">
+            <div className="proof-wall visual photo-board">
+              <ChapterPhoto scene="proof" />
               <div className="proof-big">
                 <strong>97</strong>
                 <Pair
@@ -634,7 +636,8 @@ export default function Experience() {
         {section(
           "specialists",
           <>
-            <div className="visual specialists-board">
+            <div className="visual specialists-board photo-board">
+              <ChapterPhoto scene="specialists" />
               <div className="team-total">
                 <strong dir="ltr">64</strong>
                 <Pair value={pair("متخصصاً فنياً", "Technical specialists")} />
@@ -682,7 +685,8 @@ export default function Experience() {
         {section(
           "lifecycle",
           <>
-            <div className="visual lifecycle-lines">
+            <div className="visual lifecycle-lines photo-board">
+              <ChapterPhoto scene="lifecycle" />
               {[
                 pair("استراتيجية وتصميم", "Strategy & design"),
                 pair("هندسة وتركيب", "Engineering & installation"),
@@ -783,7 +787,8 @@ export default function Experience() {
         {section(
           "partnership",
           <>
-            <div className="visual partnership-board">
+            <div className="visual partnership-board photo-board">
+              <ChapterPhoto scene="partnership" />
               {[
                 pair("منتزه جديد", "A new park"),
                 pair("تطوير وجهة قائمة", "An existing destination"),
@@ -846,7 +851,9 @@ export default function Experience() {
         {section(
           "contact",
           <>
-            <div className="visual business-card">
+            <div className="visual contact-photo-card">
+              <ChapterPhoto scene="contact" />
+              <div className="business-card">
               <div className="card-heading">
                 <img src={asset("brand/mg-group.svg")} alt="MG Group" />
                 <span lang="en">Oman</span>
@@ -895,6 +902,7 @@ export default function Experience() {
                   <Download size={15} />
                 </a>
               </div>
+            </div>
             </div>
             <div className="copy">
               <Heading ar="لنبدأ من موقعكم." en="Let’s start with your site." />
