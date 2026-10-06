@@ -7,7 +7,7 @@ The narrative begins with engineering and technical delivery, then presents proj
 1. MG Group: from engineering to experience.
 2. Evidence at scale: 97 rides in five case studies, eight portfolio projects, two countries; Skazka visitation for 2024 separately.
 3. Engineering, installation, technical launch and maintenance.
-4. Six interactive source-derived ride models: design and illustrative motion.
+4. Seven attraction cards: five official park films, sourced installation figures and six source-derived design models.
 5. Engineers, mechanics and installation/operations teams.
 6. Strategy/design → engineering/installation → launch → operation/maintenance.
 7. Russia–Oman portfolio geography, with an accessible location list.
@@ -24,6 +24,7 @@ Each case uses a common component: image, location, name, scope statement, large
 - GSAP only for a short presentation transition; all nonessential motion respects pause and reduced motion.
 - SVG engineering illustration and schematic geography avoid unnecessary 3D loading.
 - The requested ride chapter lazy-loads compressed Blender GLB assets with React Three Fiber, local Draco decoding, PBR environment lighting and a rendered poster fallback. Only the active model animates; offscreen and reduced-motion states pause rendering.
+- Park-film mode uses native HLS or a dynamically imported hls.js player, self-hosted adaptive video segments and an economical MP4 fallback. A transparent Blender-rendered landscape device surrounds the live HTML video. Heavy media is loaded only after a play or design-view action.
 - Local WOFF2 fonts, WebP images and all-path brand SVGs.
 - Semantic sections, paired language blocks, focusable controls and native dialog focus management.
 - Production metadata, canonical URL and sharing preview; no tracker, external form submission, CRM or application API is included.

@@ -1,0 +1,218 @@
+{
+  "checkedAt": "2026-10-06T20:10:51.669179+00:00",
+  "scope": "Official public parkskazka.ru attraction pages and their actual hero video hrefs. No manufacturing claims.",
+  "rides": [
+    {
+      "slug": "wheel",
+      "sourcePage": "https://parkskazka.ru/attraktsiony/semeynye/koleso-obozreniya",
+      "sourceTitle": "Колесо обозрения",
+      "videoAvailable": false,
+      "videoUrl": null,
+      "specs": [
+        {
+          "labelRu": "Высота",
+          "valueRu": "55 м"
+        },
+        {
+          "labelRu": "Кабины",
+          "valueRu": "24"
+        },
+        {
+          "labelRu": "Мест в кабине",
+          "valueRu": "6"
+        },
+        {
+          "labelRu": "Время катания",
+          "valueRu": "14 минут"
+        }
+      ],
+      "matchNotes": "Карточка действующего колеса: 24 кабины, в исходной CAD-модели 30. Не является паспортом CAD. В hero/всём HTML нет ссылки video, кнопки Смотреть видео или video markup."
+    },
+    {
+      "slug": "chain",
+      "sourcePage": "https://parkskazka.ru/attraktsiony/ekstremalnye/nebesnaya-karusel",
+      "sourceTitle": "Небесная карусель",
+      "videoAvailable": true,
+      "videoUrl": "https://parkskazka.ru/uploads/videos/000/1785254666_96b02f344bbcbe8c16a295d04b6afd57.mp4",
+      "specs": [
+        {
+          "labelRu": "Высота",
+          "valueRu": "40 м"
+        },
+        {
+          "labelRu": "Рост",
+          "valueRu": "от 130 см"
+        },
+        {
+          "labelRu": "Время катания",
+          "valueRu": "до 7 минут"
+        }
+      ],
+      "matchNotes": "Действующий пример башенной цепочной карусели. Типология соответствует; визуальные различия колонны и основания не позволяют считать точным экземпляром CAD.",
+      "web": {
+        "master": "master.m3u8",
+        "economy": "360p/index.m3u8",
+        "high": "1080p/index.m3u8",
+        "poster": "poster.webp"
+      },
+      "originalDuration": 19.8,
+      "nativeDimensions": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "slug": "drop-tower",
+      "sourcePage": "https://parkskazka.ru/attraktsiony/ekstremalnye/zvezdopad",
+      "sourceTitle": "Звездопад",
+      "videoAvailable": true,
+      "videoUrl": "https://parkskazka.ru/uploads/videos/000/1785756979_629cf56bae0e4f71abc9d75d5b8b8371.mp4",
+      "specs": [
+        {
+          "labelRu": "Высота",
+          "valueRu": "40 м"
+        },
+        {
+          "labelRu": "Рост",
+          "valueRu": "от 105 см"
+        },
+        {
+          "labelRu": "Время катания",
+          "valueRu": "до 2,5 минут"
+        }
+      ],
+      "matchNotes": "Действующая башня свободного падения. Исходная CAD геометрия и окраска отличаются; данные относятся только к объекту парка.",
+      "web": {
+        "master": "master.m3u8",
+        "economy": "360p/index.m3u8",
+        "high": "1080p/index.m3u8",
+        "poster": "poster.webp"
+      },
+      "originalDuration": 30.72,
+      "nativeDimensions": [
+        3840,
+        2160
+      ]
+    },
+    {
+      "slug": "condor",
+      "sourcePage": "https://parkskazka.ru/attraktsiony/ekstremalnye/smerch",
+      "sourceTitle": "Смерч",
+      "videoAvailable": true,
+      "videoUrl": "https://parkskazka.ru/uploads/videos/000/1785759380_3d9e092459778906d03ee9f2677aa996.mp4",
+      "specs": [
+        {
+          "labelRu": "Высота",
+          "valueRu": "34 м"
+        },
+        {
+          "labelRu": "Рост",
+          "valueRu": "от 140 см"
+        },
+        {
+          "labelRu": "Время катания",
+          "valueRu": "до 3 минут"
+        }
+      ],
+      "matchNotes": "Сопоставлено визуально: Condor с четырьмя окружностями кабин на поднимаемой башенной короне. Параметры действующего объекта.",
+      "web": {
+        "master": "master.m3u8",
+        "economy": "360p/index.m3u8",
+        "high": "1080p/index.m3u8",
+        "poster": "poster.webp"
+      },
+      "originalDuration": 23.4234,
+      "nativeDimensions": [
+        3840,
+        2160
+      ]
+    },
+    {
+      "slug": "typhoon",
+      "sourcePage": null,
+      "sourceTitle": "Тайфун",
+      "videoAvailable": false,
+      "videoUrl": null,
+      "specs": [],
+      "matchNotes": "В текущем каталоге и поиске parkskazka.ru подтверждённая карточка Тайфуна не найдена. Не подменять Вихрем, Миксом, Формулой или другим аттракционом."
+    },
+    {
+      "slug": "lightning",
+      "sourcePage": "https://parkskazka.ru/attraktsiony/ekstremalnye/molniya",
+      "sourceTitle": "Молния",
+      "videoAvailable": true,
+      "videoUrl": "https://parkskazka.ru/uploads/videos/000/1788878967_769b19bcd8f9885e9b84e2057b7b3f64.mp4",
+      "specs": [
+        {
+          "labelRu": "Высота",
+          "valueRu": "27 м"
+        },
+        {
+          "labelRu": "Скорость",
+          "valueRu": "65 км/ч"
+        },
+        {
+          "labelRu": "Рост",
+          "valueRu": "от 120 см"
+        },
+        {
+          "labelRu": "Время драйва",
+          "valueRu": "30 секунд"
+        }
+      ],
+      "matchNotes": "Прямое совпадение имени. В hero ссылка на 8:51 ролик 4K50 с ведущим и поездкой; полная длительность сохранена. 30 секунд — характеристика поездки, не длительность видео.",
+      "web": {
+        "master": "master.m3u8",
+        "economy": "360p/index.m3u8",
+        "high": "1080p/index.m3u8",
+        "poster": "poster.webp"
+      },
+      "originalDuration": 531.72,
+      "nativeDimensions": [
+        3840,
+        2160
+      ]
+    },
+    {
+      "slug": "disco",
+      "sourcePage": "https://parkskazka.ru/attraktsiony/ekstremalnye/galaktika",
+      "sourceTitle": "Галактика",
+      "videoAvailable": true,
+      "videoUrl": "https://parkskazka.ru/uploads/videos/000/1784637674_7e6316b49bd17a370d1634244441c9b2.mp4",
+      "specs": [
+        {
+          "labelRu": "Высота",
+          "valueRu": "более 15 м"
+        },
+        {
+          "labelRu": "Скорость",
+          "valueRu": "13,5 м/с"
+        },
+        {
+          "labelRu": "Длина трассы",
+          "valueRu": "100 м"
+        },
+        {
+          "labelRu": "Рост",
+          "valueRu": "от 140 см"
+        },
+        {
+          "labelRu": "Вращение",
+          "valueRu": "до 10 об/мин"
+        }
+      ],
+      "matchNotes": "Действующий DiskO Coaster на волнообразной трассе. Исходный placement не содержит ride-модель. Видео и характеристики допустимы отдельно от 3D.",
+      "web": {
+        "master": "master.m3u8",
+        "economy": "360p/index.m3u8",
+        "high": "1080p/index.m3u8",
+        "poster": "poster.webp"
+      },
+      "originalDuration": 26.48,
+      "nativeDimensions": [
+        1920,
+        1080
+      ]
+    }
+  ]
+}

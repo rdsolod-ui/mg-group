@@ -28,7 +28,7 @@ const chapters = [
   ["intro", "مجموعة إم جي", "MG Group"],
   ["proof", "الخبرة بالأرقام", "Scale"],
   ["engineering", "الهندسة والتركيب", "Engineering"],
-  ["ride-models", "نماذج الألعاب", "Ride models"],
+  ["ride-models", "الألعاب على أرض الواقع", "Attractions in action"],
   ["specialists", "الفريق الفني", "Specialists"],
   ["lifecycle", "دورة المشروع", "Lifecycle"],
   ["geography", "الجغرافيا", "Geography"],
@@ -514,7 +514,7 @@ export default function Experience() {
         e.metaKey ||
         e.isComposing ||
         (e.target as HTMLElement)?.closest(
-          "input,textarea,[contenteditable=true]",
+          "input,textarea,select,[contenteditable=true],[data-media-controls]",
         )
       )
         return;
@@ -780,7 +780,7 @@ export default function Experience() {
             </div>
           </>,
         )}
-        {section("ride-models", <RideShowcase paused={paused} reduced={reduced} />, "ride-models-chapter")}
+        {section("ride-models", <RideShowcase paused={paused || menu || notes || !!gallery} reduced={reduced} />, "ride-models-chapter")}
         {section(
           "specialists",
           <>

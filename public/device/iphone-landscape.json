@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "asset": "iphone-landscape.webp",
+  "width": 2400,
+  "height": 1240,
+  "projection": "orthographic-front",
+  "screen": {
+    "left": 0.04971264367816087,
+    "top": 0.09844271412680754,
+    "width": 0.9005747126436783,
+    "height": 0.8031145717463849,
+    "cornerRadiusX": 0.07147415443522655,
+    "cornerRadiusY": 0.15512465373961218
+  },
+  "screenPixels": {
+    "left": 119.31034482758608,
+    "top": 122.06896551724135,
+    "width": 2161.379310344828,
+    "height": 995.8620689655173,
+    "cornerRadius": 154.48275862068965
+  },
+  "videoFit": "contain",
+  "island": "landscape-left; rendered in alpha foreground; video must remain below frame",
+  "blenderVersion": "5.2.1 LTS",
+  "engine": "CYCLES",
+  "samples": 256,
+  "adaptiveThreshold": 0.009,
+  "denoise": "OPENIMAGEDENOISE",
+  "transparentDisplay": true,
+  "modelStatus": "Original illustrative modern iPhone-like shell, not official product CAD",
+  "playerSpec": {
+    "src": "/device/iphone-landscape.webp",
+    "aspectRatio": 1.935483870967742,
+    "screen": {
+      "left": 4.971264367816087,
+      "top": 9.844271412680754,
+      "width": 90.05747126436783,
+      "height": 80.31145717463849,
+      "radius": "7.1474154435% / 15.5124653740%"
+    }
+  },
+  "alphaVerified": true
+}

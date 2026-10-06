@@ -1,0 +1,3 @@
+public/ride-videos/**/*.ts binary
+public/ride-videos/**/*.mp4 binary
+public/ride-videos/**/*.m3u8 text eol=lf

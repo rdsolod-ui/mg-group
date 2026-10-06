@@ -8,4 +8,6 @@ Ride acceptance also covers all six selectors, actual visible frame changes, sta
 
 Public release verification checks all artifact hashes over HTTPS, the exact revision, unauthenticated access, the catalog entry and preservation of neighboring sites. Receipts are private release records outside this repository.
 
+Film acceptance adds the checks in `ride-video.md`: source-button provenance, all five streams, 360p/720p/1080p aligned variants, MP4 faststart, zero pre-click streams, actual frame progress, manual quality changes, seek, buffer behaviour under throttling, offscreen/pause loading stop, bounded failure recovery and fullscreen. `check:export` validates all local playlists and MPEG-TS segments, the five fallback files and the Blender phone frame. Binary `.ts` media is excluded from TypeScript inputs and explicitly marked binary in Git.
+
 Remaining source limitations: undated construction status, unspecified periods for most visitation metrics, ambiguous personnel field and limited resolution of extracted PDF images. Engineer/mechanic headcounts and the Oman contact were supplied directly by the owner on 6 October 2026. The QR must decode to `https://wa.me/96896100010`. Native Arabic editorial and physical display review are not implied by technical checks.

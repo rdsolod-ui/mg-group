@@ -1,0 +1,181 @@
+.player {
+  width: 100%;
+  min-width: 0;
+  color: var(--text);
+  align-self: center;
+}
+
+.device {
+  position: relative;
+  width: 100%;
+  isolation: isolate;
+}
+
+.screen {
+  position: absolute;
+  overflow: hidden;
+  background: #000;
+  z-index: 0;
+}
+
+.video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000;
+}
+
+.frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  user-select: none;
+  z-index: 2;
+}
+
+.playOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  color: #fff;
+  background: #061c274d;
+  font-size: clamp(12px, 1.35vw, 20px);
+  line-height: 1.25;
+  text-shadow: 0 1px 5px #000;
+}
+
+.playOverlay:disabled { opacity: .6; }
+
+.playOverlay small,
+.waiting small {
+  display: block;
+  margin-top: 4px;
+  font-size: .72em;
+  font-weight: 400;
+}
+
+.playDisc {
+  display: grid;
+  place-items: center;
+  width: clamp(44px, 5vw, 76px);
+  aspect-ratio: 1;
+  border: 1px solid #ffffff85;
+  border-radius: 50%;
+  background: #0c2b3dad;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px #0003;
+}
+
+.playDisc svg { width: 36%; height: 36%; }
+.playOverlay:hover .playDisc { background: #294d60dd; }
+
+.waiting {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #fff;
+  font-size: clamp(12px, 1.25vw, 18px);
+  background: #061c2790;
+  pointer-events: none;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #ffffff40;
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin .9s linear infinite;
+}
+
+.controls {
+  width: 90%;
+  margin: 2px auto 0;
+  font-size: 12px;
+}
+
+.transport { display: flex; align-items: center; gap: 7px; }
+
+.iconButton {
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
+  color: var(--text);
+}
+
+.iconButton:hover { background: var(--line); }
+.iconButton:disabled { opacity: .35; }
+.time { flex: 0 0 auto; font-variant-numeric: tabular-nums; font-family: "IBM Plex Sans", sans-serif; font-size: 11px; white-space: nowrap; }
+.seek { position: relative; flex: 1; min-width: 36px; height: 34px; margin: 0 8px; }
+.seekTrack { position: absolute; top: 15px; inset-inline: 0; height: 4px; background: var(--line); border-radius: 4px; overflow: hidden; }
+.bufferRange { position: absolute; height: 100%; background: var(--muted); opacity: .45; }
+.elapsed { position: absolute; left: 0; height: 100%; background: var(--accent); }
+.seek input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; appearance: none; background: transparent; cursor: pointer; }
+.seek input::-webkit-slider-runnable-track { height: 4px; background: transparent; }
+.seek input::-moz-range-track { height: 4px; background: transparent; }
+.seek input::-webkit-slider-thumb { appearance: none; width: 12px; height: 12px; margin-top: -4px; border-radius: 50%; background: var(--accent); border: 0; }
+.seek input::-moz-range-thumb { width: 12px; height: 12px; border-radius: 50%; background: var(--accent); border: 0; }
+.seek input:disabled { cursor: default; opacity: .3; }
+.settings { display: flex; align-items: center; gap: 12px; padding: 4px 0; border-top: 1px solid var(--line); flex-wrap: wrap; }
+.qualityLabel { display: flex; flex-direction: column; line-height: 1.2; gap: 2px; }
+.qualityLabel span:last-child { font-size: 10px; color: var(--muted); }
+.qualitySelect { font: inherit; font-size: 12px; color: var(--text); background: var(--panel); border: 1px solid var(--line); border-radius: 5px; min-height: 34px; padding: 4px 25px 4px 9px; }
+.qualitySelect:disabled { opacity: .45; }
+.streamInfo { margin-inline-start: auto; font-size: 10px; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.notice { min-height: 28px; padding: 3px 5% 0; font-size: 11px; color: var(--muted); line-height: 1.25; text-align: center; }
+.notice p span { display: block; font-size: 10px; margin-top: 2px; }
+.player button:focus-visible,
+.player input:focus-visible,
+.player select:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.playOverlay:focus-visible { outline-offset: -5px !important; }
+
+.player:fullscreen { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3vh 4vw; background: var(--bg); }
+.player:fullscreen .device { width: min(100%, 150vh); flex-shrink: 0; }
+.player:fullscreen .controls { width: min(90%, 130vh); }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 600px) {
+  .controls { width: 100%; }
+  .transport { gap: 2px; }
+  .iconButton { flex-basis: 44px; width: 44px; height: 44px; }
+  .time { font-size: 10px; }
+  .seek { margin-inline: 5px; }
+  .settings { gap: 8px; }
+  .qualitySelect { font-size: 11px; }
+  .streamInfo { font-size: 9px; }
+  .playOverlay { gap: 6px; }
+  .notice { padding-inline: 0; }
+}
+
+@media (min-width: 2200px) {
+  .controls { font-size: 18px; }
+  .iconButton { width: 56px; height: 56px; flex-basis: 56px; }
+  .iconButton svg { width: 26px; height: 26px; }
+  .time, .qualitySelect, .qualityLabel { font-size: 18px; }
+  .qualitySelect { min-height: 48px; }
+  .qualityLabel span:last-child, .streamInfo, .notice, .notice p span { font-size: 15px; }
+  .seek { height: 50px; }
+  .seekTrack { top: 23px; }
+  .playOverlay { font-size: 28px; }
+  .playDisc { width: 106px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner { animation: none; }
+}

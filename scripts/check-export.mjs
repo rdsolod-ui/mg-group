@@ -57,6 +57,30 @@ for (const slug of ["wheel", "chain", "drop-tower", "condor", "typhoon", "lightn
 }
 for (const file of ["draco_decoder.wasm", "draco_wasm_wrapper.js", "LICENSE.txt"])
   if (!fs.statSync(path.join(root, "decoders/draco", file)).size) throw Error(`Missing decoder: ${file}`);
+for (const slug of ["chain", "drop-tower", "condor", "lightning", "disco"]) {
+  const dir = path.join(root, "ride-videos", slug);
+  const master = fs.readFileSync(path.join(dir, "master.m3u8"), "utf8");
+  const variants = master.split(/\r?\n/).filter(line => line && !line.startsWith("#"));
+  if (!master.startsWith("#EXTM3U") || variants.length !== 3 || !master.includes("#EXT-X-INDEPENDENT-SEGMENTS"))
+    throw Error(`Invalid adaptive master: ${slug}`);
+  for (const variant of variants) {
+    if (!/^(360|720|1080)p\/index\.m3u8$/.test(variant)) throw Error(`Unexpected video variant: ${variant}`);
+    const playlist = fs.readFileSync(path.join(dir, variant), "utf8");
+    const segments = playlist.split(/\r?\n/).filter(line => line && !line.startsWith("#"));
+    if (!playlist.includes("#EXT-X-ENDLIST") || !segments.length) throw Error(`Incomplete video: ${slug}/${variant}`);
+    for (const segment of segments) {
+      if (!/^seg-\d+\.ts$/.test(segment)) throw Error(`Unexpected media path: ${segment}`);
+      const file = path.join(dir, path.dirname(variant), segment);
+      const bytes = fs.readFileSync(file);
+      if (bytes.length < 188 || bytes[0] !== 0x47 || bytes.length % 188) throw Error(`Invalid transport stream: ${file}`);
+    }
+  }
+  for (const file of ["fallback.mp4", "poster.webp"])
+    if (fs.statSync(path.join(dir, file)).size < 1000) throw Error(`Missing media: ${slug}/${file}`);
+  console.log(`PASS: ${slug}, adaptive 360p/720p/1080p, local segments and MP4 fallback`);
+}
+const phone = fs.readFileSync(path.join(root, "device/iphone-landscape.webp"));
+if (phone.toString("utf8", 8, 12) !== "WEBP") throw Error("Missing Blender device frame");
 function walk(dir) {
   for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
     const file = path.join(dir, ent.name);

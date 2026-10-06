@@ -53,6 +53,12 @@ Native Arabic editorial review, updated construction stages and actual-room legi
 
 ## Ride visualisations
 
-Six supplied CAD/DCC assets are processed through native format readers and Blender: observation wheel, swing carousel, drop tower, Condor, Typhoon and Lightning. The web chapter uses compressed GLB models, 2048px finish textures, local Draco decoders and Blender-rendered posters. Models load when the chapter becomes visible. Animation pauses outside the viewport, with the presentation pause control, and for system reduced-motion preferences. Dragging changes the viewing angle. Typhoon and Lightning show track/structure inspection rather than an unverified train simulation.
+Six supplied CAD/DCC assets are processed through native format readers and Blender: observation wheel, swing carousel, drop tower, Condor, Typhoon and Lightning. The web chapter uses compressed GLB models, 2048px finish textures, local Draco decoders and Blender-rendered posters. Models load only when the design view is selected and visible. Animation pauses outside the viewport, with the presentation pause control, and for system reduced-motion preferences. Dragging changes the viewing angle. Typhoon and Lightning show track/structure inspection rather than an unverified train simulation.
 
 These are design visualisations, not verified mechanical or operational simulations. Motion timing is illustrative. The supplied DiscoCoster placement scene contains surrounding site geometry; the ride itself was not found, so it is not presented as a completed attraction model. Source scenes, full Blender masters, native audit logs and large intermediate files are retained outside the public repository. See `docs/ride-production.md` for the production contract and remaining source limitations.
+
+## Official attraction films
+
+Seven attraction cards pair design views with sourced Skazka footage and installation specifications. Five official hero-button films are self-hosted as HLS VOD at 360p, 720p and 1080p, with an economical MP4 fallback. Video starts only after a click, buffers ahead, adapts to available bandwidth and stops requesting segments offscreen or while the presentation is paused. The landscape phone frame is a transparent Cycles render from an editable Blender model in `design/iphone/`.
+
+The wheel page has no current video button; Typhoon has no confirmed matching park page. Those cards keep their design views. Park figures are clearly separated from CAD specifications, including the wheel's 24 operating cabins versus 30 in the supplied model. See `docs/ride-video.md` and `docs/ride-video-sources.json`.

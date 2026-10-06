@@ -1,5 +1,6 @@
 import http from "node:http";
-import { readFile, stat } from "node:fs/promises";
+import { stat } from "node:fs/promises";
+import { createReadStream } from "node:fs";
 import path from "node:path";
 const root = path.resolve("out");
 const base = "/mg-group";
@@ -16,6 +17,11 @@ const mime = {
   ".txt": "text/plain; charset=utf-8",
   ".glb": "model/gltf-binary",
   ".wasm": "application/wasm",
+  ".m3u8": "application/vnd.apple.mpegurl",
+  ".ts": "video/mp2t",
+  ".mp4": "video/mp4",
+  ".m4s": "video/iso.segment",
+  ".png": "image/png",
 };
 http
   .createServer(async (req, res) => {
@@ -38,7 +44,24 @@ http
         "Content-Type",
         mime[path.extname(file)] || "application/octet-stream",
       );
-      res.end(await readFile(file));
+      const { size } = await stat(file);
+      res.setHeader("Accept-Ranges", "bytes");
+      const range = req.headers.range;
+      if (range) {
+        const match = /^bytes=(\d*)-(\d*)$/.exec(range);
+        const start = match?.[1] ? Number(match[1]) : Math.max(0, size - Number(match?.[2]));
+        const end = match?.[1] && match[2] ? Math.min(Number(match[2]), size - 1) : size - 1;
+        if (!match || (!match[1] && !match[2]) || !Number.isSafeInteger(start) || start < 0 || start > end || start >= size) {
+          res.writeHead(416, { "Content-Range": `bytes */${size}` }); res.end(); return;
+        }
+        res.writeHead(206, { "Content-Range": `bytes ${start}-${end}/${size}`, "Content-Length": end - start + 1 });
+        if (req.method === "HEAD") res.end();
+        else createReadStream(file, { start, end }).pipe(res);
+      } else {
+        res.setHeader("Content-Length", size);
+        if (req.method === "HEAD") res.end();
+        else createReadStream(file).pipe(res);
+      }
     } catch {
       res.writeHead(404);
       res.end("Not found");
