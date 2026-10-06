@@ -109,6 +109,47 @@
 .primary-button:hover { transform:translateY(-2px); }
 .icon-button:active { transform:scale(.94); }
 /* One active visible chapter only; all loops freeze in place when paused. */
+.national-flags { display:flex; align-items:flex-start; justify-content:flex-start; gap:38px; direction:ltr; margin:18px 0; --flag-height:76px; }
+.national-flag { position:relative; margin:0; padding-left:7px; text-align:left; }
+.flag-cloth { position:relative; height:var(--flag-height); width:calc(var(--flag-height) * var(--flag-ratio)); isolation:isolate; filter:drop-shadow(0 7px 5px #0002); }
+.flag-static { display:none; width:100%; height:100%; }
+.flag-waves { position:absolute; inset:0; }
+.flag-strip { position:absolute; top:0; width:calc(100% / 32 + 1.25px); height:100%; background-image:var(--flag-image); background-size:calc(var(--flag-height) * var(--flag-ratio)) 100%; background-position:calc(var(--flag-height) * var(--flag-ratio) * var(--flag-offset)) 0; background-repeat:no-repeat; transform-origin:left center; animation:flag-cloth 6.8s ease-in-out infinite; animation-delay:var(--phase); }
+.loop-flag-shade { position:absolute; inset:0; background:#071521; opacity:0; animation:flag-shade 6.8s ease-in-out infinite; animation-delay:var(--phase); }
+.flag-pole { position:absolute; left:3px; top:-3px; bottom:27px; width:3px; border-radius:3px; background:linear-gradient(90deg,#657781,#e0e7ea,#8396a1); }
+.flag-pole:before { content:''; position:absolute; width:6px; height:6px; border-radius:50%; left:-1.5px; top:-4px; background:#cfdae0; }
+.national-flag figcaption { display:flex; align-items:baseline; gap:9px; margin-top:13px; font-size:13px; color:var(--text); }
+.national-flag figcaption [lang=en] { font-size:11px; color:var(--muted); }
+.hero-line { top:16%; bottom:auto; left:9%; }
+.flags-compact { --flag-height:46px; margin:0; gap:28px; padding:18px 22px 12px; border:1px solid #ffffff26; border-radius:4px; background:#102d40c9; --text:#fff; --muted:#c2d5de; }
+.flags-compact figcaption { font-size:11px; margin-top:11px; }
+.flags-compact figcaption [lang=en] { font-size:10px; }
+@keyframes flag-cloth {
+  0%,100% { transform:translateY(0) skewY(var(--flag-tilt)); }
+  25% { transform:translateY(var(--flag-lift)) skewY(0deg); }
+  50% { transform:translateY(0) skewY(calc(-1 * var(--flag-tilt))); }
+  75% { transform:translateY(calc(-1 * var(--flag-lift))) skewY(0deg); }
+}
+@keyframes flag-shade { 0%,100% { opacity:.05; } 25% { opacity:.18; } 50% { opacity:.05; } 75% { opacity:0; } }
+@media (min-width:901px) and (max-height:800px) {
+  .national-flags { --flag-height:48px; gap:32px; margin:12px 0; }
+  .national-flag figcaption { margin-top:9px; font-size:11px; }
+  .national-flag figcaption [lang=en] { font-size:10px; }
+  .flags-compact { --flag-height:38px; margin:0; }
+  #geography .data-chart { margin-top:10px; }
+  #geography .body-copy { margin-bottom:12px; }
+  #geography .source-note { margin-top:12px; }
+}
+@media (max-width:900px) {
+  .national-flags { --flag-height:66px; gap:26px; margin:24px 0; }
+}
+@media (min-width:2400px) {
+  .national-flags { --flag-height:130px; gap:65px; margin:28px 0; }
+  .national-flag figcaption { font-size:24px; margin-top:22px; }
+  .national-flag figcaption [lang=en] { font-size:20px; }
+  .flags-compact { --flag-height:90px; margin:0; padding:28px 35px 20px; }
+  .flag-pole { width:5px; bottom:44px; }
+}
 .experience [class*="loop-"] { animation-play-state:paused; }
 .experience[data-motion=running] .chapter.is-active[data-in-view=true] [class*="loop-"],
 .experience[data-motion=running] .chapter.is-active[data-in-view=true] .chapter-photograph:after,
@@ -215,6 +256,8 @@
   .capacity-track,.programme-points { height:7px; }
 }
 @media (prefers-reduced-motion:reduce) {
+  .flag-waves { display:none; }
+  .flag-static { display:block; }
   .experience [class*="loop-"],.chapter-photograph:after,.masterplan-image-button:after { animation:none!important; }
   .primary-button:hover,.icon-button:active { transform:none; }
   .loop-ambient-glow,.loop-coaster-car,.loop-transmission,.loop-lifecycle-signal,.loop-contact-signal { display:none; }

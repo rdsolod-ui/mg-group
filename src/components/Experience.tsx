@@ -24,6 +24,7 @@ import ChapterPhoto from './ChapterPhoto';
 import { PortfolioChart, TeamChart, CountryChart } from './MotionCharts';
 import { ParkScene, DriveScene, LifecycleScene, NetworkScene, ContactSignal } from './MotionScenes';
 import useMotionVisibility from './useMotionVisibility';
+import NationalFlags from './NationalFlags';
 import { projectVisuals } from '@/data/project-visuals';
 
 const base = "/mg-group";
@@ -495,8 +496,7 @@ export default function Experience() {
                 fetchPriority="high"
               />
               <div className="hero-line">
-                <span>Russia</span>
-                <span>Oman</span>
+                <NationalFlags compact />
               </div>
               <ParkScene />
               <span className="hero-visual-credit"><span lang="ar" dir="rtl">تصوّر للمخطط العام</span><span lang="en">Illustrative masterplan</span></span>
@@ -745,6 +745,7 @@ export default function Experience() {
                   "Moscow, Khimki, Saint Petersburg, Vladivostok, Domodedovo and Salalah. Different settings. Engineering connected with operations.",
                 )}
               />
+              <NationalFlags />
               <CountryChart />
               <p className="source-note">
                 <Pair
