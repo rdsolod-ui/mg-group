@@ -1,0 +1,182 @@
+[
+  {
+    "path": "media/engineering/1.webp",
+    "source": "User-supplied MG GROUP CORP.pdf",
+    "page": 2,
+    "originalImage": "Image49.jpg",
+    "width": 488,
+    "height": 720,
+    "type": "source_image",
+    "sha256": "9ae9a21b6089a986e6ebffc73aaa20e82b448355ce5f181eea218b53b0bb6ac7"
+  },
+  {
+    "path": "media/skazka/1.webp",
+    "source": "User-supplied MG GROUP CORP.pdf",
+    "page": 3,
+    "originalImage": "Image53.jpg",
+    "width": 772,
+    "height": 436,
+    "type": "source_image",
+    "sha256": "f228e3b1819b06280a3d21de2b43779c71e0662fad6d77471f2bc5e514e0f3be"
+  },
+  {
+    "path": "media/skazka/2.webp",
+    "source": "User-supplied MG GROUP CORP.pdf",
+    "page": 3,
+    "originalImage": "Image57.jpg",
+    "width": 808,
+    "height": 465,
+    "type": "source_image",
+    "sha256": "8b4c2149ff0a887aa112a1d3dd6a799d6ed7b6adf0ef7b676860e5d1d310735e"
+  },
+  {
+    "path": "media/leo-tolstoy/1.webp",
+    "source": "User-supplied MG GROUP CORP.pdf",
+    "page": 4,
+    "originalImage": "Image61.jpg",
+    "width": 374,
+    "height": 327,
+    "type": "source_image",
+    "sha256": "5a5844fea25a8f5c4f8dc6e104fb2f3f06a2a780664e38b7d9aef090ca8af346"
+  },
+  {
+    "path": "media/leo-tolstoy/2.webp",
+    "source": "User-supplied MG GROUP CORP.pdf",
+    "page": 4,
+    "originalImage": "Image62.jpg",
+    "width": 754,
+    "height": 503,
+    "type": "source_image",
+    "sha256": "c03ddd9ad463e7364bbc34023e22cb15305b339ef99c0933db218d598562fd95"
+  },
+  {
+    "path": "media/vdnkh/1.webp",
+    "source": "User-supplied MG GROUP CORP.pdf",
+    "page": 5,
+    "originalImage": "Image66.jpg",
+    "width": 772,
+    "height": 437,
+    "type": "source_image",
+    "sha256": "8cde4115952144fc487fab121e365c68c911d9cbaf5c32e793d481fda8a59faf"
+  },
+  {
+    "path": "media/vdnkh/2.webp",
+    "source": "User-supplied MG GROUP CORP.pdf",
+    "page": 5,
+    "originalImage": "Image68.jpg",
+    "width": 773,
+    "height": 436,
+    "type": "source_image",
+    "sha256": "cf3ced07ac614d2fe891144b68327650754835b288ef3bb76ed028c11a747de3"
+  },
+  {
+    "path": "media/vdnkh/3.webp",
+    "source": "User-supplied MG GROUP CORP.pdf",
+    "page": 5,
+    "originalImage": "Image70.jpg",
+    "width": 772,
+    "height": 437,
+    "type": "source_image",
+    "sha256": "9ba0df5b940d0a0dc14b2568bec8d72ee5704148612ff7d3f273db9c8aea3baf"
+  },
+  {
+    "path": "media/minny-gorodok/1.webp",
+    "source": "User-supplied MG GROUP CORP.pdf",
+    "page": 6,
+    "originalImage": "Image74.jpg",
+    "width": 354,
+    "height": 391,
+    "type": "unclassified_source_visual",
+    "sha256": "4f8345544ec3975b8859ae0725293d2b97e722691f1b001b8902150185e56b75"
+  },
+  {
+    "path": "media/minny-gorodok/2.webp",
+    "source": "User-supplied MG GROUP CORP.pdf",
+    "page": 6,
+    "originalImage": "Image76.jpg",
+    "width": 959,
+    "height": 553,
+    "type": "unclassified_source_visual",
+    "sha256": "d811b16a89a44c0896ea681273aa6e597f5d8e91dc15a97968ed02e15278e4b8"
+  },
+  {
+    "path": "media/izmaylovo/1.webp",
+    "source": "User-supplied MG GROUP CORP.pdf",
+    "page": 7,
+    "originalImage": "Image79.jpg",
+    "width": 471,
+    "height": 628,
+    "type": "source_image",
+    "sha256": "4e66166a7e7f599682cd64c75a5ebd720ba096794a9e83371261b443be338710"
+  },
+  {
+    "path": "media/izmaylovo/2.webp",
+    "source": "User-supplied MG GROUP CORP.pdf",
+    "page": 7,
+    "originalImage": "Image80.jpg",
+    "width": 487,
+    "height": 365,
+    "type": "source_image",
+    "sha256": "c649fb94daa87f4d640e9f350afe46340109a32dec5a3e6bcce4f062b6882eb1"
+  },
+  {
+    "path": "media/ohta/1.webp",
+    "source": "User-supplied MG GROUP CORP.pdf",
+    "page": 8,
+    "originalImage": "Image83.jpg",
+    "width": 671,
+    "height": 447,
+    "type": "source_image",
+    "sha256": "d16f49eec67ffa00063c7a69a6a54d851aca486dbf53b8cb8a8970603ebb2a6b"
+  },
+  {
+    "path": "media/ohta/2.webp",
+    "source": "User-supplied MG GROUP CORP.pdf",
+    "page": 8,
+    "originalImage": "Image84.jpg",
+    "width": 502,
+    "height": 386,
+    "type": "source_image",
+    "sha256": "b5258db25442796a5e3b21bce8f5e14b57205957360a01e99419aa30835fd77c"
+  },
+  {
+    "path": "media/al-haffa/1.webp",
+    "source": "User-supplied MG GROUP CORP.pdf",
+    "page": 9,
+    "originalImage": "Image87.jpg",
+    "width": 800,
+    "height": 533,
+    "type": "source_image",
+    "sha256": "1cae6ef582e4d7b9f8673291103d0d31cc0ed064a9a95b540dfebb9b975b7686"
+  },
+  {
+    "path": "media/al-haffa/2.webp",
+    "source": "User-supplied MG GROUP CORP.pdf",
+    "page": 9,
+    "originalImage": "Image88.jpg",
+    "width": 480,
+    "height": 319,
+    "type": "source_image",
+    "sha256": "6130d04013f12dda85ff85a2a1cf9d520da399bce4657aa28844234e58451851"
+  },
+  {
+    "path": "media/airport/1.webp",
+    "source": "User-supplied MG GROUP CORP.pdf",
+    "page": 10,
+    "originalImage": "Image91.jpg",
+    "width": 1060,
+    "height": 704,
+    "type": "unclassified_source_visual",
+    "sha256": "f4978488ea672527f20a005e754fad2446046982478d3134da64351bd6cebe62"
+  },
+  {
+    "path": "media/airport/2.webp",
+    "source": "User-supplied MG GROUP CORP.pdf",
+    "page": 10,
+    "originalImage": "Image92.jpg",
+    "width": 522,
+    "height": 346,
+    "type": "unclassified_source_visual",
+    "sha256": "36afdd1fe93d1a74cba20587f0dff5df3dc5d1b2c56fc31bcc8cc39502ea7401"
+  }
+]

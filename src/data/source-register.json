@@ -1,0 +1,365 @@
+{
+  "preparedDate": "2026-10-06",
+  "status": "supplied_portfolio_source_data",
+  "source": {
+    "filename": "MG GROUP CORP.pdf",
+    "pages": 10,
+    "asOfDate": null
+  },
+  "logo": {
+    "primary": "MG Group",
+    "secondary": "AL-SHAHIQ",
+    "relationship": "Company within the group, per owner"
+  },
+  "userDecisions": {
+    "primaryBrand": "MG Group",
+    "languages": ["ar", "en"],
+    "headOffice": "Россия, Москва, улица Осенняя, 23"
+  },
+  "projects": [
+    {
+      "id": "skazka",
+      "sourceName": "Skazka Park",
+      "city": "Moscow",
+      "country": "Russia",
+      "sourcePage": 3,
+      "openingYearInSource": 2016,
+      "stageInSource": "no_construction_mark_in_source",
+      "stageAsOf": null,
+      "currentStageVerified": false,
+      "readinessInSourcePercent": null,
+      "roleInSource": "owner_and_operator",
+      "metrics": {
+        "investment": {
+          "value": 50,
+          "unit": "million USD",
+          "basis": "unspecified",
+          "period": null
+        },
+        "visitation": {
+          "value": 1500000,
+          "unit": "visits",
+          "basis": "actual_in_source",
+          "period": 2024
+        },
+        "attractions": {
+          "value": 60,
+          "unit": "rides",
+          "basis": "unspecified"
+        },
+        "staff": {
+          "value": 800,
+          "unit": "people",
+          "basis": "unspecified",
+          "sourceLabel": "Number of employers",
+          "labelNeedsClarification": true
+        }
+      },
+      "verificationState": "user_supplied_pdf_not_independently_verified",
+      "media": ["media/skazka/1.webp", "media/skazka/2.webp"]
+    },
+    {
+      "id": "leo-tolstoy",
+      "sourceName": "Leo Tolstoy Park",
+      "city": "Khimki",
+      "country": "Russia",
+      "sourcePage": 4,
+      "openingYearInSource": 2025,
+      "stageInSource": "no_construction_mark_in_source",
+      "stageAsOf": null,
+      "currentStageVerified": false,
+      "readinessInSourcePercent": null,
+      "roleInSource": "operator",
+      "metrics": {
+        "investment": {
+          "value": 7,
+          "unit": "million USD",
+          "basis": "unspecified",
+          "period": null
+        },
+        "visitation": {
+          "value": 300000,
+          "unit": "visits",
+          "basis": "unspecified",
+          "period": null
+        },
+        "attractions": {
+          "value": 27,
+          "unit": "rides",
+          "basis": "unspecified"
+        },
+        "staff": {
+          "value": 200,
+          "unit": "people",
+          "basis": "unspecified",
+          "sourceLabel": "Number of employers",
+          "labelNeedsClarification": true
+        }
+      },
+      "verificationState": "user_supplied_pdf_not_independently_verified",
+      "media": ["media/leo-tolstoy/1.webp", "media/leo-tolstoy/2.webp"]
+    },
+    {
+      "id": "vdnkh",
+      "sourceName": "VDNKH Park",
+      "city": "Moscow",
+      "country": "Russia",
+      "sourcePage": 5,
+      "openingYearInSource": 2023,
+      "stageInSource": "no_construction_mark_in_source",
+      "stageAsOf": null,
+      "currentStageVerified": false,
+      "readinessInSourcePercent": null,
+      "roleInSource": "rides_operator",
+      "metrics": {
+        "investment": {
+          "value": 5,
+          "unit": "million USD",
+          "basis": "unspecified",
+          "period": null
+        },
+        "visitation": {
+          "value": 120000,
+          "unit": "visits",
+          "basis": "unspecified",
+          "period": null
+        },
+        "attractions": {
+          "value": 6,
+          "unit": "rides",
+          "basis": "unspecified"
+        },
+        "staff": {
+          "value": 40,
+          "unit": "people",
+          "basis": "unspecified",
+          "sourceLabel": "Number of employers",
+          "labelNeedsClarification": true
+        }
+      },
+      "verificationState": "user_supplied_pdf_not_independently_verified",
+      "media": [
+        "media/vdnkh/1.webp",
+        "media/vdnkh/2.webp",
+        "media/vdnkh/3.webp"
+      ]
+    },
+    {
+      "id": "minny-gorodok",
+      "sourceName": "Minny Gorodok Park",
+      "city": "Vladivostok",
+      "country": "Russia",
+      "sourcePage": 6,
+      "openingYearInSource": 2026,
+      "stageInSource": "under_construction",
+      "stageAsOf": null,
+      "currentStageVerified": false,
+      "readinessInSourcePercent": 90,
+      "roleInSource": "investor_and_operator",
+      "metrics": {
+        "investment": {
+          "value": 60,
+          "unit": "million USD",
+          "basis": "unspecified",
+          "period": null
+        },
+        "visitation": {
+          "value": 1000000,
+          "unit": "visits",
+          "basis": "unspecified",
+          "period": null
+        },
+        "attractions": {
+          "value": 35,
+          "unit": "rides",
+          "basis": "unspecified"
+        },
+        "staff": {
+          "value": 800,
+          "unit": "people",
+          "basis": "unspecified",
+          "sourceLabel": "Number of employers",
+          "labelNeedsClarification": true
+        }
+      },
+      "verificationState": "user_supplied_pdf_not_independently_verified",
+      "media": ["media/minny-gorodok/1.webp", "media/minny-gorodok/2.webp"]
+    },
+    {
+      "id": "izmaylovo",
+      "sourceName": "Kremlin Izmaylovo",
+      "city": "Moscow",
+      "country": "Russia",
+      "sourcePage": 7,
+      "openingYearInSource": 2022,
+      "stageInSource": "no_construction_mark_in_source",
+      "stageAsOf": null,
+      "currentStageVerified": false,
+      "readinessInSourcePercent": null,
+      "roleInSource": "owner_and_operator",
+      "metrics": {
+        "investment": {
+          "value": 1.5,
+          "unit": "million USD",
+          "basis": "unspecified",
+          "period": null
+        },
+        "visitation": {
+          "value": 80000,
+          "unit": "visits",
+          "basis": "unspecified",
+          "period": null
+        },
+        "attractions": {
+          "value": 3,
+          "unit": "rides",
+          "basis": "unspecified"
+        },
+        "staff": {
+          "value": 20,
+          "unit": "people",
+          "basis": "unspecified",
+          "sourceLabel": "Number of employers",
+          "labelNeedsClarification": true
+        }
+      },
+      "verificationState": "user_supplied_pdf_not_independently_verified",
+      "media": ["media/izmaylovo/1.webp", "media/izmaylovo/2.webp"]
+    },
+    {
+      "id": "ohta",
+      "sourceName": "Ohta Park",
+      "city": "Saint Petersburg",
+      "country": "Russia",
+      "sourcePage": 8,
+      "openingYearInSource": 2020,
+      "stageInSource": "no_construction_mark_in_source",
+      "stageAsOf": null,
+      "currentStageVerified": false,
+      "readinessInSourcePercent": null,
+      "roleInSource": "owner_and_operator",
+      "metrics": {
+        "investment": {
+          "value": 0.8,
+          "unit": "million USD",
+          "basis": "unspecified",
+          "period": null
+        },
+        "visitation": {
+          "value": 50000,
+          "unit": "visits",
+          "basis": "unspecified",
+          "period": null
+        },
+        "attractions": {
+          "value": 1,
+          "unit": "rides",
+          "basis": "unspecified"
+        },
+        "staff": {
+          "value": 10,
+          "unit": "people",
+          "basis": "unspecified",
+          "sourceLabel": "Number of employers",
+          "labelNeedsClarification": true
+        }
+      },
+      "verificationState": "user_supplied_pdf_not_independently_verified",
+      "media": ["media/ohta/1.webp", "media/ohta/2.webp"]
+    },
+    {
+      "id": "al-haffa",
+      "sourceName": "Al Haffa Market",
+      "city": "Salalah",
+      "country": "Oman",
+      "sourcePage": 9,
+      "openingYearInSource": 2025,
+      "stageInSource": "under_construction",
+      "stageAsOf": null,
+      "currentStageVerified": false,
+      "readinessInSourcePercent": null,
+      "roleInSource": "owner_and_operator",
+      "metrics": {
+        "investment": {
+          "value": 3.8,
+          "unit": "million USD",
+          "basis": "unspecified",
+          "period": null
+        },
+        "visitation": {
+          "value": 100000,
+          "unit": "visits",
+          "basis": "unspecified",
+          "period": null
+        },
+        "attractions": {
+          "value": 3,
+          "unit": "rides",
+          "basis": "unspecified"
+        },
+        "staff": {
+          "value": 20,
+          "unit": "people",
+          "basis": "unspecified",
+          "sourceLabel": "Number of employers",
+          "labelNeedsClarification": true
+        }
+      },
+      "verificationState": "user_supplied_pdf_not_independently_verified",
+      "media": ["media/al-haffa/1.webp", "media/al-haffa/2.webp"]
+    },
+    {
+      "id": "airport",
+      "sourceName": "Airport Entertainment Zone",
+      "city": "Domodedovo",
+      "country": "Russia",
+      "sourcePage": 10,
+      "openingYearInSource": 2025,
+      "stageInSource": "under_construction",
+      "stageAsOf": null,
+      "currentStageVerified": false,
+      "readinessInSourcePercent": null,
+      "roleInSource": "owner_and_operator",
+      "metrics": {
+        "investment": {
+          "value": 1.8,
+          "unit": "million USD",
+          "basis": "unspecified",
+          "period": null
+        },
+        "visitation": {
+          "value": 100000,
+          "unit": "visits",
+          "basis": "unspecified",
+          "period": null
+        },
+        "attractions": {
+          "value": 10,
+          "unit": "activities",
+          "basis": "unspecified"
+        },
+        "staff": {
+          "value": 60,
+          "unit": "people",
+          "basis": "unspecified",
+          "sourceLabel": "Number of employers",
+          "labelNeedsClarification": true
+        }
+      },
+      "verificationState": "user_supplied_pdf_not_independently_verified",
+      "media": ["media/airport/1.webp", "media/airport/2.webp"]
+    }
+  ],
+  "ownerUpdate": {
+    "date": "2026-10-06",
+    "engineeringTeam": {
+      "engineers": 10,
+      "mechanics": 54,
+      "technicalSpecialistsTotal": 64
+    },
+    "omanContact": {
+      "name": "Khalid",
+      "whatsapp": "+96896100010"
+    }
+  }
+}
