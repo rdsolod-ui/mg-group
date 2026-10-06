@@ -17,6 +17,7 @@ import {
   X,
 } from "lucide-react";
 import register from "@/data/source-register.json";
+import RideShowcase from "./RideShowcase";
 
 const base = "/mg-group";
 const asset = (p: string) => `${base}/${p}`;
@@ -27,6 +28,7 @@ const chapters = [
   ["intro", "مجموعة إم جي", "MG Group"],
   ["proof", "الخبرة بالأرقام", "Scale"],
   ["engineering", "الهندسة والتركيب", "Engineering"],
+  ["ride-models", "نماذج الألعاب", "Ride models"],
   ["specialists", "الفريق الفني", "Specialists"],
   ["lifecycle", "دورة المشروع", "Lifecycle"],
   ["geography", "الجغرافيا", "Geography"],
@@ -223,7 +225,7 @@ function EngineeringDrawing() {
           return (
             <path
               key={i}
-              d={`M${325 + Math.cos(a) * 24} ${242 + Math.sin(a) * 24}L${325 + Math.cos(a) * 154} ${242 + Math.sin(a) * 154}`}
+              d={`M${(325 + Math.cos(a) * 24).toFixed(3)} ${(242 + Math.sin(a) * 24).toFixed(3)}L${(325 + Math.cos(a) * 154).toFixed(3)} ${(242 + Math.sin(a) * 154).toFixed(3)}`}
             />
           );
         })}
@@ -239,7 +241,7 @@ function EngineeringDrawing() {
           return (
             <path
               key={i}
-              d={`M${325 + Math.cos(a) * 155 - 11} ${242 + Math.sin(a) * 155 - 6}h22v17h-22z`}
+              d={`M${(325 + Math.cos(a) * 155 - 11).toFixed(3)} ${(242 + Math.sin(a) * 155 - 6).toFixed(3)}h22v17h-22z`}
             />
           );
         })}
@@ -261,10 +263,10 @@ function EngineeringDrawing() {
 }
 function WorldMap({ go }: { go: (i: number) => void }) {
   const points = [
-    { x: 332, y: 151, n: "Moscow", i: 6 },
-    { x: 319, y: 133, n: "Saint Petersburg", i: 10 },
-    { x: 528, y: 203, n: "Vladivostok", i: 11 },
-    { x: 373, y: 305, n: "Salalah", i: 12 },
+    { x: 332, y: 151, n: "Moscow", i: 7 },
+    { x: 319, y: 133, n: "Saint Petersburg", i: 11 },
+    { x: 528, y: 203, n: "Vladivostok", i: 12 },
+    { x: 373, y: 305, n: "Salalah", i: 13 },
   ];
   return (
     <div className="map-frame">
@@ -601,12 +603,12 @@ export default function Experience() {
           />
         </a>
         <nav aria-label="Main navigation">
-          {[1, 2, 6, 15].map((i) => (
+          {[1, 3, 7, 16].map((i) => (
             <button key={i} onClick={() => go(i)}>
               <Pair
                 value={pair(
                   chapters[i][1],
-                  i === 6 ? "Projects" : chapters[i][2],
+                  i === 7 ? "Projects" : chapters[i][2],
                 )}
               />
             </button>
@@ -778,6 +780,7 @@ export default function Experience() {
             </div>
           </>,
         )}
+        {section("ride-models", <RideShowcase paused={paused} reduced={reduced} />, "ride-models-chapter")}
         {section(
           "specialists",
           <>
@@ -861,7 +864,7 @@ export default function Experience() {
                   "The scope adapts to the project and the group’s role: owner, investor or operator.",
                 )}
               />
-              <button className="text-button" onClick={() => go(6)}>
+              <button className="text-button" onClick={() => go(7)}>
                 <Pair
                   value={pair("الدليل في مشاريعنا", "See the project evidence")}
                 />
@@ -982,7 +985,7 @@ export default function Experience() {
                   </div>
                 ))}
               </div>
-              <button className="text-button" onClick={() => go(15)}>
+              <button className="text-button" onClick={() => go(16)}>
                 <Pair value={pair("لنبدأ من موقعكم", "Start with your site")} />
                 <ArrowLeft size={20} />
               </button>

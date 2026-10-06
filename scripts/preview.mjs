@@ -14,6 +14,8 @@ const mime = {
   ".jpg": "image/jpeg",
   ".woff2": "font/woff2",
   ".txt": "text/plain; charset=utf-8",
+  ".glb": "model/gltf-binary",
+  ".wasm": "application/wasm",
 };
 http
   .createServer(async (req, res) => {
