@@ -28,7 +28,7 @@ Photographic light accents never alter documentary provenance. Masterplan images
 - Construction-labelled cases: Minny Gorodok retains 35 rides and the airport 10 activities. The owner corrected Salalah on 7 October 2026 to one wheel plus two arcade stalls, shown separately. This does not independently confirm an updated completion stage.
 - No attendance trend is drawn: the source only dates Skazka visits to 2024, and periods for other cases are unspecified.
 
-All values come from `src/data/source-register.json`. Sector angles and totals stay fixed throughout a loop; sectors move outward sequentially. Extruded SVG layers create depth without another WebGL scene. Every chart has a bilingual legend, accessible value description and keyboard-operable highlighting. A selected sector pauses automatic cycling until deselected. Shared pause, visibility and reduced-motion controls apply.
+All values come from `src/data/source-register.json`. Sector angles and totals stay fixed throughout a loop; sectors move outward sequentially. The three charts now use real Three.js geometry with a shared scene timeline, reflective materials and a static capture fallback; see [CHART-ASSEMBLY.md](CHART-ASSEMBLY.md). Every chart has a bilingual legend, accessible value description and keyboard-operable highlighting. A selected sector pauses automatic cycling until deselected. Shared pause, visibility and reduced-motion controls apply.
 
 ## Motion controls
 

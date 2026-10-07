@@ -1,0 +1,50 @@
+{
+  "operating-rides": {
+    "desktop": {
+      "src": "charts/operating-rides-desktop-d14cff777cab.webp",
+      "width": 926,
+      "height": 579,
+      "bytes": 26510,
+      "sha256": "d14cff777cab894f1043f7e59e31324717a841e757b87f32c58d9473039aeb6a"
+    },
+    "mobile": {
+      "src": "charts/operating-rides-mobile-b7e7e5a3b49f.webp",
+      "width": 503,
+      "height": 429,
+      "bytes": 15816,
+      "sha256": "b7e7e5a3b49f7dc603386f8dd59b0d8a807208e26e1c1e61eabc3ab5406d2beb"
+    }
+  },
+  "technical-team": {
+    "desktop": {
+      "src": "charts/technical-team-desktop-79b219b571d2.webp",
+      "width": 926,
+      "height": 579,
+      "bytes": 24582,
+      "sha256": "79b219b571d2e9b0e4fa86e3e8d1f51dfc7fdcfe5de17f58ed942f802da23ea3"
+    },
+    "mobile": {
+      "src": "charts/technical-team-mobile-ec55f08e2593.webp",
+      "width": 503,
+      "height": 429,
+      "bytes": 14752,
+      "sha256": "ec55f08e25933482a21143d3aa28e154837518dfc7a2dd910ec69a8e83aee24c"
+    }
+  },
+  "project-countries": {
+    "desktop": {
+      "src": "charts/project-countries-desktop-83a427a2e0e4.webp",
+      "width": 926,
+      "height": 579,
+      "bytes": 26028,
+      "sha256": "83a427a2e0e47ba562b24a816d31033303ba5fe0041cf34ee73c9c4204fdc4bd"
+    },
+    "mobile": {
+      "src": "charts/project-countries-mobile-6d8129ac7aec.webp",
+      "width": 503,
+      "height": 429,
+      "bytes": 15738,
+      "sha256": "6d8129ac7aec52db928874e5c8bafcfbc4495032fbbba57235e7c6bfdb6a0a7e"
+    }
+  }
+}

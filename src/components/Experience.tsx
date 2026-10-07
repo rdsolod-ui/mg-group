@@ -498,7 +498,7 @@ export default function Experience() {
           "proof",
           <>
             <div className="visual portfolio-chart-stage">
-              <PortfolioChart />
+              <PortfolioChart paused={motionBlocked} reduced={reduced} active={active === 1} />
             </div>
             <div className="copy">
               <Heading {...chapterCopy.proof.heading} />
@@ -571,25 +571,13 @@ export default function Experience() {
         {section(
           "specialists",
           <>
-            <div className="visual specialists-board photo-board">
-              <ChapterPhoto scene="specialists" />
-              <div className="team-total">
-                <strong dir="ltr">64</strong>
-                <Pair value={pair("متخصصاً فنياً", "Technical specialists")} />
-              </div>
-              <div className="team-type">
-                <Pair value={pair("مهندسون", "Engineers")} />
-                <strong dir="ltr">10</strong>
-              </div>
-              <div className="team-type">
-                <Pair value={pair("ميكانيكيون", "Mechanics")} />
-                <strong dir="ltr">54</strong>
-              </div>
+            <div className="visual assembly-chart-stage">
+              <TeamChart paused={motionBlocked} reduced={reduced} active={active === 4} />
             </div>
             <div className="copy">
               <Heading {...chapterCopy.specialists.heading} />
               <Pair className="body-copy" value={chapterCopy.specialists.body} />
-              <TeamChart />
+              <div className="assembly-context-photo"><ChapterPhoto scene="specialists" /></div>
               <p className="source-note">
                 <Pair
                   value={pair(
@@ -640,14 +628,13 @@ export default function Experience() {
         {section(
           "geography",
           <>
-            <div className="visual">
-              <NationalFlags />
-              <PortfolioGlobe go={go} paused={motionBlocked || active !== 6} />
+            <div className="visual assembly-chart-stage">
+              <CountryChart paused={motionBlocked} reduced={reduced} active={active === 6} />
             </div>
             <div className="copy">
               <Heading {...chapterCopy.geography.heading} />
               <Pair className="body-copy" value={chapterCopy.geography.body} />
-              <CountryChart />
+              <div className="assembly-geography-context"><NationalFlags /><PortfolioGlobe go={go} paused={motionBlocked || active !== 6} /></div>
               <p className="source-note">
                 <Pair
                   value={pair(

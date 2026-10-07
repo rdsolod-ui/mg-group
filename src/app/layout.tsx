@@ -7,6 +7,7 @@ import "./motion.css";
 import "./copywriting.css";
 import "./loading.css";
 import "./revision.css";
+import "./assembly-charts.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://marketing.parkskazka.ru"),
   title: site.title,

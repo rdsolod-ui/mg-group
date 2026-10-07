@@ -1,38 +1,9 @@
-/* Exploded sectors use the actual fixed values; only their position changes. */
-.exploded-chart .chart-body { grid-template-columns:minmax(230px,1.25fr) minmax(140px,1fr); gap:18px; }
-.exploded-chart:not(.chart-with-bars) .chart-body { grid-template-columns:260px minmax(0,1fr); }
+/* Slide revisions; data sculptures are defined in assembly-charts.css. */
 #geography .source-note { margin-top:8px; line-height:1.5; font-size:11px; }
 #geography .source-note .en { margin-top:4px; font-size:10px; }
 #specialists .source-note { margin-top:10px; font-size:11px; line-height:1.5; }
 #specialists .source-note .en { font-size:10px; margin-top:5px; }
-.exploded-chart .pie-center { padding-bottom:9%; }
-.exploded-chart .pie-center strong { font-size:clamp(42px,3.5vw,58px); }
-.pie-sector { transition:opacity .25s; }
-.pie-depth { fill:color-mix(in srgb,var(--chart-color) 57%,#14202a); stroke:color-mix(in srgb,var(--chart-color) 57%,#14202a); stroke-width:.5; }
-.pie-top { fill:var(--chart-color); stroke:color-mix(in srgb,var(--chart-color) 80%,white); stroke-width:.6; }
-.pie-highlight { stroke:none; }
-.loop-pie-sector { animation:pie-explode var(--sector-cycle) ease-in-out infinite; animation-delay:var(--sector-delay); }
-.loop-pie-label { animation:pie-label var(--sector-cycle) ease-in-out infinite; animation-delay:var(--sector-delay); }
-.exploded-chart .chart-item { padding:12px 5px; border-radius:5px; }
-.exploded-chart .chart-item .chart-language { font-size:14px; flex-direction:column; gap:3px; }
-.exploded-chart .chart-item .chart-language [lang=en] { font-size:12px; }
-.exploded-chart .chart-number { flex-direction:column; align-items:flex-end; gap:0; }
-.exploded-chart .chart-number b { font-size:27px; }
-.exploded-chart .chart-number small { font-size:11px; min-width:0; }
-.exploded-chart[data-selected=true] .loop-pie-sector,.exploded-chart[data-selected=true] .loop-pie-label { animation:none; }
-.pie-sector.is-selected { transform:translate(var(--explode-x),var(--explode-y)); }
-.pie-sector.is-muted { opacity:.4; }
-.chart-item.is-selected { background:color-mix(in srgb,var(--chart-color) 14%,transparent); }
 .portfolio-chart-stage .data-chart { border:none; margin:0; padding:0; }
-.portfolio-chart-stage .chart-body { grid-template-columns:1fr; gap:0; }
-.portfolio-chart-stage .pie-graphic { width:min(100%,430px); margin:auto; }
-.portfolio-chart-stage .pie-center strong { font-size:96px; }
-.portfolio-chart-stage .pie-center .chart-language { font-size:18px; }
-.portfolio-chart-stage .pie-center [lang=en] { font-size:14px; }
-.portfolio-chart-stage .chart-legend { display:grid; grid-template-columns:repeat(3,1fr); gap:0 16px; }
-.portfolio-chart-stage .chart-item { padding:9px 4px; }
-.portfolio-chart-stage .chart-item .chart-language { font-size:13px; }
-.portfolio-chart-stage .chart-number b { font-size:24px; }
 .proof-context { margin-top:26px; }
 #geography > .visual > .national-flags { justify-content:center; margin:0 0 12px; }
 .is-present #geography .globe-stage { height:clamp(230px,calc(100dvh - 460px),410px); }
@@ -47,51 +18,14 @@
 .experience .lifecycle-lines article:after { animation-play-state:paused; }
 .scope-note { display:flex; flex-direction:column; gap:5px; padding:12px 0; border-top:1px solid var(--line); font-size:13px; }
 .scope-note [lang=en] { color:var(--muted); font-size:12px; }
-@keyframes pie-explode { 0%,3%,26%,100% { transform:translate(0,0); } 9%,20% { transform:translate(var(--explode-x),var(--explode-y)); } }
-@keyframes pie-label { 0%,3%,26%,100% { background:transparent; } 9%,20% { background:color-mix(in srgb,var(--chart-color) 15%,transparent); } }
 @keyframes lifecycle-fill { 0% { transform:scaleX(0); opacity:1; } 22%,24% { transform:scaleX(1); opacity:1; } 26%,100% { transform:scaleX(1); opacity:0; } }
 @media (min-width:901px) and (max-height:800px) {
- .exploded-chart .chart-body { grid-template-columns:minmax(210px,1.2fr) minmax(125px,1fr); gap:10px; }
- .exploded-chart .chart-item { padding:7px 4px; }
- .exploded-chart .chart-item .chart-language { font-size:12px; }
- .exploded-chart .chart-item .chart-language [lang=en] { font-size:11px; }
- .exploded-chart .chart-number b { font-size:24px; }
- .portfolio-chart-stage .chart-body { grid-template-columns:1fr; }
- .portfolio-chart-stage .pie-graphic { width:290px; }
- .portfolio-chart-stage .pie-center strong { font-size:56px; }
- .portfolio-chart-stage .pie-center .chart-language { font-size:13px; }
- .portfolio-chart-stage .pie-center [lang=en] { font-size:11px; }
  .technical-visual .engineering-render { max-height:400px; }
 }
-@media (max-width:900px) {
- .exploded-chart .chart-body { grid-template-columns:1fr; gap:0; }
- .exploded-chart:not(.chart-with-bars) .chart-body { grid-template-columns:1fr; }
- .data-chart.exploded-chart .pie-graphic { width:min(100%,300px); justify-self:center; }
- .exploded-chart .pie-graphic { width:min(100%,300px); margin:auto; }
- .exploded-chart .pie-center strong { font-size:66px; }
- .exploded-chart .chart-legend { display:grid; grid-template-columns:1fr 1fr; gap:0 15px; }
- .exploded-chart .chart-item { padding:10px 3px; }
- .exploded-chart .chart-item .chart-language { font-size:13px; }
- .exploded-chart .chart-number b { font-size:25px; }
- .portfolio-chart-stage .pie-center strong { font-size:80px; }
- .portfolio-chart-stage .chart-legend { grid-template-columns:1fr 1fr; }
-}
 @media (min-width:2400px) {
- .exploded-chart .chart-body { grid-template-columns:440px minmax(270px,1fr); gap:35px; }
- .exploded-chart:not(.chart-with-bars) .chart-body { grid-template-columns:440px minmax(270px,1fr); }
- .exploded-chart .pie-center strong { font-size:110px; }
- .exploded-chart .chart-item { padding:20px 8px; }
- .exploded-chart .chart-item .chart-language { font-size:25px; }
- .exploded-chart .chart-item .chart-language [lang=en] { font-size:21px; }
- .exploded-chart .chart-number b { font-size:46px; }
- .exploded-chart .chart-number small { font-size:20px; }
- .portfolio-chart-stage .chart-body { grid-template-columns:1fr; }
- .portfolio-chart-stage .pie-graphic { width:690px; }
- .portfolio-chart-stage .pie-center strong { font-size:160px; }
  .technical-visual .engineering-render { max-height:880px; }
  .is-present #geography .globe-stage { height:850px; }
 }
 @media (prefers-reduced-motion:reduce) {
- .loop-pie-sector,.loop-pie-label,.lifecycle-lines article:after { animation:none!important; }
- .pie-sector { transition:none; }
+ .lifecycle-lines article:after { animation:none!important; }
 }

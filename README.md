@@ -71,4 +71,6 @@ The wheel page has no current video button; Typhoon has no confirmed matching pa
 
 ## Loading and constrained connections
 
+The scale, technical-team and geography chapters use [three-dimensional data sculptures](docs/CHART-ASSEMBLY.md), with synchronized assembly motion, accessible Arabic/English source tables and static alternatives for constrained connections.
+
 See [performance and loading behavior](docs/PERFORMANCE.md) for responsive delivery assets, data-saving controls, media timeouts, server caching, and the browser verification protocol.
