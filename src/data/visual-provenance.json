@@ -539,5 +539,65 @@
         "sha256": "9b41c0583de3ca8e96967337fa4bbafc6a32cacefd9fda569c0c732fedb0126b"
       }
     ]
+  },
+  {
+    "id": "blagoveshchensk",
+    "kind": "generated_illustration",
+    "sourceFile": "exec-dcc62647-d7dc-447d-bfa1-042e2e553672.png",
+    "sourceSHA256": "6c80a40901e02e530533deb6573a5812636a30255f85be4a171854c38b555bfe",
+    "description": "Generated prospective concept of one observation wheel. Not built; surrounding layout, height and construction details are illustrative, not an approved design.",
+    "variants": [
+      {
+        "path": "visuals/v2/blagoveshchensk.webp",
+        "width": 1672,
+        "height": 941,
+        "bytes": 303542,
+        "sha256": "f2c8e24c003a9bc16c8f5c7e89dd1241cd005e51767023a2f440589943cdf97d"
+      },
+      {
+        "path": "visuals/v2/blagoveshchensk-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 126792,
+        "sha256": "1b80bea1d2808c125929b9221807c55f7fc8084729b0231e413cf6a7dcdfdfe5"
+      },
+      {
+        "path": "visuals/v2/blagoveshchensk-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 60392,
+        "sha256": "9d14b231903675249c87b2e7e366773b8dc7efb29dfa8ace4f812cf54ada73fb"
+      }
+    ]
+  },
+  {
+    "id": "salalah-creative",
+    "kind": "generated_illustration",
+    "sourceFile": "exec-ec71f3d4-683a-45a5-9584-088b430e70b4.png",
+    "sourceSHA256": "40a0a9c6043e349b84cb5dcdb24b5aa47121a8e182ba20e64888ed8e68ef0e3f",
+    "description": "AI lighting interpretation of the original Salalah project drone photo salalah-coast.webp. Original wheel geometry and site context retained as reference; generated creative, not documentary photography.",
+    "variants": [
+      {
+        "path": "visuals/v2/salalah-creative.webp",
+        "width": 1672,
+        "height": 941,
+        "bytes": 268054,
+        "sha256": "b839b01e9e07b483f10b55cf133a2f4c29b2ffde89e3575a6e7a8d142f242145"
+      },
+      {
+        "path": "visuals/v2/salalah-creative-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 115430,
+        "sha256": "83bc9fb46562af6102f00e19ec563703b57b200399da421962860d211c41b0ec"
+      },
+      {
+        "path": "visuals/v2/salalah-creative-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 55604,
+        "sha256": "7af6985f50fe74f8fa2cb541699fb28628eb5d751ee7ebde91f0d0949890e161"
+      }
+    ]
   }
 ]

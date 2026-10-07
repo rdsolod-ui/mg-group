@@ -50,7 +50,7 @@ The chapter menu, evidence panel and gallery receive matching introductory headi
 
 ## Evidence boundaries
 
-- 95 rides is the five-case aggregate 60 + 27 + 6 + 1 + 1, within the eight-project portfolio. It does not include construction-stage projects or airport activities.
+- 95 rides is the five-case aggregate 60 + 27 + 6 + 1 + 1, within the nine-project portfolio. It does not include construction-stage projects, airport activities or the planned Blagoveshchensk wheel.
 - 10 engineers and 54 mechanics are the owner-supplied technical team, not total company headcount or per-project staffing.
 - Skazka's 1.5m figure is visits in 2024, not unique visitors or an annual forecast.
 - Construction-stage labels, unspecified periods and undated readiness remain visible. The Al Haffa wording describes the source's owner-operator role without asserting a verified opening.

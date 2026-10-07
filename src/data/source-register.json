@@ -62,7 +62,13 @@
       "media": [
         "media/skazka/1.webp",
         "media/skazka/2.webp"
-      ]
+      ],
+      "ownerCoordinates": {
+        "lat": 55.77149167507881,
+        "lng": 37.43412735237241,
+        "source": "Direct owner message",
+        "asOf": "2026-10-07"
+      }
     },
     {
       "id": "leo-tolstoy",
@@ -106,7 +112,13 @@
       "media": [
         "media/leo-tolstoy/1.webp",
         "media/leo-tolstoy/2.webp"
-      ]
+      ],
+      "ownerCoordinates": {
+        "lat": 55.893357043936994,
+        "lng": 37.45923248637098,
+        "source": "Direct owner message",
+        "asOf": "2026-10-07"
+      }
     },
     {
       "id": "vdnkh",
@@ -151,7 +163,13 @@
         "media/vdnkh/1.webp",
         "media/vdnkh/2.webp",
         "media/vdnkh/3.webp"
-      ]
+      ],
+      "ownerCoordinates": {
+        "lat": 55.82675421281442,
+        "lng": 37.62643620586514,
+        "source": "Direct owner message",
+        "asOf": "2026-10-07"
+      }
     },
     {
       "id": "minny-gorodok",
@@ -195,7 +213,13 @@
       "media": [
         "media/minny-gorodok/1.webp",
         "media/minny-gorodok/2.webp"
-      ]
+      ],
+      "ownerCoordinates": {
+        "lat": 43.12176756665061,
+        "lng": 131.94065326536736,
+        "source": "Direct owner message",
+        "asOf": "2026-10-07"
+      }
     },
     {
       "id": "izmaylovo",
@@ -246,6 +270,12 @@
         "observationWheels": 1,
         "arcadeStalls": 0,
         "source": "Direct owner correction in project conversation"
+      },
+      "ownerCoordinates": {
+        "lat": 55.7946795763556,
+        "lng": 37.74847414233548,
+        "source": "Direct owner message",
+        "asOf": "2026-10-07"
       }
     },
     {
@@ -290,7 +320,13 @@
       "media": [
         "media/ohta/1.webp",
         "media/ohta/2.webp"
-      ]
+      ],
+      "ownerCoordinates": {
+        "lat": 60.12729734811739,
+        "lng": 30.44686841004293,
+        "source": "Direct owner message",
+        "asOf": "2026-10-07"
+      }
     },
     {
       "id": "al-haffa",
@@ -345,6 +381,12 @@
           "Shooting gallery",
           "Balloon darts"
         ]
+      },
+      "ownerCoordinates": {
+        "lat": 17.000459845300245,
+        "lng": 54.104987453823455,
+        "source": "Direct owner message",
+        "asOf": "2026-10-07"
       }
     },
     {
@@ -389,7 +431,58 @@
       "media": [
         "media/airport/1.webp",
         "media/airport/2.webp"
-      ]
+      ],
+      "ownerCoordinates": {
+        "lat": 55.41437426053603,
+        "lng": 37.90019188081303,
+        "source": "Direct owner message",
+        "asOf": "2026-10-07"
+      }
+    },
+    {
+      "id": "blagoveshchensk",
+      "sourceName": "Blagoveshchensk Park observation wheel",
+      "city": "Blagoveshchensk",
+      "country": "Russia",
+      "sourcePage": null,
+      "openingYearInSource": null,
+      "stageInSource": "planned",
+      "stageAsOf": "2026-10-07",
+      "currentStageVerified": true,
+      "readinessInSourcePercent": null,
+      "roleInSource": "not_specified",
+      "metrics": {
+        "attractions": {
+          "value": 1,
+          "unit": "planned observation wheel",
+          "basis": "owner_update_2026-10-07"
+        },
+        "investment": {
+          "value": null,
+          "unit": "million USD",
+          "basis": "not_supplied",
+          "period": null
+        },
+        "visitation": {
+          "value": null,
+          "unit": "visits",
+          "basis": "not_supplied",
+          "period": null
+        },
+        "staff": {
+          "value": null,
+          "unit": "people",
+          "basis": "not_supplied"
+        }
+      },
+      "verificationState": "owner_confirmed_planned_not_built",
+      "media": [],
+      "ownerCoordinates": {
+        "lat": 50.25663240061146,
+        "lng": 127.53443384787141,
+        "source": "Direct owner message",
+        "asOf": "2026-10-07"
+      }
     }
   ],
   "ownerUpdate": {

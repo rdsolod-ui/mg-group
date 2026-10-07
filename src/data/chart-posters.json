@@ -33,18 +33,18 @@
   },
   "project-countries": {
     "desktop": {
-      "src": "charts/project-countries-desktop-83a427a2e0e4.webp",
+      "src": "charts/project-countries-desktop-596331080cea.webp",
       "width": 926,
       "height": 579,
-      "bytes": 26028,
-      "sha256": "83a427a2e0e47ba562b24a816d31033303ba5fe0041cf34ee73c9c4204fdc4bd"
+      "bytes": 25918,
+      "sha256": "596331080cea3f9c7f055f82fcf2cfd624fec78ab380cdd37229ed7bcf7705a8"
     },
     "mobile": {
-      "src": "charts/project-countries-mobile-6d8129ac7aec.webp",
+      "src": "charts/project-countries-mobile-133844a84f9e.webp",
       "width": 503,
-      "height": 429,
-      "bytes": 15738,
-      "sha256": "6d8129ac7aec52db928874e5c8bafcfbc4495032fbbba57235e7c6bfdb6a0a7e"
+      "height": 503,
+      "bytes": 15642,
+      "sha256": "133844a84f9e5368ed2c1c359618399933b7d3ca6efaedefc14f1885a476ab8d"
     }
   }
 }

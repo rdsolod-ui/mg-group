@@ -6,6 +6,7 @@ const generated = (id: string, name: string): VisualAsset => ({
   en: 'Generated masterplan visualization. Interpretive layout, not an as-built plan.',
 });
 export const projectVisuals: Record<string, VisualAsset[]> = {
+  blagoveshchensk: [{...generated('blagoveshchensk', 'Blagoveshchensk planned observation wheel'), ar:'تصور مولّد لعجلة مخططة. لم تُبنَ بعد؛ التصميم وتوزيع الموقع توضيحيان.', en:'Generated concept of a planned wheel. Not yet built; design and site layout are illustrative.'}],
   skazka: [generated('skazka', 'Skazka Park')],
   'leo-tolstoy': [generated('leo-tolstoy', 'Leo Tolstoy Park')],
   vdnkh: [generated('vdnkh', 'VDNKH Attractions')],
@@ -17,6 +18,7 @@ export const projectVisuals: Record<string, VisualAsset[]> = {
     {src: image('salalah-coast'), alt: 'Close original drone frame of Salalah Eye showing the full wheel, hub and cabins', kind: 'photo', ar: 'صورة حقيقية من أرشيف المشروع — صلالة، سبتمبر ٢٠٢٦.', en: 'Original project photography — Salalah, September 2026.'},
     {src: image('salalah-dawn'), alt: 'Original dawn drone photograph of Salalah Eye', kind: 'photo', ar: 'صورة حقيقية من أرشيف المشروع — عند الفجر.', en: 'Original project photography — dawn.'},
     {src: image('salalah-palms'), alt: 'Original drone photograph of the wheel and Salalah palm groves', kind: 'photo', ar: 'صورة حقيقية من أرشيف المشروع — الساحل والنخيل.', en: 'Original project photography — coast and palms.'},
+    {src: image('salalah-creative'), alt: 'Salalah Eye sunset creative based on original project photography', kind: 'generated', ar: 'تصوّر إبداعي مولّد اعتماداً على صورة حقيقية للمشروع؛ الإضاءة معالجة فنياً.', en: 'Generated creative based on an original project photograph; lighting is an artistic interpretation.'},
   ],
 };
 export const salalahProgramme = [

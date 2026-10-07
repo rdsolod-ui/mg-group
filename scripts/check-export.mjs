@@ -19,6 +19,7 @@ const ids = [
   "minny-gorodok",
   "al-haffa",
   "airport",
+  "blagoveshchensk",
   "partnership",
   "contact",
 ];
@@ -50,7 +51,7 @@ for (const record of visualRecords) {
   }
 }
 if (html.includes('media/al-haffa/1.webp') || html.includes('media/skazka/1.webp')) throw Error('Legacy case imagery is still rendered');
-if (!html.includes('Original project photography') || !html.includes('Generated masterplan visualization')) throw Error('Visual provenance captions missing');
+if (!html.includes('Generated creative based on an original project photograph') || !html.includes('Generated masterplan visualization')) throw Error('Visual provenance captions missing');
 const filmRoot=path.join(root,'films/salalah');
 for (const resolution of [360,720,1080]) {
   const playlist=fs.readFileSync(path.join(filmRoot,`${resolution}p/index.m3u8`),'utf8');

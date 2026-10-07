@@ -7,7 +7,7 @@
     "build": "next build --webpack",
     "typecheck": "tsc --noEmit",
     "preview": "node scripts/preview.mjs",
-    "check:export": "node scripts/check-export.mjs && node scripts/check-seo.mjs && node scripts/check-performance.mjs && node scripts/check-charts.mjs",
+    "check:export": "node scripts/check-export.mjs && node scripts/check-seo.mjs && node scripts/check-performance.mjs && node scripts/check-charts.mjs && node scripts/check-locations.mjs",
     "check:seo": "node scripts/check-seo.mjs",
     "assets:performance": "node scripts/optimize-media.mjs",
     "assets:icons": "node scripts/build-brand-assets.mjs",

@@ -5,17 +5,17 @@ The narrative begins with engineering and technical delivery, then presents proj
 ## Chapters
 
 1. MG Group: from engineering to experience.
-2. Evidence at scale: 95 rides in five case studies, eight portfolio projects, two countries; Skazka visitation for 2024 separately.
+2. Evidence at scale: 95 rides in five operating case studies, nine portfolio projects, two countries; Skazka visitation for 2024 separately.
 3. Engineering, installation, technical launch and maintenance.
 4. Seven attraction cards: five official park films, sourced installation figures and six source-derived design models.
 5. Engineers, mechanics and installation/operations teams.
 6. Strategy/design → engineering/installation → launch → operation/maintenance.
 7. Russia–Oman portfolio geography, with an accessible location list.
-8–15. Skazka, Leo Tolstoy, VDNKH, Izmaylovo, Ohta, Minny Gorodok, Al Haffa and Domodedovo.
-16. Cooperation scopes and AL-SHAHIQ within the group.
-17. Khalid's Oman contact card with WhatsApp QR, downloadable vCard, Moscow head office and a project brief.
+8–16. Skazka, Leo Tolstoy, VDNKH, Izmaylovo, Ohta, Minny Gorodok, Al Haffa, Domodedovo and the planned Blagoveshchensk wheel.
+17. Cooperation scopes and AL-SHAHIQ within the group.
+18. Khalid's Oman contact card with WhatsApp QR, downloadable vCard, Moscow head office and a project brief.
 
-Each case uses a common component: complete perspective masterplan, location, name, scope statement, large metrics, group role, opening year as listed and stage/source note. Construction-stage visitation figures are not displayed as achieved results. Galleries open on user action with 100–300% detail inspection. Salalah has separate site-photo, site-film, development-concept and programme-plan modes.
+Each case uses a common component: labelled creative, exact GPS link, name, scope statement, large metrics, group role when supplied, opening year as listed and stage/source note. Construction-stage and planned-project visitation figures are not displayed as achieved results. Galleries open on user action with 100–300% detail inspection. Salalah has separate creative, original site-photo and site-film tabs. The optional Google map flight and its configuration boundary are documented in [PARK-FLIGHTS.md](PARK-FLIGHTS.md).
 
 ## Implementation
 

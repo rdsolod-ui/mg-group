@@ -45,8 +45,8 @@ export const chapterCopy: Record<string, ChapterCopy> = {
   geography: {
     heading: { ar: "من موسكو إلى صلالة.", en: "From Moscow to Salalah." },
     body: {
-      ar: "ثمانية مشاريع. ستة مواقع. من روسيا إلى عُمان.",
-      en: "Eight projects. Six locations. Russia to Oman.",
+      ar: "تسعة مشاريع. إحداثيات دقيقة. من روسيا إلى عُمان.",
+      en: "Nine projects. Exact locations. Russia to Oman.",
     },
   },
   skazka: {
@@ -104,6 +104,10 @@ export const chapterCopy: Record<string, ChapterCopy> = {
       ar: "عشرة أنشطة ترفيهية في برنامج دوموديدوفو. المشروع قيد الإنشاء وفق المحفظة المقدّمة.",
       en: "Ten entertainment activities in the Domodedovo programme. Listed under construction in the supplied portfolio.",
     },
+  },
+  blagoveshchensk: {
+    heading: { ar: "وجهة جديدة. منظور يرتفع.", en: "A new destination. A higher perspective." },
+    body: { ar: "عجلة مشاهدة مخططة في بلاغوفيشتشينسك. مشروع جديد في المحفظة، لم يُبنَ بعد.", en: "A planned observation wheel in Blagoveshchensk. A new portfolio project, not yet built." },
   },
   partnership: {
     heading: { ar: "رؤيتكم. وخبرتنا على أرض الواقع.", en: "Your vision. Our hands-on expertise." },

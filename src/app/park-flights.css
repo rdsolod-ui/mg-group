@@ -1,0 +1,21 @@
+.park-flight { width:100%; min-width:0; }
+.park-flight-stage { position:relative; isolation:isolate; aspect-ratio:16/9; overflow:hidden; background:#091e2d; border-radius:8px; }
+.park-flight-creative { position:absolute; inset:0; z-index:0; opacity:var(--flight-fade,1); }
+.park-flight-creative > .masterplan-image-button,.park-flight-creative .masterplan-image-button > .progressive-media { height:100%; max-height:none!important; aspect-ratio:auto!important; }
+.park-flight-creative .masterplan-image-button > .progressive-media { object-fit:contain; }
+.park-flight-map { position:absolute; z-index:1; inset:0; visibility:hidden; }
+.park-flight-map.is-visible { visibility:visible; }
+.park-flight-google { height:100%; width:100%; }
+.park-flight-pin { position:absolute; z-index:2; left:50%; top:50%; transform:translate(-50%,-50%); color:#fff; filter:drop-shadow(0 1px 3px #000); pointer-events:none; }
+.park-flight-loading { position:absolute; inset:0; display:grid; place-items:center; z-index:2; background:#102d403b; pointer-events:none; }
+.park-flight-heading { position:absolute; z-index:2; top:16px; left:18px; display:flex; flex-direction:column; gap:3px; max-width:75%; color:#fff; font-size:14px; text-shadow:0 1px 5px #000; pointer-events:none; }
+.park-flight-heading [lang=en] { font:400 11px 'IBM Plex Sans'; }
+.park-flight-tools { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px 16px; margin-top:9px; direction:ltr; }
+.park-flight-tools a,.park-flight-tools button { display:flex; align-items:center; gap:7px; color:var(--muted); font:400 11px 'IBM Plex Sans'; min-height:36px; }
+.park-flight-tools button { color:var(--accent); }
+.park-flight-tools button small { font-size:10px; }
+.park-flight-tools a:focus-visible,.park-flight-tools button:focus-visible { outline:2px solid var(--accent); outline-offset:4px; }
+.park-flight-tools a:hover { color:var(--accent); }
+@media(min-width:901px) and (max-height:800px) { .park-flight-stage { max-height:265px; aspect-ratio:auto; height:265px; } .park-flight-tools { margin-top:4px; } }
+@media(max-width:900px) { .park-flight-tools { gap:5px; } .park-flight-tools a { font-size:10px; } }
+@media(min-width:2400px) { .park-flight-heading { top:30px; left:32px; font-size:27px; } .park-flight-heading [lang=en] { font-size:22px; } .park-flight-tools a,.park-flight-tools button { font-size:22px; min-height:54px; } .park-flight-tools button small { font-size:19px; } }

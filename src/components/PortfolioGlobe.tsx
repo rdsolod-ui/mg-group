@@ -28,7 +28,7 @@ export default function PortfolioGlobe({go,paused}:{go:(n:number)=>void;paused:b
       {!loaded&&<div className="model-load-panel"><button className="media-load-button" disabled={!network.online} onClick={()=>{setError(false);setAttempt(v=>v+1);setLoaded(true);}}><span lang="ar">تحميل الخريطة التفاعلية</span><span lang="en">{error?'Retry interactive globe':'Load interactive globe'}</span></button></div>}
     </div>
     <p className="globe-help"><span lang="ar" dir="rtl">اسحب لتدوير الكرة الأرضية</span><span lang="en">Drag to rotate the globe</span></p>
-    <div className="map-links">{[['Moscow',7],['Saint Petersburg',11],['Vladivostok',12],['Salalah',13]].map(([name,id])=><button key={name} onClick={()=>go(Number(id))}>{name}</button>)}</div>
-    <p className="map-note" lang="en">NASA/GSFC, Reto Stöckli · July 2004 satellite composite. City-level locations.</p>
+    <div className="map-links">{[['Moscow',7],['Saint Petersburg',11],['Vladivostok',12],['Salalah',13],['Blagoveshchensk',15]].map(([name,id])=><button key={name} onClick={()=>go(Number(id))}>{name}</button>)}</div>
+    <p className="map-note" lang="en">NASA/GSFC, Reto Stöckli · July 2004 satellite composite. Park GPS supplied by the owner.</p>
   </div>;
 }

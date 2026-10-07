@@ -50,6 +50,7 @@ const chapters = [
   ["minny-gorodok", "ميني غورودوك", "Minny Gorodok"],
   ["al-haffa", "سوق الحافة", "Al Haffa"],
   ["airport", "دوموديدوفو", "Domodedovo"],
+  ["blagoveshchensk", "بلاغوفيشتشينسك", "Blagoveshchensk"],
   ["partnership", "التعاون", "Partnership"],
   ["contact", "المكتب الرئيسي", "Head office"],
 ];
@@ -100,6 +101,11 @@ const caseCopy: Record<
     name: pair("منطقة الترفيه في المطار", "Airport Entertainment Zone"),
     place: pair("دوموديدوفو، روسيا", "Domodedovo, Russia"),
     role: pair("مالك ومشغّل", "Owner & operator"),
+  },
+  blagoveshchensk: {
+    name: pair("عجلة بلاغوفيشتشينسك", "Blagoveshchensk observation wheel"),
+    place: pair("بلاغوفيشتشينسك، روسيا", "Blagoveshchensk, Russia"),
+    role: pair("مشروع مخطط", "Planned project"),
   },
 };
 function Pair({
@@ -168,16 +174,21 @@ function CaseStudy({
   project,
   onGallery,
   paused,
+  active,
+  reduced,
 }: {
   project: Project;
   onGallery: (p: Project, image?: number) => void;
   paused: boolean;
+  active: boolean;
+  reduced: boolean;
 }) {
   const c = caseCopy[project.id];
   const construction = project.stageInSource === "under_construction";
+  const planned = project.stageInSource === "planned";
   return (
     <>
-      <ProjectVisual id={project.id} paused={paused} onExpand={(index) => onGallery(project, index)} />
+      <ProjectVisual id={project.id} paused={paused} active={active} reduced={reduced} onExpand={(index) => onGallery(project, index)} />
       <div className="copy case-copy">
         <p className="location case-identity">
           <Pair value={c.name} />
@@ -188,16 +199,16 @@ function CaseStudy({
         <div className="case-metrics">
           <Metric
             value={String(project.metrics.attractions.value)}
-            ar={project.id === "airport" ? "أنشطة" : ['al-haffa','izmaylovo'].includes(project.id) ? "عجلة مشاهدة" : "ألعاب"}
-            en={project.id === "airport" ? "Activities" : ['al-haffa','izmaylovo'].includes(project.id) ? "Observation wheel" : "Rides"}
+            ar={planned ? "عجلة مخططة" : project.id === "airport" ? "أنشطة" : ['al-haffa','izmaylovo'].includes(project.id) ? "عجلة مشاهدة" : "ألعاب"}
+            en={planned ? "Planned wheel" : project.id === "airport" ? "Activities" : ['al-haffa','izmaylovo'].includes(project.id) ? "Observation wheel" : "Rides"}
           />
           {project.id === 'al-haffa' && <Metric value="2" ar="نقطتا ألعاب" en="Arcade stalls" detail="Shooting gallery · Balloon darts" />}
-          <Metric
+          {project.metrics.investment.value != null && <Metric
             value={`$${project.metrics.investment.value}m`}
             ar="استثمارات معلنة"
             en="Reported investment"
-          />
-          {!construction && (
+          />}
+          {!construction && !planned && project.metrics.visitation.value != null && (
             <Metric
               value={
                 project.metrics.visitation.value >= 1000000
@@ -218,7 +229,7 @@ function CaseStudy({
           <Pair value={c.role} />
           <span dir="ltr">{project.openingYearInSource}</span>
         </div>
-        {construction ? (
+        {planned ? <p className="stage-note"><Pair value={pair("مشروع مخطط، لم يُبنَ بعد. تصور توضيحي؛ الأبعاد والميزانية وموعد الافتتاح لم تُحدّد.", "Planned, not yet built. Illustrative concept; dimensions, budget and opening date are not specified.")} /></p> : construction ? (
           <p className="stage-note">
             <Pair
               value={pair(
@@ -430,7 +441,7 @@ export default function Experience() {
           />
         </a>
         <nav aria-label="Main navigation">
-          {[1, 3, 7, 16].map((i) => (
+          {[1, 3, 7, chapters.length - 1].map((i) => (
             <a key={i} href={`#${chapters[i][0]}`} onClick={(event) => {
               if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
               event.preventDefault(); go(i);
@@ -484,7 +495,7 @@ export default function Experience() {
                   <ChevronDown />
                 </button>
                 <span className="hero-eight" dir="ltr">
-                  <b>8</b>
+                  <b>{register.projects.length}</b>
                   <Pair
                     value={pair("مشاريع في المحفظة", "Portfolio projects")}
                   />
@@ -503,7 +514,7 @@ export default function Experience() {
             <div className="copy">
               <Heading {...chapterCopy.proof.heading} />
               <Pair className="body-copy" value={chapterCopy.proof.body} />
-              <div className="proof-small proof-context"><Metric value="8" ar="مشاريع" en="Projects" /><Metric value="2" ar="بلدان" en="Countries" /></div>
+              <div className="proof-small proof-context"><Metric value={String(register.projects.length)} ar="مشاريع" en="Projects" /><Metric value="2" ar="بلدان" en="Countries" /></div>
               <div className="single-proof">
                 <strong dir="ltr">1.5m</strong>
                 <Pair
@@ -516,8 +527,8 @@ export default function Experience() {
               <p className="source-note">
                 <Pair
                   value={pair(
-                    "البيانات: العرض التعريفي وتحديث المالك في ٧ أكتوبر ٢٠٢٦. لا يشمل الإجمالي المشاريع المصنّفة قيد الإنشاء وأنشطة المطار.",
-                    "Corporate presentation and owner update, 7 October 2026. Total excludes projects listed under construction and airport activities.",
+                    "البيانات: العرض التعريفي وتحديث المالك في ٧ أكتوبر ٢٠٢٦. لا يشمل الإجمالي المشاريع قيد الإنشاء والمخططة وأنشطة المطار.",
+                    "Corporate presentation and owner update, 7 October 2026. Ride total excludes construction-stage and planned projects, and airport activities.",
                   )}
                 />
               </p>
@@ -638,8 +649,8 @@ export default function Experience() {
               <p className="source-note">
                 <Pair
                   value={pair(
-                    "٨ مشاريع في ٦ مواقع، وفق المحفظة المقدّمة.",
-                    "8 projects in 6 locations, as listed in the supplied portfolio.",
+                    "٩ مشاريع، بما فيها بلاغوفيشتشينسك المخطط. الإحداثيات مقدّمة من المالك.",
+                    "9 projects, including planned Blagoveshchensk. GPS points supplied by the owner.",
                   )}
                 />
               </p>
@@ -655,6 +666,7 @@ export default function Experience() {
           "minny-gorodok",
           "al-haffa",
           "airport",
+          "blagoveshchensk",
         ].map((id) =>
           section(
             id,
@@ -662,6 +674,8 @@ export default function Experience() {
               project={register.projects.find((p) => p.id === id)!}
               onGallery={enterGallery}
               paused={mediaPaused}
+              active={chapters[active][0] === id}
+              reduced={reduced}
             />,
             "case-study",
           ),
@@ -715,7 +729,7 @@ export default function Experience() {
                   </div>
                 ))}
               </div>
-              <button className="text-button" onClick={() => go(16)}>
+              <button className="text-button" onClick={() => go(chapters.length - 1)}>
                 <Pair value={pair("ناقشوا مشروعكم معنا", "Discuss your project")} />
                 <ArrowLeft size={20} />
               </button>
@@ -940,8 +954,8 @@ export default function Experience() {
         <Pair
           className="body-copy"
           value={pair(
-            "زيارة سكازكا تخص عام ٢٠٢٤. فترات الزيارات الأخرى غير مذكورة. المشاريع الثلاثة قيد الإنشاء تُعرض بهذه الصفة حتى تحديث حالتها.",
-            "Skazka visitation refers to 2024. Other visitation periods are unspecified. The three construction-stage projects retain that label until their status is updated.",
+            "زيارة سكازكا تخص عام ٢٠٢٤. فترات الزيارات الأخرى غير مذكورة. المشاريع الثلاثة قيد الإنشاء تُعرض بهذه الصفة حتى تحديث حالتها. أكد المالك أن مشروع بلاغوفيشتشينسك مخطط ولم يُبنَ بعد؛ عجلته غير مدرجة في إجمالي الألعاب التشغيلية.",
+            "Skazka visitation refers to 2024. Other visitation periods are unspecified. The three construction-stage projects retain that label until their status is updated. Blagoveshchensk is owner-confirmed as planned and not yet built; its wheel is excluded from the operating total.",
           )}
         />
         <Pair

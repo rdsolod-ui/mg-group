@@ -1,6 +1,6 @@
 # Verification
 
-Build, TypeScript and exported-file checks are required before release. `check:export` checks seventeen chapters, paths, all-vector logo structure, six self-contained compressed GLBs, assembly animation clips, posters and local decoders, then generates a full SHA-256 file manifest.
+Build, TypeScript and exported-file checks are required before release. `check:export` checks eighteen chapters, nine exact owner GPS points, planned-versus-operating scope, paths, all-vector logo structure, six self-contained compressed GLBs, assembly animation clips, posters and local decoders, then generates a full SHA-256 file manifest. Google Maps control tests with a fixture do not replace live API-key, imagery and coverage verification.
 
 Browser acceptance covers desktop and mobile presentation modes, navigation, galleries, theme changes, source notes, pause, keyboard controls and absence of horizontal overflow. Representative visual review must inspect the hero, engineering, metrics, specialists and project case layouts.
 

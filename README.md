@@ -8,7 +8,7 @@ MG Group is the primary brand. AL-SHAHIQ is presented as a company within the gr
 
 Intended public route: [MG Group](https://marketing.parkskazka.ru/mg-group/).
 
-The presentation contains seventeen chapters: introduction, scale, engineering, interactive ride models, specialists, lifecycle, geography, eight project case studies, partnership and head office. It supports continuous scrolling, a chapter menu, a Present mode, keyboard navigation, light/dark themes, motion pause and system reduced-motion preferences.
+The presentation contains eighteen chapters: introduction, scale, engineering, interactive ride models, specialists, lifecycle, geography, nine project case studies, partnership and head office. It supports continuous scrolling, a chapter menu, a Present mode, keyboard navigation, light/dark themes, motion pause and system reduced-motion preferences.
 
 The primary logo is a new geometric MG monogram with a structural M and an open G. Its navy and copper palette combines technical clarity with the human side of amusement destinations. The main signature, white signature, monochrome version and compact mark are true SVG paths with transparent backgrounds. Lettering is outlined; no installed font is required to display the files. The AL-SHAHIQ supporting logo uses a reworked mountain mark and broad-nib Arabic Ruqaa lettering converted to paths.
 
@@ -33,8 +33,8 @@ Portfolio facts and images originate in the ten-page MG GROUP CORP presentation 
 
 The final Arabic/English headlines, ride hooks and editorial boundaries are documented in [the copy deck](docs/COPY-DECK.md). `src/data/presentation-copy.ts` holds the shared presentation copy.
 
-- Eight projects and two countries are listed in the source.
-- The 97-ride aggregate is arithmetic across Skazka, Leo Tolstoy, VDNKH, Izmaylovo and Ohta: 60 + 27 + 6 + 3 + 1. Three projects marked under construction and airport activities are excluded.
+- Eight projects and two countries are listed in the original PDF. The owner's 7 October 2026 update adds a ninth, planned observation wheel in Blagoveshchensk, not yet built.
+- The 95-ride aggregate follows the owner's corrected Izmaylovo scope: 60 + 27 + 6 + 1 + 1 across five operating cases. Three projects marked under construction, airport activities and the planned Blagoveshchensk wheel are excluded.
 - Skazka's 1.5 million visits refer specifically to 2024. Other visitation periods are unspecified.
 - Minny Gorodok, Al Haffa and Domodedovo retain the source's construction-stage label. Listed opening years do not prove current opening or completion.
 - Investment figures are reported project figures, not company valuations or proof that MG Group solely funded them.
@@ -50,6 +50,10 @@ Font licences are in `public/licenses/`. IBM Plex and Aref Ruqaa glyph outlines 
 ## SEO and link previews
 
 The static page includes bilingual search metadata, Open Graph and Twitter cards, accurate Organization/WebSite/WebPage/Service JSON-LD, a canonical sitemap, and a full SVG/ICO/PNG/Apple/Android/maskable icon kit. Three generated photographic previews use the original vector logo and local Arabic/English fonts. See [SEO, sharing and favicon documentation](docs/SEO-AND-SHARING.md) for editable sources, checks, generation provenance and platform limitations.
+
+## Park location flights
+
+Nine exact owner-supplied GPS points are stored in `src/data/project-locations.json`. The optional Google Maps 3D adapter performs a globe-to-site camera flight, holds the destination, then crossfades to the project's labelled creative. Activation requires a restricted Maps JavaScript API browser key and enabled billing; without configuration the site presents the creative and an exact Google Maps link. See [setup, behavior and evidence boundaries](docs/PARK-FLIGHTS.md). Original Salalah photos and footage remain in dedicated tabs.
 
 ## Release contract
 
