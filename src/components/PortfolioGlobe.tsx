@@ -13,6 +13,7 @@ class GlobeBoundary extends Component<{children:ReactNode;onError:()=>void},{fai
 }
 export default function PortfolioGlobe({go,paused,reduced,active}:{go:(id:string)=>void;paused:boolean;reduced:boolean;active:boolean}) {
   const ref=useRef<HTMLDivElement>(null),interacted=useRef(false);
+  const label=useRef<HTMLSpanElement>(null);
   const[visible,setVisible]=useState(false),[ready,setReady]=useState(false),[error,setError]=useState(false),[attempt,setAttempt]=useState(0);
   const[selected,setSelected]=useState('riyam'),[focusRevision,setFocusRevision]=useState(0);
   const network=useNetwork();const[Globe,setGlobe]=useState<typeof import('./PortfolioGlobeScene').default|null>(null);
@@ -31,7 +32,8 @@ export default function PortfolioGlobe({go,paused,reduced,active}:{go:(id:string
       <div className="globe-view">
         <div className={`globe-stage ${ready?'is-ready':''}`} data-media-controls tabIndex={0} role="group" aria-label="Interactive satellite globe. Drag to rotate. Scroll or pinch to zoom.">
           {(!ready||!loaded)&&<img className="globe-preview" src="/mg-group/visuals/v2/earth-day.webp" alt="Satellite world map preview"/>}
-          {loaded&&Globe&&<GlobeBoundary key={attempt} onError={onError}><Globe selected={selected} select={select} focusRevision={focusRevision} paused={paused||reduced||!visible} onReady={onReady} onInteraction={onInteraction}/></GlobeBoundary>}
+          {loaded&&Globe&&<GlobeBoundary key={attempt} onError={onError}><Globe selected={selected} select={select} focusRevision={focusRevision} paused={paused||reduced||!visible} onReady={onReady} onInteraction={onInteraction} label={label}/></GlobeBoundary>}
+          {loaded&&ready&&<span ref={label} className="globe-distance" data-arc-label={current.id}><small>{current.en}</small><strong dir="ltr">≈ {formatKm(current.km)} km</strong></span>}
           {loaded&&!ready&&<MediaLoading ar="جارٍ تحميل الكرة الأرضية" en="Loading the globe"/>}
           {error&&<button className="globe-retry" onClick={()=>{setError(false);setAttempt(v=>v+1);}}>إعادة المحاولة · Retry globe</button>}
         </div>

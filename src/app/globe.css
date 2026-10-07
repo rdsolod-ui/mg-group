@@ -15,6 +15,8 @@
 .globe-distance { display:flex; flex-direction:column; align-items:center; white-space:nowrap; padding:9px 15px; border:1px solid #ffd09c70; border-radius:6px; background:#0c223be8; color:#fff; box-shadow:0 8px 32px #0003; font:12px 'IBM Plex Sans'; }
 .globe-distance strong { color:#ffd09c; font:500 25px 'IBM Plex Sans'; margin-top:2px; }
 .globe-distance small { font-size:11px; }
+.globe-distance { position:absolute; left:0; top:0; pointer-events:none; z-index:2; }
+.globe-distance[hidden] { display:none; }
 #globe .globe-help { margin:0 0 10px; font-size:11px; line-height:1.4; }
 .globe-destination { display:flex; align-items:center; justify-content:space-between; gap:14px; padding:12px 0; border-top:1px solid var(--line); line-height:1.35; }
 .globe-destination>div>span { display:block; font-size:15px; }
