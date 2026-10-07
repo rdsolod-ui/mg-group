@@ -1,5 +1,5 @@
 "use client";
-import { Suspense, useRef, useEffect } from 'react';
+import { Suspense, useRef, useEffect, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Html, Line, OrbitControls, useTexture } from '@react-three/drei';
 import { SRGBColorSpace, Vector3, type Mesh } from 'three';
@@ -8,16 +8,16 @@ import parkLocations from '@/data/project-locations.json';
 const point=(lat:number,lon:number,r=1)=>new Vector3(r*Math.cos(lat*Math.PI/180)*Math.cos(lon*Math.PI/180),r*Math.sin(lat*Math.PI/180),-r*Math.cos(lat*Math.PI/180)*Math.sin(lon*Math.PI/180));
 const parkChapters: Record<string, number> = {skazka:7,'leo-tolstoy':8,vdnkh:9,izmaylovo:10,ohta:11,'minny-gorodok':12,'al-haffa':13,airport:14,blagoveshchensk:15};
 export const globeLocations=Object.entries(parkLocations).map(([id,p])=>({id,name:p.en,lat:p.lat,lon:p.lng,chapter:parkChapters[id]}));
-const regionLabels: Record<string,string>={skazka:'Moscow',ohta:'Saint Petersburg','minny-gorodok':'Vladivostok','al-haffa':'Salalah',blagoveshchensk:'Blagoveshchensk'};
 function Earth({go,onReady}:{go:(n:number)=>void;onReady:()=>void}){
   const earth=useRef<Mesh>(null!);
+  const [hovered,setHovered]=useState<string|null>(null);
   const texture=useTexture('/mg-group/visuals/v2/earth-day.webp');texture.colorSpace=SRGBColorSpace;
   useEffect(onReady,[onReady]);
   return <>
     <mesh ref={earth}><sphereGeometry args={[1,96,64]}/><meshStandardMaterial map={texture} roughness={1}/></mesh>
     {globeLocations.map((p,i)=><group key={p.name} position={point(p.lat,p.lon,1.012)}>
-      <mesh onClick={()=>go(p.chapter)}><sphereGeometry args={[.012,12,8]}/><meshBasicMaterial color="#ffb985"/></mesh>
-      {regionLabels[p.id] && <Html center occlude={[earth]} zIndexRange={[10,0]} style={{pointerEvents:'none'}}><button className={`globe-label globe-label-${i}`} onClick={()=>go(p.chapter)} style={{pointerEvents:'auto'}}>{regionLabels[p.id]}</button></Html>}
+      <mesh onClick={()=>go(p.chapter)} onPointerOver={()=>setHovered(p.id)} onPointerOut={()=>setHovered(null)}><sphereGeometry args={[.012,12,8]}/><meshBasicMaterial color="#ffb985"/></mesh>
+      {hovered===p.id && <Html center occlude={[earth]} zIndexRange={[10,0]} style={{pointerEvents:'none'}}><span className={`globe-label globe-label-${i}`}>{p.name}</span></Html>}
     </group>)}
     {['minny-gorodok','al-haffa','blagoveshchensk'].map(id=>{const p=globeLocations.find(p=>p.id===id)!;const a=point(globeLocations[0].lat,globeLocations[0].lon),b=point(p.lat,p.lon);const points=Array.from({length:61},(_,j)=>a.clone().lerp(b,j/60).normalize().multiplyScalar(1.014+.12*Math.sin(Math.PI*j/60)));return <Line key={id} points={points} color="#efb48c" lineWidth={1.2} transparent opacity={.75}/>;})}
   </>;
