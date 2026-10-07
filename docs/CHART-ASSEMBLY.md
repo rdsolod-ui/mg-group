@@ -37,3 +37,6 @@ Arabic precedes English. The complete data description accompanies the image; th
 Build, type checking and the export/SEO/asset integrity checks remain required. Browser acceptance covers the three totals, all categories including both 1/95 shares, local/global pause, remount, desktop/short-screen/4K/mobile layouts, theme changes, reduced motion, Save data and WebGL loss/retry. Inspect contact sheets for assembly, focused sectors and return; moving matrices alone do not establish visual quality.
 
 Dated captures, actual results, delivery sizes and the publication receipt are kept outside the public repository in `C:/Users/admin/Documents/mg-group-production/chart-assembly-20261007/`. Native Safari/iPhone and a physical conference display require separate verification; browser emulation is not a native-device test.
+# Central labels
+
+The 95 / 64 / 8 totals and Arabic/English units remain HTML above the WebGL surface. Explicit local layers place the scene below connectors, totals and controls. A compact dark centre and fixed line heights keep the units inside the ring opening, including at 720p and on mobile. Poster images inherit their picture's visibility after load so a loaded preview cannot remain visible behind the animated scene.

@@ -87,7 +87,7 @@ export function DataPie({ data, id, ar, en, unitAr, unitEn, paused, reduced, act
       {poster && <picture className="assembly-poster" style={{ visibility: ready ? 'hidden' : 'visible' }} aria-hidden="true">
         <source media="(max-width:900px)" srcSet={`/mg-group/${poster.mobile.src}`} />
         <img ref={posterImage} src={`/mg-group/${poster.desktop.src}`} alt="" width={poster.desktop.width} height={poster.desktop.height} loading="lazy" decoding="async"
-          onLoad={event => { event.currentTarget.style.visibility = 'visible'; setPosterFailed(false); }} onError={event => { event.currentTarget.style.visibility = 'hidden'; setPosterFailed(true); }} />
+          onLoad={event => { event.currentTarget.style.visibility = ''; setPosterFailed(false); }} onError={event => { event.currentTarget.style.visibility = 'hidden'; setPosterFailed(true); }} />
       </picture>}
       {enabled && Scene && <div className={`assembly-canvas ${ready ? 'is-ready' : ''}`} aria-hidden="true"><ChartBoundary key={attempt} onError={onError}><Scene data={data} running={running} reduced={reduced} motion={motion} onReady={onReady} onError={onError} onFocus={setFocus} connector={connector} selected={selected} revision={revision}/></ChartBoundary></div>}
       <svg className="assembly-connector" viewBox="0 0 1000 700" preserveAspectRatio="none" aria-hidden="true"><path ref={connector} fill="none" stroke={item ? chartPalette[shown] : '#d4a47c'} strokeWidth="1.4"/></svg>

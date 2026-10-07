@@ -9,24 +9,25 @@
  box-shadow:inset 0 1px 0 #a0d4da26,inset 0 -1px 0 #030d1a80,0 20px 55px -35px #00121b99; }
 .assembly-stage:after { content:''; position:absolute; inset:0; border-radius:inherit; box-shadow:inset 0 0 0 1px #a4c9d818; pointer-events:none; }
 .assembly-stage .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0; }
-.assembly-fallback { position:absolute; width:85%; height:95%; inset:2% 7.5% 3%; }
-.assembly-poster { position:absolute; inset:0; pointer-events:none; }
+.assembly-fallback { position:absolute; z-index:0; width:85%; height:95%; inset:2% 7.5% 3%; }
+.assembly-poster { position:absolute; z-index:0; inset:0; pointer-events:none; }
 .assembly-poster img { display:block; width:100%; height:100%; object-fit:contain; }
-.assembly-canvas { position:absolute; inset:0; opacity:0; transition:opacity .45s cubic-bezier(.32,.72,0,1); pointer-events:none; }
+.assembly-canvas { position:absolute; z-index:1; inset:0; opacity:0; transition:opacity .45s cubic-bezier(.32,.72,0,1); pointer-events:none; }
 .assembly-canvas.is-ready { opacity:1; }
 .assembly-canvas > div { position:absolute!important; inset:0; }
-.assembly-connector { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; opacity:.7; }
+.assembly-connector { position:absolute; z-index:2; inset:0; width:100%; height:100%; pointer-events:none; opacity:.7; }
 .assembly-connector path { opacity:0; }
-.assembly-total { position:absolute; left:50%; top:49%; transform:translate(-50%,-50%); text-align:center; pointer-events:none; }
-.assembly-total strong { display:block; font:400 clamp(60px,6.1vw,105px)/.97 'IBM Plex Sans'; letter-spacing:-.07em; color:#f3e9dc; }
-.assembly-total .chart-language { margin-top:8px; font-size:15px; gap:0; color:#d1dee1; }
-.assembly-total [lang=en] { font:400 11px 'IBM Plex Sans'; letter-spacing:.05em; }
-.assembly-focus { position:absolute; top:22px; right:25px; text-align:right; max-width:48%; pointer-events:none; }
+.assembly-total { position:absolute; z-index:3; left:50%; top:46%; width:34%; padding:5px 0; transform:translate(-50%,-50%); text-align:center; pointer-events:none;
+ color:#f3e9dc; background:radial-gradient(ellipse closest-side,#102d40 70%,#102d40ed 86%,#102d4000 100%); }
+.assembly-total strong { display:block; font:400 clamp(54px,5.2vw,90px)/.95 'IBM Plex Sans'; letter-spacing:-.055em; color:#f3e9dc; text-shadow:0 1px 4px #071c2b; }
+.assembly-total .chart-language { margin-top:4px; font-size:14px; line-height:1.2; gap:2px; color:#f1f5f6; text-shadow:0 1px 3px #071c2b,0 0 5px #071c2b; }
+.assembly-total [lang=en] { font:400 11px/1.2 'IBM Plex Sans'; letter-spacing:.025em; }
+.assembly-focus { position:absolute; z-index:3; top:22px; right:25px; text-align:right; max-width:48%; pointer-events:none; }
 .assembly-focus strong { display:flex; gap:12px; align-items:baseline; justify-content:flex-end; font:400 39px/.95 'IBM Plex Sans'; letter-spacing:-.04em; color:var(--focus-color); }
 .assembly-focus strong small { font-size:12px; letter-spacing:0; color:#c6d9de; }
 .assembly-focus .chart-language { font-size:14px; gap:2px; margin-top:7px; }
 .assembly-focus [lang=en] { font:400 11px 'IBM Plex Sans'; color:#b7ced6; }
-.assembly-controls { position:absolute; inset:auto 23px 17px; display:flex; justify-content:space-between; align-items:flex-end; gap:12px; }
+.assembly-controls { position:absolute; z-index:4; inset:auto 23px 17px; display:flex; justify-content:space-between; align-items:flex-end; gap:12px; }
 .assembly-status { display:flex; flex-direction:column; gap:2px; font-size:11px; color:#c2d3d9; }
 .assembly-status [lang=en] { font:400 9px 'IBM Plex Sans'; letter-spacing:.1em; text-transform:uppercase; }
 .assembly-controls button { border:1px solid #a7c3ca3b; border-radius:50px; padding:7px 15px; background:#061a285c; min-height:44px; }
@@ -56,8 +57,8 @@
  .assembly-chart figcaption { margin-bottom:9px; }
  .assembly-chart figcaption > .chart-language { font-size:13px; }
  .assembly-stage { aspect-ratio:1.75; border-radius:16px; }
- .assembly-total strong { font-size:66px; }
- .assembly-total .chart-language { font-size:12px; margin-top:5px; }
+ .assembly-total strong { font-size:58px; }
+ .assembly-total .chart-language { font-size:12px; margin-top:3px; }
  .assembly-focus { top:15px; right:20px; }
  .assembly-focus strong { font-size:31px; }
  .assembly-controls { inset:auto 17px 12px; }
@@ -81,7 +82,7 @@
  .assembly-stage { aspect-ratio:1; }
  .assembly-chart figcaption > .chart-language { font-size:13px; }
  .assembly-chart figcaption [lang=en] { font-size:11px; }
- .assembly-total strong { font-size:64px; }
+ .assembly-total strong { font-size:58px; }
  .assembly-total .chart-language { font-size:12px; }
  .assembly-total [lang=en] { font-size:10px; }
  .assembly-focus { top:15px; right:17px; left:17px; max-width:none; display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
@@ -107,7 +108,7 @@
  .assembly-chart figcaption [lang=en] { font-size:22px; }
  .assembly-edition { font-size:20px; }
  .assembly-stage { border-radius:36px; }
- .assembly-total strong { font-size:190px; }
+ .assembly-total strong { font-size:162px; }
  .assembly-total .chart-language { font-size:27px; }
  .assembly-total [lang=en] { font-size:21px; }
  .assembly-focus { top:42px; right:44px; }
