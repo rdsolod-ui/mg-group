@@ -6,6 +6,12 @@ const generated = (id: string, name: string): VisualAsset => ({
   en: 'Generated masterplan visualization. Interpretive layout, not an as-built plan.',
 });
 export const projectVisuals: Record<string, VisualAsset[]> = {
+  nizwa: [
+    {src:image('nizwa-destination'),kind:'concept',alt:'Owner-supplied Nizwa destination concept with wheel, cafes and landscaping',ar:'تصوّر للوجهة مقدّم من المالك؛ العجلة والمقاهي والتنسيق مقترحات وليست منشآت قائمة.',en:'Owner-supplied destination concept. Wheel, cafes and landscaping are proposed, not existing.'},
+    {src:image('nizwa-wheel'),kind:'concept',alt:'Owner-supplied concept of the planned Nizwa observation wheel',ar:'تصوّر للعجلة المخططة مقدّم من المالك؛ ليس صورة لمنشأة قائمة.',en:'Owner-supplied planned wheel concept; not a photograph of an existing installation.'},
+    {src:image('nizwa-site'),kind:'photo',alt:'Original owner-supplied photograph of the Nizwa rocky site without a wheel',ar:'صورة حقيقية للموقع مقدّمة من المالك. لا توجد عجلة في الصورة الأصلية.',en:'Original site photograph supplied by the owner. No wheel is present in the original photo.'},
+  ],
+  riyam:[{...generated('riyam','Riyam planned amusement park'),ar:'تصوّر مولّد لمنتزه ترفيهي مخطط مع عجلة؛ توزيع توضيحي، وليس مخططاً معتمداً.',en:'Generated concept of a planned amusement park with a wheel. Illustrative layout, not an approved masterplan.'}],
   blagoveshchensk: [{...generated('blagoveshchensk', 'Blagoveshchensk planned observation wheel'), ar:'تصور مولّد لعجلة مخططة. لم تُبنَ بعد؛ التصميم وتوزيع الموقع توضيحيان.', en:'Generated concept of a planned wheel. Not yet built; design and site layout are illustrative.'}],
   skazka: [generated('skazka', 'Skazka Park')],
   'leo-tolstoy': [generated('leo-tolstoy', 'Leo Tolstoy Park')],

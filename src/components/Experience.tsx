@@ -51,6 +51,8 @@ const chapters = [
   ["al-haffa", "سوق الحافة", "Al Haffa"],
   ["airport", "دوموديدوفو", "Domodedovo"],
   ["blagoveshchensk", "بلاغوفيشتشينسك", "Blagoveshchensk"],
+  ["nizwa", "نزوى", "Nizwa"],
+  ["riyam", "ريام", "Riyam"],
   ["partnership", "التعاون", "Partnership"],
   ["contact", "المكتب الرئيسي", "Head office"],
 ];
@@ -105,6 +107,16 @@ const caseCopy: Record<
   blagoveshchensk: {
     name: pair("عجلة بلاغوفيشتشينسك", "Blagoveshchensk observation wheel"),
     place: pair("بلاغوفيشتشينسك، روسيا", "Blagoveshchensk, Russia"),
+    role: pair("مشروع مخطط", "Planned project"),
+  },
+  nizwa: {
+    name: pair("عجلة نزوى", "Nizwa observation wheel"),
+    place: pair("نزوى، سلطنة عُمان", "Nizwa, Sultanate of Oman"),
+    role: pair("مشروع مخطط", "Planned project"),
+  },
+  riyam: {
+    name: pair("منتزه ريام الترفيهي", "Riyam amusement park"),
+    place: pair("مسقط، سلطنة عُمان", "Muscat, Sultanate of Oman"),
     role: pair("مشروع مخطط", "Planned project"),
   },
 };
@@ -198,7 +210,7 @@ function CaseStudy({
         <Pair value={chapterCopy[project.id].body} className="body-copy" />
         <div className="case-metrics">
           <Metric
-            value={String(project.metrics.attractions.value)}
+            value={String(planned && 'plannedWheelCount' in project ? project.plannedWheelCount : project.metrics.attractions.value)}
             ar={planned ? "عجلة مخططة" : project.id === "airport" ? "أنشطة" : ['al-haffa','izmaylovo'].includes(project.id) ? "عجلة مشاهدة" : "ألعاب"}
             en={planned ? "Planned wheel" : project.id === "airport" ? "Activities" : ['al-haffa','izmaylovo'].includes(project.id) ? "Observation wheel" : "Rides"}
           />
@@ -649,8 +661,8 @@ export default function Experience() {
               <p className="source-note">
                 <Pair
                   value={pair(
-                    "٩ مشاريع، بما فيها بلاغوفيشتشينسك المخطط. الإحداثيات مقدّمة من المالك.",
-                    "9 projects, including planned Blagoveshchensk. GPS points supplied by the owner.",
+                    "١١ مشروعاً، بما فيها المشاريع المخططة في بلاغوفيشتشينسك ونزوى وريام. الإحداثيات مقدّمة من المالك.",
+                    "11 projects, including planned Blagoveshchensk, Nizwa and Riyam. GPS points supplied by the owner.",
                   )}
                 />
               </p>
@@ -667,6 +679,8 @@ export default function Experience() {
           "al-haffa",
           "airport",
           "blagoveshchensk",
+          "nizwa",
+          "riyam",
         ].map((id) =>
           section(
             id,
@@ -954,8 +968,8 @@ export default function Experience() {
         <Pair
           className="body-copy"
           value={pair(
-            "زيارة سكازكا تخص عام ٢٠٢٤. فترات الزيارات الأخرى غير مذكورة. المشاريع الثلاثة قيد الإنشاء تُعرض بهذه الصفة حتى تحديث حالتها. أكد المالك أن مشروع بلاغوفيشتشينسك مخطط ولم يُبنَ بعد؛ عجلته غير مدرجة في إجمالي الألعاب التشغيلية.",
-            "Skazka visitation refers to 2024. Other visitation periods are unspecified. The three construction-stage projects retain that label until their status is updated. Blagoveshchensk is owner-confirmed as planned and not yet built; its wheel is excluded from the operating total.",
+            "زيارة سكازكا تخص عام ٢٠٢٤. فترات الزيارات الأخرى غير مذكورة. المشاريع الثلاثة قيد الإنشاء تُعرض بهذه الصفة حتى تحديث حالتها. بلاغوفيشتشينسك ونزوى وريام مشاريع مخططة وفق المالك؛ لا تدخل في إجمالي الألعاب التشغيلية.",
+            "Skazka visitation refers to 2024. Other visitation periods are unspecified. The three construction-stage projects retain that label until their status is updated. Blagoveshchensk, Nizwa and Riyam are owner-confirmed planned projects, excluded from the operating total.",
           )}
         />
         <Pair

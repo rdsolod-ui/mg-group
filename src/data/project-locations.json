@@ -1,11 +1,79 @@
 {
-  "skazka": { "lat": 55.77149167507881, "lng": 37.43412735237241, "range": 850, "en": "Skazka Park", "ar": "منتزه سكازكا" },
-  "leo-tolstoy": { "lat": 55.893357043936994, "lng": 37.45923248637098, "range": 750, "en": "Leo Tolstoy Park", "ar": "منتزه ليف تولستوي" },
-  "vdnkh": { "lat": 55.82675421281442, "lng": 37.62643620586514, "range": 700, "en": "VDNKH Attractions", "ar": "ألعاب في دي إن خا" },
-  "izmaylovo": { "lat": 55.7946795763556, "lng": 37.74847414233548, "range": 600, "en": "Kremlin Izmaylovo", "ar": "كرملين إزمايلوفو" },
-  "ohta": { "lat": 60.12729734811739, "lng": 30.44686841004293, "range": 750, "en": "Ohta Park", "ar": "أوختا بارك" },
-  "minny-gorodok": { "lat": 43.12176756665061, "lng": 131.94065326536736, "range": 1000, "en": "Minny Gorodok Park", "ar": "منتزه ميني غورودوك" },
-  "al-haffa": { "lat": 17.000459845300245, "lng": 54.104987453823455, "range": 650, "en": "Salalah Eye", "ar": "عين صلالة" },
-  "airport": { "lat": 55.41437426053603, "lng": 37.90019188081303, "range": 1300, "en": "Domodedovo Airport", "ar": "مطار دوموديدوفو" },
-  "blagoveshchensk": { "lat": 50.25663240061146, "lng": 127.53443384787141, "range": 650, "en": "Blagoveshchensk · planned wheel", "ar": "بلاغوفيشتشينسك · عجلة مخططة" }
+  "skazka": {
+    "lat": 55.77149167507881,
+    "lng": 37.43412735237241,
+    "range": 850,
+    "en": "Skazka Park",
+    "ar": "منتزه سكازكا"
+  },
+  "leo-tolstoy": {
+    "lat": 55.893357043936994,
+    "lng": 37.45923248637098,
+    "range": 750,
+    "en": "Leo Tolstoy Park",
+    "ar": "منتزه ليف تولستوي"
+  },
+  "vdnkh": {
+    "lat": 55.82675421281442,
+    "lng": 37.62643620586514,
+    "range": 700,
+    "en": "VDNKH Attractions",
+    "ar": "ألعاب في دي إن خا"
+  },
+  "izmaylovo": {
+    "lat": 55.7946795763556,
+    "lng": 37.74847414233548,
+    "range": 600,
+    "en": "Kremlin Izmaylovo",
+    "ar": "كرملين إزمايلوفو"
+  },
+  "ohta": {
+    "lat": 60.12729734811739,
+    "lng": 30.44686841004293,
+    "range": 750,
+    "en": "Ohta Park",
+    "ar": "أوختا بارك"
+  },
+  "minny-gorodok": {
+    "lat": 43.12176756665061,
+    "lng": 131.94065326536736,
+    "range": 1000,
+    "en": "Minny Gorodok Park",
+    "ar": "منتزه ميني غورودوك"
+  },
+  "al-haffa": {
+    "lat": 17.000459845300245,
+    "lng": 54.104987453823455,
+    "range": 650,
+    "en": "Salalah Eye",
+    "ar": "عين صلالة"
+  },
+  "airport": {
+    "lat": 55.41437426053603,
+    "lng": 37.90019188081303,
+    "range": 1300,
+    "en": "Domodedovo Airport",
+    "ar": "مطار دوموديدوفو"
+  },
+  "blagoveshchensk": {
+    "lat": 50.25663240061146,
+    "lng": 127.53443384787141,
+    "range": 650,
+    "en": "Blagoveshchensk · planned wheel",
+    "ar": "بلاغوفيشتشينسك · عجلة مخططة"
+  },
+  "nizwa": {
+    "lat": 22.93807942265588,
+    "lng": 57.54263192669975,
+    "range": 650,
+    "ar": "عجلة نزوى",
+    "en": "Nizwa observation wheel"
+  },
+  "riyam": {
+    "lat": 23.62201678251985,
+    "lng": 58.577819796136815,
+    "range": 900,
+    "ar": "منتزه ريام الترفيهي",
+    "en": "Riyam amusement park"
+  }
 }

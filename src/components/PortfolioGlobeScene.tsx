@@ -6,7 +6,7 @@ import { SRGBColorSpace, Vector3, type Mesh } from 'three';
 import parkLocations from '@/data/project-locations.json';
 
 const point=(lat:number,lon:number,r=1)=>new Vector3(r*Math.cos(lat*Math.PI/180)*Math.cos(lon*Math.PI/180),r*Math.sin(lat*Math.PI/180),-r*Math.cos(lat*Math.PI/180)*Math.sin(lon*Math.PI/180));
-const parkChapters: Record<string, number> = {skazka:7,'leo-tolstoy':8,vdnkh:9,izmaylovo:10,ohta:11,'minny-gorodok':12,'al-haffa':13,airport:14,blagoveshchensk:15};
+const parkChapters: Record<string, number> = {skazka:7,'leo-tolstoy':8,vdnkh:9,izmaylovo:10,ohta:11,'minny-gorodok':12,'al-haffa':13,airport:14,blagoveshchensk:15,nizwa:16,riyam:17};
 export const globeLocations=Object.entries(parkLocations).map(([id,p])=>({id,name:p.en,lat:p.lat,lon:p.lng,chapter:parkChapters[id]}));
 function Earth({go,onReady}:{go:(n:number)=>void;onReady:()=>void}){
   const earth=useRef<Mesh>(null!);

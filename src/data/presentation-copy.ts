@@ -45,8 +45,8 @@ export const chapterCopy: Record<string, ChapterCopy> = {
   geography: {
     heading: { ar: "من موسكو إلى صلالة.", en: "From Moscow to Salalah." },
     body: {
-      ar: "تسعة مشاريع. إحداثيات دقيقة. من روسيا إلى عُمان.",
-      en: "Nine projects. Exact locations. Russia to Oman.",
+      ar: "أحد عشر مشروعاً. إحداثيات دقيقة. من روسيا إلى عُمان.",
+      en: "Eleven projects. Exact locations. Russia to Oman.",
     },
   },
   skazka: {
@@ -108,6 +108,14 @@ export const chapterCopy: Record<string, ChapterCopy> = {
   blagoveshchensk: {
     heading: { ar: "وجهة جديدة. منظور يرتفع.", en: "A new destination. A higher perspective." },
     body: { ar: "عجلة مشاهدة مخططة في بلاغوفيشتشينسك. مشروع جديد في المحفظة، لم يُبنَ بعد.", en: "A planned observation wheel in Blagoveshchensk. A new portfolio project, not yet built." },
+  },
+  nizwa: {
+    heading:{ar:'نزوى. أفق جديد.',en:'Nizwa. A new horizon.'},
+    body:{ar:'عجلة مشاهدة مخططة، مع صورة الموقع الحقيقي وتصوّرات أولية للوجهة.',en:'One planned observation wheel, with original site photography and early destination concepts.'},
+  },
+  riyam: {
+    heading:{ar:'روح سكازكا. أفق مسقط.',en:'Skazka’s spirit. Muscat’s horizon.'},
+    body:{ar:'مشروع منتزه عائلي مخطط في ريام مع عجلة مشاهدة، يستلهم تجربة سكازكا. عدد الألعاب الأخرى وبرنامجها لم يُحدّدا بعد.',en:'A planned family amusement park at Riyam with an observation wheel, inspired by the Skazka experience. The remaining ride mix and count are not yet defined.'},
   },
   partnership: {
     heading: { ar: "رؤيتكم. وخبرتنا على أرض الواقع.", en: "Your vision. Our hands-on expertise." },

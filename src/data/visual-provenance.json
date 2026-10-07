@@ -599,5 +599,125 @@
         "sha256": "7af6985f50fe74f8fa2cb541699fb28628eb5d751ee7ebde91f0d0949890e161"
       }
     ]
+  },
+  {
+    "id": "nizwa-destination",
+    "kind": "owner_supplied_concept",
+    "sourceFile": "IMG_1955.PNG",
+    "sourceSHA256": "8e58dbc5372759a6dd0e22f4ce46ebc9abd2a406343c074aebecff5a9d390500",
+    "description": "Owner-supplied prospective destination concept; added wheel, cafes and landscaping are not existing structures.",
+    "variants": [
+      {
+        "path": "visuals/v2/nizwa-destination.webp",
+        "width": 1086,
+        "height": 1448,
+        "bytes": 494480,
+        "sha256": "7308a73257dc3a2a036674e1e0b7ecefa163466e1aa27d5f1627101a25db4079"
+      },
+      {
+        "path": "visuals/v2/nizwa-destination-960.webp",
+        "width": 960,
+        "height": 1280,
+        "bytes": 335886,
+        "sha256": "2e53af0f69e3b1d6d4957b275f3ec53b7b2b807d3a40fede66429f88a693df73"
+      },
+      {
+        "path": "visuals/v2/nizwa-destination-640.webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 181744,
+        "sha256": "0633255b5f11ee918d485e1ac3d95804ca30bb885ded11c158b0f2d31cdbdeac"
+      }
+    ]
+  },
+  {
+    "id": "nizwa-wheel",
+    "kind": "owner_supplied_concept",
+    "sourceFile": "IMG_1954.PNG",
+    "sourceSHA256": "67f4e8e1bf09b674cbb159a586409eac1a5e179217c1499ea028015f57eba955",
+    "description": "Owner-supplied wheel concept composited on the Nizwa site; not an as-built installation photograph.",
+    "variants": [
+      {
+        "path": "visuals/v2/nizwa-wheel.webp",
+        "width": 1086,
+        "height": 1448,
+        "bytes": 336582,
+        "sha256": "b0a73724c419d76c2e4553114aae7c24e4754681f48c8207beb5e6d768206d78"
+      },
+      {
+        "path": "visuals/v2/nizwa-wheel-960.webp",
+        "width": 960,
+        "height": 1280,
+        "bytes": 230448,
+        "sha256": "d1a370bfd52fa5a8906dda5ab143b8a2245bfa96c1765cb04c3014bb4b897094"
+      },
+      {
+        "path": "visuals/v2/nizwa-wheel-640.webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 118106,
+        "sha256": "22835af3bda64baa9a180684ad23090a0367ed78201b682629dee999152df30f"
+      }
+    ]
+  },
+  {
+    "id": "nizwa-site",
+    "kind": "owner_supplied_site_photo",
+    "sourceFile": "IMG_1953.JPG",
+    "sourceSHA256": "44a51be0e53370d00d5e3655e240ec1418793b196d1a93b21c8342b61117f3f5",
+    "description": "Original site photograph, wheel absent. EXIF orientation normalized, delivery resized; no generative alteration.",
+    "variants": [
+      {
+        "path": "visuals/v2/nizwa-site.webp",
+        "width": 1672,
+        "height": 2229,
+        "bytes": 744838,
+        "sha256": "eec9734ef624536dfba14b24be3fa3ac1b4d65dd7f76decf72b1a86500a26114"
+      },
+      {
+        "path": "visuals/v2/nizwa-site-960.webp",
+        "width": 960,
+        "height": 1280,
+        "bytes": 214638,
+        "sha256": "9e81283cc538ec464e7a3e23fc82dbd0c2079140360e2db45cb21ae708d6d255"
+      },
+      {
+        "path": "visuals/v2/nizwa-site-640.webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 97000,
+        "sha256": "130bb4d9c2fc1dd29d9e557ad439865e6903f977cebb4fa704a545bbaec3daf4"
+      }
+    ]
+  },
+  {
+    "id": "riyam",
+    "kind": "generated_illustration",
+    "sourceFile": "exec-4f9b096c-7c58-4228-a3c4-1aa4eb1747d7.png",
+    "sourceSHA256": "b8124af9f786eb295630b8eb2d3f2e2559adc0b811f96ddb521c159992e45630",
+    "description": "Illustrative family amusement park concept inspired by Skazka, in a Muscat coastal setting. Not a surveyed boundary, approved programme or as-built masterplan.",
+    "variants": [
+      {
+        "path": "visuals/v2/riyam.webp",
+        "width": 1672,
+        "height": 941,
+        "bytes": 606686,
+        "sha256": "c3afd2b394db5ad73110f3d1d7a07329c077d6ebcecbec11383aab66d9c860d0"
+      },
+      {
+        "path": "visuals/v2/riyam-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 204140,
+        "sha256": "223a4ffc3301cf4dd8cc85390e190c7eaf0e4ca274c31533349e44d320b22cf0"
+      },
+      {
+        "path": "visuals/v2/riyam-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 98126,
+        "sha256": "23967c6106edeb0b174509958909b7050c90d3e5938b913d71c8cf1551fd338d"
+      }
+    ]
   }
 ]

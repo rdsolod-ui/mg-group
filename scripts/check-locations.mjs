@@ -12,10 +12,12 @@ const expected = [
   ['al-haffa',17.000459845300245,54.104987453823455],
   ['airport',55.41437426053603,37.90019188081303],
   ['blagoveshchensk',50.25663240061146,127.53443384787141],
+  ['nizwa',22.93807942265588,57.54263192669975],
+  ['riyam',23.62201678251985,58.577819796136815],
 ];
 const html = await readFile('out/index.html', 'utf8');
-assert.equal(source.projects.length,9);
-assert.equal(Object.keys(locations).length,9);
+assert.equal(source.projects.length,11);
+assert.equal(Object.keys(locations).length,11);
 for(const [id,lat,lng] of expected) {
   assert.deepEqual([locations[id].lat,locations[id].lng],[lat,lng]);
   const p=source.projects.find(p=>p.id===id);
@@ -26,7 +28,14 @@ const planned=source.projects.find(p=>p.id==='blagoveshchensk');
 assert.equal(planned.stageInSource,'planned');
 assert.equal(planned.metrics.attractions.value,1);
 for(const key of ['investment','visitation','staff'])assert.equal(planned.metrics[key].value,null,'Unknown is not zero');
+for(const id of ['nizwa','riyam']){
+ const p=source.projects.find(p=>p.id===id);
+ assert.equal(p.stageInSource,'planned');assert.equal(p.country,'Oman');assert.equal(p.plannedWheelCount,1);
+ for(const key of ['investment','visitation','staff'])assert.equal(p.metrics[key].value,null);
+}
+assert.equal(source.projects.find(p=>p.id==='riyam').metrics.attractions.value,null,'Skazka ride total must not be copied to Riyam');
+assert.deepEqual(['Russia','Oman'].map(country=>source.projects.filter(p=>p.country===country).length),[8,3]);
 const operating=source.projects.filter(p=>['skazka','leo-tolstoy','vdnkh','izmaylovo','ohta'].includes(p.id));
 assert.equal(operating.reduce((sum,p)=>sum+p.metrics.attractions.value,0),95,'Planned wheel is excluded from operating rides');
 assert(html.includes('Not yet built'));
-console.log('PASS: nine exact owner GPS points and public links; planned wheel separated from 95 operating rides');
+console.log('PASS: eleven exact owner GPS points and public links; three planned projects excluded from 95 operating rides; country mix 8:3');

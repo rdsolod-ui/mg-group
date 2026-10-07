@@ -4,7 +4,7 @@
 
 On 7 October 2026 the owner supplied nine exact GPS points, including a new planned observation wheel in Blagoveshchensk. Coordinates are preserved in `src/data/project-locations.json` and in each source-register entry. Display labels use five decimals; Google Maps links and camera targets use the original numeric precision.
 
-The portfolio now contains nine projects (eight Russia, one Oman) and eighteen chapters. The operating attraction total remains 95. Blagoveshchensk has one **planned**, **not yet built** wheel; its budget, height, opening date and staff are unknown and are not displayed as zero.
+The portfolio now contains eleven projects (eight Russia, three Oman) and twenty chapters. The operating attraction total remains 95. Blagoveshchensk has one **planned**, **not yet built** wheel; its budget, height, opening date and staff are unknown and are not displayed as zero.
 
 ## Interaction
 
@@ -23,7 +23,7 @@ Enable Maps JavaScript API and billing in the owner's chosen Google Cloud projec
 
 With no key, builds succeed and **no Google map or flight is activated**. The creative and exact Google Maps destination link remain available. This fallback is not a replacement-map provider and must not be reported as a completed Google animation.
 
-After activation, verify actual coverage, credits, camera arrival and visual quality at all nine locations on the live origin. SDK-fixture tests validate control logic only; they do not prove Google authorization, imagery availability or native mobile performance.
+After activation, verify actual coverage, credits, camera arrival and visual quality at all eleven locations on the live origin. SDK-fixture tests validate control logic only; they do not prove Google authorization, imagery availability or native mobile performance.
 
 Official references checked 7 October 2026: [Maps 3D setup](https://developers.google.com/maps/documentation/javascript/3d/get-started), [camera animation](https://developers.google.com/maps/documentation/javascript/3d/animate-camera), [3D reference](https://developers.google.com/maps/documentation/javascript/reference/3d-map).
 
@@ -38,3 +38,5 @@ Blagoveshchensk brief: photorealistic aerial concept of one white observation wh
 Salalah editing brief: use the original project drone photograph as the geometric and site reference. Preserve the two broad central bearing rings, horizontal axle and service platforms, white A-frame supports, rim, enclosed round gondolas, buildings, palms and parking. Refine lighting into a warm cinematic sunset. No new rides, changed wheel mechanism or invented engineering details. This is an artistic lighting interpretation, not documentary photography.
 
 Original generation outputs and production QA are kept outside the public repository. Delivery images use AVIF/WebP with 640, 960 and 1672 pixel variants and small placeholders.
+
+The subsequent owner update adds planned Nizwa and Riyam projects, bringing the coordinate set to eleven. See [OMAN-PLANNED.md](OMAN-PLANNED.md) for the photo/concept distinction and unknown Riyam ride count.

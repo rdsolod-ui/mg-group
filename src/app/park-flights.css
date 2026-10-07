@@ -6,6 +6,7 @@
 .park-flight-map { position:absolute; z-index:1; inset:0; visibility:hidden; }
 .park-flight-map.is-visible { visibility:visible; }
 .park-flight-google { height:100%; width:100%; }
+.nizwa-visual .park-flight-stage { aspect-ratio:3/4; max-width:285px; max-height:380px; margin-inline:auto; }
 .park-flight-pin { position:absolute; z-index:2; left:50%; top:50%; transform:translate(-50%,-50%); color:#fff; filter:drop-shadow(0 1px 3px #000); pointer-events:none; }
 .park-flight-loading { position:absolute; inset:0; display:grid; place-items:center; z-index:2; background:#102d403b; pointer-events:none; }
 .park-flight-heading { position:absolute; z-index:2; top:16px; left:18px; display:flex; flex-direction:column; gap:3px; max-width:75%; color:#fff; font-size:14px; text-shadow:0 1px 5px #000; pointer-events:none; }

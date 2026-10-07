@@ -12,7 +12,7 @@ const values = [
 for (const [index, data] of values.entries()) {
   const sectors = chartSectors(data.map((value, i) => ({ id: String(i), value, ar: '', en: '' })));
   const total = data.reduce((a, b) => a + b, 0);
-  assert.equal(total, [95, 64, 9][index], 'Approved source total');
+  assert.equal(total, [95, 64, 11][index], 'Approved source total');
   assert(Math.abs(sectors.at(-1).end - sectors[0].start - 2 * Math.PI) < 1e-12);
   for (let i = 0; i < data.length; i++) {
     assert(Math.abs((sectors[i].end - sectors[i].start) / (2 * Math.PI) - data[i] / total) < 1e-12, 'Small slices retain true angle');
@@ -29,7 +29,7 @@ for (const [index, data] of values.entries()) {
   const before = chartPhase(cycle - 1e-5, data.length), after = chartPhase(cycle + 1e-5, data.length);
   assert(Math.abs(before.assembly - after.assembly) < 1e-6 && before.lift === after.lift, 'No loop-seam jump');
 }
-console.log('PASS: 95/64/9 source totals, exact sector proportions, all focus phases and continuous loop seams');
+console.log('PASS: 95/64/11 source totals, exact sector proportions, all focus phases and continuous loop seams');
 const posters = JSON.parse(await readFile('src/data/chart-posters.json', 'utf8'));
 assert.equal(Object.keys(posters).length, 3);
 for (const variants of Object.values(posters)) for (const poster of Object.values(variants)) {

@@ -20,6 +20,8 @@ const ids = [
   "al-haffa",
   "airport",
   "blagoveshchensk",
+  "nizwa",
+  "riyam",
   "partnership",
   "contact",
 ];

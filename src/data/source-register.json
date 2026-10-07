@@ -482,7 +482,102 @@
         "lng": 127.53443384787141,
         "source": "Direct owner message",
         "asOf": "2026-10-07"
-      }
+      },
+      "plannedWheelCount": 1
+    },
+    {
+      "id": "nizwa",
+      "sourceName": "Nizwa observation wheel",
+      "city": "Nizwa",
+      "country": "Oman",
+      "sourcePage": null,
+      "openingYearInSource": null,
+      "stageInSource": "planned",
+      "stageAsOf": "2026-10-07",
+      "currentStageVerified": true,
+      "readinessInSourcePercent": null,
+      "roleInSource": "not_specified",
+      "metrics": {
+        "attractions": {
+          "value": 1,
+          "unit": "planned observation wheel",
+          "basis": "owner_update_2026-10-07"
+        },
+        "investment": {
+          "value": null,
+          "unit": "million USD",
+          "basis": "not_supplied",
+          "period": null
+        },
+        "visitation": {
+          "value": null,
+          "unit": "visits",
+          "basis": "not_supplied",
+          "period": null
+        },
+        "staff": {
+          "value": null,
+          "unit": "people",
+          "basis": "not_supplied"
+        }
+      },
+      "verificationState": "owner_confirmed_planned_not_built",
+      "media": [],
+      "ownerCoordinates": {
+        "lat": 22.93807942265588,
+        "lng": 57.54263192669975,
+        "source": "Direct owner message",
+        "asOf": "2026-10-07"
+      },
+      "plannedWheelCount": 1,
+      "ownerScope": "One planned observation wheel; supplied site photo and two supplied concepts."
+    },
+    {
+      "id": "riyam",
+      "sourceName": "Riyam amusement park",
+      "city": "Muscat",
+      "country": "Oman",
+      "sourcePage": null,
+      "openingYearInSource": null,
+      "stageInSource": "planned",
+      "stageAsOf": "2026-10-07",
+      "currentStageVerified": true,
+      "readinessInSourcePercent": null,
+      "roleInSource": "not_specified",
+      "metrics": {
+        "attractions": {
+          "value": null,
+          "unit": "rides; total not supplied",
+          "basis": "owner_update_2026-10-07"
+        },
+        "investment": {
+          "value": null,
+          "unit": "million USD",
+          "basis": "not_supplied",
+          "period": null
+        },
+        "visitation": {
+          "value": null,
+          "unit": "visits",
+          "basis": "not_supplied",
+          "period": null
+        },
+        "staff": {
+          "value": null,
+          "unit": "people",
+          "basis": "not_supplied"
+        }
+      },
+      "verificationState": "owner_confirmed_planned_not_built",
+      "media": [],
+      "ownerCoordinates": {
+        "lat": 23.62201678251985,
+        "lng": 58.577819796136815,
+        "source": "Direct owner message",
+        "asOf": "2026-10-07"
+      },
+      "plannedWheelCount": 1,
+      "ownerScope": "Planned family amusement park with one observation wheel; Skazka Park is a concept reference, not a transfer of its ride count or specifications."
     }
   ],
   "ownerUpdate": {

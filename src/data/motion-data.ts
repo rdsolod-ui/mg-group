@@ -7,7 +7,7 @@ const names: Record<string, [string, string]> = {
 };
 export const operatingRides = operatingIds.map(id => {
   const project = source.projects.find(p => p.id === id)!;
-  return { id, ar: names[id][0], en: names[id][1], value: project.metrics.attractions.value };
+  return { id, ar: names[id][0], en: names[id][1], value: project.metrics.attractions.value! };
 });
 export const rideTotal = operatingRides.reduce((sum, p) => sum + p.value, 0);
 const team = source.ownerUpdate.engineeringTeam;

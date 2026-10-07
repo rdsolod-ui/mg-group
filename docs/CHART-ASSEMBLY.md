@@ -8,7 +8,7 @@ The portfolio, technical team and geography chapters use solid data sculptures w
 
 - Operating rides: **95 = 60 + 27 + 6 + 1 + 1** across five cases.
 - Technical staff: **64 = 10 engineers + 54 mechanics**.
-- Portfolio projects: **9 = 8 Russia + 1 Oman**, including the owner's newly supplied planned Blagoveshchensk wheel; this is a project count, not a claim that all projects are completed.
+- Portfolio projects: **11 = 8 Russia + 3 Oman**, including the owner-supplied planned Blagoveshchensk, Nizwa and Riyam projects; this is a project count, not a claim that all projects are completed.
 
 Angular proportions are computed from full-precision values. Small shares retain their actual angle. Percentages are rounded individually to one decimal place and therefore need not sum to exactly 100.0%. The central total and source table remain available throughout the animation.
 
@@ -39,4 +39,4 @@ Build, type checking and the export/SEO/asset integrity checks remain required. 
 Dated captures, actual results, delivery sizes and the publication receipt are kept outside the public repository in `C:/Users/admin/Documents/mg-group-production/chart-assembly-20261007/`. Native Safari/iPhone and a physical conference display require separate verification; browser emulation is not a native-device test.
 # Central labels
 
-The 95 / 64 / 9 totals and Arabic/English units remain HTML above the WebGL surface. Explicit local layers place the scene below connectors, totals and controls. A compact dark centre and fixed line heights keep the units inside the ring opening, including at 720p and on mobile. Poster images inherit their picture's visibility after load so a loaded preview cannot remain visible behind the animated scene. Geography posters were recaptured for the updated 8:1 ratio.
+The 95 / 64 / 11 totals and Arabic/English units remain HTML above the WebGL surface. Explicit local layers place the scene below connectors, totals and controls. A compact dark centre and fixed line heights keep the units inside the ring opening, including at 720p and on mobile. Poster images inherit their picture's visibility after load so a loaded preview cannot remain visible behind the animated scene. Geography posters were recaptured for the updated 8:3 ratio.
