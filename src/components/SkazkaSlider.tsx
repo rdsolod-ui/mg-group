@@ -20,7 +20,7 @@ export default function SkazkaSlider({active,paused,reduced,onExpand}:{active:bo
   useEffect(()=>{if(!running)return;const timer=setTimeout(()=>choose(index+1),7500);return()=>clearTimeout(timer);},[running,index,choose]);
   const next=Array.from({length:4},(_,i)=>(index+i+1)%slides.length);
   const displayed=ready===index?index:shown;
-  return <div ref={root} className="visual case-visual skazka-slider" role="region" aria-roledescription="carousel" aria-label="Skazka Park summer attraction gallery" data-slide={index} data-shown={shown} data-slider-running={running} data-media-controls
+  return <div ref={root} className="visual case-visual skazka-slider" role="region" aria-roledescription="carousel" aria-label="Skazka Park summer attraction gallery" data-slide={index} data-shown={shown} data-slider-running={running} data-slider-state={!active?'inactive':!visible?'offscreen':paused?'suspended':reduced?'reduced-motion':network.economy?'save-data':!network.online?'offline':hover?'hover':focus?'focus':index!==shown||ready!==index?'loading':'running'} data-media-controls
     onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)}
     onFocusCapture={()=>setFocus(true)} onBlurCapture={event=>{if(!event.currentTarget.contains(event.relatedTarget))setFocus(false);}}
     onKeyDown={event=>{if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();event.stopPropagation();choose(index+(event.key==='ArrowRight'?1:-1));}}}>
