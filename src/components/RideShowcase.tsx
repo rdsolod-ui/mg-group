@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { Box, Film, Pause, Play, RotateCcw, ExternalLink } from "lucide-react";
 import AttractionVideo from "./AttractionVideo";
 import { rides } from "@/data/ride-catalogue";
+import { chapterCopy, rideHooks } from "@/data/presentation-copy";
 import device from "../../public/device/iphone-landscape.json";
 const phone = { ...device.playerSpec, src: `/mg-group${device.playerSpec.src}` };
 const Viewer = dynamic(() => import("./RideViewer"), { ssr: false });
@@ -38,13 +39,16 @@ export default function RideShowcase({ paused, reduced }: { paused: boolean; red
   const show = (next: "film" | "model") => { if (next === mode) return; setMode(next); setReady(false); setError(false); };
   return <div className="ride-showcase">
     <div className="ride-title">
-      <div><p lang="ar" dir="rtl">من التصميم إلى التجربة الحيّة.</p><h2>From design to the real experience.</h2></div>
+      <div><p lang="ar" dir="rtl">{chapterCopy["ride-models"].heading.ar}</p><h2 lang="en" dir="ltr">{chapterCopy["ride-models"].heading.en}</h2></div>
       <span className="ride-model-label" lang="en">Skazka Park · Moscow</span>
     </div>
     <div className="ride-layout">
       <div className="ride-content">
         <div className="ride-view-heading">
-          <div><h3 lang="ar" dir="rtl">{mode === "film" ? ride.parkNameAr : ride.ar}</h3><span lang="en">{mode === "film" ? ride.parkName : ride.en}</span></div>
+          <div className="ride-hook">
+            <p className="ride-identity"><span lang="ar" dir="rtl">{mode === "film" ? ride.parkNameAr : ride.ar}</span><span lang="en" dir="ltr">{mode === "film" ? ride.parkName : ride.en}</span></p>
+            <h3 lang="ar" dir="rtl">{rideHooks[ride.slug].ar}</h3><span lang="en" dir="ltr">{rideHooks[ride.slug].en}</span>
+          </div>
           <div className="ride-view-tabs" role="group" aria-label="Attraction view">
             {ride.video && <button aria-pressed={mode === "film"} onClick={() => show("film")}><Film size={16} /><span lang="ar">فيديو المنتزه<span lang="en">Park film</span></span></button>}
             {ride.model && <button aria-pressed={mode === "model"} onClick={() => show("model")}><Box size={16} /><span lang="ar">نموذج التصميم<span lang="en">Design model</span></span></button>}

@@ -3,10 +3,11 @@ export const site = {
   name: "MG Group",
   title: "MG Group | هندسة وتشغيل مدن الملاهي | Amusement Park Engineering",
   description:
-    "مجموعة إم جي: هندسة وتركيب وإطلاق وتشغيل مدن الملاهي في روسيا وعُمان. Amusement park engineering, installation, commissioning and operations in Russia and Oman.",
-  image: "social/mg-group-og-v1.jpg",
+    "هندسة وتركيب وتشغيل مدن الملاهي في روسيا وعُمان. MG Group: amusement park engineering, installation and operations, backed by 10 engineers and 54 mechanics.",
+  socialTitle: "MG Group | نبني مدن الملاهي ونشغّلها | We build parks. We keep them running.",
+  image: "social/mg-group-og-v2.jpg",
   imageAlt:
-    "MG Group — من الهندسة إلى التجربة. Amusement park engineering, installation and operations. Generated park illustration with an observation wheel.",
+    "MG Group — نبني مدن الملاهي. ونشغّلها. We build parks. We keep them running. Generated concept illustration of an amusement park with an observation wheel.",
 } as const;
 
 const orgId = `${site.url}#organization`;

@@ -4,6 +4,7 @@ import "./globals.css";
 import "./visuals.css";
 import "./chapter-photography.css";
 import "./motion.css";
+import "./copywriting.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://marketing.parkskazka.ru"),
   title: site.title,
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
   alternates: { canonical: site.url },
   openGraph: {
     type: "website",
-    title: site.title,
+    title: site.socialTitle,
     description: site.description,
     siteName: site.name,
     url: site.url,
@@ -25,14 +26,14 @@ export const metadata: Metadata = {
     alternateLocale: ["en_GB"],
     images: [
       { url: `${site.url}${site.image}`, secureUrl: `${site.url}${site.image}`, width: 1200, height: 630, type: "image/jpeg", alt: site.imageAlt },
-      { url: `${site.url}social/mg-group-square-v1.jpg`, secureUrl: `${site.url}social/mg-group-square-v1.jpg`, width: 1200, height: 1200, type: "image/jpeg", alt: site.imageAlt },
+      { url: `${site.url}social/mg-group-square-v2.jpg`, secureUrl: `${site.url}social/mg-group-square-v2.jpg`, width: 1200, height: 1200, type: "image/jpeg", alt: site.imageAlt },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: site.title,
+    title: site.socialTitle,
     description: site.description,
-    images: [{ url: `${site.url}social/mg-group-card-v1.jpg`, alt: site.imageAlt }],
+    images: [{ url: `${site.url}social/mg-group-card-v2.jpg`, alt: site.imageAlt }],
   },
   robots: {
     index: true, follow: true,

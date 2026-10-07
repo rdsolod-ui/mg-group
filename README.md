@@ -31,6 +31,8 @@ Development/preview URL: `http://127.0.0.1:3116/mg-group/`. The static build is 
 
 Portfolio facts and images originate in the ten-page MG GROUP CORP presentation supplied by the owner. `src/data/source-register.json` retains source pages, original metric meanings and unconfirmed dates/stages. `src/data/media.json` records extracted image dimensions and provenance.
 
+The final Arabic/English headlines, ride hooks and editorial boundaries are documented in [the copy deck](docs/COPY-DECK.md). `src/data/presentation-copy.ts` holds the shared presentation copy.
+
 - Eight projects and two countries are listed in the source.
 - The 97-ride aggregate is arithmetic across Skazka, Leo Tolstoy, VDNKH, Izmaylovo and Ohta: 60 + 27 + 6 + 3 + 1. Three projects marked under construction and airport activities are excluded.
 - Skazka's 1.5 million visits refer specifically to 2024. Other visitation periods are unspecified.

@@ -18,10 +18,12 @@ One bilingual page has one canonical URL and one sitemap entry. There are no sep
 
 | File under `public/social/` | Size | Purpose |
 | --- | --- | --- |
-| `mg-group-og-v1.jpg` | 1200 × 630 | Primary Open Graph preview |
-| `mg-group-card-v1.jpg` | 1200 × 600 | Twitter/X large-image card |
-| `mg-group-square-v1.jpg` | 1200 × 1200 | Secondary OG square image and manual sharing asset |
+| `mg-group-og-v2.jpg` | 1200 × 630 | Primary Open Graph preview |
+| `mg-group-card-v2.jpg` | 1200 × 600 | Twitter/X large-image card |
+| `mg-group-square-v2.jpg` | 1200 × 1200 | Secondary OG square image and manual sharing asset |
 | `park-concept-v1.jpg` | 1727 × 911 | Optimized generated photographic source |
+
+The v2 cards synchronize the final brand headline with the presentation. The generated scene is unchanged; v1 files remain available for cached links. The descriptive search title is retained, while the social title carries the brand hook.
 
 The primary image is declared first with absolute HTTPS URL, secure URL, MIME type, dimensions and alt text. Final JPEGs are under 350 KB, use stable versioned names and require no client-side rendering. A scraper may select only the first image; the square alternative is not a promise of device-specific automatic art direction.
 

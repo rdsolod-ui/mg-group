@@ -1,5 +1,5 @@
 {
-  "id": "mg-sharing-v1",
+  "id": "mg-sharing-v2",
   "created": "2026-10-07",
   "classification": "generated-concept",
   "generationTool": "image_gen",
@@ -36,6 +36,33 @@
       "height": 1200,
       "bytes": 259756,
       "sha256": "ac9424cb58ea9ffb00cafdae23dff190a8b819ff2f06c0ee22844bde08a28491"
+    },
+    {
+      "path": "social/mg-group-og-v2.jpg",
+      "width": 1200,
+      "height": 630,
+      "bytes": 171996,
+      "sha256": "240d617672520b5b8765c53360d73805d330271549904531aabe530e363e373f"
+    },
+    {
+      "path": "social/mg-group-card-v2.jpg",
+      "width": 1200,
+      "height": 600,
+      "bytes": 172185,
+      "sha256": "46936674ec8c5d7357e696b5f9d760f15ae293e2ce1ad07ad118a0fcb337e94e"
+    },
+    {
+      "path": "social/mg-group-square-v2.jpg",
+      "width": 1200,
+      "height": 1200,
+      "bytes": 268271,
+      "sha256": "f5bb6605bb6f608d07c76f383ac4fadf12e6003c5ab568bc95f7d07c6e23a138"
     }
-  ]
+  ],
+  "copyRevision": {
+    "date": "2026-10-07",
+    "scope": "Typography update to the final Arabic/English brand headline. Existing generated source retained; no new scene generation.",
+    "layoutRenderer": "Chromium via Playwright",
+    "activeVersion": "v2"
+  }
 }

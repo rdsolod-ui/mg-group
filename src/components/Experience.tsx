@@ -26,6 +26,7 @@ import { ParkScene, DriveScene, LifecycleScene, NetworkScene, ContactSignal } fr
 import useMotionVisibility from './useMotionVisibility';
 import NationalFlags from './NationalFlags';
 import { projectVisuals } from '@/data/project-visuals';
+import { chapterCopy } from '@/data/presentation-copy';
 
 const base = "/mg-group";
 const asset = (p: string) => `${base}/${p}`;
@@ -56,77 +57,47 @@ const caseCopy: Record<
   {
     name: PairText;
     place: PairText;
-    claim: PairText;
     role: PairText;
   }
 > = {
   skazka: {
     name: pair("منتزه سكازكا", "Skazka Park"),
     place: pair("موسكو، روسيا", "Moscow, Russia"),
-    claim: pair(
-      "خبرة متكاملة، على نطاق منتزه كامل.",
-      "Full-cycle experience. At the scale of a complete park.",
-    ),
     role: pair("مالك ومشغّل", "Owner & operator"),
   },
   "leo-tolstoy": {
     name: pair("منتزه ليف تولستوي", "Leo Tolstoy Park"),
     place: pair("خيمكي، روسيا", "Khimki, Russia"),
-    claim: pair(
-      "تشغيل الوجهة، وإدارة تجربة الزائر.",
-      "Operating the destination. Managing the visitor experience.",
-    ),
     role: pair("مشغّل", "Operator"),
   },
   vdnkh: {
     name: pair("ألعاب في دي إن خا", "VDNKH Attractions"),
     place: pair("موسكو، روسيا", "Moscow, Russia"),
-    claim: pair(
-      "تشغيل فني داخل وجهة حضرية كبيرة.",
-      "Technical operations within a major urban destination.",
-    ),
     role: pair("مشغّل الألعاب", "Ride operator"),
   },
   izmaylovo: {
     name: pair("كرملين إزمايلوفو", "Kremlin Izmaylovo"),
     place: pair("موسكو، روسيا", "Moscow, Russia"),
-    claim: pair(
-      "الألعاب كجزء من التجربة السياحية.",
-      "Attractions as part of the tourism experience.",
-    ),
     role: pair("مالك ومشغّل للمشروع", "Project owner & operator"),
   },
   ohta: {
     name: pair("أوختا بارك", "Ohta Park"),
     place: pair("سانت بطرسبرغ، روسيا", "Saint Petersburg, Russia"),
-    claim: pair(
-      "وجهة ترفيهية تتكامل مع محيطها.",
-      "An attraction integrated into its destination.",
-    ),
     role: pair("مالك ومشغّل للمشروع", "Project owner & operator"),
   },
   "minny-gorodok": {
     name: pair("منتزه ميني غورودوك", "Minny Gorodok Park"),
     place: pair("فلاديفوستوك، روسيا", "Vladivostok, Russia"),
-    claim: pair("مشروع تطوير واسع النطاق.", "Development at a larger scale."),
     role: pair("مستثمر ومشغّل", "Investor & operator"),
   },
   "al-haffa": {
     name: pair("سوق الحافة", "Al Haffa Market"),
     place: pair("صلالة، سلطنة عُمان", "Salalah, Sultanate of Oman"),
-    claim: pair(
-      "خبرة المجموعة في سلطنة عُمان.",
-      "The group’s experience in Oman.",
-    ),
     role: pair("مالك ومشغّل", "Owner & operator"),
   },
   airport: {
     name: pair("منطقة الترفيه في المطار", "Airport Entertainment Zone"),
     place: pair("دوموديدوفو، روسيا", "Domodedovo, Russia"),
-    claim: pair(
-      "الترفيه خارج حدود المنتزه التقليدي.",
-      "Entertainment beyond the traditional park.",
-    ),
     role: pair("مالك ومشغّل", "Owner & operator"),
   },
 };
@@ -207,11 +178,12 @@ function CaseStudy({
     <>
       <ProjectVisual id={project.id} paused={paused} onExpand={(index) => onGallery(project, index)} />
       <div className="copy case-copy">
-        <p className="location">
-          <Pair value={c.place} />
+        <p className="location case-identity">
+          <Pair value={c.name} />
+          <Pair value={c.place} className="case-place" />
         </p>
-        <Heading ar={c.name.ar} en={c.name.en} />
-        <Pair value={c.claim} className="body-copy" />
+        <Heading {...chapterCopy[project.id].heading} />
+        <Pair value={chapterCopy[project.id].body} className="body-copy" />
         <div className="case-metrics">
           <Metric
             value={String(project.metrics.attractions.value)}
@@ -508,21 +480,11 @@ export default function Experience() {
               <p className="hero-brand" lang="en" dir="ltr">
                 MG Group
               </p>
-              <Heading
-                h1
-                ar="من الهندسة إلى التجربة."
-                en="From engineering to experience."
-              />
-              <Pair
-                className="body-copy"
-                value={pair(
-                  "نطوّر ونركّب ونطلق ونشغّل الوجهات الترفيهية. خبرة المنتزه، من الهيكل إلى تجربة الزائر.",
-                  "We develop, install, launch and operate amusement destinations. Park expertise, from the structure to the visitor experience.",
-                )}
-              />
+              <Heading h1 {...chapterCopy.intro.heading} />
+              <Pair className="body-copy" value={chapterCopy.intro.body} />
               <div className="hero-bottom">
                 <button className="primary-button" onClick={() => go(2)}>
-                  <Pair value={pair("اكتشف خبرتنا", "Explore our expertise")} />
+                  <Pair value={pair("شاهدوا خبرتنا الهندسية", "See our engineering expertise")} />
                   <ChevronDown />
                 </button>
                 <span className="hero-eight" dir="ltr">
@@ -556,17 +518,8 @@ export default function Experience() {
               </div>
             </div>
             <div className="copy">
-              <Heading
-                ar="خبرة تُرى في الأرقام."
-                en="Experience you can measure."
-              />
-              <Pair
-                className="body-copy"
-                value={pair(
-                  "نطاق العمل يجمع المنتزهات المتكاملة والمواقع الحضرية والوجهات السياحية ومناطق الترفيه.",
-                  "The portfolio spans complete parks, urban attractions, tourism destinations and entertainment zones.",
-                )}
-              />
+              <Heading {...chapterCopy.proof.heading} />
+              <Pair className="body-copy" value={chapterCopy.proof.body} />
               <PortfolioChart />
               <div className="single-proof">
                 <strong dir="ltr">1.5m</strong>
@@ -605,17 +558,8 @@ export default function Experience() {
               </p>
             </div>
             <div className="copy">
-              <Heading
-                ar="الهندسة التي تجعل التجربة ممكنة."
-                en="Engineering makes the experience possible."
-              />
-              <Pair
-                className="body-copy"
-                value={pair(
-                  "الخبرة لا تتوقف عند تطوير الموقع. تشمل تركيب الألعاب، وتنسيق الأعمال الفنية، والإطلاق، ثم التشغيل والصيانة.",
-                  "Expertise extends beyond site development: ride installation, technical coordination, launch, then operation and maintenance.",
-                )}
-              />
+              <Heading {...chapterCopy.engineering.heading} />
+              <Pair className="body-copy" value={chapterCopy.engineering.body} />
               <div className="capability-list">
                 {[
                   pair(
@@ -661,17 +605,8 @@ export default function Experience() {
               </div>
             </div>
             <div className="copy">
-              <Heading
-                ar="المعرفة في أيدي المتخصصين."
-                en="Expertise in specialist hands."
-              />
-              <Pair
-                className="body-copy"
-                value={pair(
-                  "عشرة مهندسين وأربعة وخمسون ميكانيكياً. فريق يربط التصميم بالتركيب والإطلاق والتشغيل اليومي.",
-                  "Ten engineers. Fifty-four mechanics. A team connecting design with installation, launch and day-to-day operation.",
-                )}
-              />
+              <Heading {...chapterCopy.specialists.heading} />
+              <Pair className="body-copy" value={chapterCopy.specialists.body} />
               <TeamChart />
               <p className="source-note">
                 <Pair
@@ -703,17 +638,8 @@ export default function Experience() {
               ))}
             </div>
             <div className="copy">
-              <Heading
-                ar="دورة كاملة. مسؤوليات مترابطة."
-                en="One lifecycle. Connected expertise."
-              />
-              <Pair
-                className="body-copy"
-                value={pair(
-                  "التخطيط المالي، وإدارة المشروع، واللوجستيات، والتنسيق بشأن التصاريح، وبناء نموذج التشغيل.",
-                  "Financial planning, project management, logistics, permit coordination and the operating model.",
-                )}
-              />
+              <Heading {...chapterCopy.lifecycle.heading} />
+              <Pair className="body-copy" value={chapterCopy.lifecycle.body} />
               <Pair
                 className="body-copy"
                 value={pair(
@@ -723,7 +649,7 @@ export default function Experience() {
               />
               <button className="text-button" onClick={() => go(7)}>
                 <Pair
-                  value={pair("الدليل في مشاريعنا", "See the project evidence")}
+                  value={pair("اكتشفوا المشاريع وراء الأرقام", "See the projects behind the numbers")}
                 />
                 <ArrowLeft size={20} />
               </button>
@@ -737,17 +663,8 @@ export default function Experience() {
               <PortfolioGlobe go={go} paused={motionBlocked || active !== 6} />
             </div>
             <div className="copy">
-              <Heading
-                ar="خبرة من روسيا إلى عُمان."
-                en="Experience from Russia to Oman."
-              />
-              <Pair
-                className="body-copy"
-                value={pair(
-                  "موسكو وخيمكي وسانت بطرسبرغ وفلاديفوستوك ودوموديدوفو وصلالة. مواقع مختلفة، وخبرة تربط الهندسة بالتشغيل.",
-                  "Moscow, Khimki, Saint Petersburg, Vladivostok, Domodedovo and Salalah. Different settings. Engineering connected with operations.",
-                )}
-              />
+              <Heading {...chapterCopy.geography.heading} />
+              <Pair className="body-copy" value={chapterCopy.geography.body} />
               <NationalFlags />
               <CountryChart />
               <p className="source-note">
@@ -807,17 +724,8 @@ export default function Experience() {
               </div>
             </div>
             <div className="copy">
-              <Heading
-                ar="خبرة تتكيّف مع مشروعكم."
-                en="Expertise shaped around your project."
-              />
-              <Pair
-                className="body-copy"
-                value={pair(
-                  "نبدأ من الموقع والهدف ودور الشريك. ثم نحدد نطاق التطوير والهندسة والتركيب والتشغيل المناسب.",
-                  "Start with the site, the objective and the partner’s role. Define the right scope for development, engineering, installation and operation.",
-                )}
-              />
+              <Heading {...chapterCopy.partnership.heading} />
+              <Pair className="body-copy" value={chapterCopy.partnership.body} />
               <div className="capability-list">
                 {[
                   pair(
@@ -840,7 +748,7 @@ export default function Experience() {
                 ))}
               </div>
               <button className="text-button" onClick={() => go(16)}>
-                <Pair value={pair("لنبدأ من موقعكم", "Start with your site")} />
+                <Pair value={pair("ناقشوا مشروعكم معنا", "Discuss your project")} />
                 <ArrowLeft size={20} />
               </button>
             </div>
@@ -904,14 +812,8 @@ export default function Experience() {
             </div>
             </div>
             <div className="copy">
-              <Heading ar="لنبدأ من موقعكم." en="Let’s start with your site." />
-              <Pair
-                className="body-copy"
-                value={pair(
-                  "الموقع، والمساحة، والجمهور المستهدف، والمرحلة الحالية: أساس محادثة عملية حول مشروعكم.",
-                  "Location, area, audience and current stage: the starting point for a practical project discussion.",
-                )}
-              />
+              <Heading {...chapterCopy.contact.heading} />
+              <Pair className="body-copy" value={chapterCopy.contact.body} />
               <address>
                 <Pair value={pair("المكتب الرئيسي", "Head office")} />
                 <p lang="ar" dir="rtl">
@@ -929,8 +831,8 @@ export default function Experience() {
               >
                 <Pair
                   value={pair(
-                    "تواصل مع خالد في عُمان",
-                    "Contact Khalid in Oman",
+                    "ناقشوا مشروعكم مع خالد",
+                    "Discuss your project with Khalid",
                   )}
                 />
                 <ArrowLeft size={18} />
@@ -942,8 +844,8 @@ export default function Experience() {
               >
                 <Pair
                   value={pair(
-                    "تحميل نموذج بيانات المشروع",
-                    "Download a project brief",
+                    "جهّزوا بيانات مشروعكم",
+                    "Prepare your project brief",
                   )}
                 />
                 <Download size={17} />
@@ -1028,7 +930,7 @@ export default function Experience() {
         >
           <X />
         </button>
-        <Heading ar="فصول العرض" en="Presentation chapters" />
+        <Heading ar="اكتشفوا خبرتنا، فصلاً بفصل." en="Explore the expertise. Chapter by chapter." />
         <div className="chapter-menu">
           {chapters.map((c, i) => (
             <button key={c[0]} onClick={() => go(i)}>
@@ -1050,7 +952,7 @@ export default function Experience() {
         >
           <X />
         </button>
-        <Heading ar="ملاحظات المحفظة" en="Portfolio notes" />
+        <Heading ar="الأرقام ومصادرها." en="The evidence behind the numbers." />
         <Pair
           className="body-copy"
           value={pair(
@@ -1094,9 +996,8 @@ export default function Experience() {
         </button>
         {gallery && (
           <>
-            <h2 lang="en" dir="ltr">
-              {caseCopy[gallery.id].name.en}
-            </h2>
+            <p className="gallery-project-name"><Pair value={caseCopy[gallery.id].name} /></p>
+            <Heading ar="استكشفوا تفاصيل المشروع." en="Explore the project in detail." />
             <VisualInspector key={`${gallery.id}-${image}`} visual={projectVisuals[gallery.id][image]} />
             <div className="gallery-thumbs">
               {projectVisuals[gallery.id].map((m, i) => (

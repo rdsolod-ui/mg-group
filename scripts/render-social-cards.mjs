@@ -8,6 +8,7 @@ import sharp from "sharp";
 const require = createRequire(import.meta.url);
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE || "C:/Users/admin/.codex/playwright-runtime/node_modules/playwright");
 const root = path.resolve("public");
+const version = "v2";
 const template = await readFile("design/social-card.html", "utf8");
 const server = createServer(async (req, res) => {
   try {
@@ -29,7 +30,7 @@ try {
     await page.goto(`http://127.0.0.1:${server.address().port}/card?format=${name}`);
     await page.evaluate(async () => { await document.fonts.ready; await Promise.all([...document.images].map((image) => image.decode())); });
     const image = await page.screenshot({ animations: "disabled" });
-    await sharp(image).jpeg({ quality: 88, mozjpeg: true, chromaSubsampling: "4:4:4" }).toFile(`public/social/mg-group-${name}-v1.jpg`);
+    await sharp(image).jpeg({ quality: 88, mozjpeg: true, chromaSubsampling: "4:4:4" }).toFile(`public/social/mg-group-${name}-${version}.jpg`);
   }
   console.log("Rendered 1200×630, 1200×600 and 1200×1200 social cards.");
 } finally { await page.close(); await browser.close(); server.close(); }

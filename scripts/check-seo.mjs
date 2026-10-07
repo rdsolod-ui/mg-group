@@ -31,7 +31,7 @@ assert.equal(get("og:image:alt").length, 2);
 for (const key of ["og:image", "og:image:secure_url", "twitter:image"])
   for (const url of get(key)) assert(url.startsWith(`${canonical}social/`) && !url.includes("?"), key);
 for (const [name, height] of [["og", 630], ["card", 600], ["square", 1200]]) {
-  const file = `${root}/social/mg-group-${name}-v1.jpg`;
+  const file = `${root}/social/mg-group-${name}-v2.jpg`;
   const meta = await sharp(file).metadata();
   assert.equal(meta.width, 1200); assert.equal(meta.height, height); assert.equal(meta.format, "jpeg");
   assert((await stat(file)).size < 350_000, `Preview byte budget: ${name}`);
