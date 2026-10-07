@@ -22,6 +22,7 @@ export function DataPie({ data, id, ar, en, unitAr, unitEn, paused, reduced, act
 }) {
   const title = useId();
   const ref = useRef<HTMLElement>(null);
+  const posterImage = useRef<HTMLImageElement>(null);
   const connector = useRef<SVGPathElement>(null);
   const motion = useRef<ChartMotion>({ time: 0, selected: -1, revision: 0 });
   const [selected, setSelected] = useState(-1), [focus, setFocus] = useState(-1), [revision, setRevision] = useState(0);
@@ -39,6 +40,15 @@ export function DataPie({ data, id, ar, en, unitAr, unitEn, paused, reduced, act
     const observer = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting), { threshold: .05 });
     observer.observe(el); return () => observer.disconnect();
   }, []);
+  useEffect(() => {
+    const image = posterImage.current; if (!image) return;
+    // An SSR image can fail before React attaches onError, especially on a cold connection.
+    const check = () => {
+      if (image.complete && image.naturalWidth === 0) { image.style.visibility = 'hidden'; setPosterFailed(true); }
+    };
+    check(); image.addEventListener('error', check);
+    return () => image.removeEventListener('error', check);
+  }, [visible]);
   useEffect(() => {
     if (!enabled || Scene || !network.online) return;
     let current = true;
@@ -76,7 +86,7 @@ export function DataPie({ data, id, ar, en, unitAr, unitEn, paused, reduced, act
       </svg>
       {poster && <picture className="assembly-poster" style={{ visibility: ready ? 'hidden' : 'visible' }} aria-hidden="true">
         <source media="(max-width:900px)" srcSet={`/mg-group/${poster.mobile.src}`} />
-        <img src={`/mg-group/${poster.desktop.src}`} alt="" width={poster.desktop.width} height={poster.desktop.height} loading="lazy" decoding="async"
+        <img ref={posterImage} src={`/mg-group/${poster.desktop.src}`} alt="" width={poster.desktop.width} height={poster.desktop.height} loading="lazy" decoding="async"
           onLoad={event => { event.currentTarget.style.visibility = 'visible'; setPosterFailed(false); }} onError={event => { event.currentTarget.style.visibility = 'hidden'; setPosterFailed(true); }} />
       </picture>}
       {enabled && Scene && <div className={`assembly-canvas ${ready ? 'is-ready' : ''}`} aria-hidden="true"><ChartBoundary key={attempt} onError={onError}><Scene data={data} running={running} reduced={reduced} motion={motion} onReady={onReady} onError={onError} onFocus={setFocus} connector={connector} selected={selected} revision={revision}/></ChartBoundary></div>}
