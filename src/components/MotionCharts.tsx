@@ -27,12 +27,12 @@ export function DataPie({ data, id, ar, en, unitAr, unitEn, paused, reduced, act
   const motion = useRef<ChartMotion>({ time: 0, selected: -1, revision: 0 });
   const [selected, setSelected] = useState(-1), [focus, setFocus] = useState(-1), [revision, setRevision] = useState(0);
   const [visible, setVisible] = useState(false), [ready, setReady] = useState(false), [error, setError] = useState(false);
-  const [attempt, setAttempt] = useState(0), [localPause, setLocalPause] = useState(false);
+  const [attempt, setAttempt] = useState(0);
   const [posterFailed, setPosterFailed] = useState(false);
   const [Scene, setScene] = useState<typeof import('./ChartAssemblyScene').default | null>(null);
   const network = useNetwork();
   const enabled = visible && active && !network.economy && !reduced && !error;
-  const running = enabled && !paused && !localPause;
+  const running = enabled && !paused;
   const onReady = useCallback(() => setReady(true), []);
   const onError = useCallback(() => { setError(true); setReady(false); }, []);
   useEffect(() => {
@@ -97,11 +97,7 @@ export function DataPie({ data, id, ar, en, unitAr, unitEn, paused, reduced, act
       </div>
       <div className="assembly-controls" data-media-controls>
         <span className="assembly-status"><span lang="ar" dir="rtl">{selected >= 0 ? 'تفاصيل التكوين' : 'الصورة الكاملة'}</span><span lang="en">{selected >= 0 ? 'Component detail' : 'The complete picture'}</span></span>
-        {error ? <button disabled={!network.online} onClick={() => { setError(false); setAttempt(v => v + 1); }} aria-label="Retry 3D chart"><Bilingual ar="إعادة المحاولة" en="Retry 3D" /></button> : !network.economy && !reduced && <button onClick={() => {
-          if (selected >= 0) choose(selected); else setLocalPause(v => !v);
-        }} aria-label={selected >= 0 ? 'Show all segments' : localPause ? 'Resume chart animation' : 'Pause chart animation'} aria-pressed={localPause}>
-          <Bilingual ar={selected >= 0 ? 'عرض الكل' : localPause ? 'متابعة' : 'إيقاف مؤقت'} en={selected >= 0 ? 'Show all' : localPause ? 'Resume' : 'Pause'} />
-        </button>}
+        {error ? <button disabled={!network.online} onClick={() => { setError(false); setAttempt(v => v + 1); }} aria-label="Retry 3D chart"><Bilingual ar="إعادة المحاولة" en="Retry 3D" /></button> : selected >= 0 && <button onClick={() => choose(selected)} aria-label="Show all segments"><Bilingual ar="عرض الكل" en="Show all" /></button>}
       </div>
     </div>
     <ul className="assembly-legend" aria-label={`${en}: source values and calculated shares`}>

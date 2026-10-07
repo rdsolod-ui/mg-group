@@ -11,6 +11,7 @@ const ids = [
   "specialists",
   "lifecycle",
   "geography",
+  "globe",
   "skazka",
   "leo-tolstoy",
   "vdnkh",

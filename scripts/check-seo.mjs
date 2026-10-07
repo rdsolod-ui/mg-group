@@ -60,7 +60,7 @@ assert.equal(organization.contactPoint.telephone, "+96896100010");
 assert(!("numberOfEmployees" in organization), "Technical team is not confirmed company headcount");
 assert.equal(nodes.filter((n) => n["@type"] === "Service").length, 4);
 for (const service of nodes.filter((n) => n["@type"] === "Service")) assert(html.includes(`id="${service.url.split("#")[1]}"`));
-for (const fragment of ["proof", "ride-models", "skazka", "contact"]) assert(html.includes(`href="#${fragment}"`));
+for (const fragment of ["proof", "ride-models", "globe", "contact"]) assert(html.includes(`href="#${fragment}"`));
 assert(!/aggregateRating|reviewCount|foundingDate/.test(JSON.stringify(graph)), "No unsupported structured claims");
 const manifestLink = links.find((l) => l.rel === "manifest");
 assert.equal(manifestLink.href, "/mg-group/site.webmanifest");

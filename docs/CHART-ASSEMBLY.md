@@ -1,6 +1,6 @@
 # Three-dimensional portfolio charts
 
-The portfolio, technical team and geography chapters use solid data sculptures with a shared assembly timeline. The previous stacked SVG extrusion is replaced by actual depth-tested Three.js geometry. The team and country charts now occupy the main visual column; the workshop illustration and interactive globe provide context alongside the copy.
+The portfolio, technical team and geography chapters use solid data sculptures with a shared assembly timeline. The previous stacked SVG extrusion is replaced by actual depth-tested Three.js geometry. The team and country charts now occupy the main visual column; the workshop illustration and flags provide context alongside the copy; the interactive globe has its own chapter.
 
 ## Source data
 
@@ -20,7 +20,7 @@ Angular proportions are computed from full-precision values. Small shares retain
 - `src/app/assembly-charts.css`: stage, responsive legends, labels, short-screen and 4K layouts.
 - `scripts/check-charts.mjs`: source totals, angular coverage, all focus phases, bounded movement and continuity across the loop boundary.
 
-The animation assembles the parts, focuses them sequentially, then opens the assembly before repeating. The repeat boundary has matching positions. A single scene clock drives the geometry, active callout and connector; labels update only at focus changes. Selecting a legend item holds it until Show all or deselection. Each manual transition settles, then on-demand rendering stops. Global pause, chart pause, tab visibility and chapter visibility are respected.
+The animation assembles the parts, focuses them sequentially, then opens the assembly before repeating. The repeat boundary has matching positions. A single scene clock drives the geometry, active callout and connector; labels update only at focus changes. Selecting a legend item holds it until Show all or deselection. Each manual transition settles, then on-demand rendering stops. Tab/chapter visibility, open dialogs and reduced motion are respected. Animation starts automatically; no chart/global start or pause controls are displayed.
 
 Canvas rendering is mounted only for the active visible chart, and disposed when leaving it. Device pixel ratio is bounded; sustained low frame rate lowers it to 1. The scene generates its own environment map, with no remote HDR, font, model or texture dependency. Shared renderer code uses the already pinned React Three Fiber and Three.js versions; no new runtime package is added.
 
@@ -34,7 +34,7 @@ Arabic precedes English. The complete data description accompanies the image; th
 
 ## Verification
 
-Build, type checking and the export/SEO/asset integrity checks remain required. Browser acceptance covers the three totals, all categories including both 1/95 shares, local/global pause, remount, desktop/short-screen/4K/mobile layouts, theme changes, reduced motion, Save data and WebGL loss/retry. Inspect contact sheets for assembly, focused sectors and return; moving matrices alone do not establish visual quality.
+Build, type checking and the export/SEO/asset integrity checks remain required. Browser acceptance covers the three totals, all categories including both 1/95 shares, automatic start, dialog suspension, remount, desktop/short-screen/4K/mobile layouts, theme changes, reduced motion, Save data and WebGL loss/retry. Inspect contact sheets for assembly, focused sectors and return; moving matrices alone do not establish visual quality.
 
 Dated captures, actual results, delivery sizes and the publication receipt are kept outside the public repository in `C:/Users/admin/Documents/mg-group-production/chart-assembly-20261007/`. Native Safari/iPhone and a physical conference display require separate verification; browser emulation is not a native-device test.
 # Central labels

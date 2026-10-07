@@ -11,6 +11,6 @@ Two gently waving national flags identify the countries represented in the portf
 
 `src/components/NationalFlags.tsx` samples each full flag into 32 adjacent CSS strips. A 6.8-second travelling wave grows from a fixed hoist, with phased fabric shading. Artwork is locally hosted, with no remote dependency or new JavaScript library. Arabic labels precede English. Each flag has one accessible image name; decorative strips and poles are hidden from assistive technology.
 
-Existing active-chapter/viewport/document/dialog scheduling and global Pause control apply to the loops. Pause freezes the current frame. Reduced motion displays the complete original flat artwork and disables the waving layer. Flag ratios and orientation do not change with language or theme.
+Active-chapter/viewport/document/dialog scheduling applies to the automatic loops. Reduced motion displays the complete original flat artwork and disables the waving layer. Flag ratios and orientation do not change with language or theme.
 
 The editable Russian artwork is `public/flags/russia.svg`; official Omani artwork is `public/flags/oman.jpg`. Motion and responsive layout live in `src/app/motion.css`.

@@ -1,6 +1,6 @@
 "use client";
 import { Component, useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
-import { Pause, Play, RotateCcw } from 'lucide-react';
+import { RotateCcw } from 'lucide-react';
 import sizes from '@/data/model-sizes.json';
 import MediaLoading from './MediaLoading';
 import { useNetwork } from './NetworkPreferences';
@@ -14,7 +14,7 @@ export default function RideModel({ slug, title, paused, visible }: { slug: stri
   const network = useNetwork();
   const [state, setState] = useState<'idle' | 'loading' | 'preparing' | 'ready' | 'error'>('idle');
   const [progress, setProgress] = useState<number>();
-  const [url, setUrl] = useState(''), [reset, setReset] = useState(0), [localPause, setLocalPause] = useState(false);
+  const [url, setUrl] = useState(''), [reset, setReset] = useState(0);
   const [Viewer, setViewer] = useState<typeof import('./RideViewer').default | null>(null);
   const controller = useRef<AbortController | null>(null), objectUrl = useRef('');
   const cancel = useCallback(() => { controller.current?.abort(); controller.current = null; setUrl(''); setState('idle'); }, []);
@@ -57,14 +57,19 @@ export default function RideModel({ slug, title, paused, visible }: { slug: stri
       if (controller.current === request) setState(stalled || !request.signal.aborted ? 'error' : 'idle');
     } finally { clearTimeout(timer); if (controller.current === request) controller.current = null; }
   }
+  const autoAttempted = useRef(false);
+  useEffect(() => {
+    if (!visible || paused || !network.online || network.economy || state !== 'idle' || autoAttempted.current) return;
+    autoAttempted.current = true; void load();
+  }, [visible, paused, network.online, network.economy, state]);
   const bytes = (sizes as Record<string, number>)[slug];
   return <div className="ride-stage" data-model-state={state} aria-label={`${title} interactive 3D model`}>
     <img className={`ride-poster ${state === 'ready' ? 'is-loaded' : ''}`} src={`/mg-group/rides/${slug}-poster.webp`} alt={`${title} — rendered from the supplied model in Blender`} loading="lazy" />
-    {url && Viewer && state !== 'error' && <Boundary key={reset} onError={onError}><Viewer slug={slug} url={url} paused={paused || localPause || !visible} onReady={onReady}/></Boundary>}
+    {url && Viewer && state !== 'error' && <Boundary key={reset} onError={onError}><Viewer slug={slug} url={url} paused={paused || !visible} onReady={onReady}/></Boundary>}
     {state !== 'ready' && <div className="model-load-panel">
       {state === 'loading' || state === 'preparing' ? <MediaLoading ar={state === 'loading' ? 'جارٍ تنزيل النموذج' : 'جارٍ تجهيز المشهد'} en={state === 'loading' ? 'Downloading model' : 'Preparing 3D scene'} progress={state === 'loading' ? progress : undefined} onCancel={cancel}/> :
       <button className="media-load-button" disabled={!network.online} onClick={() => void load()}><span lang="ar" dir="rtl">{!network.online ? 'أعد الاتصال لتحميل النموذج' : state === 'error' ? 'إعادة تحميل النموذج' : 'تحميل النموذج التفاعلي'}</span><span lang="en">{!network.online ? 'Reconnect to load 3D' : state === 'error' ? 'Retry 3D model' : 'Load interactive 3D'}</span><small dir="ltr">{(bytes / 1000000).toFixed(1)} MB · {network.economy ? 'Preview uses less data' : 'Drag to explore'}</small></button>}
     </div>}
-    {state === 'ready' && <div className="ride-stage-footer"><span lang="ar" dir="rtl">اسحب للتدوير · مرّر للتكبير<span lang="en" dir="ltr">Drag to orbit · Scroll to zoom</span></span><div><button aria-label={localPause ? 'Play model animation' : 'Pause model animation'} disabled={paused} onClick={() => setLocalPause(v => !v)}>{localPause || paused ? <Play size={18}/> : <Pause size={18}/>}</button><button aria-label="Reset model view" onClick={() => { setReset(v => v + 1); setState('preparing'); }}><RotateCcw size={18}/></button></div></div>}
+    {state === 'ready' && <div className="ride-stage-footer"><span lang="ar" dir="rtl">اسحب للتدوير · مرّر للتكبير<span lang="en" dir="ltr">Drag to orbit · Scroll to zoom</span></span><div><button aria-label="Reset model view" onClick={() => { setReset(v => v + 1); setState('preparing'); }}><RotateCcw size={18}/></button></div></div>}
   </div>;
 }

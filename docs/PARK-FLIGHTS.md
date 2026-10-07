@@ -4,16 +4,16 @@
 
 On 7 October 2026 the owner supplied nine exact GPS points, including a new planned observation wheel in Blagoveshchensk. Coordinates are preserved in `src/data/project-locations.json` and in each source-register entry. Display labels use five decimals; Google Maps links and camera targets use the original numeric precision.
 
-The portfolio now contains eleven projects (eight Russia, three Oman) and twenty chapters. The operating attraction total remains 95. Blagoveshchensk has one **planned**, **not yet built** wheel; its budget, height, opening date and staff are unknown and are not displayed as zero.
+The portfolio now contains eleven projects (eight Russia, three Oman) and twenty-one chapters. The operating attraction total remains 95. Blagoveshchensk has one **planned**, **not yet built** wheel; its budget, height, opening date and staff are unknown and are not displayed as zero.
 
 ## Interaction
 
 - Only the active, visible case can load a map. The Maps SDK is lazy-loaded once and the individual scene is released on completion or departure.
 - Camera starts at a 24,000 km range. A nine-second `flyCameraTo` targets the supplied GPS point, followed by a 0.9-second destination hold and a 1.4-second smooth crossfade.
 - Camera ranges and tilts are presentation choices, not engineering dimensions or a claim of survey accuracy.
-- Presentation pause stops the camera and fade. Resume uses the remaining flight duration. Skip immediately reveals the creative; replay creates a fresh scene.
-- Data saving, detected slow connections, offline state and reduced motion show the creative directly. SDK loading is bounded (15 seconds), map readiness is bounded (20 seconds), and an absent arrival event has a bounded recovery. Error returns to the creative with a retry control.
-- Google attribution stays inside the map, unobscured by the controls. The exact-coordinate link stays below the map.
+- Flights start automatically when entering a case. Dialogs and document visibility suspend the camera and fade; return uses the remaining duration. There are no start, pause, skip or replay controls. Re-entering the case creates a fresh scene.
+- Data saving, detected slow connections, offline state and reduced motion show the creative directly. SDK loading is bounded (15 seconds), map readiness is bounded (20 seconds), and an absent arrival event has a bounded recovery. Error returns to the creative; the next chapter visit can retry.
+- Google attribution stays inside the map. A 0.9-second map reveal precedes the flight; after the final crossfade a gentle edge glow and GPS-icon pulse repeat without additional map requests. The exact-coordinate link stays below the map.
 
 ## Google activation
 

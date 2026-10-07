@@ -12,8 +12,6 @@ import {
   List,
   Minimize2,
   Moon,
-  Pause,
-  Play,
   Sun,
   X,
 } from "lucide-react";
@@ -42,6 +40,7 @@ const chapters = [
   ["specialists", "الفريق الفني", "Specialists"],
   ["lifecycle", "دورة المشروع", "Lifecycle"],
   ["geography", "الجغرافيا", "Geography"],
+  ["globe", "وجهاتنا", "Our destinations"],
   ["skazka", "سكازكا", "Skazka"],
   ["leo-tolstoy", "ليف تولستوي", "Leo Tolstoy"],
   ["vdnkh", "في دي إن خا", "VDNKH"],
@@ -277,7 +276,6 @@ export default function Experience() {
   const [active, setActive] = useState(0);
   const [present, setPresent] = useState(false);
   const [theme, setTheme] = useState<"dark" | "light">("dark");
-  const [paused, setPaused] = useState(false);
   const [reduced, setReduced] = useState(false);
   const [menu, setMenu] = useState(false);
   const [notes, setNotes] = useState(false);
@@ -285,7 +283,7 @@ export default function Experience() {
   const [image, setImage] = useState(0);
   const [fullscreen, setFullscreen] = useState(false);
   const foreground = useMotionVisibility(root, present);
-  const mediaPaused = paused || !foreground || menu || notes || !!gallery;
+  const mediaPaused = !foreground || menu || notes || !!gallery;
   const motionBlocked = mediaPaused || reduced;
   const menuDialog = useRef<HTMLDialogElement>(null),
     notesDialog = useRef<HTMLDialogElement>(null),
@@ -315,7 +313,7 @@ export default function Experience() {
     try {
       const t = localStorage.getItem("mg-group-theme");
       if (t === "light" || t === "dark") setTheme(t);
-      setPaused(localStorage.getItem('mg-group-motion') === 'paused');
+      localStorage.removeItem('mg-group-motion');
     } catch {}
     return () => mq.removeEventListener("change", update);
   }, []);
@@ -657,7 +655,8 @@ export default function Experience() {
             <div className="copy">
               <Heading {...chapterCopy.geography.heading} />
               <Pair className="body-copy" value={chapterCopy.geography.body} />
-              <div className="assembly-geography-context"><NationalFlags /><PortfolioGlobe go={go} paused={motionBlocked || active !== 6} /></div>
+              <div className="assembly-geography-context"><NationalFlags /></div>
+              <button className="text-button" onClick={() => go(7)}><Pair value={pair("استكشفوا الوجهات على الكرة الأرضية", "Explore every destination on the globe")} /><ArrowRight size={20}/></button>
               <p className="source-note">
                 <Pair
                   value={pair(
@@ -669,6 +668,7 @@ export default function Experience() {
             </div>
           </>,
         )}
+        {section("globe", <PortfolioGlobe go={(id) => go(chapters.findIndex(c => c[0] === id))} paused={mediaPaused} reduced={reduced} active={active === 7} />, "globe-chapter")}
         {[
           "skazka",
           "leo-tolstoy",
@@ -886,15 +886,6 @@ export default function Experience() {
             aria-pressed={present}
           >
             {present ? "Exit" : "Present"}
-          </button>
-          <button
-            className="icon-button"
-            onClick={() => { const next = !paused; setPaused(next); try { localStorage.setItem('mg-group-motion', next ? 'paused' : 'running'); } catch {} }}
-            aria-label={paused ? "Resume motion" : "Pause motion"}
-            aria-pressed={paused}
-            title={reduced ? 'Reduced motion is enabled in your device settings' : paused ? 'Resume all animation loops' : 'Pause all animation loops'}
-          >
-            {paused ? <Play size={18} /> : <Pause size={18} />}
           </button>
           <button
             className="icon-button fullscreen"

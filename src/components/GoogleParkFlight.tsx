@@ -12,7 +12,7 @@ export default function GoogleParkFlight({ location, running, onReady, onArrive,
   const timing = useRef({ remaining: 9000, started: 0, arrived: false });
   const commands = useRef(Promise.resolve());
   useEffect(() => {
-    let disposed = false, el: MapElement | undefined;
+    let disposed = false, el: MapElement | undefined, announced = false;
     const timeout = setTimeout(() => callbacks.current.onError(), 20000);
     loadGoogleMaps().then(({ Map3DElement }) => {
       if (disposed || !host.current) return;
@@ -23,8 +23,8 @@ export default function GoogleParkFlight({ location, running, onReady, onArrive,
       current.style.cssText = 'display:block;width:100%;height:100%';
       current.addEventListener('gmp-error', () => { if (!disposed) callbacks.current.onError(); });
       current.addEventListener('gmp-steadychange', event => {
-        if (!disposed && (event as Event & { isSteady: boolean }).isSteady) {
-          clearTimeout(timeout); setReady(true); callbacks.current.onReady();
+        if (!disposed && !announced && (event as Event & { isSteady: boolean }).isSteady) {
+          announced = true; clearTimeout(timeout); setReady(true); callbacks.current.onReady();
         }
       });
       current.addEventListener('gmp-animationend', () => {
@@ -38,7 +38,7 @@ export default function GoogleParkFlight({ location, running, onReady, onArrive,
     return () => {
       disposed = true; clearTimeout(timeout);
       map.current = null;
-      if (el) { void el.stopCameraAnimation().catch(() => {}); el.remove(); }
+      if (el) { try { el.stopCameraAnimation(); } catch {} el.remove(); }
     };
   }, [location]);
   useEffect(() => {

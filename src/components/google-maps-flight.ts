@@ -3,8 +3,8 @@
 export const mapsConfigured = Boolean(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY);
 export type Camera = { center: { lat: number; lng: number; altitude: number }; range: number; tilt: number; heading: number; altitudeMode?: string };
 export type MapElement = HTMLElement & Camera & {
-  flyCameraTo(options: { endCamera: Camera; durationMillis: number }): Promise<void>;
-  stopCameraAnimation(): Promise<void>;
+  flyCameraTo(options: { endCamera: Camera; durationMillis: number }): void;
+  stopCameraAnimation(): void;
 };
 type MapsLibrary = { Map3DElement: new (options: Camera & { mode: string; gestureHandling: string; defaultUIHidden: boolean }) => MapElement };
 type MapsWindow = Window & { google?: { maps: { importLibrary(name: string): Promise<MapsLibrary> } }; __mgMapsReady?: () => void };

@@ -5,6 +5,14 @@
 .park-flight-creative .masterplan-image-button > .progressive-media { object-fit:contain; }
 .park-flight-map { position:absolute; z-index:1; inset:0; visibility:hidden; }
 .park-flight-map.is-visible { visibility:visible; }
+.park-flight-map { transition:opacity .9s cubic-bezier(.22,1,.36,1); }
+.park-flight-stage:after { content:''; position:absolute; inset:0; z-index:2; pointer-events:none; border-radius:inherit; box-shadow:inset 0 0 32px #f4a47335; opacity:0; }
+.park-flight[data-flight-motion=running]:is([data-flight-phase=creative],[data-flight-phase=idle],[data-flight-phase=error]) .park-flight-stage:after { animation:destination-breathe 5s ease-in-out infinite; }
+.park-flight[data-flight-motion=running] .park-flight-tools a>svg { animation:location-breathe 4s ease-in-out infinite; }
+.park-flight[data-flight-phase=arrival] .park-flight-pin>svg { animation:location-breathe 2.4s ease-in-out infinite; }
+@keyframes destination-breathe { 0%,100% { opacity:.15; } 50% { opacity:.7; } }
+@keyframes location-breathe { 0%,100% { opacity:.65; transform:scale(1); } 50% { opacity:1; transform:scale(1.12); } }
+@media(prefers-reduced-motion:reduce) { .park-flight-map { transition:none; }.park-flight-stage:after,.park-flight-tools a>svg,.park-flight-pin>svg { animation:none!important; } }
 .park-flight-google { height:100%; width:100%; }
 .nizwa-visual .park-flight-stage { aspect-ratio:3/4; max-width:285px; max-height:380px; margin-inline:auto; }
 .park-flight-pin { position:absolute; z-index:2; left:50%; top:50%; transform:translate(-50%,-50%); color:#fff; filter:drop-shadow(0 1px 3px #000); pointer-events:none; }
