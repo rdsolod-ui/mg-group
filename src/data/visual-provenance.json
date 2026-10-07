@@ -719,5 +719,143 @@
         "sha256": "23967c6106edeb0b174509958909b7050c90d3e5938b913d71c8cf1551fd338d"
       }
     ]
+  },
+  {
+    "id": "skazka-summer-wheel",
+    "kind": "ai_edited_photograph",
+    "sourceFile": "exec-b3f5d1a2-5d48-43ae-b266-3e81bf7be0de.png",
+    "sourceSHA256": "fb9e3ca3020f7ee5e5d50cab855d85e9c7ac307eb0babc3d9040818130727201",
+    "description": "AI-enhanced official park photography. Summer weather, vegetation and visitors edited; not documentary evidence of attendance.",
+    "variants": [
+      {
+        "path": "visuals/skazka-summer/wheel.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 606160,
+        "sha256": "e6176f1a7806d77d180e69de9b468baa31e03ecd9fc39be6f90d739d97c734bb"
+      },
+      {
+        "path": "visuals/skazka-summer/wheel-thumb.webp",
+        "width": 240,
+        "height": 160,
+        "bytes": 12738,
+        "sha256": "49ea3556c18f080a5fc471df2f837eac487372bbc0d96eac000dbd86863ce0f1"
+      }
+    ]
+  },
+  {
+    "id": "skazka-summer-boomerang",
+    "kind": "ai_edited_photograph",
+    "sourceFile": "exec-4973bc80-6f7f-4c63-a332-f8a13214bfae.png",
+    "sourceSHA256": "1d4e513ee34c046040de9fcfae70b4e39cdd06d54ba1bec7760b04e5677b56b6",
+    "description": "AI-enhanced official park photography. Summer weather, vegetation and visitors edited; not documentary evidence of attendance.",
+    "variants": [
+      {
+        "path": "visuals/skazka-summer/boomerang.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 474964,
+        "sha256": "3049a9526c3a13780e7c63376dc898ae2e003602d7a2e0a800dd981aab03e9fb"
+      },
+      {
+        "path": "visuals/skazka-summer/boomerang-thumb.webp",
+        "width": 240,
+        "height": 160,
+        "bytes": 11630,
+        "sha256": "af4040686b00def62fbc983526e43f0f389c45dfb3b0f35adb9f91fca73f4e3f"
+      }
+    ]
+  },
+  {
+    "id": "skazka-summer-lightning",
+    "kind": "ai_edited_photograph",
+    "sourceFile": "exec-48362f08-c13a-4bf8-857a-19255bb2440e.png",
+    "sourceSHA256": "4ed3685d14252de7bbd30774e08badbb6ba425eace58677e3a6ef89e8c604da2",
+    "description": "AI-enhanced official park photography. Summer weather, vegetation and visitors edited; not documentary evidence of attendance.",
+    "variants": [
+      {
+        "path": "visuals/skazka-summer/lightning.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 556350,
+        "sha256": "aece7a4aafaa8f560d972f25caf6b552abb461984d4bcf2af1f3a5254170f612"
+      },
+      {
+        "path": "visuals/skazka-summer/lightning-thumb.webp",
+        "width": 240,
+        "height": 160,
+        "bytes": 13912,
+        "sha256": "78fb420b90df2564eccc87aedcfdde5973e7a164418c9a7ccd49b40b99411fa9"
+      }
+    ]
+  },
+  {
+    "id": "skazka-summer-sky-carousel",
+    "kind": "ai_edited_photograph",
+    "sourceFile": "exec-7bc01c37-bd23-4383-b904-93a721b304b1.png",
+    "sourceSHA256": "735ae94d3e34c58b342f593e2ef2fe298b8d88489130270b6709697c0f675acf",
+    "description": "AI-enhanced official park photography. Summer weather, vegetation and visitors edited; not documentary evidence of attendance.",
+    "variants": [
+      {
+        "path": "visuals/skazka-summer/sky-carousel.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 274174,
+        "sha256": "a164a8b73f237d4f67255f4ca1ab9961d4fbbe6a41578a9cb66fb564e615a548"
+      },
+      {
+        "path": "visuals/skazka-summer/sky-carousel-thumb.webp",
+        "width": 240,
+        "height": 160,
+        "bytes": 6122,
+        "sha256": "e39c8fe74960591ae4b57f748503199d69e037797d5247ace073a1c874a877e5"
+      }
+    ]
+  },
+  {
+    "id": "skazka-summer-galaxy",
+    "kind": "ai_edited_photograph",
+    "sourceFile": "exec-482d8cf8-04d3-4a85-9056-45d284e91676.png",
+    "sourceSHA256": "a169621a62c4ff6e5bb46eaaa390ecd0ecf3f9dcf24e2ddb264da12011370c92",
+    "description": "AI-enhanced official park photography. Summer weather, vegetation and visitors edited; not documentary evidence of attendance.",
+    "variants": [
+      {
+        "path": "visuals/skazka-summer/galaxy.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 443068,
+        "sha256": "7e2f803f82e2086466b39dc9d80678ccd61ac2779bff26b39a952df3aef03a2b"
+      },
+      {
+        "path": "visuals/skazka-summer/galaxy-thumb.webp",
+        "width": 240,
+        "height": 160,
+        "bytes": 8842,
+        "sha256": "5f65a8b67328b85b891183dd08d57d153bff8db975c40b2309f4979e72d5d800"
+      }
+    ]
+  },
+  {
+    "id": "skazka-summer-kraken",
+    "kind": "ai_edited_photograph",
+    "sourceFile": "exec-c2378ff7-179e-409a-88ce-ac2492596e1c.png",
+    "sourceSHA256": "d577f718eb9a4d89bc7843d0842890f81721017424a57c997fad6f13c69c6127",
+    "description": "AI-enhanced official park photography. Summer weather, vegetation and visitors edited; not documentary evidence of attendance.",
+    "variants": [
+      {
+        "path": "visuals/skazka-summer/kraken.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 451372,
+        "sha256": "d1378fb9eb694b88821620455e269e993fde3b8b341c6d241c1c323831e7c6d9"
+      },
+      {
+        "path": "visuals/skazka-summer/kraken-thumb.webp",
+        "width": 240,
+        "height": 160,
+        "bytes": 10106,
+        "sha256": "501c9e3f00867bfb8b93a688c085e49f0c536fde7233e1cafacd9a3bf04ab2d8"
+      }
+    ]
   }
 ]

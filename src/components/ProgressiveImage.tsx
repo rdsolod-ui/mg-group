@@ -4,13 +4,15 @@ import registry from '@/data/optimized-media.json';
 import { useNetwork } from './NetworkPreferences';
 import MediaLoading from './MediaLoading';
 const images: Record<string, (typeof registry)[keyof typeof registry]> = registry;
-export default function ProgressiveImage({ src, alt, sizes = '(max-width: 900px) 92vw, 56vw', className = '', priority = false, full = false, interactive = true }: { src: string; alt: string; sizes?: string; className?: string; priority?: boolean; full?: boolean; interactive?: boolean }) {
+export default function ProgressiveImage({ src, alt, sizes = '(max-width: 900px) 92vw, 56vw', className = '', priority = false, full = false, interactive = true, onReady, onFailure }: { src: string; alt: string; sizes?: string; className?: string; priority?: boolean; full?: boolean; interactive?: boolean; onReady?:()=>void; onFailure?:()=>void }) {
   const key = src.replace(/^\/mg-group\//, ''), image = images[key];
   const network = useNetwork();
   const box = useRef<HTMLSpanElement>(null), img = useRef<HTMLImageElement>(null);
   const [near, setNear] = useState(priority || full);
   const [state, setState] = useState<'waiting' | 'loaded' | 'error'>('waiting');
   const [attempt, setAttempt] = useState(0);
+  useEffect(()=>{if(state==='loaded')onReady?.();},[state,onReady]);
+  useEffect(()=>{if(state==='error')onFailure?.();},[state,onFailure]);
   useEffect(() => {
     if (near || !box.current) return;
     const observer = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) { setNear(true); observer.disconnect(); } }, { rootMargin: network.economy ? '0px' : '100px' });

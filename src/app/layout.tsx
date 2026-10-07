@@ -10,6 +10,7 @@ import "./revision.css";
 import "./assembly-charts.css";
 import "./park-flights.css";
 import "./globe.css";
+import "./skazka-slider.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://marketing.parkskazka.ru"),
   title: site.title,

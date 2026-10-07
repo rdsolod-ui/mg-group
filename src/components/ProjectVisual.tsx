@@ -7,6 +7,7 @@ import { projectVisuals, salalahProgramme, type VisualAsset } from '@/data/proje
 import register from '@/data/source-register.json';
 import { ProjectCapacity } from './MotionCharts';
 import ParkFlight from './ParkFlight';
+import SkazkaSlider from './SkazkaSlider';
 
 export function VisualCaption({ visual }: { visual: VisualAsset }) {
   return <span className="pair"><span lang="ar" dir="rtl">{visual.ar}</span><span className="en" lang="en" dir="ltr">{visual.en}</span></span>;
@@ -40,6 +41,7 @@ export default function ProjectVisual({ id, onExpand, paused, active, reduced }:
   const index=nizwa ? mode==='site' ? 2 : mode==='wheel' ? 1 : 0 : salalah && mode==='creative' ? 3 : 0;
   const visual=projectVisuals[id][index];
   const project=register.projects.find(p=>p.id===id)!;
+  if(id==='skazka')return <SkazkaSlider active={active} paused={paused} reduced={reduced} onExpand={onExpand}/>;
   return <div ref={ref} className={`visual case-visual masterplan-visual ${salalah?'salalah-visual':''} ${nizwa?'nizwa-visual':''}`}>
     {nizwa && <div className="project-media-tabs" data-media-controls aria-label="Nizwa site and concepts">
       {[['photo','تصوّر الوجهة','Destination concept'],['wheel','تصوّر العجلة','Wheel concept'],['site','الموقع الحالي','Actual site']].map(([key,ar,en])=><button key={key} aria-pressed={mode===key} onClick={()=>setMode(key)}><span lang="ar" dir="rtl">{ar}</span><small lang="en">{en}</small></button>)}

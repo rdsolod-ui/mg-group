@@ -6,9 +6,9 @@ import path from 'node:path';
 const digest = b => createHash('sha256').update(b).digest('hex');
 await mkdir('public/optimized', { recursive: true });
 const registry = {};
-for (const dir of ['visuals/v2', 'visuals/chapters']) {
+for (const dir of ['visuals/v2', 'visuals/chapters', 'visuals/skazka-summer']) {
   for (const file of await readdir(`public/${dir}`)) {
-    if (!file.endsWith('.webp') || /-(640|960)\.webp$/.test(file) || file === 'earth-day.webp') continue;
+    if (!file.endsWith('.webp') || /-(640|960|thumb)\.webp$/.test(file) || file === 'earth-day.webp') continue;
     const source = `${dir}/${file}`, input = await readFile(`public/${source}`);
     const meta = await sharp(input).metadata();
     const preview = await sharp(input).resize(24).webp({ quality: 30 }).toBuffer();

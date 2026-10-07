@@ -1,3 +1,4 @@
+import { skazkaSlides } from './skazka-slides';
 export type VisualAsset = { src: string; alt: string; ar: string; en: string; kind: 'generated' | 'photo' | 'concept' | 'plan' };
 const image = (slug: string) => `visuals/v2/${slug}.webp`;
 const generated = (id: string, name: string): VisualAsset => ({
@@ -13,7 +14,7 @@ export const projectVisuals: Record<string, VisualAsset[]> = {
   ],
   riyam:[{...generated('riyam','Riyam planned amusement park'),ar:'تصوّر مولّد لمنتزه ترفيهي مخطط مع عجلة؛ توزيع توضيحي، وليس مخططاً معتمداً.',en:'Generated concept of a planned amusement park with a wheel. Illustrative layout, not an approved masterplan.'}],
   blagoveshchensk: [{...generated('blagoveshchensk', 'Blagoveshchensk planned observation wheel'), ar:'تصور مولّد لعجلة مخططة. لم تُبنَ بعد؛ التصميم وتوزيع الموقع توضيحيان.', en:'Generated concept of a planned wheel. Not yet built; design and site layout are illustrative.'}],
-  skazka: [generated('skazka', 'Skazka Park')],
+  skazka: skazkaSlides.map(slide=>slide.visual),
   'leo-tolstoy': [generated('leo-tolstoy', 'Leo Tolstoy Park')],
   vdnkh: [generated('vdnkh', 'VDNKH Attractions')],
   izmaylovo: [generated('izmaylovo', 'Kremlin Izmaylovo')],
