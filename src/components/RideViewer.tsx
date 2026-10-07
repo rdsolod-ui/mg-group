@@ -35,10 +35,24 @@ function Studio() {
   return null;
 }
 
-function Model({ slug, paused, onReady }: { slug: string; paused: boolean; onReady: () => void }) {
-  const gltf = useLoader(GLTFLoader, `/mg-group/rides/${slug}.glb`, loader => {
+function Model({ url, paused, onReady }: { url: string; paused: boolean; onReady: () => void }) {
+  const gltf = useLoader(GLTFLoader, url, loader => {
     loader.setDRACOLoader(draco);
   });
+  useEffect(() => () => {
+    // Object URLs belong to one download session; do not retain every visited model.
+    useLoader.clear(GLTFLoader, url);
+    const resources = new Set<{ dispose: () => void }>();
+    gltf.scene.traverse(child => {
+      if (!(child instanceof THREE.Mesh)) return;
+      resources.add(child.geometry);
+      for (const material of Array.isArray(child.material) ? child.material : [child.material]) {
+        resources.add(material);
+        for (const value of Object.values(material)) if (value instanceof THREE.Texture) resources.add(value);
+      }
+    });
+    resources.forEach(resource => resource.dispose());
+  }, [gltf, url]);
   const { object, mixer, scale, offset, ownedMaterials } = useMemo(() => {
     const object = gltf.scene.clone(true);
     const box = new THREE.Box3().setFromObject(object), size = box.getSize(new THREE.Vector3()), center = box.getCenter(new THREE.Vector3());
@@ -70,7 +84,7 @@ function Model({ slug, paused, onReady }: { slug: string; paused: boolean; onRea
   return <group scale={scale} position={offset}><primitive object={object} /></group>;
 }
 
-export default function RideViewer({ slug, paused, onReady }: { slug: string; paused: boolean; onReady: () => void }) {
+export default function RideViewer({ slug, url, paused, onReady }: { slug: string; url: string; paused: boolean; onReady: () => void }) {
   const horizontal = slug === "typhoon" || slug === "lightning";
   return <Canvas shadows={{ type: THREE.PCFShadowMap }} frameloop={paused ? "demand" : "always"} dpr={[1, 1.5]} camera={horizontal ? wideCameraConfig : cameraConfig} gl={{ antialias: true, alpha: false, powerPreference: "high-performance" }} onCreated={({ gl }) => { gl.setClearColor("#10212e"); gl.toneMapping = THREE.ACESFilmicToneMapping; gl.toneMappingExposure = 1.3; }}>
     <Studio />
@@ -79,7 +93,7 @@ export default function RideViewer({ slug, paused, onReady }: { slug: string; pa
     <ambientLight intensity={.4} />
     <directionalLight position={[-5, 12, 7]} intensity={3.8} color="#fff1d7" castShadow shadow-mapSize={[1024, 1024]} shadow-camera-left={-9} shadow-camera-right={9} shadow-camera-top={12} shadow-camera-bottom={-5} shadow-bias={-.001} />
     <directionalLight position={[7, 7, -5]} intensity={2.3} color="#bcdcff" />
-    <Suspense fallback={null}><Model key={slug} slug={slug} paused={paused} onReady={onReady} /></Suspense>
+    <Suspense fallback={null}><Model key={url} url={url} paused={paused} onReady={onReady} /></Suspense>
     <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -.025, 0]} receiveShadow><planeGeometry args={[1000, 1000]} /><meshStandardMaterial color="#10212e" roughness={.67} metalness={.12} /></mesh>
     <OrbitControls makeDefault target={[0, horizontal ? 1.3 : 3.8, 0]} enablePan={false} enableZoom minDistance={5} maxDistance={35} minPolarAngle={.15} maxPolarAngle={Math.PI * .485} autoRotate={horizontal && !paused} autoRotateSpeed={.5} enableDamping dampingFactor={.08} />
   </Canvas>;

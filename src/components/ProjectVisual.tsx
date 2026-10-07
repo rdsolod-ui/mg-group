@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from 'react';
 import { Expand, Minus, Plus } from 'lucide-react';
+import ProgressiveImage from "./ProgressiveImage";
 import AttractionVideo from './AttractionVideo';
 import { projectVisuals, salalahProgramme, type VisualAsset } from '@/data/project-visuals';
 import register from '@/data/source-register.json';
@@ -9,8 +10,8 @@ import { ProjectCapacity } from './MotionCharts';
 export function VisualCaption({ visual }: { visual: VisualAsset }) {
   return <span className="pair"><span lang="ar" dir="rtl">{visual.ar}</span><span className="en" lang="en" dir="ltr">{visual.en}</span></span>;
 }
-export function VisualImage({ visual, className = '', full = false }: { visual: VisualAsset; className?: string; full?: boolean }) {
-  return <img className={className} src={`/mg-group/${visual.src}`} srcSet={full ? undefined : [640,960].map(w => `/mg-group/${visual.src.replace('.webp', `-${w}.webp`)} ${w}w`).join(', ') + `, /mg-group/${visual.src} ${visual.kind === 'plan' ? 3300 : visual.kind === 'photo' ? 2400 : 1672}w`} sizes="(max-width: 900px) 92vw, 56vw" alt={visual.alt} loading="lazy" />;
+export function VisualImage({ visual, className = '', full = false, interactive = false }: { visual: VisualAsset; className?: string; full?: boolean; interactive?: boolean }) {
+  return <ProgressiveImage key={`${visual.src}-${full}`} className={className} src={`/mg-group/${visual.src}`} sizes="(max-width: 900px) 92vw, 56vw" alt={visual.alt} full={full} interactive={interactive} />;
 }
 export function VisualInspector({ visual }: { visual: VisualAsset }) {
   const [zoom, setZoom] = useState(1);
@@ -22,7 +23,7 @@ export function VisualInspector({ visual }: { visual: VisualAsset }) {
       <span lang="ar" dir="rtl">كبّر لاستكشاف التفاصيل <small lang="en" dir="ltr">Zoom to explore details</small></span>
     </div>
     <div className={`visual-inspector ${zoom > 1 ? 'is-zoomed' : ''}`} tabIndex={0} aria-label="Masterplan detail viewer, scroll to explore when zoomed">
-      <div style={{ width: `${zoom*100}%` }}><VisualImage visual={visual} full /></div>
+      <div style={{ width: `${zoom*100}%` }}><VisualImage visual={visual} full={zoom > 1} interactive /></div>
     </div>
     {visual.kind === 'plan' && <ol className="programme-key">{salalahProgramme.map(([ar,en])=><li key={en}><span lang="ar" dir="rtl">{ar}</span><small lang="en">{en}</small></li>)}</ol>}
   </>;

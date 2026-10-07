@@ -4,6 +4,8 @@ import { useCallback, useEffect, useId, useRef, useState, type CSSProperties } f
 import { Maximize, Pause, Play, RotateCcw, Volume2, VolumeX } from "lucide-react";
 import type Hls from "hls.js";
 import type { LoadPolicy } from "hls.js";
+import { useNetwork } from "./NetworkPreferences";
+import MediaLoading from "./MediaLoading";
 import styles from "./AttractionVideo.module.css";
 
 export type AttractionDevice = {
@@ -57,6 +59,7 @@ export default function AttractionVideo(props: AttractionVideoProps) {
 }
 
 function VideoSession({ slug, title, paused, visible, device = defaultDevice, highPlaylist = "1080p/index.m3u8", mediaBase, framed = true }: AttractionVideoProps) {
+  const network = useNetwork();
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const hlsRef = useRef<Hls | null>(null);
@@ -85,8 +88,12 @@ function VideoSession({ slug, title, paused, visible, device = defaultDevice, hi
   const [playBlocked, setPlayBlocked] = useState(false);
   const id = useId();
   const base = mediaBase || `/mg-group/ride-videos/${slug}`;
-  const allowed = visible && tabVisible && !paused;
+  const allowed = visible && tabVisible && !paused && network.online;
   allowedRef.current = allowed;
+
+  useEffect(() => {
+    if (!activated) { qualityRef.current = network.economy ? 'economy' : 'auto'; setQuality(qualityRef.current); }
+  }, [network.economy, activated]);
 
   const readProgress = useCallback(() => {
     const video = videoRef.current;
@@ -222,14 +229,14 @@ function VideoSession({ slug, title, paused, visible, device = defaultDevice, hi
         }
         if (!HlsClass.isSupported()) { fallback(); return; }
         const connection = (navigator as Navigator & { connection?: Connection }).connection;
-        const slow = connection?.saveData || /^(slow-2g|2g|3g)$/.test(connection?.effectiveType || "");
+        const slow = qualityRef.current === "economy" || connection?.saveData || /^(slow-2g|2g|3g)$/.test(connection?.effectiveType || "");
         const hls = new HlsClass({
           autoStartLoad: false,
           startLevel: 0,
           abrEwmaDefaultEstimate: slow ? 350000 : 700000,
           capLevelToPlayerSize: true,
-          maxBufferLength: 20,
-          maxMaxBufferLength: 32,
+          maxBufferLength: slow ? 10 : 20,
+          maxMaxBufferLength: slow ? 16 : 32,
           maxBufferSize: 24 * 1024 * 1024,
           backBufferLength: 8,
           lowLatencyMode: false,
@@ -254,6 +261,9 @@ function VideoSession({ slug, title, paused, visible, device = defaultDevice, hi
             mediaRecoveryUsed = true;
             hls.recoverMediaError();
             if (!allowedRef.current || !wantedRef.current) hls.stopLoad();
+          } else if (data.type === HlsClass.ErrorTypes.NETWORK_ERROR) {
+            resumeAtRef.current = video.currentTime || resumeAtRef.current;
+            wantedRef.current = false; hls.stopLoad(); video.pause(); setStatus("error");
           } else fallback();
         });
         hls.loadSource(`${base}/master.m3u8`);
@@ -296,10 +306,30 @@ function VideoSession({ slug, title, paused, visible, device = defaultDevice, hi
 
   const stop = () => {
     wantedRef.current = false;
-    videoRef.current?.pause();
+    const video = videoRef.current;
+    if (video) {
+      resumeAtRef.current = video.currentTime || resumeAtRef.current;
+      video.pause();
+      if (engineRef.current === 'native' || engineRef.current === 'mp4') {
+        nativeSuspendedRef.current = true; changingSourceRef.current = true;
+        video.removeAttribute('src'); video.load(); setBuffered([]);
+      }
+    }
     hlsRef.current?.stopLoad();
     setStatus("paused");
   };
+
+  useEffect(() => {
+    if (status !== 'loading' && status !== 'buffering') return;
+    const timer = setTimeout(() => {
+      const video = videoRef.current;
+      resumeAtRef.current = video?.currentTime || resumeAtRef.current;
+      wantedRef.current = false; hlsRef.current?.stopLoad(); video?.pause();
+      if (engineRef.current !== 'hls' && video) { video.removeAttribute('src'); video.load(); }
+      setStatus('error');
+    }, 30000);
+    return () => clearTimeout(timer);
+  }, [status]);
 
   const selectQuality = (value: Quality) => {
     qualityRef.current = value;
@@ -344,7 +374,7 @@ function VideoSession({ slug, title, paused, visible, device = defaultDevice, hi
       <div className={styles.screen} style={framed ? screenStyle : { inset: 0, width: '100%', height: '100%', borderRadius: 4 }}>
         <video
           ref={videoRef} className={styles.video} preload="none" playsInline muted={muted}
-          poster={`${base}/poster.webp`} aria-label={`${title} — attraction video`}
+          poster={visible || activated ? `${base}/poster.webp` : undefined} aria-label={`${title} — attraction video`}
           onLoadedMetadata={loadedMetadata} onDurationChange={readProgress} onTimeUpdate={readProgress}
           onProgress={readProgress} onResize={readProgress}
           onPlay={() => {
@@ -362,15 +392,18 @@ function VideoSession({ slug, title, paused, visible, device = defaultDevice, hi
           }}
           onVolumeChange={() => { if (videoRef.current) setMuted(videoRef.current.muted); }}
           onEnded={() => { wantedRef.current = false; hlsRef.current?.stopLoad(); setStatus("ended"); }}
-          onError={() => { if (engineRef.current === "native" || engineRef.current === "mp4") fallbackRef.current(); }}
+          onError={() => {
+            if (videoRef.current?.error?.code === 2) { wantedRef.current = false; setStatus('error'); }
+            else if (engineRef.current === "native" || engineRef.current === "mp4") fallbackRef.current();
+          }}
         />
         {!active && <button className={styles.playOverlay} onClick={start} disabled={!allowed} aria-label={status === "error" ? `Retry ${title} video` : `Play ${title} video`}>
           <span className={styles.playDisc}>{status === "ended" || status === "error" ? <RotateCcw aria-hidden="true" /> : <Play aria-hidden="true" />}</span>
           <span lang="ar" dir="rtl">{status === "error" ? "إعادة المحاولة" : status === "ended" ? "إعادة المشاهدة" : "شاهد الفيديو"}<small lang="en" dir="ltr">{status === "error" ? "Retry video" : status === "ended" ? "Watch again" : framed ? "Watch the ride" : "Watch the site film"}</small></span>
         </button>}
-        {waiting && <div className={styles.waiting} role="status"><span className={styles.spinner} aria-hidden="true" /><span lang="ar" dir="rtl">جارٍ تحميل الفيديو<small lang="en" dir="ltr">Buffering video</small></span></div>}
+        {waiting && <div className={styles.waiting}><MediaLoading ar="جارٍ تحميل الفيديو" en="Buffering video" onCancel={stop}/></div>}
       </div>
-      {framed && <img className={styles.frame} src={device.src} alt="" aria-hidden="true" loading="lazy" draggable="false" />}
+      {framed && (visible || activated) && <img className={styles.frame} src={device.src} alt="" aria-hidden="true" loading="lazy" draggable="false" />}
     </div>
 
     <div className={styles.controls}>
@@ -407,7 +440,8 @@ function VideoSession({ slug, title, paused, visible, device = defaultDevice, hi
       </div>
     </div>
     <div className={styles.notice} aria-live="polite" aria-atomic="true">
-      {status === "error" ? <p lang="ar" dir="rtl">تعذّر تحميل الفيديو. تحقق من اتصالك وحاول مجدداً.<span lang="en" dir="ltr">Video could not load. Check your connection and retry.</span></p>
+      {!network.online ? <p lang="ar" dir="rtl">انقطع الاتصال. أعد الاتصال واضغط تشغيل للمتابعة.<span lang="en" dir="ltr">Offline. Reconnect and press play to resume.</span></p>
+        : status === "error" ? <p lang="ar" dir="rtl">تعذّر تحميل الفيديو. تحقق من اتصالك وحاول مجدداً.<span lang="en" dir="ltr">Video could not load. Check your connection and retry.</span></p>
         : paused ? <p lang="ar" dir="rtl">أوقف العرض مؤقتاً تشغيل الفيديو.<span lang="en" dir="ltr">Presentation pause is on.</span></p>
         : playBlocked ? <p lang="ar" dir="rtl">اضغط تشغيل للمتابعة.<span lang="en" dir="ltr">Press play to continue.</span></p>
         : engine === "mp4" ? <p lang="ar" dir="rtl">تشغيل النسخة البديلة بجودة ثابتة.<span lang="en" dir="ltr">Fallback video · fixed quality.</span></p>

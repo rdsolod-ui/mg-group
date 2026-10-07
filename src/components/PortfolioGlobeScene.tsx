@@ -1,5 +1,5 @@
 "use client";
-import { Suspense, useRef } from 'react';
+import { Suspense, useRef, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Html, Line, OrbitControls, useTexture } from '@react-three/drei';
 import { SRGBColorSpace, Vector3, type Mesh } from 'three';
@@ -11,9 +11,10 @@ export const globeLocations=[
   {name:'Vladivostok',lat:43.12,lon:131.88,chapter:12},
   {name:'Salalah',lat:17.02,lon:54.09,chapter:13},
 ];
-function Earth({go}:{go:(n:number)=>void}){
+function Earth({go,onReady}:{go:(n:number)=>void;onReady:()=>void}){
   const earth=useRef<Mesh>(null!);
   const texture=useTexture('/mg-group/visuals/v2/earth-day.webp');texture.colorSpace=SRGBColorSpace;
+  useEffect(onReady,[onReady]);
   return <>
     <mesh ref={earth}><sphereGeometry args={[1,96,64]}/><meshStandardMaterial map={texture} roughness={1}/></mesh>
     {globeLocations.map((p,i)=><group key={p.name} position={point(p.lat,p.lon,1.012)}>
@@ -23,10 +24,10 @@ function Earth({go}:{go:(n:number)=>void}){
     {[2,3].map(i=>{const a=point(globeLocations[0].lat,globeLocations[0].lon),b=point(globeLocations[i].lat,globeLocations[i].lon);const points=Array.from({length:61},(_,j)=>a.clone().lerp(b,j/60).normalize().multiplyScalar(1.014+.12*Math.sin(Math.PI*j/60)));return <Line key={i} points={points} color="#efb48c" lineWidth={1.2} transparent opacity={.75}/>;})}
   </>;
 }
-export default function PortfolioGlobeScene({go,paused}:{go:(n:number)=>void;paused:boolean}){
+export default function PortfolioGlobeScene({go,paused,onReady}:{go:(n:number)=>void;paused:boolean;onReady:()=>void}){
   return <Canvas frameloop={paused ? 'demand' : 'always'} dpr={[1,1.5]} camera={{position:point(35,70,3.45).toArray(),fov:40}} gl={{alpha:true,antialias:true,powerPreference:'low-power'}}>
     <ambientLight intensity={1.4}/><directionalLight position={[3,5,2]} intensity={1.4}/>
-    <Suspense fallback={null}><Earth go={go}/></Suspense>
+    <Suspense fallback={null}><Earth go={go} onReady={onReady}/></Suspense>
     <OrbitControls enablePan={false} enableZoom={false} enableDamping={false} rotateSpeed={.45} autoRotate={!paused} autoRotateSpeed={.22}/>
   </Canvas>;
 }

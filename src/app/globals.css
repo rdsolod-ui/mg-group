@@ -1,6 +1,6 @@
 @font-face {
   font-family: "IBM Plex Sans";
-  src: url("/mg-group/fonts/IBMPlexSans-Variable.woff2") format("woff2");
+  src: url("/mg-group/optimized/IBMPlexSans-Latin-efa2a03b60bb.woff2") format("woff2");
   font-weight: 100 700;
   font-display: swap;
 }
@@ -257,7 +257,7 @@ h2 {
   inset: 0 48% 0 0;
   z-index: -1;
 }
-.hero-photo > img {
+.hero-photo > .progressive-media {
   height: 100%;
   object-fit: cover;
   object-position: 48% 50%;
@@ -271,7 +271,7 @@ h2 {
     linear-gradient(90deg, transparent 10%, var(--bg) 100%),
     linear-gradient(0deg, var(--bg), transparent 50%);
 }
-:root[data-theme="light"] .hero-photo > img {
+:root[data-theme="light"] .hero-photo > .progressive-media {
   opacity: 0.9;
 }
 .hero-copy {
@@ -1136,7 +1136,7 @@ address > p[lang="en"] {
   .hero-photo:after {
     background: linear-gradient(0deg, var(--bg), transparent 100%);
   }
-  .hero-photo > img {
+  .hero-photo > .progressive-media {
     opacity: 0.45;
     object-position: center;
   }

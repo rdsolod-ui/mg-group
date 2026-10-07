@@ -1,6 +1,7 @@
 "use client";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { gsap } from "gsap";
+import ProgressiveImage from "./ProgressiveImage";
+import NetworkPreferences from "./NetworkPreferences";
 import {
   ArrowLeft,
   ArrowRight,
@@ -323,10 +324,11 @@ export default function Experience() {
     if (motionBlocked) return;
     const elements = root.current?.querySelectorAll('.chapter.is-active > .visual, .chapter.is-active > .copy');
     if (!elements?.length) return;
-    const context = gsap.context(() => {
-      gsap.fromTo(elements, { opacity: .55, y: 16 }, { opacity: 1, y: 0, duration: .65, stagger: .08, ease: 'power2.out', clearProps: 'transform,opacity' });
-    }, root);
-    return () => context.revert();
+    const animations = [...elements].map((element, i) => element.animate(
+      [{ opacity: .55, transform: 'translateY(16px)' }, { opacity: 1, transform: 'translateY(0)' }],
+      { duration: 650, delay: i * 80, easing: 'cubic-bezier(.22,1,.36,1)' },
+    ));
+    return () => animations.forEach(animation => animation.cancel());
   }, [active, present, motionBlocked]);
   useEffect(() => {
     const key = (e: KeyboardEvent) => {
@@ -463,13 +465,7 @@ export default function Experience() {
           "intro",
           <>
             <div className="hero-photo">
-              <img
-                src={asset("visuals/v2/skazka.webp")}
-                srcSet={`${asset('visuals/v2/skazka-640.webp')} 640w, ${asset('visuals/v2/skazka-960.webp')} 960w, ${asset('visuals/v2/skazka.webp')} 1672w`}
-                sizes="(max-width: 900px) 100vw, 60vw"
-                alt="Skazka Park — generated aerial masterplan visualization"
-                fetchPriority="high"
-              />
+              <ProgressiveImage src={asset("visuals/v2/skazka.webp")} sizes="(max-width: 900px) 100vw, 60vw" alt="Skazka Park — generated aerial masterplan visualization" priority />
               <div className="hero-line">
                 <NationalFlags compact />
               </div>
@@ -546,7 +542,7 @@ export default function Experience() {
           "engineering",
           <>
             <div className="visual technical-visual">
-              <img className="engineering-render" src={asset('visuals/v2/engineering.webp')} srcSet={`${asset('visuals/v2/engineering-640.webp')} 640w, ${asset('visuals/v2/engineering-960.webp')} 960w, ${asset('visuals/v2/engineering.webp')} 1672w`} sizes="(max-width: 900px) 92vw, 55vw" alt="Illustrative wheel drive assembly showing mechanical components, structure and maintenance access" loading="lazy" />
+              <ProgressiveImage className="engineering-render" src={asset('visuals/v2/engineering.webp')} sizes="(max-width: 900px) 92vw, 55vw" alt="Illustrative wheel drive assembly showing mechanical components, structure and maintenance access" />
               <DriveScene />
               <p className="drawing-caption">
                 <Pair
@@ -713,7 +709,7 @@ export default function Experience() {
                 </article>
               ))}
               <div className="group-member">
-                <img src={asset("brand/al-shahiq.svg")} alt="AL-SHAHIQ" />
+                <img src={asset("brand/al-shahiq.svg")} alt="AL-SHAHIQ" loading="lazy" />
                 <NetworkScene />
                 <Pair
                   value={pair(
@@ -761,7 +757,7 @@ export default function Experience() {
               <ChapterPhoto scene="contact" />
               <div className="business-card">
               <div className="card-heading">
-                <img src={asset("brand/mg-group.svg")} alt="MG Group" />
+                <img src={asset("brand/mg-group.svg")} alt="MG Group" loading="lazy" />
                 <ContactSignal />
                 <span lang="en">Oman</span>
               </div>
@@ -775,6 +771,7 @@ export default function Experience() {
                   <img
                     src={asset("brand/khalid-whatsapp.svg")}
                     alt="WhatsApp QR code for Khalid: +968 9610 0010"
+                    loading="lazy"
                   />
                 </a>
                 <div className="card-person">
@@ -931,6 +928,7 @@ export default function Experience() {
           <X />
         </button>
         <Heading ar="اكتشفوا خبرتنا، فصلاً بفصل." en="Explore the expertise. Chapter by chapter." />
+        <NetworkPreferences />
         <div className="chapter-menu">
           {chapters.map((c, i) => (
             <button key={c[0]} onClick={() => go(i)}>

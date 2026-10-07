@@ -87,7 +87,7 @@
 .drive-motion-scene { padding-top:12px; }
 .drive-motion-scene svg { display:block; max-height:100px; }
 .technical-visual .engineering-render { max-height:400px; object-fit:cover; }
-.is-present .salalah-visual .masterplan-image-button > img { max-height:380px; }
+.is-present .salalah-visual .masterplan-image-button > .progressive-media { max-height:380px; }
 .loop-gear { transform-origin:0 0; animation:orbit 12s linear infinite; }
 .reverse-gear { animation-duration:8.5s; animation-direction:reverse; }
 .loop-transmission { fill:var(--accent); animation:transmission 9s ease-in-out infinite; }
@@ -181,14 +181,14 @@
   #proof .source-note .en { font-size:9px; }
   .technical-visual .engineering-render { max-height:290px; }
   .drive-motion-scene svg { max-height:76px; }
-  #lifecycle .chapter-photograph > img { max-height:208px; }
+  #lifecycle .chapter-photograph > .progressive-media { max-height:208px; }
   .lifecycle-motion-scene svg { max-height:55px; }
   .network-motion-scene { width:90px; flex-basis:90px; }
   .photo-board .group-member { gap:12px; }
   .photo-board .group-member .pair { font-size:10px; }
   .photo-board .group-member .en { font-size:9px; }
-  .experience .case-study .masterplan-image-button > img { max-height:265px; }
-  .is-present .salalah-visual .masterplan-image-button > img { max-height:240px; }
+  .experience .case-study .masterplan-image-button > .progressive-media { max-height:265px; }
+  .is-present .salalah-visual .masterplan-image-button > .progressive-media { max-height:240px; }
   .project-capacity { padding-top:7px; margin-top:4px; }
   .capacity-heading .chart-language { font-size:10px; }
   .capacity-heading [lang=en] { font-size:9px; }
@@ -245,7 +245,7 @@
   #proof .single-proof .en { font-size:20px; }
   .park-motion-scene { max-width:900px; }
   .technical-visual .engineering-render { max-height:780px; }
-  .is-present .salalah-visual .masterplan-image-button > img { max-height:780px; }
+  .is-present .salalah-visual .masterplan-image-button > .progressive-media { max-height:780px; }
   .drive-motion-scene svg { max-height:180px; }
   .lifecycle-motion-scene svg { max-height:140px; }
   .network-motion-scene { width:220px; flex-basis:220px; }

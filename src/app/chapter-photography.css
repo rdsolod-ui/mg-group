@@ -1,6 +1,6 @@
 /* Photographic chapter panels retain the factual figures as live bilingual text. */
 .chapter-photograph { margin:0; min-width:0; }
-.chapter-photograph > img { display:block; width:100%; height:auto; aspect-ratio:1672/941; object-fit:cover; border-radius:5px; }
+.chapter-photograph > .progressive-media { display:block; width:100%; height:auto; aspect-ratio:1672/941; object-fit:cover; border-radius:5px; }
 .chapter-photograph figcaption { display:flex; flex-wrap:wrap; justify-content:space-between; gap:4px 12px; padding:8px 0; font-size:10px; line-height:1.5; color:var(--muted); }
 .chapter-photograph figcaption [lang=en] { font-family:'IBM Plex Sans'; }
 .photo-board { border:0; padding:0; min-width:0; }
@@ -30,7 +30,7 @@
 .photo-board.partnership-board article .en { font-size:12px; text-align:right; }
 .photo-board .group-member { margin-top:20px; gap:20px; }
 .photo-board .group-member > img { width:155px; }
-.contact-photo-card > .chapter-photograph > img { aspect-ratio:3.5; object-position:50% 40%; }
+.contact-photo-card > .chapter-photograph > .progressive-media { aspect-ratio:3.5; object-position:50% 40%; }
 .contact-photo-card .business-card { padding:22px; box-shadow:none; }
 .contact-photo-card .card-heading { padding-bottom:12px; }
 .contact-photo-card .card-heading > img { width:180px; }
@@ -42,7 +42,7 @@
 .contact-photo-card .qr-caption { margin:8px 0 12px; }
 .contact-photo-card .card-links { padding-top:12px; }
 @media (min-width:901px) and (max-height:800px) {
-  .photo-board > .chapter-photograph > img { max-height:245px; }
+  .photo-board > .chapter-photograph > .progressive-media { max-height:245px; }
   .proof-wall.photo-board { gap:10px 20px; }
   .photo-board .proof-big > strong { font-size:86px; margin-bottom:8px; }
   .photo-board .proof-big .pair { font-size:14px; }
@@ -59,7 +59,7 @@
   .photo-board .group-member { margin-top:13px; }
   .photo-board .group-member > img { width:140px; }
   .is-present .contact-photo-card .business-card { padding:16px 20px; }
-  .contact-photo-card > .chapter-photograph > img { height:140px; object-position:50% 25%; }
+  .contact-photo-card > .chapter-photograph > .progressive-media { height:140px; object-position:50% 25%; }
   .is-present .contact-photo-card .qr-wrap > a { width:29%; max-width:130px; }
   .is-present .contact-photo-card .card-heading > img { width:160px; }
   .is-present .contact-photo-card .card-links { padding-top:8px; }
@@ -89,7 +89,7 @@
   .photo-board.lifecycle-lines .pair { font-size:16px; }
   .photo-board.lifecycle-lines .en { font-size:11px; }
   .photo-board.partnership-board article .pair { font-size:16px; }
-  .contact-photo-card > .chapter-photograph > img { aspect-ratio:16/9; }
+  .contact-photo-card > .chapter-photograph > .progressive-media { aspect-ratio:16/9; }
   .contact-photo-card .business-card { padding:20px; }
   .contact-photo-card .qr-wrap > a { width:43%; }
   .contact-photo-card .card-heading > img { width:165px; }

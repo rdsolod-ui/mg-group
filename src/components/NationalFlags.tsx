@@ -1,8 +1,9 @@
 import type { CSSProperties } from 'react';
+import optimizedFlag from '@/data/optimized-flag.json';
 
 const countries = [
   { id: 'russia', ar: 'روسيا', en: 'Russia', file: 'russia.svg', ratio: 1.5 },
-  { id: 'oman', ar: 'عُمان', en: 'Oman', file: 'oman.jpg', ratio: 2000 / 1143 },
+  { id: 'oman', ar: 'عُمان', en: 'Oman', file: '../' + optimizedFlag.src, ratio: 2000 / 1143 },
 ];
 const strips = 32;
 

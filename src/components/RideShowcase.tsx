@@ -1,42 +1,29 @@
 "use client";
-import { Component, useCallback, useEffect, useRef, useState, type ReactNode } from "react";
-import dynamic from "next/dynamic";
-import { Box, Film, Pause, Play, RotateCcw, ExternalLink } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import RideModel from "./RideModel";
+import { Box, Film, ExternalLink } from "lucide-react";
 import AttractionVideo from "./AttractionVideo";
 import { rides } from "@/data/ride-catalogue";
 import { chapterCopy, rideHooks } from "@/data/presentation-copy";
 import device from "../../public/device/iphone-landscape.json";
 const phone = { ...device.playerSpec, src: `/mg-group${device.playerSpec.src}` };
-const Viewer = dynamic(() => import("./RideViewer"), { ssr: false });
-
-class ModelBoundary extends Component<{ children: ReactNode; onError: () => void }, { failed: boolean }> {
-  state = { failed: false };
-  static getDerivedStateFromError() { return { failed: true }; }
-  componentDidCatch() { this.props.onError(); }
-  render() { return this.state.failed ? null : this.props.children; }
-}
-
 export default function RideShowcase({ paused, reduced }: { paused: boolean; reduced: boolean }) {
   const [index, setIndex] = useState(3);
   const [mode, setMode] = useState<"film" | "model">("film");
-  const [near, setNear] = useState(false), [visible, setVisible] = useState(false);
-  const [ready, setReady] = useState(false), [error, setError] = useState(false);
-  const [localPause, setLocalPause] = useState(false), [reset, setReset] = useState(0);
+  const [visible, setVisible] = useState(false);
   const stage = useRef<HTMLDivElement>(null), ride = rides[index];
   useEffect(() => {
     const io = new IntersectionObserver(([entry]) => {
-      setVisible(entry.isIntersecting); if (entry.isIntersecting) setNear(true);
+      setVisible(entry.isIntersecting);
     }, { threshold: .15 });
     if (stage.current) io.observe(stage.current);
     return () => io.disconnect();
   }, []);
-  const onReady = useCallback(() => setReady(true), []), onError = useCallback(() => setError(true), []);
   const choose = (i: number) => {
     if (i === index) return;
     setIndex(i); setMode(rides[i].video ? "film" : "model");
-    setReady(false); setError(false); setReset(v => v + 1);
   };
-  const show = (next: "film" | "model") => { if (next === mode) return; setMode(next); setReady(false); setError(false); };
+  const show = (next: "film" | "model") => { if (next === mode) return; setMode(next); };
   return <div className="ride-showcase">
     <div className="ride-title">
       <div><p lang="ar" dir="rtl">{chapterCopy["ride-models"].heading.ar}</p><h2 lang="en" dir="ltr">{chapterCopy["ride-models"].heading.en}</h2></div>
@@ -56,15 +43,7 @@ export default function RideShowcase({ paused, reduced }: { paused: boolean; red
         </div>
         <div ref={stage} className={`ride-display ${mode === "film" ? "ride-film-stage" : ""}`}>
           {mode === "film" ? <div className="ride-video-mount"><AttractionVideo slug={ride.slug} title={ride.parkName || ride.en} highPlaylist={ride.highPlaylist} device={phone} paused={paused} visible={visible} /></div> :
-          <div className="ride-stage" aria-label={`${ride.en} ${error ? "rendered preview" : "interactive 3D model"}`}>
-            <img className={`ride-poster ${ready && !error ? "is-loaded" : ""}`} src={`/mg-group/rides/${ride.slug}-poster.webp`} alt={`${ride.en} — rendered from the supplied model in Blender`} loading="lazy" />
-            {near && <ModelBoundary key={`${ride.slug}-${reset}`} onError={onError}><Viewer key={`${ride.slug}-${reset}`} slug={ride.slug} paused={paused || reduced || localPause || !visible} onReady={onReady} /></ModelBoundary>}
-            {!ready && !error && near && <div className="ride-loading" role="status">جارٍ تحميل النموذج · Loading model</div>}
-            {!error && <div className="ride-stage-footer"><span lang="ar" dir="rtl">اسحب للتدوير · مرّر للتكبير<span lang="en" dir="ltr">Drag to orbit · Scroll to zoom</span></span><div>
-              <button aria-label={localPause ? "Play model animation" : "Pause model animation"} onClick={() => setLocalPause(v => !v)} disabled={reduced || paused}>{localPause || reduced || paused ? <Play size={18} /> : <Pause size={18} />}</button>
-              <button aria-label="Reset model view" onClick={() => { setReset(v => v + 1); setReady(false); setError(false); }}><RotateCcw size={18} /></button>
-            </div></div>}
-          </div>}
+          <RideModel key={ride.slug} slug={ride.slug} title={ride.en} paused={paused || reduced} visible={visible} />}
         </div>
         {ride.facts.length > 0 && <div className="ride-specifications">
           <div className="ride-specification-source"><span lang="ar" dir="rtl">مواصفات {ride.parkNameAr} في سكازكا<span lang="en" dir="ltr">{ride.parkName} at Skazka</span></span><a href={ride.source} target="_blank" rel="noreferrer" aria-label={`Official ${ride.parkName} specifications`}><span lang="en">parkskazka.ru</span><ExternalLink size={12} /></a></div>
