@@ -7,6 +7,7 @@ const base = "/mg-group";
 const port = Number(process.argv[2] || 3116);
 const mime = {
   ".html": "text/html; charset=utf-8",
+  ".pdf": "application/pdf",
   ".css": "text/css",
   ".js": "text/javascript",
   ".json": "application/json",

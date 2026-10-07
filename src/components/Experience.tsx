@@ -466,6 +466,9 @@ export default function Experience() {
           ))}
         </nav>
         <div className="header-tools">
+          <a className="header-pdf" href={asset('downloads/MG-Group-Presentation.pdf')} download="MG-Group-Presentation.pdf" aria-label="تنزيل العرض بصيغة PDF / Download presentation PDF" title="تنزيل PDF / Download PDF">
+            <Download size={17} aria-hidden="true"/><span><span lang="ar" dir="rtl">تنزيل PDF</span><small lang="en">Download PDF</small></span>
+          </a>
           <button
             className="icon-button"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}

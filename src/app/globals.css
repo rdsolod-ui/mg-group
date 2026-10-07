@@ -154,7 +154,14 @@ h2 {
 .header-tools {
   display: flex;
   gap: 14px;
+  align-items: center;
 }
+.header-pdf { display:inline-flex; align-items:center; gap:8px; padding:7px 12px; border:1px solid var(--accent); border-radius:7px; color:var(--accent); flex-shrink:0; font-size:12px; line-height:1.2; }
+.header-pdf>span { display:flex; flex-direction:column; gap:3px; }
+.header-pdf small { font:10px 'IBM Plex Sans'; }
+.header-pdf:hover { background:color-mix(in srgb,var(--accent) 12%,transparent); }
+.header-pdf:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+@media(max-width:600px) { .header .brand { width:135px; }.header .header-tools { gap:5px; }.header-pdf { padding:8px; gap:5px; }.header-pdf small { display:none; }.header .icon-button { width:28px; }.header { gap:8px!important; } }
 .icon-button {
   width: 35px;
   height: 35px;
