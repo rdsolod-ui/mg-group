@@ -8,7 +8,7 @@ import { chapterCopy, rideHooks } from "@/data/presentation-copy";
 import device from "../../public/device/iphone-landscape.json";
 const phone = { ...device.playerSpec, src: `/mg-group${device.playerSpec.src}` };
 export default function RideShowcase({ paused, reduced }: { paused: boolean; reduced: boolean }) {
-  const [index, setIndex] = useState(3);
+  const [index, setIndex] = useState(0);
   const [mode, setMode] = useState<"film" | "model">("film");
   const [visible, setVisible] = useState(false);
   const stage = useRef<HTMLDivElement>(null), ride = rides[index];

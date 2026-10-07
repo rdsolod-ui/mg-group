@@ -1,7 +1,35 @@
 {
-  "checkedAt": "2026-10-06T20:10:51.669179+00:00",
+  "checkedAt": "2026-10-07",
   "scope": "Official public parkskazka.ru attraction pages and their actual hero video hrefs. No manufacturing claims.",
   "rides": [
+    {
+      "slug": "boomerang",
+      "sourcePage": "https://parkskazka.ru/attraktsiony/ekstremalnye/bumerang",
+      "sourceTitle": "Бумеранг",
+      "videoAvailable": true,
+      "videoUrl": "https://parkskazka.ru/uploads/videos/000/1785487923_b7bafce357f77e95092b9f03fecdcaac.mp4",
+      "originalSHA256": "0fcc40a0ea5af7277cfc3daef3b0a7707d90483bd0cf9ff5b62748a955f624c4",
+      "originalDuration": 17.08,
+      "specs": [
+        {
+          "labelRu": "Высота",
+          "valueRu": "37 м"
+        },
+        {
+          "labelRu": "Скорость",
+          "valueRu": "85,3 км/ч"
+        },
+        {
+          "labelRu": "Петля",
+          "valueRu": "360°"
+        },
+        {
+          "labelRu": "Минимальный рост",
+          "valueRu": "130 см"
+        }
+      ],
+      "matchNotes": "Park film and published characteristics describe the operating attraction. WFC-20A supplied design geometry is a separate presentation model, not a verified as-built survey."
+    },
     {
       "slug": "wheel",
       "sourcePage": "https://parkskazka.ru/attraktsiony/semeynye/koleso-obozreniya",
@@ -126,15 +154,6 @@
         3840,
         2160
       ]
-    },
-    {
-      "slug": "typhoon",
-      "sourcePage": null,
-      "sourceTitle": "Тайфун",
-      "videoAvailable": false,
-      "videoUrl": null,
-      "specs": [],
-      "matchNotes": "В текущем каталоге и поиске parkskazka.ru подтверждённая карточка Тайфуна не найдена. Не подменять Вихрем, Миксом, Формулой или другим аттракционом."
     },
     {
       "slug": "lightning",

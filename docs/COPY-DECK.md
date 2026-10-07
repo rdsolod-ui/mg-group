@@ -9,7 +9,7 @@ The central message is delivery expertise across engineering, installation, laun
 | Chapter | Arabic | English |
 | --- | --- | --- |
 | intro | نبني مدن الملاهي. وندير تشغيلها. | We build parks. We keep them running. |
-| proof | ٩٧ لعبة. والخبرة تتحدث. | 97 rides. The experience speaks. |
+| proof | الخبرة تُثبتها المشاريع. | Expertise. Proven in operation. |
 | engineering | خلف كل تجربة، هندسة دقيقة. | Precision behind every experience. |
 | ride-models | شاهدوا ما تُحرّكه الهندسة. | See what engineering sets in motion. |
 | specialists | ١٠ مهندسين. ٥٤ ميكانيكياً. فريق واحد. | 10 engineers. 54 mechanics. One team. |
@@ -18,7 +18,7 @@ The central message is delivery expertise across engineering, installation, laun
 | skazka | ٦٠ لعبة. ١٫٥ مليون زيارة في ٢٠٢٤. | 60 rides. 1.5m visits in 2024. |
 | leo-tolstoy | ٢٧ لعبة. تشغيل متكامل. | 27 rides. One coordinated operation. |
 | vdnkh | ٦ ألعاب. خبرة تشغيل في العاصمة. | Six rides. Capital-city expertise. |
-| izmaylovo | ٣ ألعاب تُكمل تجربة الوجهة. | Three rides. One destination experience. |
+| izmaylovo | عجلة واحدة. أفق جديد للوجهة. | One wheel. A new perspective. |
 | ohta | لعبة واحدة. سبب جديد للزيارة. | One ride. A reason to visit. |
 | minny-gorodok | ٣٥ لعبة في رؤية تطوير أوسع. | 35 rides. A bigger development vision. |
 | al-haffa | ساحل صلالة. منظور جديد للترفيه. | Salalah’s coast. A new perspective. |
@@ -36,7 +36,7 @@ Original attraction names remain visible above the hook and in the selector. Par
 | chain | هندسة ترفع مستوى التجربة. | Engineering that lifts the experience. |
 | drop-tower | التشويق يبدأ بالدقة. | The thrill starts with precision. |
 | condor | حركة معقّدة. تجربة واحدة. | Complex motion. One experience. |
-| typhoon | اكتشفوا الهندسة خلف المسار. | Explore the engineering behind the track. |
+| boomerang | اندفاع إلى الأمام. وإثارة في العودة. | Full speed ahead. Then back again. |
 | lightning | خلف كل منعطف، هندسة. | Engineering behind every turn. |
 | disco | الدوران والحركة يصنعان التجربة. | Spin and motion shape the experience. |
 
@@ -50,7 +50,7 @@ The chapter menu, evidence panel and gallery receive matching introductory headi
 
 ## Evidence boundaries
 
-- 97 rides is the five-case aggregate 60 + 27 + 6 + 3 + 1, within the eight-project portfolio. It does not include construction-stage projects or airport activities.
+- 95 rides is the five-case aggregate 60 + 27 + 6 + 1 + 1, within the eight-project portfolio. It does not include construction-stage projects or airport activities.
 - 10 engineers and 54 mechanics are the owner-supplied technical team, not total company headcount or per-project staffing.
 - Skazka's 1.5m figure is visits in 2024, not unique visitors or an annual forecast.
 - Construction-stage labels, unspecified periods and undated readiness remain visible. The Al Haffa wording describes the source's owner-operator role without asserting a verified opening.

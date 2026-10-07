@@ -23,7 +23,7 @@ import ProjectVisual, { VisualCaption, VisualInspector } from './ProjectVisual';
 import PortfolioGlobe from './PortfolioGlobe';
 import ChapterPhoto from './ChapterPhoto';
 import { PortfolioChart, TeamChart, CountryChart } from './MotionCharts';
-import { ParkScene, DriveScene, LifecycleScene, NetworkScene, ContactSignal } from './MotionScenes';
+import { NetworkScene, ContactSignal } from './MotionScenes';
 import useMotionVisibility from './useMotionVisibility';
 import NationalFlags from './NationalFlags';
 import { projectVisuals } from '@/data/project-visuals';
@@ -188,9 +188,10 @@ function CaseStudy({
         <div className="case-metrics">
           <Metric
             value={String(project.metrics.attractions.value)}
-            ar={project.id === "airport" ? "أنشطة" : "ألعاب"}
-            en={project.id === "airport" ? "Activities" : "Rides"}
+            ar={project.id === "airport" ? "أنشطة" : ['al-haffa','izmaylovo'].includes(project.id) ? "عجلة مشاهدة" : "ألعاب"}
+            en={project.id === "airport" ? "Activities" : ['al-haffa','izmaylovo'].includes(project.id) ? "Observation wheel" : "Rides"}
           />
+          {project.id === 'al-haffa' && <Metric value="2" ar="نقطتا ألعاب" en="Arcade stalls" detail="Shooting gallery · Balloon darts" />}
           <Metric
             value={`$${project.metrics.investment.value}m`}
             ar="استثمارات معلنة"
@@ -469,7 +470,6 @@ export default function Experience() {
               <div className="hero-line">
                 <NationalFlags compact />
               </div>
-              <ParkScene />
               <span className="hero-visual-credit"><span lang="ar" dir="rtl">تصوّر للمخطط العام</span><span lang="en">Illustrative masterplan</span></span>
             </div>
             <div className="copy hero-copy">
@@ -497,26 +497,13 @@ export default function Experience() {
         {section(
           "proof",
           <>
-            <div className="proof-wall visual photo-board">
-              <ChapterPhoto scene="proof" />
-              <div className="proof-big">
-                <strong>97</strong>
-                <Pair
-                  value={pair(
-                    "لعبة في خمسة مشاريع تشغيلية",
-                    "Rides across five operating case studies",
-                  )}
-                />
-              </div>
-              <div className="proof-small">
-                <Metric value="8" ar="مشاريع" en="Projects" />
-                <Metric value="2" ar="بلدان" en="Countries" />
-              </div>
+            <div className="visual portfolio-chart-stage">
+              <PortfolioChart />
             </div>
             <div className="copy">
               <Heading {...chapterCopy.proof.heading} />
               <Pair className="body-copy" value={chapterCopy.proof.body} />
-              <PortfolioChart />
+              <div className="proof-small proof-context"><Metric value="8" ar="مشاريع" en="Projects" /><Metric value="2" ar="بلدان" en="Countries" /></div>
               <div className="single-proof">
                 <strong dir="ltr">1.5m</strong>
                 <Pair
@@ -529,8 +516,8 @@ export default function Experience() {
               <p className="source-note">
                 <Pair
                   value={pair(
-                    "المصدر: العرض التعريفي. إجمالي ٩٧ يستثني المشاريع الثلاثة المصنّفة قيد الإنشاء، ولا يشمل أنشطة المطار.",
-                    "Source: corporate presentation. The 97-ride total excludes three projects labelled under construction and airport activities.",
+                    "البيانات: العرض التعريفي وتحديث المالك في ٧ أكتوبر ٢٠٢٦. لا يشمل الإجمالي المشاريع المصنّفة قيد الإنشاء وأنشطة المطار.",
+                    "Corporate presentation and owner update, 7 October 2026. Total excludes projects listed under construction and airport activities.",
                   )}
                 />
               </p>
@@ -542,13 +529,12 @@ export default function Experience() {
           "engineering",
           <>
             <div className="visual technical-visual">
-              <ProgressiveImage className="engineering-render" src={asset('visuals/v2/engineering.webp')} sizes="(max-width: 900px) 92vw, 55vw" alt="Illustrative wheel drive assembly showing mechanical components, structure and maintenance access" />
-              <DriveScene />
+              <ProgressiveImage className="engineering-render" src={asset('visuals/v2/engineering.webp')} sizes="(max-width: 900px) 92vw, 55vw" alt="Actual Skazka observation wheel: central axle, maintenance platform, A-frame supports and radial bracing" />
               <p className="drawing-caption">
                 <Pair
                   value={pair(
-                    "تصوّر هندسي توضيحي؛ ليس مخططاً تصنيعياً.",
-                    "Generated engineering illustration; not a fabrication drawing.",
+                    "عجلة المشاهدة في سكازكا — صورة حقيقية من الموقع الرسمي للمنتزه.",
+                    "Skazka observation wheel — actual photograph from parkskazka.ru.",
                   )}
                 />
               </p>
@@ -620,7 +606,6 @@ export default function Experience() {
           <>
             <div className="visual lifecycle-lines photo-board">
               <ChapterPhoto scene="lifecycle" />
-              <LifecycleScene />
               {[
                 pair("استراتيجية وتصميم", "Strategy & design"),
                 pair("هندسة وتركيب", "Engineering & installation"),
@@ -656,12 +641,12 @@ export default function Experience() {
           "geography",
           <>
             <div className="visual">
+              <NationalFlags />
               <PortfolioGlobe go={go} paused={motionBlocked || active !== 6} />
             </div>
             <div className="copy">
               <Heading {...chapterCopy.geography.heading} />
               <Pair className="body-copy" value={chapterCopy.geography.body} />
-              <NationalFlags />
               <CountryChart />
               <p className="source-note">
                 <Pair

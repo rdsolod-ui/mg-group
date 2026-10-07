@@ -7,12 +7,12 @@ The presentation uses one restrained motion system across all 17 chapters. Nativ
 | Area | Added motion |
 | --- | --- |
 | All chapters | Slow architectural background rings; active-chapter entrance; visible-chapter scheduling |
-| Opening | Observation wheel with counter-rotating cabins, coaster car and a subtle light cycle |
-| Scale | Five-segment doughnut, proportional bars, a moving ring marker and cyclic emphasis |
-| Engineering | Mechanical gears, drive components and a transmission signal |
+| Opening | Documentary-style project visual and national flags; decorative ride plaque removed |
+| Scale | Large extruded doughnut with sequentially exploded sectors and synchronized legend |
+| Engineering | Actual Skazka wheel photograph; no fictional hub or decorative transmission |
 | Attractions | Existing model animation retained under the shared pause/visibility control |
 | Specialists | Two-segment technical-team chart and source-derived percentages |
-| Lifecycle | Four process icons, travelling signal and sequential step emphasis |
+| Lifecycle | Four labelled project stages with sequential progress underlines |
 | Geography | Slow rotation of the existing satellite globe; Russia/Oman project chart |
 | Eight cases | Photo-frame accents; operating-portfolio share bars or source-programme indicators |
 | Partnership | A connected-group diagram beside AL-SHAHIQ |
@@ -22,13 +22,13 @@ Photographic light accents never alter documentary provenance. Masterplan images
 
 ## Data integrity
 
-- Operating attractions: 60 + 27 + 6 + 3 + 1 = **97** across five source cases. Shares are calculated against 97; construction projects and airport activities are excluded.
+- Operating attractions: 60 + 27 + 6 + 1 + 1 = **95** across five source cases. Shares are calculated against 95; construction projects and airport activities are excluded.
 - Technical team: **10 engineers + 54 mechanics = 64 specialists**. Shares: 15.6% and 84.4%, rounded to one decimal place.
 - Country mix: **7 Russian projects + 1 Oman project = 8 projects**. These are counts, not revenue, investment or workload shares.
-- Source-programme values for construction projects remain 35 rides, 3 rides and 10 airport activities. Animated decorative marks do not express completion percentages.
+- Construction-labelled cases: Minny Gorodok retains 35 rides and the airport 10 activities. The owner corrected Salalah on 7 October 2026 to one wheel plus two arcade stalls, shown separately. This does not independently confirm an updated completion stage.
 - No attendance trend is drawn: the source only dates Skazka visits to 2024, and periods for other cases are unspecified.
 
-All values come from `src/data/source-register.json`. The chart paths, bar widths, values and denominators stay fixed throughout a loop. Animation changes emphasis and markers only. Every chart has a bilingual legend, accessible value description and keyboard-operable segment highlighting. Totals remain stable when a segment is selected.
+All values come from `src/data/source-register.json`. Sector angles and totals stay fixed throughout a loop; sectors move outward sequentially. Extruded SVG layers create depth without another WebGL scene. Every chart has a bilingual legend, accessible value description and keyboard-operable highlighting. A selected sector pauses automatic cycling until deselected. Shared pause, visibility and reduced-motion controls apply.
 
 ## Motion controls
 

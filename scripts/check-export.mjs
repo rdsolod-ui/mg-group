@@ -61,7 +61,7 @@ for (const resolution of [360,720,1080]) {
   }
 }
 console.log(`PASS: ${visualRecords.length} classified visual assets and 24-second adaptive Salalah film`);
-for (const slug of ["wheel", "chain", "drop-tower", "condor", "typhoon", "lightning"]) {
+for (const slug of ["wheel", "chain", "drop-tower", "condor", "boomerang", "lightning"]) {
   const data = fs.readFileSync(path.join(root, "rides", `${slug}.glb`));
   if (data.toString("utf8", 0, 4) !== "glTF" || data.readUInt32LE(4) !== 2 || data.readUInt32LE(8) !== data.length)
     throw Error(`Invalid GLB: ${slug}`);
@@ -77,7 +77,7 @@ for (const slug of ["wheel", "chain", "drop-tower", "condor", "typhoon", "lightn
 }
 for (const file of ["draco_decoder.wasm", "draco_wasm_wrapper.js", "LICENSE.txt"])
   if (!fs.statSync(path.join(root, "decoders/draco", file)).size) throw Error(`Missing decoder: ${file}`);
-for (const slug of ["chain", "drop-tower", "condor", "lightning", "disco"]) {
+for (const slug of ["boomerang", "chain", "drop-tower", "condor", "lightning", "disco"]) {
   const dir = path.join(root, "ride-videos", slug);
   const master = fs.readFileSync(path.join(dir, "master.m3u8"), "utf8");
   const variants = master.split(/\r?\n/).filter(line => line && !line.startsWith("#"));

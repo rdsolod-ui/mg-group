@@ -85,7 +85,7 @@ function Model({ url, paused, onReady }: { url: string; paused: boolean; onReady
 }
 
 export default function RideViewer({ slug, url, paused, onReady }: { slug: string; url: string; paused: boolean; onReady: () => void }) {
-  const horizontal = slug === "typhoon" || slug === "lightning";
+  const horizontal = slug === "boomerang" || slug === "lightning";
   return <Canvas shadows={{ type: THREE.PCFShadowMap }} frameloop={paused ? "demand" : "always"} dpr={[1, 1.5]} camera={horizontal ? wideCameraConfig : cameraConfig} gl={{ antialias: true, alpha: false, powerPreference: "high-performance" }} onCreated={({ gl }) => { gl.setClearColor("#10212e"); gl.toneMapping = THREE.ACESFilmicToneMapping; gl.toneMappingExposure = 1.3; }}>
     <Studio />
     <WideFraming horizontal={horizontal} />

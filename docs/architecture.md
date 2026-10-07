@@ -5,7 +5,7 @@ The narrative begins with engineering and technical delivery, then presents proj
 ## Chapters
 
 1. MG Group: from engineering to experience.
-2. Evidence at scale: 97 rides in five case studies, eight portfolio projects, two countries; Skazka visitation for 2024 separately.
+2. Evidence at scale: 95 rides in five case studies, eight portfolio projects, two countries; Skazka visitation for 2024 separately.
 3. Engineering, installation, technical launch and maintenance.
 4. Seven attraction cards: five official park films, sourced installation figures and six source-derived design models.
 5. Engineers, mechanics and installation/operations teams.

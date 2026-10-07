@@ -9,6 +9,14 @@ export type RideCard = {
 // Source-page snapshots and media provenance: docs/ride-video-sources.json.
 export const rides: RideCard[] = [
   {
+    slug:"boomerang",ar:"بوميرانغ",en:"Boomerang",model:true,video:true,
+    parkName:"Boomerang",parkNameAr:"بوميرانغ",highPlaylist:"1080p/index.m3u8",
+    source:"https://parkskazka.ru/attraktsiony/ekstremalnye/bumerang",
+    note:"Film and figures: Boomerang at Skazka. The supplied WFC-20A design model is available for structural inspection; it is not an as-built survey.",
+    noteAr:"الفيديو والأرقام لبوميرانغ في سكازكا. نموذج WFC-20A المرفق متاح لاستكشاف الهيكل؛ ولا يمثل توثيقاً مساحياً للمنشأة المنفذة.",
+    facts:[{value:"37 m",ar:"الارتفاع",en:"Height"},{value:"85.3 km/h",ar:"السرعة",en:"Speed"},{value:"360°",ar:"حلقة كاملة",en:"Vertical loop"},{value:"130 cm",ar:"الحد الأدنى للطول",en:"Minimum rider height"}],
+  },
+  {
     slug: "wheel", ar: "عجلة المشاهدة", en: "Observation wheel", model: true, video: false,
     parkName: "Observation wheel", parkNameAr: "عجلة المشاهدة",
     source: "https://parkskazka.ru/attraktsiony/semeynye/koleso-obozreniya",
@@ -39,12 +47,6 @@ export const rides: RideCard[] = [
     note:"Smerch at Skazka. The design model illustrates the Condor mechanism; its motion is illustrative.",
     noteAr:"سميرتش في سكازكا. نموذج التصميم يوضّح آلية كوندور، والحركة فيه توضيحية.",
     facts:[{value:"34 m",ar:"الارتفاع",en:"Height"},{value:"≤ 3 min",ar:"مدة الجولة",en:"Ride duration"},{value:"140 cm",ar:"الحد الأدنى للطول",en:"Minimum rider height"}],
-  },
-  {
-    slug:"typhoon",ar:"تايفون",en:"Typhoon",model:true,video:false,
-    note:"The supplied track model is available to explore. A matching park video and published specifications have not been identified.",
-    noteAr:"نموذج المسار المرفق متاح للاستكشاف. لم يُعثر على فيديو مطابق أو مواصفات منشورة لهذا النموذج.",
-    facts:[],
   },
   {
     slug:"lightning",ar:"مولنيا",en:"Lightning",model:true,video:true,

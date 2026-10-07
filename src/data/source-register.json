@@ -13,7 +13,10 @@
   },
   "userDecisions": {
     "primaryBrand": "MG Group",
-    "languages": ["ar", "en"],
+    "languages": [
+      "ar",
+      "en"
+    ],
     "headOffice": "Россия, Москва, улица Осенняя, 23"
   },
   "projects": [
@@ -56,7 +59,10 @@
         }
       },
       "verificationState": "user_supplied_pdf_not_independently_verified",
-      "media": ["media/skazka/1.webp", "media/skazka/2.webp"]
+      "media": [
+        "media/skazka/1.webp",
+        "media/skazka/2.webp"
+      ]
     },
     {
       "id": "leo-tolstoy",
@@ -97,7 +103,10 @@
         }
       },
       "verificationState": "user_supplied_pdf_not_independently_verified",
-      "media": ["media/leo-tolstoy/1.webp", "media/leo-tolstoy/2.webp"]
+      "media": [
+        "media/leo-tolstoy/1.webp",
+        "media/leo-tolstoy/2.webp"
+      ]
     },
     {
       "id": "vdnkh",
@@ -183,7 +192,10 @@
         }
       },
       "verificationState": "user_supplied_pdf_not_independently_verified",
-      "media": ["media/minny-gorodok/1.webp", "media/minny-gorodok/2.webp"]
+      "media": [
+        "media/minny-gorodok/1.webp",
+        "media/minny-gorodok/2.webp"
+      ]
     },
     {
       "id": "izmaylovo",
@@ -211,9 +223,10 @@
           "period": null
         },
         "attractions": {
-          "value": 3,
-          "unit": "rides",
-          "basis": "unspecified"
+          "value": 1,
+          "unit": "observation wheel",
+          "basis": "owner_correction_2026-10-07",
+          "previousPdfValue": 3
         },
         "staff": {
           "value": 20,
@@ -224,7 +237,16 @@
         }
       },
       "verificationState": "user_supplied_pdf_not_independently_verified",
-      "media": ["media/izmaylovo/1.webp", "media/izmaylovo/2.webp"]
+      "media": [
+        "media/izmaylovo/1.webp",
+        "media/izmaylovo/2.webp"
+      ],
+      "ownerScopeUpdate": {
+        "date": "2026-10-07",
+        "observationWheels": 1,
+        "arcadeStalls": 0,
+        "source": "Direct owner correction in project conversation"
+      }
     },
     {
       "id": "ohta",
@@ -265,7 +287,10 @@
         }
       },
       "verificationState": "user_supplied_pdf_not_independently_verified",
-      "media": ["media/ohta/1.webp", "media/ohta/2.webp"]
+      "media": [
+        "media/ohta/1.webp",
+        "media/ohta/2.webp"
+      ]
     },
     {
       "id": "al-haffa",
@@ -293,9 +318,10 @@
           "period": null
         },
         "attractions": {
-          "value": 3,
-          "unit": "rides",
-          "basis": "unspecified"
+          "value": 1,
+          "unit": "observation wheel",
+          "basis": "owner_correction_2026-10-07",
+          "previousPdfValue": 3
         },
         "staff": {
           "value": 20,
@@ -306,7 +332,20 @@
         }
       },
       "verificationState": "user_supplied_pdf_not_independently_verified",
-      "media": ["media/al-haffa/1.webp", "media/al-haffa/2.webp"]
+      "media": [
+        "media/al-haffa/1.webp",
+        "media/al-haffa/2.webp"
+      ],
+      "ownerScopeUpdate": {
+        "date": "2026-10-07",
+        "observationWheels": 1,
+        "arcadeStalls": 2,
+        "source": "Direct owner correction in project conversation",
+        "arcadeTypes": [
+          "Shooting gallery",
+          "Balloon darts"
+        ]
+      }
     },
     {
       "id": "airport",
@@ -347,7 +386,10 @@
         }
       },
       "verificationState": "user_supplied_pdf_not_independently_verified",
-      "media": ["media/airport/1.webp", "media/airport/2.webp"]
+      "media": [
+        "media/airport/1.webp",
+        "media/airport/2.webp"
+      ]
     }
   ],
   "ownerUpdate": {

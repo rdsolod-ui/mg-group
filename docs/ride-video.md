@@ -8,7 +8,7 @@ Source verification: 6 October 2026 UTC / 7 October in the owner's Dubai timezon
 | Swing carousel | Sky carousel | Official hero film | Related swing-ride configuration; not asserted to be identical |
 | Drop tower | Zvezdopad | Official hero film | Same ride family; colour and details differ |
 | Condor | Smerch | Official hero film | Condor arrangement identified visually |
-| Typhoon | Not identified | No confirmed source | Supplied track model only |
+| Boomerang | Official Skazka hero film | 360p / 720p / 1080p | WFC-20A supplied model and film |
 | Lightning | Lightning | Official hero film | Name and attraction confirmed |
 | Disco Coaster | Galaktika | Official hero film | Placement source contains no ride geometry |
 

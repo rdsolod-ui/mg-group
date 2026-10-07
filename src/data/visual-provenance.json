@@ -92,30 +92,30 @@
   {
     "id": "izmaylovo",
     "kind": "generated_illustration",
-    "sourceFile": "exec-83bfd979-f782-4f72-9bc0-6e08bd40b880.png",
-    "sourceSHA256": "d785ecee58a3d9dd85feadbfc600f1d83f5b64aa420d4497f898d1a215d56e2d",
-    "description": "AI-generated interpretive architectural visualization; not a surveyed or as-built plan. Native generation resolution retained.",
+    "sourceFile": "exec-16525700-aa3e-42a6-9312-571bda9e2873.png",
+    "sourceSHA256": "b7e066169f32d29e072e8586278aa0578bf80a61acf18492c06b10a9d8958c91",
+    "description": "Corrected illustrative scope: one observation wheel; both additional rides removed. Owner correction 2026-10-07.",
     "variants": [
       {
         "path": "visuals/v2/izmaylovo.webp",
         "width": 1672,
         "height": 941,
-        "bytes": 689826,
-        "sha256": "3caa758585ab48a5eef41d8f641ea4c754681bfcca413607ba0d0aa764fd2f33"
+        "bytes": 640482,
+        "sha256": "f72729afc13b29f9086c9fd53838088365d4049ba455112cb2e040f33e751a86"
       },
       {
         "path": "visuals/v2/izmaylovo-960.webp",
         "width": 960,
         "height": 540,
-        "bytes": 211814,
-        "sha256": "de8728e1ffa90a859822219702a1a8ec4b7956d76017156153e86652dbbe8fd7"
+        "bytes": 208246,
+        "sha256": "646602458fb07baf4bdbc9c0f89550978256a1e74152e2ba373a88ee8a3d1616"
       },
       {
         "path": "visuals/v2/izmaylovo-640.webp",
         "width": 640,
         "height": 360,
-        "bytes": 98990,
-        "sha256": "f5d22416df6ce121310cc3a514b945f377841d755f2decabd9e39bf483fbdba1"
+        "bytes": 99004,
+        "sha256": "a6f0d8659f3223adf203e950bf9389d84b44e6bae9277fbd7f2f0ba0002af56f"
       }
     ]
   },
@@ -182,90 +182,91 @@
   {
     "id": "airport",
     "kind": "generated_illustration",
-    "sourceFile": "exec-aac6c680-4bc1-4d89-9631-2d678754e9f9.png",
-    "sourceSHA256": "91dc8459af98746b1e403a4934488c736cd7fe7ad77f93517715b6068cc98c32",
-    "description": "AI-generated interpretive architectural visualization; not a surveyed or as-built plan. Native generation resolution retained.",
+    "sourceFile": "exec-7fbcac84-663a-42b1-9fcd-7ebb2f9c5f20.png",
+    "sourceSHA256": "c83e79c9f446134c0bce0d28cf9b513d81660c4c2546a400034f9b38666b3dc8",
+    "description": "Owner-requested photorealistic concept with playing children and supervising parents; not an installed-site photograph.",
     "variants": [
       {
         "path": "visuals/v2/airport.webp",
         "width": 1672,
         "height": 941,
-        "bytes": 401972,
-        "sha256": "7b4ecd205e02011af514b9142de82df8443f22f3a7e54354958cfd2e94591963"
+        "bytes": 480588,
+        "sha256": "83ccb0032d647e35165b987e7605b1989ad15434c381fdc62cedb5ade5b6b250"
       },
       {
         "path": "visuals/v2/airport-960.webp",
         "width": 960,
         "height": 540,
-        "bytes": 123044,
-        "sha256": "f80acd8df032f00001fa399639d60ade426646869b17e08cb51eff0ae2fa7956"
+        "bytes": 155306,
+        "sha256": "195ac5fcd0aa3704c93f5489d354f2d36930f3e566e8556da32189d3d8939a4f"
       },
       {
         "path": "visuals/v2/airport-640.webp",
         "width": 640,
         "height": 360,
-        "bytes": 61328,
-        "sha256": "f7d671daba6b297e1b31d02e40b31c82848e6d424bc11b15b774323613f9fb2d"
+        "bytes": 78662,
+        "sha256": "850e89c065aa41bfa11c5823bb2a491568210f79b555d3843c85f15e19cd45ef"
       }
     ]
   },
   {
     "id": "engineering",
-    "kind": "generated_illustration",
-    "sourceFile": "exec-a82fd081-8f2e-4baa-a64a-a658a75d8ba3.png",
-    "sourceSHA256": "4b5c7450aeadfa06994217fa0e63d309be057e899e8ac01d6446d0958a531091",
-    "description": "AI-generated interpretive architectural visualization; not a surveyed or as-built plan. Native generation resolution retained.",
+    "kind": "documentary_photo",
+    "sourceFile": "wheel-ref-0.jpg",
+    "sourceSHA256": "6ac9cfc172d6163d6bbfd5b9cd320067257f485d281fd72a3760cf78c7c25929",
+    "description": "Real Skazka observation wheel photograph from its official attraction page, retrieved 2026-10-07.",
     "variants": [
       {
         "path": "visuals/v2/engineering.webp",
-        "width": 1672,
-        "height": 941,
-        "bytes": 349684,
-        "sha256": "e4c2e01d1a31eab024575f5e3a1ed519e93d5d6f0fbae64c13cee146e633b697"
+        "width": 1020,
+        "height": 680,
+        "bytes": 252904,
+        "sha256": "9cee94ea357c7fbeb0ebc241767c688be5d50518b25b6e2e0e995be22dc1a72e"
       },
       {
         "path": "visuals/v2/engineering-960.webp",
         "width": 960,
-        "height": 540,
-        "bytes": 117806,
-        "sha256": "23d40824b21bb105a56306d1f0f3ad1f07c05914f7e2bec301514a6891f034df"
+        "height": 640,
+        "bytes": 163822,
+        "sha256": "913681cdbb47a9657a18c58400f0d5dced8dae70eff7b08b1203ef4466d17cf7"
       },
       {
         "path": "visuals/v2/engineering-640.webp",
         "width": 640,
-        "height": 360,
-        "bytes": 61844,
-        "sha256": "152a9e13bce6a953efd576f63601122577f30c943264697d7f471041e24f8e95"
+        "height": 427,
+        "bytes": 81972,
+        "sha256": "c2c2c719ec18439f9f22312612d43b1c99157ef2071f13afa834cbb2ca55bab1"
       }
-    ]
+    ],
+    "sourceURL": "https://parkskazka.ru/attraktsiony/semeynye/koleso-obozreniya"
   },
   {
     "id": "salalah-coast",
     "kind": "documentary_photo",
-    "sourceFile": "hero-02-coast-original.jpg",
-    "sourceSHA256": "a6a27b31d97875de3dfbe7db2319eaa0ef1464ab140e75e81e5ea66cd91ad78f",
-    "description": "Owner-supplied original drone photography; conventional image conversion and resizing only.",
+    "sourceFile": "salalah-close.jpg",
+    "sourceSHA256": "8cc080c18ffac944b48611909183db7a3df49d027e52e18c5aad1bf615e5ca33",
+    "description": "Unaltered frame at 36.46 seconds of owner DJI_20260930162342_0001_D.MP4, 2026-09-30; conventional resizing and compression only.",
     "variants": [
       {
         "path": "visuals/v2/salalah-coast.webp",
         "width": 2400,
-        "height": 1728,
-        "bytes": 545484,
-        "sha256": "e1e6e04238ebb25a270f7841f25ff3e3909fdf1f5ba8d61403eaeafd819b025d"
+        "height": 1350,
+        "bytes": 491370,
+        "sha256": "9450b56b18dc225ebea7a5e87e84f2399f122193ee598099267d318af32d4345"
       },
       {
         "path": "visuals/v2/salalah-coast-960.webp",
         "width": 960,
-        "height": 691,
-        "bytes": 69556,
-        "sha256": "26a0b50672378316737ea6e675a3865f2ad9143343596466a7e279438fa34736"
+        "height": 540,
+        "bytes": 77712,
+        "sha256": "7d39ec0714037e348bee0ea2b4f0726dc72bd05f5346825f9efbf57e1b40ac62"
       },
       {
         "path": "visuals/v2/salalah-coast-640.webp",
         "width": 640,
-        "height": 461,
-        "bytes": 33718,
-        "sha256": "b136b67a673410e8f2931036bfb054ecacb62941da0bbd6b088fdd5348bd9500"
+        "height": 360,
+        "bytes": 37930,
+        "sha256": "8ee287cc8c4921b42ce62d9492701eff11dea986e4ecf85841267fed02ad5b8d"
       }
     ]
   },

@@ -11,10 +11,10 @@ export const chapterCopy: Record<string, ChapterCopy> = {
     },
   },
   proof: {
-    heading: { ar: "٩٧ لعبة. والخبرة تتحدث.", en: "97 rides. The experience speaks." },
+    heading: { ar: "الخبرة تُثبتها المشاريع.", en: "Expertise. Proven in operation." },
     body: {
-      ar: "٩٧ لعبة في خمسة مشاريع تشغيلية ضمن محفظة من ثمانية مشاريع.",
-      en: "97 rides across five operating case studies. Part of an eight-project portfolio.",
+      ar: "خمسة مشاريع تشغيلية. من الوجهات العائلية إلى معالم المدن.",
+      en: "Five operating case studies. From family destinations to city landmarks.",
     },
   },
   engineering: {
@@ -31,8 +31,8 @@ export const chapterCopy: Record<string, ChapterCopy> = {
   specialists: {
     heading: { ar: "١٠ مهندسين. ٥٤ ميكانيكياً. فريق واحد.", en: "10 engineers. 54 mechanics. One team." },
     body: {
-      ar: "٦٤ متخصصاً فنياً يربطون التصميم بأعمال الموقع، والتركيب بالإطلاق، والصيانة بالتشغيل اليومي.",
-      en: "64 technical specialists connecting design to site work, installation to launch, and maintenance to daily operations.",
+      ar: "من التركيب إلى الإطلاق، ومن الصيانة إلى التشغيل اليومي.",
+      en: "From assembly to launch. From maintenance to daily operation.",
     },
   },
   lifecycle: {
@@ -45,8 +45,8 @@ export const chapterCopy: Record<string, ChapterCopy> = {
   geography: {
     heading: { ar: "من موسكو إلى صلالة.", en: "From Moscow to Salalah." },
     body: {
-      ar: "ثمانية مشاريع في ستة مواقع. محفظة تربط خبرة المنتزهات في روسيا بمشاريع المجموعة في عُمان.",
-      en: "Eight projects across six locations. A portfolio connecting Russian park experience with the group’s projects in Oman.",
+      ar: "ثمانية مشاريع. ستة مواقع. من روسيا إلى عُمان.",
+      en: "Eight projects. Six locations. Russia to Oman.",
     },
   },
   skazka: {
@@ -71,10 +71,10 @@ export const chapterCopy: Record<string, ChapterCopy> = {
     },
   },
   izmaylovo: {
-    heading: { ar: "٣ ألعاب تُكمل تجربة الوجهة.", en: "Three rides. One destination experience." },
+    heading: { ar: "عجلة واحدة. أفق جديد للوجهة.", en: "One wheel. A new perspective." },
     body: {
-      ar: "المجموعة مالك ومشغّل لمشروع يربط الألعاب بالتجربة السياحية.",
-      en: "The group’s owner-operator role brings attractions into the tourism experience.",
+      ar: "نملك ونشغّل عجلة مشاهدة تُكمل التجربة السياحية في كرملين إزمايلوفو.",
+      en: "We own and operate an observation wheel within the Kremlin Izmaylovo visitor experience.",
     },
   },
   ohta: {
@@ -94,8 +94,8 @@ export const chapterCopy: Record<string, ChapterCopy> = {
   "al-haffa": {
     heading: { ar: "ساحل صلالة. منظور جديد للترفيه.", en: "Salalah’s coast. A new perspective." },
     body: {
-      ar: "دور المالك والمشغّل في مشروع على ساحل صلالة. استكشفوا صور الموقع الأصلية ورؤية التطوير.",
-      en: "An owner-operator project on Salalah’s coast. Explore original site photography and the development vision.",
+      ar: "عجلة مشاهدة على ساحل صلالة، وبجوارها لعبتان: الرماية ورمي السهام على البالونات.",
+      en: "One observation wheel on Salalah’s coast, with two adjacent arcade stalls: a shooting gallery and balloon darts.",
     },
   },
   airport: {
@@ -126,7 +126,7 @@ export const rideHooks: Record<string, BilingualCopy> = {
   chain: { ar: "هندسة ترفع مستوى التجربة.", en: "Engineering that lifts the experience." },
   "drop-tower": { ar: "التشويق يبدأ بالدقة.", en: "The thrill starts with precision." },
   condor: { ar: "حركة معقّدة. تجربة واحدة.", en: "Complex motion. One experience." },
-  typhoon: { ar: "اكتشفوا الهندسة خلف المسار.", en: "Explore the engineering behind the track." },
+  boomerang: { ar: "اندفاع إلى الأمام. وإثارة في العودة.", en: "Full speed ahead. Then back again." },
   lightning: { ar: "خلف كل منعطف، هندسة.", en: "Engineering behind every turn." },
   disco: { ar: "الدوران والحركة يصنعان التجربة.", en: "Spin and motion shape the experience." },
 };

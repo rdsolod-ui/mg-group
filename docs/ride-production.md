@@ -8,7 +8,7 @@ The source-of-truth is the owner-supplied model geometry. Existing company metri
 | Swing carousel | MAX | Source canopy, chains, seats and base; rotating assembly |
 | Drop tower | SKP | Source tower and passenger carriage; illustrative vertical motion |
 | Condor | SKB | Source structure; illustrative upper-assembly rotation |
-| Typhoon | SKP | Track and structure; orbit inspection |
+| Boomerang | SKP | WFC-20A supplied track and structure; orbit inspection |
 | Lightning | DWG | Track, spine, supports and station; orbit inspection |
 | Disco Coaster | MAX placement scene | Pending actual ride source; not included in public models |
 
@@ -30,8 +30,10 @@ Web posters are rendered at 1920×1080 with Cycles, adaptive sampling up to 96 s
 - The supplied DiscoCoster placement scene contains site surroundings, not a verified ride assembly. The owner does not know the separate model's location.
 - The Lightning DWG references two unavailable external files. Available native 3D solids are used; completeness of absent references is not claimed. Drawing insertion units and exported scene units require an explicit conversion check.
 - Original renderer-specific shaders are not treated as transferable validation. Blender PBR materials are recreated in the working scene.
-- Ride timing, loads, clearances, safety logic and compliance are not validated by a presentation animation. Typhoon and Lightning have no train-motion claim. Condor secondary hubs are not individually simulated.
+- Ride timing, loads, clearances, safety logic and compliance are not validated by a presentation animation. Boomerang and Lightning have no train-motion claim. Condor secondary hubs are not individually simulated.
 
 ## Delivery separation
+
+Revision 7 October 2026: 150 source wheel rim/support parts are attached to the rotor. The lower drive hardware is fixed; the 30 cabin assemblies counter-rotate. `WFC-20A.skp` replaces the former Typhoon model with Boomerang. Its native geometry/materials and existing Muscat poster are reused; the poster is not a new render from this revision.
 
 The website contains lightweight visualisations, not original engineering source files. Full Blender masters, imported scenes, intermediate native exports, dependency reports and reversible build scripts are retained in the local production package. Public access to visualisations does not assign a blanket licence to redistribute original supplied models.
