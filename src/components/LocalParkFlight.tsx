@@ -19,10 +19,16 @@ export default function LocalParkFlight(props:Props){
    el.dataset.zoomStage=t<3.2?'planet':t<6.4?'region':t<9.6?'city':'location';
    planet.style.transform=`scale(${1+3.8*clamp(t/4.1)**2})`;
    planet.style.opacity=String(1-clamp((t-3.2)/1.1));
+   // All frames share the same GPS centre and projection. Nested detailed frames
+   // grow in place, so roads/coastlines retain their position across resolutions.
+   const groundWidth=t<6.4?120000*Math.pow(16000/120000,clamp((t-3.2)/3.2)):
+    t<9.6?16000*Math.pow(1600/16000,clamp((t-6.4)/3.2)):
+    1600/(1+.15*clamp((t-9.6)/3.2));
+   const extents=[120000,16000,1600];
    for(let i=0;i<3;i++){
-    const start=3.2+i*3.2,p=clamp((t-start)/3.2);
-    layers[i].style.opacity=String(clamp((t-start)/.85));
-    layers[i].style.transform=`scale(${1+(i===2?.15:i===0?1.4:1.7)*p*p})`;
+    const scale=extents[i]/groundWidth;
+    layers[i].style.opacity=String(i===0?clamp((t-3.2)/1.1):clamp((scale-.2)/.65));
+    layers[i].style.transform=`scale(${scale})`;
    }
   };
   if(props.reduced)elapsed.current=12.8;
@@ -40,12 +46,12 @@ export default function LocalParkFlight(props:Props){
   frame=requestAnimationFrame(tick);return()=>cancelAnimationFrame(frame);
  },[props.running,props.reduced,props.id,props.onArrive,ready]);
  const imageReady=(stage:string)=>setLoaded(previous=>previous.includes(stage)?previous:[...previous,stage]);
- return <div ref={root} className="park-flight-local park-flight-layers" data-provider="self-hosted" data-ready={ready} data-zoom-stage={props.reduced?'location':'planet'} data-flight-seconds="0" data-resolution={width}>
+ return <div ref={root} className="park-flight-local park-flight-layers satellite-flight" data-provider="self-hosted-esri-static" data-ready={ready} data-zoom-stage={props.reduced?'location':'planet'} data-flight-seconds="0" data-resolution={width}>
   <div className="flight-planet"><img src={`/mg-group/maps/flight/${props.id}-planet.webp`} alt={`Earth centred on ${props.location.en}`} onLoad={()=>imageReady('planet')} onError={props.onError}/><span className="flight-planet-dot"/></div>
-  {['region','city','location'].map(stage=><div key={stage} className="park-flight-layer"><img src={`/mg-group/maps/flight/${props.id}-${stage}-${width}.webp`} alt={`${props.location.en} — ${stage} map`} onLoad={()=>imageReady(stage)} onError={props.onError}/></div>)}
+  {['region','city','location'].map(stage=><div key={stage} className="park-flight-layer"><img src={`/mg-group/maps/satellite/${props.id}-${stage}-${width}.webp`} alt={`${props.location.en} — ${stage}, Esri satellite imagery`} onLoad={()=>imageReady(stage)} onError={props.onError}/></div>)}
   <div className="map-stage-titles"><span>الأرض / Planet</span><span>المنطقة / Region</span><span>المدينة / City</span><span>الموقع / Location</span></div>
   {!ready&&<div className="flight-buffer" role="status"><span lang="ar" dir="rtl">جارٍ تجهيز الرحلة</span><small>Preparing the journey · {loaded.length}/4</small></div>}
   <span className="local-map-target"/><span className="local-map-label">{props.location.en}<small>{props.location.lat.toFixed(5)}° N · {props.location.lng.toFixed(5)}° E</small></span>
-  <div className="local-map-credit"><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap contributors</a><span> · NASA/GSFC · </span><a href={`/mg-group/maps/${props.id}.json`} download>Site data</a><span> · </span><a href={`/mg-group/maps/context/${['skazka','leo-tolstoy','vdnkh','izmaylovo','airport'].includes(props.id)?'moscow':props.id}.json`} download>Region data · ODbL</a></div>
+  <div className="local-map-credit"><a href="/mg-group/maps/satellite/credits.html" target="_blank" rel="noreferrer">Esri, Vantor, Earthstar Geographics, GIS User Community · NASA/GSFC</a><span> · Imagery dates vary</span></div>
  </div>;
 }

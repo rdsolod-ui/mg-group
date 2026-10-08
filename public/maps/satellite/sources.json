@@ -1,0 +1,1100 @@
+{
+  "provider": "Esri World Imagery",
+  "attribution": "Source: Esri, Vantor, Earthstar Geographics, and the GIS User Community",
+  "terms": "https://doc.arcgis.com/en/arcgis-online/reference/static-maps.htm",
+  "copyright": "Map images © 2026 Esri and its licensors. All rights reserved.",
+  "retrievedAt": "2026-10-08T08:43:40.158282+00:00",
+  "acquisitionDate": "Composite imagery; acquisition dates vary. Retrieval date is not acquisition date.",
+  "scope": "Static geographic context for MG Group marketing presentation. Owner-supplied GPS is not a surveyed boundary. Images do not establish project completion.",
+  "frames": [
+    {
+      "id": "skazka",
+      "stage": "region",
+      "center": [
+        37.43412735237241,
+        55.77149167507881
+      ],
+      "groundWidthMeters": 120000,
+      "bbox3857": [
+        4060480.34883297,
+        7453059.398112935,
+        4273815.64148033,
+        7573060.500227076
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=4060480.34883297%2C7453059.398112935%2C4273815.64148033%2C7573060.500227076&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "e2e6663c64da49b8b2c92a749f44b3b2360569692283042a9a16d86ea93a8f7f",
+      "files": [
+        {
+          "path": "skazka-region-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 46210,
+          "sha256": "5c00c3fe4f114fef6f733c022e4b058eb1d7a42d03447bca4121d1e621fc8e52"
+        },
+        {
+          "path": "skazka-region-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 284872,
+          "sha256": "4577ae5b6c738fc4d049a7e9a6871b2c360f4265310359f60dd3e3aa97a617cc"
+        }
+      ]
+    },
+    {
+      "id": "skazka",
+      "stage": "city",
+      "center": [
+        37.43412735237241,
+        55.77149167507881
+      ],
+      "groundWidthMeters": 16000,
+      "bbox3857": [
+        4152925.642313493,
+        7505059.87569573,
+        4181370.347999808,
+        7521060.022644281
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=4152925.642313493%2C7505059.87569573%2C4181370.347999808%2C7521060.022644281&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "9380a41584c0fda2240e6f49f9b65ea253cdba093af05df2102f3083644f3673",
+      "files": [
+        {
+          "path": "skazka-city-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 62634,
+          "sha256": "936cd186105508d00c1dd4c84e4219936e17c12580329a888b5fdbd7be80d43a"
+        },
+        {
+          "path": "skazka-city-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 373348,
+          "sha256": "3a5277070c5b8f5d7b5dfcca49cd7d210b77ebe0a76befc78c9314d29280fbcd"
+        }
+      ]
+    },
+    {
+      "id": "skazka",
+      "stage": "location",
+      "center": [
+        37.43412735237241,
+        55.77149167507881
+      ],
+      "groundWidthMeters": 1600,
+      "bbox3857": [
+        4165725.7598723345,
+        7512259.941822578,
+        4168570.2304409663,
+        7513859.956517433
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=4165725.7598723345%2C7512259.941822578%2C4168570.2304409663%2C7513859.956517433&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "01ce358f2ca1d2908cf57326941ca1d5440d454d31c4b1de0f39f7903f62b9d9",
+      "files": [
+        {
+          "path": "skazka-location-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 38574,
+          "sha256": "7141aeecf85006dcd829de9d6224b3d78b54c971244bd691b0c1dec86f3df30a"
+        },
+        {
+          "path": "skazka-location-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 217146,
+          "sha256": "92040e488fb8ed9fbd8a0d6c60422accf92815d35fcbf99cdc832c026c93dcf0"
+        }
+      ]
+    },
+    {
+      "id": "leo-tolstoy",
+      "stage": "region",
+      "center": [
+        37.45923248637098,
+        55.893357043936994
+      ],
+      "groundWidthMeters": 120000,
+      "bbox3857": [
+        4062940.268906098,
+        7477026.425267325,
+        4276945.102873239,
+        7597404.144373841
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=4062940.268906098%2C7477026.425267325%2C4276945.102873239%2C7597404.144373841&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "7bed14a2da10adc555c07c347fa541a1fabaefa6943dc51e5fd68dc293a76666",
+      "files": [
+        {
+          "path": "leo-tolstoy-region-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 45054,
+          "sha256": "43492af1c0d7f3ac43e1b34e4bcccdb51c09475c429d65d4dc926d3e9af5f614"
+        },
+        {
+          "path": "leo-tolstoy-region-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 282068,
+          "sha256": "0e69eea9397bfd224c28f54ea78f67913b7b865134f2ef7c0f8c4f286dd5d352"
+        }
+      ]
+    },
+    {
+      "id": "leo-tolstoy",
+      "stage": "city",
+      "center": [
+        37.45923248637098,
+        55.893357043936994
+      ],
+      "groundWidthMeters": 16000,
+      "bbox3857": [
+        4155675.6969585256,
+        7529190.103546815,
+        4184209.674820811,
+        7545240.46609435
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=4155675.6969585256%2C7529190.103546815%2C4184209.674820811%2C7545240.46609435&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "8bd42f5ab7ec6ec506b2d924c4c944d00bfad5c73850a8fe1f49218cab5baf83",
+      "files": [
+        {
+          "path": "leo-tolstoy-city-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 62630,
+          "sha256": "a654c0f91f7360da1bc01766f559f90a460db2cea96e64c439d26b6a652c8688"
+        },
+        {
+          "path": "leo-tolstoy-city-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 381296,
+          "sha256": "1086484df20d49a7a22dd4ad9e96f3156b48eb6cf0da81b1074540b3ff68133a"
+        }
+      ]
+    },
+    {
+      "id": "leo-tolstoy",
+      "stage": "location",
+      "center": [
+        37.45923248637098,
+        55.893357043936994
+      ],
+      "groundWidthMeters": 1600,
+      "bbox3857": [
+        4168515.986996554,
+        7536412.766693206,
+        4171369.3847827828,
+        7538017.80294796
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=4168515.986996554%2C7536412.766693206%2C4171369.3847827828%2C7538017.80294796&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "8270ed3c0dd754acdd0e3d4d72f09b99a0ec1037d6dc995fe66ea50a5f7bf76d",
+      "files": [
+        {
+          "path": "leo-tolstoy-location-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 44438,
+          "sha256": "5ca6fd77adc8d8bb29adec75c4199b3306e7d663fd2519fdc25cd88a0bc9377f"
+        },
+        {
+          "path": "leo-tolstoy-location-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 241968,
+          "sha256": "421250d76296566e592ec0f691f77b3d537f908f25c1e82771510ecd023c4293"
+        }
+      ]
+    },
+    {
+      "id": "vdnkh",
+      "stage": "region",
+      "center": [
+        37.62643620586514,
+        55.82675421281442
+      ],
+      "groundWidthMeters": 120000,
+      "bbox3857": [
+        4081736.583164761,
+        7463918.576389016,
+        4295374.854440238,
+        7584090.103981472
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=4081736.583164761%2C7463918.576389016%2C4295374.854440238%2C7584090.103981472&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "98b13b472144088d68f3bc4497dce76d3458772d17e1e43aeb3650af422cb128",
+      "files": [
+        {
+          "path": "vdnkh-region-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 45492,
+          "sha256": "3abb582a4add01d5f208df414fc4ac25de78bd9bc1751d3227da0740fa7ee9bb"
+        },
+        {
+          "path": "vdnkh-region-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 285204,
+          "sha256": "516eb2a9930489986c2e3d5a1b24bf81970a593e6341bc6be52014965c3bfaf8"
+        }
+      ]
+    },
+    {
+      "id": "vdnkh",
+      "stage": "city",
+      "center": [
+        37.62643620586514,
+        55.82675421281442
+      ],
+      "groundWidthMeters": 16000,
+      "bbox3857": [
+        4174313.1673841346,
+        7515992.905012413,
+        4202798.270220865,
+        7532015.775358074
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=4174313.1673841346%2C7515992.905012413%2C4202798.270220865%2C7532015.775358074&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "989d24832ed1cc8f33da38877598b60bd6ea8036897f6531c7d221179d7b33c5",
+      "files": [
+        {
+          "path": "vdnkh-city-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 65356,
+          "sha256": "5f6bd71fba52ca27dcf96781bc710bf7ca71e7889140a341f7ca677679223eb2"
+        },
+        {
+          "path": "vdnkh-city-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 396864,
+          "sha256": "f711f26f1b7aca0a1f5118c1cd8fbd0c893f54321acbd9a028302a39ee930959"
+        }
+      ]
+    },
+    {
+      "id": "vdnkh",
+      "stage": "location",
+      "center": [
+        37.62643620586514,
+        55.82675421281442
+      ],
+      "groundWidthMeters": 1600,
+      "bbox3857": [
+        4187131.463660663,
+        7523203.196667961,
+        4189979.973944336,
+        7524805.483702526
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=4187131.463660663%2C7523203.196667961%2C4189979.973944336%2C7524805.483702526&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "38caa86d147391889d3a711c1c1795938faf001a0a8a62e5a6996c9d55004972",
+      "files": [
+        {
+          "path": "vdnkh-location-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 55486,
+          "sha256": "ef6a901d1b1c74e754a88b5a10aa41a57f3fab2f36f29246c5c910f8a1648cde"
+        },
+        {
+          "path": "vdnkh-location-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 267224,
+          "sha256": "fa52d99841eeace7ea3a40c9d76778703e61bc2c951c7268d4a67a7971f95fba"
+        }
+      ]
+    },
+    {
+      "id": "izmaylovo",
+      "stage": "region",
+      "center": [
+        37.74847414233548,
+        55.7946795763556
+      ],
+      "groundWidthMeters": 120000,
+      "bbox3857": [
+        4095409.77366114,
+        7457614.003423365,
+        4308872.065834541,
+        7577686.542770904
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=4095409.77366114%2C7457614.003423365%2C4308872.065834541%2C7577686.542770904&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "83e65d40b92597204c81b8b6747219d46ee0efaedf51274da1bd0278af26d647",
+      "files": [
+        {
+          "path": "izmaylovo-region-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 45660,
+          "sha256": "d9966edd83b3544e062c65c10b0f4a38085bb30cc481e0908ae2dead1e6162f3"
+        },
+        {
+          "path": "izmaylovo-region-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 283612,
+          "sha256": "1c2e61c1af5b70cc618b9a2b44b1ce59dc96002f38c1fe92236341906f21c78a"
+        }
+      ]
+    },
+    {
+      "id": "izmaylovo",
+      "stage": "city",
+      "center": [
+        37.74847414233548,
+        55.7946795763556
+      ],
+      "groundWidthMeters": 16000,
+      "bbox3857": [
+        4187910.100269614,
+        7509645.4371406315,
+        4216371.739226067,
+        7525655.109053637
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=4187910.100269614%2C7509645.4371406315%2C4216371.739226067%2C7525655.109053637&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "1378f05ea6d51cfa5d95b83ba5b7de4965faff6410adcaccc775dce50aa5c3a7",
+      "files": [
+        {
+          "path": "izmaylovo-city-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 66122,
+          "sha256": "1304d05cc0ff46cd002719009ead21805cf864058c0886ed49e97ccf40d578bd"
+        },
+        {
+          "path": "izmaylovo-city-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 395180,
+          "sha256": "4893025b1d74af9b3edec03c4af2747adab5af6ac3fa3517fb08281d0f3e2885"
+        }
+      ]
+    },
+    {
+      "id": "izmaylovo",
+      "stage": "location",
+      "center": [
+        37.74847414233548,
+        55.7946795763556
+      ],
+      "groundWidthMeters": 1600,
+      "bbox3857": [
+        4200717.837800018,
+        7516849.789501484,
+        4203564.001695664,
+        7518450.756692785
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=4200717.837800018%2C7516849.789501484%2C4203564.001695664%2C7518450.756692785&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "5c984951280b5374acde5331dad95fb8a59ad78503e7ad7dfed65245a2cb9f71",
+      "files": [
+        {
+          "path": "izmaylovo-location-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 53232,
+          "sha256": "c840f7404857189846216d724f231497d93ce05573f06cd6ca37000ef4656f2c"
+        },
+        {
+          "path": "izmaylovo-location-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 249242,
+          "sha256": "3781e508312a2ac4cfdcdbd36ba90eed0d1ef4ca1f3bde1ccabb7ec31b5bbbc4"
+        }
+      ]
+    },
+    {
+      "id": "ohta",
+      "stage": "region",
+      "center": [
+        30.44686841004293,
+        60.12729734811739
+      ],
+      "groundWidthMeters": 120000,
+      "bbox3857": [
+        3268866.021975027,
+        8360373.012609049,
+        3509793.7533365455,
+        8495894.861499904
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=3268866.021975027%2C8360373.012609049%2C3509793.7533365455%2C8495894.861499904&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "d3634beb07d0f9c69d24143643985070b95e17e5ba7a7a8b19fa2fe1abbbe67e",
+      "files": [
+        {
+          "path": "ohta-region-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 20434,
+          "sha256": "ac615231caf436dc3173b4b2f80354e93a8384816c65bb2a10e28740ba8cfe66"
+        },
+        {
+          "path": "ohta-region-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 145032,
+          "sha256": "b1f1639b99ecc4578dd5a43c40c91f9d54cfe28f89fc5e9a9fce0a6c468bc63d"
+        }
+      ]
+    },
+    {
+      "id": "ohta",
+      "stage": "city",
+      "center": [
+        30.44686841004293,
+        60.12729734811739
+      ],
+      "groundWidthMeters": 16000,
+      "bbox3857": [
+        3373268.0388983516,
+        8419099.147128418,
+        3405391.736413221,
+        8437168.726980533
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=3373268.0388983516%2C8419099.147128418%2C3405391.736413221%2C8437168.726980533&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "0df9b8fad310ab160f0cff69d7a436e4744d454076095abb879d47d4e2928b57",
+      "files": [
+        {
+          "path": "ohta-city-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 46046,
+          "sha256": "278f3e190d9d654d9f29fd619e8b43a1c203c7480c1f4d3c1ff7f43caa232ddc"
+        },
+        {
+          "path": "ohta-city-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 321314,
+          "sha256": "365595597b1cd45a10dc301aba59beb56458ec179f3c334e9148d18713351b03"
+        }
+      ]
+    },
+    {
+      "id": "ohta",
+      "stage": "location",
+      "center": [
+        30.44686841004293,
+        60.12729734811739
+      ],
+      "groundWidthMeters": 1600,
+      "bbox3857": [
+        3387723.702780043,
+        8427230.45806187,
+        3390936.0725315297,
+        8429037.416047081
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=3387723.702780043%2C8427230.45806187%2C3390936.0725315297%2C8429037.416047081&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "609532a9db067af6b6c02913d93b8569204ae4dded762c1e5edbfd516c44f2fe",
+      "files": [
+        {
+          "path": "ohta-location-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 55104,
+          "sha256": "0117d0319fd32796446257f0177b6406c0cde1c40e91bb2b156eba7f4d6752e7"
+        },
+        {
+          "path": "ohta-location-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 279088,
+          "sha256": "d7266bfe19a03e4ab686504089d99d27aa22b2e9d45fe570df7e03e04954915e"
+        }
+      ]
+    },
+    {
+      "id": "minny-gorodok",
+      "stage": "region",
+      "center": [
+        131.94065326536736,
+        43.12176756665061
+      ],
+      "groundWidthMeters": 120000,
+      "bbox3857": [
+        14605363.591959575,
+        5284285.472557718,
+        14769769.080905551,
+        5376763.560089828
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=14605363.591959575%2C5284285.472557718%2C14769769.080905551%2C5376763.560089828&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "c14cf57b58da4a583988297bd984f5edc7eb669337a563a61e4ffa26dbf72d6d",
+      "files": [
+        {
+          "path": "minny-gorodok-region-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 15722,
+          "sha256": "b8f2c6d0f8d5f6146497ccdc25d3faa9eacf23f56b989f04900d4de630677002"
+        },
+        {
+          "path": "minny-gorodok-region-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 97034,
+          "sha256": "3ccbc17df39e98d6b2786cbed1492e809a3c9114f8980cc1aefe4fa57071781e"
+        }
+      ]
+    },
+    {
+      "id": "minny-gorodok",
+      "stage": "city",
+      "center": [
+        131.94065326536736,
+        43.12176756665061
+      ],
+      "groundWidthMeters": 16000,
+      "bbox3857": [
+        14676605.970502831,
+        5324359.3104882995,
+        14698526.702362295,
+        5336689.722159247
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=14676605.970502831%2C5324359.3104882995%2C14698526.702362295%2C5336689.722159247&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "f2fccd72073dc6068f74797b29545d3f5911809a6a194dc745fcea5d8f41ea02",
+      "files": [
+        {
+          "path": "minny-gorodok-city-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 38054,
+          "sha256": "f1af5c4be7d55db8f8c95add058047d9f29883b0cc1cb9630ed9d532313ef880"
+        },
+        {
+          "path": "minny-gorodok-city-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 235382,
+          "sha256": "698256853fa6174a8ab9d4c9e3dba1956605d6b22617f70028166cbc6f4792c4"
+        }
+      ]
+    },
+    {
+      "id": "minny-gorodok",
+      "stage": "location",
+      "center": [
+        131.94065326536736,
+        43.12176756665061
+      ],
+      "groundWidthMeters": 1600,
+      "bbox3857": [
+        14686470.29983959,
+        5329907.995740226,
+        14688662.373025537,
+        5331141.036907321
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=14686470.29983959%2C5329907.995740226%2C14688662.373025537%2C5331141.036907321&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "9df2cb132f4f647f85af1ee94e0284e3cddbf565302b0457a06a71cc80fdbf2f",
+      "files": [
+        {
+          "path": "minny-gorodok-location-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 53190,
+          "sha256": "06fdb338024659274e6dbf715b6766ccbab4f1e19e53227560356aa34b4a5f4e"
+        },
+        {
+          "path": "minny-gorodok-location-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 290876,
+          "sha256": "b3eedf4679af7637f0eb6eb42ab5edb960dc1005ca416eb503e7aab3b592268a"
+        }
+      ]
+    },
+    {
+      "id": "al-haffa",
+      "stage": "region",
+      "center": [
+        54.104987453823455,
+        17.000459845300245
+      ],
+      "groundWidthMeters": 120000,
+      "bbox3857": [
+        5960197.9933932545,
+        1885586.3857568149,
+        6085681.312078909,
+        1956170.7525174958
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=5960197.9933932545%2C1885586.3857568149%2C6085681.312078909%2C1956170.7525174958&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "deb54104526d9e36ac1fe795b700d1963b245c616306b3be3a8b7a3a2489c34f",
+      "files": [
+        {
+          "path": "al-haffa-region-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 30926,
+          "sha256": "1e96151f39b756684ba83fa30a45f78c43c2b40775010b61ebf9d7c0e3281fd5"
+        },
+        {
+          "path": "al-haffa-region-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 202806,
+          "sha256": "32e216b400df1c305895d59760f750949f25b12d5e7318abf0637a1601fb0c59"
+        }
+      ]
+    },
+    {
+      "id": "al-haffa",
+      "stage": "city",
+      "center": [
+        54.104987453823455,
+        17.000459845300245
+      ],
+      "groundWidthMeters": 16000,
+      "bbox3857": [
+        6014574.098157038,
+        1916172.9446864433,
+        6031305.2073151255,
+        1925584.1935878673
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=6014574.098157038%2C1916172.9446864433%2C6031305.2073151255%2C1925584.1935878673&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "e043cfce892fe881318c142a1d1dc73943ab61fec915706ea1cb13b7ed372cd6",
+      "files": [
+        {
+          "path": "al-haffa-city-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 34674,
+          "sha256": "63d264d4e53b25a701a7fccf6f06bb62da10b7d0fd28c71bdc673e692fee58fa"
+        },
+        {
+          "path": "al-haffa-city-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 210422,
+          "sha256": "7d45742543df39a8fec88f9128bcc33b0072e6d0b9469250062b5e57656b5312"
+        }
+      ]
+    },
+    {
+      "id": "al-haffa",
+      "stage": "location",
+      "center": [
+        54.104987453823455,
+        17.000459845300245
+      ],
+      "groundWidthMeters": 1600,
+      "bbox3857": [
+        6022103.097278178,
+        1920408.006692084,
+        6023776.208193986,
+        1921349.1315822266
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=6022103.097278178%2C1920408.006692084%2C6023776.208193986%2C1921349.1315822266&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "a45ec6986191a7b23206a31bc150ce1521fa5c4e84c2248198a2e881447ae4ee",
+      "files": [
+        {
+          "path": "al-haffa-location-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 40642,
+          "sha256": "927bca4fa7f6179e1da6dd19096a9d24f1fe2f2856b4d30b16c6923758285c4f"
+        },
+        {
+          "path": "al-haffa-location-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 222468,
+          "sha256": "22c8d79d63cd35f53df8c28854a76cf2c00a4d6ae67f6b15d21c77d357734681"
+        }
+      ]
+    },
+    {
+      "id": "airport",
+      "stage": "region",
+      "center": [
+        37.90019188081303,
+        55.41437426053603
+      ],
+      "groundWidthMeters": 120000,
+      "bbox3857": [
+        4113328.7472350933,
+        7383249.634105203,
+        4324731.375043843,
+        7502163.612247624
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=4113328.7472350933%2C7383249.634105203%2C4324731.375043843%2C7502163.612247624&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "00aa9eb269d37ef09b0c84c7ef62d810ead63186b30f568838b5f7f72820e182",
+      "files": [
+        {
+          "path": "airport-region-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 44240,
+          "sha256": "1d50e68c08e5b6f2d89a6b74848511c28a9c8bbbdbd7368f4d2697f34d3a3ae4"
+        },
+        {
+          "path": "airport-region-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 267402,
+          "sha256": "83ec37e1cf36568f3047f5c8c64a89b1ee13975b86c699b02aae2810f1479339"
+        }
+      ]
+    },
+    {
+      "id": "airport",
+      "stage": "city",
+      "center": [
+        37.90019188081303,
+        55.41437426053603
+      ],
+      "groundWidthMeters": 16000,
+      "bbox3857": [
+        4204936.5526188845,
+        7434779.0246335855,
+        4233123.569660052,
+        7450634.221719242
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=4204936.5526188845%2C7434779.0246335855%2C4233123.569660052%2C7450634.221719242&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "380a7f9809ca496704dc0203e3b51c8843d8fdb778d5be288a8a0dd8536bc8f8",
+      "files": [
+        {
+          "path": "airport-city-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 33958,
+          "sha256": "a480623a3813f42df2dec7aba0f851309e24daa72dfb1df9fafb5e55458fa1bc"
+        },
+        {
+          "path": "airport-city-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 260476,
+          "sha256": "20e9109f2eb47f866b6d7632a868188559d233786527da0c4b09ee416029c460"
+        }
+      ]
+    },
+    {
+      "id": "airport",
+      "stage": "location",
+      "center": [
+        37.90019188081303,
+        55.41437426053603
+      ],
+      "groundWidthMeters": 1600,
+      "bbox3857": [
+        4217620.71028741,
+        7441913.86332213,
+        4220439.411991526,
+        7443499.383030697
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=4217620.71028741%2C7441913.86332213%2C4220439.411991526%2C7443499.383030697&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "d691b519e1050366eeb1f4b68e9a15ef88795b881ba63acfa946dc6e00a3caf2",
+      "files": [
+        {
+          "path": "airport-location-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 46718,
+          "sha256": "e9238068e1af47c36ddfd9260215405108132eed5906330585d13c3755e15ed5"
+        },
+        {
+          "path": "airport-location-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 240946,
+          "sha256": "089548c6e02af882d42f5d8e6921208d8622f59d1bfbe3fad50b81f0c4c1a2c8"
+        }
+      ]
+    },
+    {
+      "id": "blagoveshchensk",
+      "stage": "region",
+      "center": [
+        127.53443384787141,
+        50.25663240061146
+      ],
+      "groundWidthMeters": 120000,
+      "bbox3857": [
+        14103222.92271764,
+        6438051.258260224,
+        14290913.546389317,
+        6543627.234075543
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=14103222.92271764%2C6438051.258260224%2C14290913.546389317%2C6543627.234075543&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "de0c862d39ada8ea5884d13ee5b0d6082487297a66eb30cfeb4f50a0f17b0c05",
+      "files": [
+        {
+          "path": "blagoveshchensk-region-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 20174,
+          "sha256": "f6efabea08e926a3ce358a99824b51d6ea274bf4a64113d8d15a6839418db112"
+        },
+        {
+          "path": "blagoveshchensk-region-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 145828,
+          "sha256": "0bdb524c2350408aa33c13645ec40c81e25801d5f11cbf1b4ebedd5ec7f59c75"
+        }
+      ]
+    },
+    {
+      "id": "blagoveshchensk",
+      "stage": "city",
+      "center": [
+        127.53443384787141,
+        50.25663240061146
+      ],
+      "groundWidthMeters": 16000,
+      "bbox3857": [
+        14184555.5263087,
+        6483800.847780195,
+        14209580.942798257,
+        6497877.6445555715
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=14184555.5263087%2C6483800.847780195%2C14209580.942798257%2C6497877.6445555715&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "b3d80c6de7a522f74b853222c1d35e8f3810b3f41c60af357fcea7b2ecaff994",
+      "files": [
+        {
+          "path": "blagoveshchensk-city-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 49292,
+          "sha256": "652b4cabc6bbf3750bc5691503eb194db5f7b3034b2133badc28b457c9166430"
+        },
+        {
+          "path": "blagoveshchensk-city-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 296494,
+          "sha256": "75fc170d7351077b1d5e697fa6d073703defab1fa005fee0050afcc2f84ecd33"
+        }
+      ]
+    },
+    {
+      "id": "blagoveshchensk",
+      "stage": "location",
+      "center": [
+        127.53443384787141,
+        50.25663240061146
+      ],
+      "groundWidthMeters": 1600,
+      "bbox3857": [
+        14195816.963729002,
+        6490135.406329115,
+        14198319.505377956,
+        6491543.086006652
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=14195816.963729002%2C6490135.406329115%2C14198319.505377956%2C6491543.086006652&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "9168d3b13e7195bb53ea087ab421351e5eb87da3eaf5744fad6f2938da556984",
+      "files": [
+        {
+          "path": "blagoveshchensk-location-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 48190,
+          "sha256": "c86962f3a2fadc7541080fb883254004a92dc22995d309d83614a628b288d24a"
+        },
+        {
+          "path": "blagoveshchensk-location-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 240272,
+          "sha256": "2fa04e39a73cde1c26517feebb1aa8157f19e939e1ba7481f23e9d181daed7b8"
+        }
+      ]
+    },
+    {
+      "id": "nizwa",
+      "stage": "region",
+      "center": [
+        57.54263192669975,
+        22.93807942265588
+      ],
+      "groundWidthMeters": 120000,
+      "bbox3857": [
+        6340464.711852779,
+        2587884.23440437,
+        6470768.258117187,
+        2661179.9791781
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=6340464.711852779%2C2587884.23440437%2C6470768.258117187%2C2661179.9791781&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "bb4ed83a5f010016d1240a80a93949bf8d399bb3dfefc3692ad065b95466e20e",
+      "files": [
+        {
+          "path": "nizwa-region-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 51208,
+          "sha256": "a1bd8f584da1105b4c5850840209c0b3ce3073098845af62a947b666a93aa620"
+        },
+        {
+          "path": "nizwa-region-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 337144,
+          "sha256": "7ebcb09194a19457e338df5293ca4611069afe0560051310c16976c57e06e645"
+        }
+      ]
+    },
+    {
+      "id": "nizwa",
+      "stage": "city",
+      "center": [
+        57.54263192669975,
+        22.93807942265588
+      ],
+      "groundWidthMeters": 16000,
+      "bbox3857": [
+        6396929.581900689,
+        2619645.7238063198,
+        6414303.388069277,
+        2629418.4897761503
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=6396929.581900689%2C2619645.7238063198%2C6414303.388069277%2C2629418.4897761503&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "54e8322c319c9c903b42049597edbdab3f311a1a31bb92e3cdbbb69eb3bfc520",
+      "files": [
+        {
+          "path": "nizwa-city-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 54006,
+          "sha256": "f91ce639788e1259aeb78944da976c4f8f4390eeae41b3521798aff167479908"
+        },
+        {
+          "path": "nizwa-city-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 338844,
+          "sha256": "3e130e0234b71fd5a68ffcc194e88f80544637ac4ad2d8aab4f680c3786309b6"
+        }
+      ]
+    },
+    {
+      "id": "nizwa",
+      "stage": "location",
+      "center": [
+        57.54263192669975,
+        22.93807942265588
+      ],
+      "groundWidthMeters": 1600,
+      "bbox3857": [
+        6404747.794676553,
+        2624043.4684927436,
+        6406485.175293412,
+        2625020.7450897265
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=6404747.794676553%2C2624043.4684927436%2C6406485.175293412%2C2625020.7450897265&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "e6d3d10ddefb6075c15a58611fb7940f2c9f0142cdc26b9addc826c2d8539749",
+      "files": [
+        {
+          "path": "nizwa-location-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 54562,
+          "sha256": "f37966a54573185c58f82bff27bea0a704cce43bcb3f06ad949da737ae3bd3ce"
+        },
+        {
+          "path": "nizwa-location-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 299682,
+          "sha256": "48459d8975d249ff6dbde967f759dbdab3197f7be9f564ea8d856cdda05145fb"
+        }
+      ]
+    },
+    {
+      "id": "riyam",
+      "stage": "region",
+      "center": [
+        58.577819796136815,
+        23.62201678251985
+      ],
+      "groundWidthMeters": 120000,
+      "bbox3857": [
+        6455365.81729022,
+        2670579.805413829,
+        6586340.32568196,
+        2744252.9663841827
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=6455365.81729022%2C2670579.805413829%2C6586340.32568196%2C2744252.9663841827&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "3bc96d1ddfd707b463ccf0895ea38b5730f9acfbf5c03bc84438fb7a5777834a",
+      "files": [
+        {
+          "path": "riyam-region-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 19140,
+          "sha256": "20be2145a6c33e546386b6d38a4f8fdd09a5be9b841c60980e4d537619d2fa2a"
+        },
+        {
+          "path": "riyam-region-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 122800,
+          "sha256": "9dde5332c20ba2e11244ca9201d65b9175fbdf4a058708124bd6569a7880fe5d"
+        }
+      ]
+    },
+    {
+      "id": "riyam",
+      "stage": "city",
+      "center": [
+        58.577819796136815,
+        23.62201678251985
+      ],
+      "groundWidthMeters": 16000,
+      "bbox3857": [
+        6512121.437593307,
+        2702504.8418343156,
+        6529584.705378873,
+        2712327.9299636963
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=6512121.437593307%2C2702504.8418343156%2C6529584.705378873%2C2712327.9299636963&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "3d1e320da752f19ee2a82f43d7101e029a6453efd7e7cd4715b310606966408a",
+      "files": [
+        {
+          "path": "riyam-city-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 27750,
+          "sha256": "a125d1c896311367228de2b7874e407aa4bafa0f5255c0351560cef1a21870c3"
+        },
+        {
+          "path": "riyam-city-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 176912,
+          "sha256": "f3b7943c009a152ef437910d1e2f8c1cf2504a4fecfc65b54af53231262a611d"
+        }
+      ]
+    },
+    {
+      "id": "riyam",
+      "stage": "location",
+      "center": [
+        58.577819796136815,
+        23.62201678251985
+      ],
+      "groundWidthMeters": 1600,
+      "bbox3857": [
+        6519979.908096812,
+        2706925.231492537,
+        6521726.234875369,
+        2707907.540305475
+      ],
+      "request": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export?bbox=6519979.908096812%2C2706925.231492537%2C6521726.234875369%2C2707907.540305475&bboxSR=3857&imageSR=3857&size=2048%2C1152&format=jpg&transparent=false&f=image",
+      "sourceSha256": "1b3ddfcdcd8996d2a13a568cf46c460b10b90f60fdbbd48eea410351832bdf4e",
+      "files": [
+        {
+          "path": "riyam-location-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 46626,
+          "sha256": "64078e9a912eafa41d04a05fcffaf6d891cbb72a1c89f8d7356929e75295f8f4"
+        },
+        {
+          "path": "riyam-location-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 293648,
+          "sha256": "17a309b7894af0587d7d8833d7c19e90d307dcfbfb4caea482fec753f09e0c24"
+        }
+      ]
+    }
+  ]
+}

@@ -70,3 +70,6 @@
 .flight-planet-dot {position:absolute;left:50%;top:50%;width:8px;height:8px;transform:translate(-50%,-50%);background:#ffca8b;border:2px solid #fff;border-radius:50%;box-shadow:0 0 12px #ffd69b;}
 .flight-buffer {position:absolute;z-index:5;bottom:32px;left:50%;transform:translateX(-50%);padding:8px 14px;background:#071b2de8;border:1px solid #e6b48255;border-radius:6px;color:#e4edf3;text-align:center;font-size:12px;}
 .flight-buffer small {display:block;margin-top:3px;font-size:10px;white-space:nowrap;}
+.satellite-flight .park-flight-layer {mask-image:linear-gradient(to right,transparent,#000 3%,#000 97%,transparent);}
+.satellite-flight .local-map-label {max-width:90%;white-space:normal;box-shadow:0 3px 15px #0008;}
+.satellite-flight .map-stage-titles span {box-shadow:0 1px 6px #0005;}
