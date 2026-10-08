@@ -1,7 +1,5 @@
 > Current implementation: [self-hosted free flights](FREE-PARK-FLIGHTS.md). No Google or ArcGIS key is required. The provider setup below is historical.
 
-> Provider update, 2026-10-08: ArcGIS selected by the owner. See [current setup and validation status](ARCGIS-FLIGHTS.md). Google instructions below are historical.
-
 # Park location flights
 
 ## Scope and source
