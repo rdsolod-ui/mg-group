@@ -2,7 +2,7 @@
 import { useCallback, useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { LocateFixed } from 'lucide-react';
 import locations from '@/data/project-locations.json';
-import { mapsConfigured } from './google-maps-flight';
+const mapsConfigured = true;
 import { useNetwork } from './NetworkPreferences';
 import MediaLoading from './MediaLoading';
 export default function ParkFlight({ id, active, paused, reduced, children }: { id: string; active: boolean; paused: boolean; reduced: boolean; children: ReactNode }) {
@@ -14,7 +14,7 @@ export default function ParkFlight({ id, active, paused, reduced, children }: { 
   const [fade, setFade] = useState(0);
   const elapsed = useRef(0);
   const flightElapsed = useRef(0);
-  const [Scene, setScene] = useState<typeof import('./GoogleParkFlight').default | null>(null);
+  const [Scene, setScene] = useState<typeof import('./LocalParkFlight').default | null>(null);
   const eligible = mapsConfigured && !network.economy && !reduced && network.online;
   const mounted = active && near && eligible && ['loading', 'flight', 'arrival'].includes(phase);
   const playing = mounted && !paused;
@@ -34,9 +34,14 @@ export default function ParkFlight({ id, active, paused, reduced, children }: { 
   useEffect(() => {
     if (!mounted || Scene) return;
     let current = true;
-    import('./GoogleParkFlight').then(module => { if (current) setScene(() => module.default); }, () => { if (current) onError(); });
+    import('./LocalParkFlight').then(module => { if (current) setScene(() => module.default); }, () => { if (current) onError(); });
     return () => { current = false; };
   }, [mounted, Scene, onError]);
+  useEffect(() => {
+    if (phase !== 'loading') return;
+    const timeout = setTimeout(onError, 22000);
+    return () => clearTimeout(timeout);
+  }, [phase, onError]);
   useEffect(() => {
     if (phase !== 'flight' || !playing) return;
     // Bounded recovery if the SDK never reports arrival; pause does not consume this budget.
@@ -60,12 +65,12 @@ export default function ParkFlight({ id, active, paused, reduced, children }: { 
     frame = requestAnimationFrame(tick); return () => cancelAnimationFrame(frame);
   }, [phase, playing]);
   if (!location) return children;
-  const showMap = mounted && phase !== 'loading';
-  return <div className="park-flight" ref={root} data-flight={id} data-flight-phase={phase} data-flight-configured={mapsConfigured} data-flight-motion={active && near && !paused && !reduced ? "running" : "static"} data-lat={location.lat} data-lng={location.lng}>
-    <div className="park-flight-stage" style={{ '--flight-fade': showMap ? fade : 1 } as CSSProperties}>
+  const showMap = mounted;
+  return <div className="park-flight" ref={root} data-flight={id} data-flight-eligible={eligible} data-flight-economy={network.economy} data-flight-online={network.online} data-flight-phase={phase} data-flight-configured={mapsConfigured} data-flight-motion={active && near && !paused && !reduced ? "running" : "static"} data-lat={location.lat} data-lng={location.lng}>
+    <div className="park-flight-stage" style={{ '--flight-fade': showMap && phase !== 'loading' ? fade : 1 } as CSSProperties}>
       <div className="park-flight-creative" inert={showMap && fade < 1}>{children}</div>
-      {mounted && Scene && <div className={`park-flight-map ${showMap ? 'is-visible' : ''}`} style={{ opacity: showMap ? 1 - fade : 0 }} data-media-controls>
-        <Scene location={location} running={playing && phase === 'flight'} onReady={onReady} onArrive={onArrive} onError={onError} />
+      {mounted && Scene && <div className="park-flight-map" style={{ opacity: 1 - fade }} data-media-controls>
+        <Scene id={id} location={location} running={playing && phase === 'flight'} onReady={onReady} onArrive={onArrive} onError={onError} />
       </div>}
       {mounted && phase === 'loading' && <div className="park-flight-loading"><MediaLoading ar="من العالم إلى الموقع" en="From the world to this location" /></div>}
       {showMap && <div className="park-flight-heading" aria-hidden="true"><span lang="ar" dir="rtl">{phase === 'arrival' ? location.ar : 'من العالم إلى هذا الموقع'}</span><span lang="en">{phase === 'arrival' ? location.en : 'From the world to this destination'}</span></div>}
