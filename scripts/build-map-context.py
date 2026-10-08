@@ -29,6 +29,11 @@ for key,p in points.items():
     continue
    pts=[xy(v['lon'],v['lat']) for v in e.get('geometry',[])]
    if not pts or min(x for x,y in pts)>1200 or max(x for x,y in pts)<0 or min(y for x,y in pts)>800 or max(y for x,y in pts)<0:continue
+   simplified=[pts[0]]
+   for point in pts[1:-1]:
+    if math.dist(point,simplified[-1])>1.5:simplified.append(point)
+   simplified.append(pts[-1]);pts=simplified
+   if len(pts)==2 and math.dist(*pts)<.8:continue
    color='#527c93' if 'waterway' in t or 'natural' in t else '#d4b285'
    paths.append('<polyline points="'+' '.join(f'{x:.1f},{y:.1f}' for x,y in pts)+f'" fill="none" stroke="{color}" stroke-width="{1 if stage=="region" else 1.8}"/>')
   assert paths,(key,stage)
