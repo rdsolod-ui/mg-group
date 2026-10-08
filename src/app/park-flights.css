@@ -65,3 +65,8 @@
 .park-flight-layers[data-zoom-stage=location] .local-map-label,.park-flight-layers[data-zoom-stage=location] .local-map-target {opacity:1;}
 @media(max-width:600px){.map-stage-titles{gap:3px;top:8px;left:8px}.map-stage-titles span{font-size:8px;padding:5px}.project-media-panel .skazka-next{gap:4px}}
 @media(prefers-reduced-motion:reduce){.project-media-panel{animation:none}}
+.flight-planet {position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transform-origin:center;will-change:transform,opacity;}
+.flight-planet img {height:88%;width:auto;max-width:90%;object-fit:contain;filter:drop-shadow(0 0 18px #3c9bbc66);}
+.flight-planet-dot {position:absolute;left:50%;top:50%;width:8px;height:8px;transform:translate(-50%,-50%);background:#ffca8b;border:2px solid #fff;border-radius:50%;box-shadow:0 0 12px #ffd69b;}
+.flight-buffer {position:absolute;z-index:5;bottom:32px;left:50%;transform:translateX(-50%);padding:8px 14px;background:#071b2de8;border:1px solid #e6b48255;border-radius:6px;color:#e4edf3;text-align:center;font-size:12px;}
+.flight-buffer small {display:block;margin-top:3px;font-size:10px;white-space:nowrap;}
