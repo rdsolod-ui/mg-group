@@ -25,7 +25,8 @@ export default function LocalParkFlight(props:Props){
     layers[i].style.transform=`scale(${1+(i===2?.15:i===0?1.4:1.7)*p*p})`;
    }
   };
-  draw(props.reduced?12.8:elapsed.current);
+  if(props.reduced)elapsed.current=12.8;
+  draw(elapsed.current);
   if(!props.running||!ready||arrived.current)return;
   let frame=0,last:number|undefined;
   const tick=(now:number)=>{
@@ -48,4 +49,3 @@ export default function LocalParkFlight(props:Props){
   <div className="local-map-credit"><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap contributors</a><span> · NASA/GSFC · </span><a href={`/mg-group/maps/${props.id}.json`} download>Site data</a><span> · </span><a href={`/mg-group/maps/context/${['skazka','leo-tolstoy','vdnkh','izmaylovo','airport'].includes(props.id)?'moscow':props.id}.json`} download>Region data · ODbL</a></div>
  </div>;
 }
-
