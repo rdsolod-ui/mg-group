@@ -1,5 +1,5 @@
 'use client';
-import {useState} from 'react';
+import {useState,useEffect,useRef} from 'react';
 import {Expand} from 'lucide-react';
 import ParkFlight from './ParkFlight';
 import SkazkaSlider from './SkazkaSlider';
@@ -10,8 +10,10 @@ const tabs=[['map','الخريطة','Map'],['photos','الصور','Photographs']
 const videos=[['boomerang','Boomerang'],['chain','Sky carousel'],['drop-tower','Drop tower'],['condor','Condor'],['lightning','Lightning'],['disco','Galaxy']];
 export default function ParkMedia({id,onExpand,paused,active,reduced}:{id:string;onExpand:(index?:number)=>void;paused:boolean;active:boolean;reduced:boolean}){
  const [mode,setMode]=useState('map'),[index,setIndex]=useState(0),[video,setVideo]=useState('boomerang');
+ const root=useRef<HTMLDivElement>(null);const [visible,setVisible]=useState(false);
+ useEffect(()=>{if(!root.current)return;const io=new IntersectionObserver(([e])=>setVisible(e.isIntersecting),{threshold:.15});io.observe(root.current);return()=>io.disconnect();},[]);
  const assets=projectVisuals[id],visual=assets[index];
- return <div className="visual case-visual standardized-media" data-project-media={id}>
+ return <div ref={root} className="visual case-visual standardized-media" data-project-media={id}>
   <div className="project-media-tabs" role="tablist" aria-label={`${id} media`} data-media-controls onKeyDown={event=>{
    if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;
    event.preventDefault();event.stopPropagation();const current=tabs.findIndex(t=>t[0]===mode);
@@ -24,8 +26,8 @@ export default function ParkMedia({id,onExpand,paused,active,reduced}:{id:string
      <button className="masterplan-image-button unified-photo" onClick={()=>onExpand(index)} aria-label={`Expand ${visual.alt}`}><VisualImage visual={visual}/><span className="image-expand"><Expand size={20}/></span></button>
      {assets.length>1&&<div className="project-photo-thumbs" data-media-controls>{assets.map((asset,i)=><button key={asset.src} aria-label={asset.alt} aria-pressed={index===i} onClick={()=>setIndex(i)}><img src={`/mg-group/${asset.src}`} alt="" loading="lazy"/><small>{i+1}</small></button>)}</div>}
      <p className="visual-source-note"><VisualCaption visual={visual}/></p>
-    </>:id==='al-haffa'?<AttractionVideo slug="salalah" title="Salalah Eye" paused={paused||!active} visible={active} mediaBase="/mg-group/films/salalah" framed={false}/>:id==='skazka'?<>
-     <AttractionVideo key={video} slug={video} title={videos.find(v=>v[0]===video)![1]} paused={paused||!active} visible={active} framed={false}/>
+    </>:id==='al-haffa'?<AttractionVideo slug="salalah" title="Salalah Eye" paused={paused} visible={visible} mediaBase="/mg-group/films/salalah" framed={false}/>:id==='skazka'?<>
+     <AttractionVideo key={video} slug={video} title={videos.find(v=>v[0]===video)![1]} paused={paused} visible={visible} framed={false}/>
      <div className="project-video-select" data-media-controls>{videos.map(([slug,title])=><button key={slug} aria-pressed={video===slug} onClick={()=>setVideo(slug)}>{title}</button>)}</div>
     </>:<div className="project-video-empty"><span lang="ar" dir="rtl">لم يُضَف فيديو لهذا المشروع بعد</span><small lang="en">Video for this project has not been added yet.</small></div>}
   </div>
