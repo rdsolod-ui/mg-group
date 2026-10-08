@@ -1,13 +1,8 @@
 "use client";
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { Expand, Minus, Plus } from 'lucide-react';
 import ProgressiveImage from "./ProgressiveImage";
-import AttractionVideo from './AttractionVideo';
-import { projectVisuals, salalahProgramme, type VisualAsset } from '@/data/project-visuals';
-import register from '@/data/source-register.json';
-import { ProjectCapacity } from './MotionCharts';
-import ParkFlight from './ParkFlight';
-import SkazkaSlider from './SkazkaSlider';
+import { salalahProgramme, type VisualAsset } from '@/data/project-visuals';
 
 export function VisualCaption({ visual }: { visual: VisualAsset }) {
   return <span className="pair"><span lang="ar" dir="rtl">{visual.ar}</span><span className="en" lang="en" dir="ltr">{visual.en}</span></span>;
@@ -31,31 +26,4 @@ export function VisualInspector({ visual }: { visual: VisualAsset }) {
   </>;
 }
 
-export default function ProjectVisual({ id, onExpand, paused, active, reduced }: { id: string; onExpand: (index?: number) => void; paused: boolean; active: boolean; reduced: boolean }) {
-  const [mode, setMode] = useState(id === 'al-haffa' ? 'creative' : 'photo');
-  const ref=useRef<HTMLDivElement>(null);
-  const [visible,setVisible]=useState(false);
-  useEffect(()=>{const node=ref.current;if(!node)return;const observer=new IntersectionObserver(([entry])=>setVisible(entry.isIntersecting),{threshold:.15});observer.observe(node);return()=>observer.disconnect();},[]);
-  const salalah=id==='al-haffa';
-  const nizwa=id==='nizwa';
-  const index=nizwa ? mode==='site' ? 2 : mode==='wheel' ? 1 : 0 : salalah && mode==='creative' ? 3 : 0;
-  const visual=projectVisuals[id][index];
-  const project=register.projects.find(p=>p.id===id)!;
-  if(id==='skazka')return <SkazkaSlider active={active} paused={paused} reduced={reduced} onExpand={onExpand}/>;
-  return <div ref={ref} className={`visual case-visual masterplan-visual ${salalah?'salalah-visual':''} ${nizwa?'nizwa-visual':''}`}>
-    {nizwa && <div className="project-media-tabs" data-media-controls aria-label="Nizwa site and concepts">
-      {[['photo','تصوّر الوجهة','Destination concept'],['wheel','تصوّر العجلة','Wheel concept'],['site','الموقع الحالي','Actual site']].map(([key,ar,en])=><button key={key} aria-pressed={mode===key} onClick={()=>setMode(key)}><span lang="ar" dir="rtl">{ar}</span><small lang="en">{en}</small></button>)}
-    </div>}
-    {salalah && <div className="project-media-tabs" data-media-controls aria-label="Salalah project media">
-      {[['creative','التصوّر','Creative'],['photo','صور الموقع','Site photos'],['film','الفيلم','Site film']].map(([key,ar,en])=><button key={key} aria-pressed={mode===key} onClick={()=>setMode(key)}><span lang="ar" dir="rtl">{ar}</span><small lang="en">{en}</small></button>)}
-    </div>}
-    {salalah && mode==='film' ? <div className="site-film">
-      <AttractionVideo slug="salalah" title="Salalah Eye" paused={paused} visible={visible} mediaBase="/mg-group/films/salalah" framed={false} />
-      <p className="visual-source-note"><span lang="ar" dir="rtl">لقطات درون حقيقية من أرشيف المشروع — سبتمبر وأكتوبر ٢٠٢٦.</span><span lang="en">Original project drone footage — September–October 2026.</span></p>
-    </div> : <>
-      <figure><ParkFlight key={mode} id={id} active={active} paused={paused} reduced={reduced || (salalah && mode==='photo') || (nizwa && mode==='site')}><button className="masterplan-image-button" onClick={()=>onExpand(index)} aria-label={`Explore ${id} images and masterplan`}><VisualImage visual={visual}/><span className="image-expand"><Expand size={20}/></span></button></ParkFlight><figcaption><VisualCaption visual={visual}/></figcaption></figure>
-      <button className="gallery-open" onClick={()=>onExpand(index)}><span className="pair"><span lang="ar" dir="rtl">استكشف الصور والتفاصيل</span><span className="en" lang="en">Explore images & details</span></span><Expand size={17}/></button>
-      {salalah ? <div className="scope-note"><span lang="ar" dir="rtl">عجلة مشاهدة + الرماية + رمي السهام على البالونات</span><span lang="en">Observation wheel + shooting gallery + balloon darts</span></div> : id==='riyam' ? <div className="scope-note"><span lang="ar" dir="rtl">منتزه عائلي مخطط مع عجلة مشاهدة · تشكيلة الألعاب قيد التحديد</span><span lang="en">Planned family park with an observation wheel · Ride mix to be defined</span></div> : nizwa ? null : project.stageInSource==='planned' ? <div className="scope-note"><span lang="ar" dir="rtl">عجلة مخططة واحدة · لم تُبنَ بعد</span><span lang="en">One planned observation wheel · Not yet built</span></div> : project.metrics.attractions.value !== null && <ProjectCapacity id={id} value={project.metrics.attractions.value} activities={id==='airport'} construction={project.stageInSource==='under_construction'} />}
-    </>}
-  </div>;
-}
+export { default } from './ParkMedia';

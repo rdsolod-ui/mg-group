@@ -3,7 +3,6 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { ArrowLeft, ArrowRight, Expand } from 'lucide-react';
 import { skazkaSlides as slides } from '@/data/skazka-slides';
 import ProgressiveImage from './ProgressiveImage';
-import ParkFlight from './ParkFlight';
 import { ProjectCapacity } from './MotionCharts';
 import { useNetwork } from './NetworkPreferences';
 
@@ -29,7 +28,7 @@ export default function SkazkaSlider({active,paused,reduced,onExpand}:{active:bo
         {next.map((n,slot)=><button key={slot} type="button" data-preview={n} onClick={()=>choose(n)} aria-label={`Show ${slides[n].en} photograph`}><img src={`/mg-group/${slides[n].thumb}`} width={240} height={160} alt="" loading="lazy" decoding="async"/><span lang="ar" dir="rtl">{slides[n].ar}<small lang="en" dir="ltr">{slides[n].en}</small></span></button>)}
       </div>
       <div className="skazka-feature">
-        <ParkFlight id="skazka" active={active} paused={paused} reduced={reduced}>
+
           <button type="button" className="skazka-slide-image" onClick={()=>onExpand(displayed)} aria-label={`Expand ${slides[displayed].en} summer photograph`}
             onTouchStart={e=>{touch.current={x:e.touches[0].clientX,y:e.touches[0].clientY};}}
             onTouchEnd={e=>{if(!touch.current)return;const dx=e.changedTouches[0].clientX-touch.current.x,dy=e.changedTouches[0].clientY-touch.current.y;touch.current=null;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.5){e.preventDefault();choose(index+(dx<0?1:-1));}}}>
@@ -38,7 +37,7 @@ export default function SkazkaSlider({active,paused,reduced,onExpand}:{active:bo
             </span>)}
             <span className="image-expand"><Expand size={19}/></span>
           </button>
-        </ParkFlight>
+
         {failed===index&&<div className="skazka-load-error" role="status"><span lang="ar" dir="rtl">تعذّر تحميل الصورة التالية<small lang="en" dir="ltr">The next photograph could not load.</small></span><button type="button" onClick={()=>{setFailed(null);setAttempts(a=>({...a,[index]:(a[index]||0)+1}));}}>إعادة المحاولة / Retry</button></div>}
         <div className="skazka-slide-footer">
           <div className="skazka-slide-name"><span lang="ar" dir="rtl">{slides[displayed].ar}</span><span lang="en">{slides[displayed].en}</span></div>

@@ -54,7 +54,8 @@ for (const record of visualRecords) {
   }
 }
 if (html.includes('media/al-haffa/1.webp') || html.includes('media/skazka/1.webp')) throw Error('Legacy case imagery is still rendered');
-if (!html.includes('Generated creative based on an original project photograph') || !html.includes('Generated masterplan visualization')) throw Error('Visual provenance captions missing');
+const visualClient = fs.readdirSync(path.join(root,'_next/static/chunks'),{recursive:true}).filter(f=>f.endsWith('.js')).map(f=>fs.readFileSync(path.join(root,'_next/static/chunks',f),'utf8')).join('');
+if (!visualClient.includes('Generated creative based on an original project photograph') || !visualClient.includes('Generated masterplan visualization')) throw Error('Visual provenance captions missing');
 const filmRoot=path.join(root,'films/salalah');
 for (const resolution of [360,720,1080]) {
   const playlist=fs.readFileSync(path.join(filmRoot,`${resolution}p/index.m3u8`),'utf8');

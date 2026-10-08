@@ -22,7 +22,7 @@ for(const [id,lat,lng] of expected) {
   assert.deepEqual([locations[id].lat,locations[id].lng],[lat,lng]);
   const p=source.projects.find(p=>p.id===id);
   assert.deepEqual([p.ownerCoordinates.lat,p.ownerCoordinates.lng],[lat,lng]);
-  assert(html.includes(`query=${lat}%2C${lng}`),`Exact Google Maps link missing: ${id}`);
+  assert(html.includes(`mlat=${lat}&amp;mlon=${lng}`),`Exact OpenStreetMap link missing: ${id}`);
 }
 const planned=source.projects.find(p=>p.id==='blagoveshchensk');
 assert.equal(planned.stageInSource,'planned');
@@ -37,5 +37,5 @@ assert.equal(source.projects.find(p=>p.id==='riyam').metrics.attractions.value,n
 assert.deepEqual(['Russia','Oman'].map(country=>source.projects.filter(p=>p.country===country).length),[8,3]);
 const operating=source.projects.filter(p=>['skazka','leo-tolstoy','vdnkh','izmaylovo','ohta'].includes(p.id));
 assert.equal(operating.reduce((sum,p)=>sum+p.metrics.attractions.value,0),95,'Planned wheel is excluded from operating rides');
-assert(html.includes('Not yet built'));
+assert(html.toLowerCase().includes('not yet built'));
 console.log('PASS: eleven exact owner GPS points and public links; three planned projects excluded from 95 operating rides; country mix 8:3');
